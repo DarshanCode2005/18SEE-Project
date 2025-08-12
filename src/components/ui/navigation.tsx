@@ -44,7 +44,7 @@ export const Navigation = ({
               <span className="text-primary-foreground font-bold text-lg">18</span>
             </div>
             <div className="hidden sm:block">
-              <h1 className="font-serif text-xl font-bold text-slate-50">18SEE</h1>
+              <h1 className="font-serif text-xl font-bold text-slate-400">18SEE</h1>
               <p className="text-sm text-muted-foreground">IIT Roorkee</p>
             </div>
           </div>
