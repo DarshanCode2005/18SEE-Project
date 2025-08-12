@@ -23,14 +23,11 @@ export const Navigation = ({
     name: "About",
     href: "#about"
   }, {
-    name: "Speakers",
-    href: "#speakers"
+    name: "Themes",
+    href: "#themes"
   }, {
-    name: "Schedule",
-    href: "#schedule"
-  }, {
-    name: "Call for Papers",
-    href: "#papers"
+    name: "Gallery",
+    href: "#gallery"
   }, {
     name: "Registration",
     href: "#registration"

@@ -1,4 +1,5 @@
 import { Separator } from "@/components/ui/separator";
+import { NewsletterForm } from "@/components/sections/NewsletterSection";
 import { 
   Mail, 
   Phone, 
@@ -43,7 +44,7 @@ export const FooterSection = () => {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             
             {/* Conference Info */}
-            <div className="lg:col-span-2">
+            <div className="lg:col-span-1">
               <div className="flex items-center space-x-3 mb-6">
                 <div className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center">
                   <span className="text-secondary-foreground font-bold text-xl">18</span>
@@ -118,6 +119,11 @@ export const FooterSection = () => {
                   </li>
                 ))}
               </ul>
+            </div>
+
+            {/* Newsletter Subscription */}
+            <div>
+              <NewsletterForm variant="footer" />
             </div>
           </div>
         </div>
