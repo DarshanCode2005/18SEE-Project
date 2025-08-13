@@ -1,5 +1,7 @@
 ## 18th Symposium on Earthquake Engineering – IIT Roorkee Website
 
+**Current Deployed Link:** https://18-see-project.vercel.app/
+
 A static, responsive website for the **18th Symposium on Earthquake Engineering** organized by the Department of Earthquake Engineering, IIT Roorkee.
 
 The site provides conference details, schedule, call for papers, EasyChair integration, photo gallery, sponsors, and registration links.
@@ -34,7 +36,6 @@ The site provides conference details, schedule, call for papers, EasyChair integ
 **Frontend Development** – Shradha Thakur, Stuti Jain, Akshat Yadav
 
 **Backend & EasyChair Integration** – Madhav Dhall, Kabeer Khosla, Umesh, Shankar Mahadevan
-
 
 ## 📅 Development Workflow
 
