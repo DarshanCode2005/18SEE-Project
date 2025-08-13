@@ -99,7 +99,7 @@ export const HeroSection = () => {
             <Button size="lg" className="bg-secondary hover:bg-secondary-dark text-secondary-foreground shadow-glow">
               Register Now
             </Button>
-            <Button size="lg" variant="outline" className="border-primary-foreground text-primary-foreground hover:text-primary bg-slate-800 hover:bg-slate-700">
+            <Button size="lg" variant="outline" className="border-primary-foreground bg-slate-100 text-slate-700">
               <Download className="h-4 w-4 mr-2" />
               Download Brochure
             </Button>

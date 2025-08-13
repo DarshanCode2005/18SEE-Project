@@ -41,7 +41,8 @@ export const Navigation = ({
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">18</span>
+              <span className="text-primary-foreground font-bold text-lg">
+            </span>
             </div>
             <div className="hidden sm:block">
               <h1 className="font-serif text-xl font-bold text-slate-50">18SEE</h1>
