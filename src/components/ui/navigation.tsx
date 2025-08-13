@@ -26,6 +26,9 @@ export const Navigation = ({
     name: "Themes",
     href: "#themes"
   }, {
+    name: "Schedule",
+    href: "#schedule"
+  }, {
     name: "Gallery",
     href: "#gallery"
   }, {

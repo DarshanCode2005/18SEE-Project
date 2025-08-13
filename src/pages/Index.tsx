@@ -2,6 +2,7 @@ import { Navigation } from "@/components/ui/navigation";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { ThemesSection } from "@/components/sections/ThemesSection";
+import { ScheduleSection } from "@/components/sections/ScheduleSection";
 import { GallerySection } from "@/components/sections/GallerySection";
 import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { NewsletterSection } from "@/components/sections/NewsletterSection";
@@ -16,6 +17,7 @@ const Index = () => {
       <HeroSection />
       <AboutSection />
       <ThemesSection />
+      <ScheduleSection />
       <GallerySection />
       <TestimonialsSection />
       <NewsletterSection />
