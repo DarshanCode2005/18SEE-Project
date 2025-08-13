@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
+import iitrLogo from "@/assets/iitr_logo.png";
 import { Menu, X } from "lucide-react";
 interface NavigationProps {
   className?: string;
@@ -45,7 +46,7 @@ export const Navigation = ({
           <div className="flex items-center space-x-3">
             <div className="w-12 h-12 flex items-center justify-center">
               <img 
-                src="src\assets\iitr_logo.png" 
+                src={iitrLogo} 
                 alt="IIT Roorkee Logo" 
                 className={`w-full h-full object-contain ${isScrolled ? 'brightness-90' : 'brightness-110'}`}
               />

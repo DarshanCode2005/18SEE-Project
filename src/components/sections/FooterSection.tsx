@@ -1,5 +1,6 @@
 import { Separator } from "@/components/ui/separator";
 import { NewsletterForm } from "@/components/sections/NewsletterSection";
+import iitrLogo from "@/assets/iitr_logo.png";
 import { 
   Mail, 
   Phone, 
@@ -48,7 +49,7 @@ export const FooterSection = () => {
               <div className="flex items-center space-x-3 mb-6">
                 <div className="w-12 h-12 flex items-center justify-center">
                   <img 
-                    src="src\assets\iitr_logo.png" 
+                    src={iitrLogo}
                     alt="IIT Roorkee Logo"
                     className="w-full h-full object-contain"
                   />
