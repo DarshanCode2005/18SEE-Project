@@ -46,8 +46,12 @@ export const FooterSection = () => {
             {/* Conference Info */}
             <div className="lg:col-span-1">
               <div className="flex items-center space-x-3 mb-6">
-                <div className="w-12 h-12 bg-secondary rounded-lg flex items-center justify-center">
-                  <span className="text-secondary-foreground font-bold text-xl">18</span>
+                <div className="w-12 h-12 flex items-center justify-center">
+                  <img 
+                    src="src\assets\iitr_logo.png" 
+                    alt="IIT Roorkee Logo"
+                    className="w-full h-full object-contain"
+                  />
                 </div>
                 <div>
                   <h3 className="font-serif text-xl font-bold">18SEE 2025</h3>

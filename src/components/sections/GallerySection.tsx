@@ -20,8 +20,8 @@ const galleryData: MediaItem[] = [
   {
     id: '1',
     type: 'image',
-    src: '/api/placeholder/800/600',
-    thumbnail: '/api/placeholder/400/300',
+    src: '/placeholder.svg',
+    thumbnail: '/placeholder.svg',
     title: 'Opening Ceremony 2023',
     category: 'past-events',
     alt: 'Opening ceremony of 17th SEE'
@@ -30,7 +30,7 @@ const galleryData: MediaItem[] = [
     id: '2',
     type: 'video',
     src: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-    thumbnail: '/api/placeholder/400/300',
+    thumbnail: '/placeholder.svg',
     title: 'Keynote Highlights',
     category: 'past-events',
     alt: 'Keynote speaker presentation'
@@ -38,8 +38,8 @@ const galleryData: MediaItem[] = [
   {
     id: '3',
     type: 'image',
-    src: '/api/placeholder/800/600',
-    thumbnail: '/api/placeholder/400/300',
+    src: '/placeholder.svg',
+    thumbnail: '/placeholder.svg',
     title: 'Conference Hall Setup',
     category: 'preparations',
     alt: 'Main conference hall preparation'
@@ -47,8 +47,8 @@ const galleryData: MediaItem[] = [
   {
     id: '4',
     type: 'image',
-    src: '/api/placeholder/800/600',
-    thumbnail: '/api/placeholder/400/300',
+    src: '/placeholder.svg',
+    thumbnail: '/placeholder.svg',
     title: 'IIT Roorkee Campus',
     category: 'venue',
     alt: 'Beautiful IIT Roorkee campus view'
@@ -56,8 +56,8 @@ const galleryData: MediaItem[] = [
   {
     id: '5',
     type: 'image',
-    src: '/api/placeholder/800/600',
-    thumbnail: '/api/placeholder/400/300',
+    src: '/placeholder.svg',
+    thumbnail: '/placeholder.svg',
     title: 'Award Ceremony',
     category: 'key-moments',
     alt: 'Best paper award ceremony'
@@ -65,8 +65,8 @@ const galleryData: MediaItem[] = [
   {
     id: '6',
     type: 'image',
-    src: '/api/placeholder/800/600',
-    thumbnail: '/api/placeholder/400/300',
+    src: '/placeholder.svg',
+    thumbnail: '/placeholder.svg',
     title: 'Panel Discussion',
     category: 'key-moments',
     alt: 'Expert panel discussion'

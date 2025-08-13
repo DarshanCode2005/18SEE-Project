@@ -82,7 +82,7 @@ export const ThemesSection = () => {
   const displayedThemes = showAll ? themes : themes.slice(0, initialCount);
 
   return (
-    <section className="py-20 bg-background">
+    <section id="themes" className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Section Header */}

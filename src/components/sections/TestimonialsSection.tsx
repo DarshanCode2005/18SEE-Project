@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { ChevronLeft, ChevronRight, Quote, Play, Pause } from "lucide-react";
+import headshotPlaceholder from "@/assets/headshot_placeholder.png";
 
 interface Testimonial {
   id: string;
@@ -19,7 +20,7 @@ const testimonials: Testimonial[] = [
     name: 'Dr. Rajesh Kumar',
     designation: 'Professor',
     institution: 'IIT Delhi',
-    image: '/api/placeholder/100/100',
+    image: headshotPlaceholder,
     quote: 'The 17th SEE was an extraordinary platform for knowledge exchange. The quality of research presentations and networking opportunities were exceptional.',
     year: '2023'
   },
@@ -28,7 +29,7 @@ const testimonials: Testimonial[] = [
     name: 'Prof. Sarah Williams',
     designation: 'Director, Earthquake Research Center',
     institution: 'Stanford University',
-    image: '/api/placeholder/100/100',
+    image: headshotPlaceholder,
     quote: 'IIT Roorkee consistently hosts one of the finest earthquake engineering symposiums globally. The 18th edition promises to be even more impactful.',
     year: '2023'
   },
@@ -37,7 +38,7 @@ const testimonials: Testimonial[] = [
     name: 'Dr. Hiroshi Tanaka',
     designation: 'Senior Researcher',
     institution: 'University of Tokyo',
-    image: '/api/placeholder/100/100',
+    image: headshotPlaceholder,
     quote: 'The symposium provides invaluable insights into cutting-edge seismic research. The collaboration opportunities are unmatched.',
     year: '2021'
   },
@@ -46,7 +47,7 @@ const testimonials: Testimonial[] = [
     name: 'Dr. Maria Rodriguez',
     designation: 'Principal Engineer',
     institution: 'Seismic Solutions International',
-    image: '/api/placeholder/100/100',
+    image: headshotPlaceholder,
     quote: 'As a practicing engineer, this symposium bridges the gap between academic research and real-world applications beautifully.',
     year: '2023'
   },
@@ -55,7 +56,7 @@ const testimonials: Testimonial[] = [
     name: 'Prof. Anil Chopra',
     designation: 'Emeritus Professor',
     institution: 'UC Berkeley',
-    image: '/api/placeholder/100/100',
+    image: headshotPlaceholder,
     quote: 'The symposium at IIT Roorkee has been instrumental in advancing earthquake engineering research for decades. A must-attend event.',
     year: '2021'
   }

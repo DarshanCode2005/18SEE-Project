@@ -245,25 +245,25 @@ export const ScheduleSection = () => {
 
         <div className="max-w-6xl mx-auto">
           <Tabs defaultValue="day1" className="w-full">
-            <TabsList className="grid w-full grid-cols-3 mb-8">
-              <TabsTrigger value="day1" className="flex items-center gap-2">
+            <TabsList className="grid w-full grid-cols-3 mb-8 h-auto">
+              <TabsTrigger value="day1" className="flex items-center gap-2 py-2 px-3 h-auto data-[state=active]:text-primary">
                 <Calendar className="w-4 h-4" />
                 <div className="text-center">
-                  <div className="font-semibold">Day 1</div>
+                  <div className="font-semibold text-sm">Day 1</div>
                   <div className="text-xs">Dec 15, 2025</div>
                 </div>
               </TabsTrigger>
-              <TabsTrigger value="day2" className="flex items-center gap-2">
+              <TabsTrigger value="day2" className="flex items-center gap-2 py-2 px-3 h-auto data-[state=active]:text-primary">
                 <Calendar className="w-4 h-4" />
                 <div className="text-center">
-                  <div className="font-semibold">Day 2</div>
+                  <div className="font-semibold text-sm">Day 2</div>
                   <div className="text-xs">Dec 16, 2025</div>
                 </div>
               </TabsTrigger>
-              <TabsTrigger value="day3" className="flex items-center gap-2">
+              <TabsTrigger value="day3" className="flex items-center gap-2 py-2 px-3 h-auto data-[state=active]:text-primary">
                 <Calendar className="w-4 h-4" />
                 <div className="text-center">
-                  <div className="font-semibold">Day 3</div>
+                  <div className="font-semibold text-sm">Day 3</div>
                   <div className="text-xs">Dec 17, 2025</div>
                 </div>
               </TabsTrigger>

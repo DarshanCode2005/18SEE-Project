@@ -43,19 +43,22 @@ export const Navigation = ({
         <div className="flex justify-between items-center py-4 my-0">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="w-10 h-10 bg-gradient-primary rounded-lg flex items-center justify-center">
-              <span className="text-primary-foreground font-bold text-lg">
-            </span>
+            <div className="w-12 h-12 flex items-center justify-center">
+              <img 
+                src="src\assets\iitr_logo.png" 
+                alt="IIT Roorkee Logo" 
+                className={`w-full h-full object-contain ${isScrolled ? 'brightness-90' : 'brightness-110'}`}
+              />
             </div>
             <div className="hidden sm:block">
-              <h1 className="font-serif text-xl font-bold text-slate-50">18SEE</h1>
-              <p className="text-sm text-muted-foreground">IIT Roorkee</p>
+              <h1 className={`font-serif text-xl font-bold ${isScrolled ? 'text-foreground' : 'text-white'}`}>18SEE</h1>
+              <p className={`text-sm ${isScrolled ? 'text-muted-foreground' : 'text-white/80'}`}>IIT Roorkee</p>
             </div>
           </div>
 
           {/* Desktop Navigation */}
           <div className="hidden lg:flex items-center space-x-1">
-            {navItems.map(item => <Button key={item.name} variant="ghost" className="hover:bg-primary/10 hover:text-primary transition-colors" asChild>
+            {navItems.map(item => <Button key={item.name} variant="ghost" className={`hover:bg-primary/10 hover:text-primary transition-colors ${isScrolled ? 'text-foreground' : 'text-white'}`} asChild>
                 <a href={item.href}>{item.name}</a>
               </Button>)}
           </div>
@@ -67,7 +70,7 @@ export const Navigation = ({
           </div>
 
           {/* Mobile Menu Button */}
-          <Button variant="ghost" size="sm" className="lg:hidden" onClick={() => setIsOpen(!isOpen)}>
+          <Button variant="ghost" size="sm" className={`lg:hidden ${isScrolled ? 'text-foreground' : 'text-white'}`} onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>
         </div>
