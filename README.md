@@ -1,6 +1,8 @@
+https://18-see-project-uwa3.vercel.app/
+
 ## 18th Symposium on Earthquake Engineering – IIT Roorkee Website
 
-**Current Deployed Link:** https://18-see-project.vercel.app/
+**Current Deployed Link:** https://18-see-project-uwa3.vercel.app/
 
 A static, responsive website for the **18th Symposium on Earthquake Engineering** organized by the Department of Earthquake Engineering, IIT Roorkee.
 
