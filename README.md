@@ -1,73 +1,48 @@
-# Welcome to your Lovable project
+## 18th Symposium on Earthquake Engineering – IIT Roorkee Website
 
-## Project info
+A static, responsive website for the **18th Symposium on Earthquake Engineering** organized by the Department of Earthquake Engineering, IIT Roorkee.
 
-**URL**: https://lovable.dev/projects/08a5eac0-6d8b-4db1-92e2-041c8d38d411
+The site provides conference details, schedule, call for papers, EasyChair integration, photo gallery, sponsors, and registration links.
 
-## How can I edit this code?
+## 🚀 Features
 
-There are several ways of editing your application.
+* **Hero Section** with event title, date, venue, and countdown timer
+* **About Section** with IIT Roorkee and symposium history
+* **Themes & Topics** (34 items) with *Show More/Show Less* toggle
+* **Speakers** section with profile cards and hover effects
+* **3-Day Schedule** with tabs and downloadable PDF
+* **Call for Papers** with EasyChair submission link
+* **Registration Form** (static form service integration)
+* **Venue & Travel** with embedded Google Maps
+* **Organizing Committee** section with names and photos
+* **Sponsors Carousel**
+* **Photo & Video Gallery** with lightbox
+* **Contact Form** (Formspree/EmailJS integration)
+* **Responsive Design** (desktop, tablet, mobile)
 
-**Use Lovable**
+## 🛠 Tech Stack
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/08a5eac0-6d8b-4db1-92e2-041c8d38d411) and start prompting.
+* **HTML5** – Structure
+* **CSS3 / TailwindCSS / Bootstrap** – Styling & responsiveness
+* **JavaScript (Vanilla)** – Interactivity
+* **EasyChair** – Paper submission integration
+* **Formspree / EmailJS** – Contact & registration form handling
+* **Vercel** - For Deployment
 
-Changes made via Lovable will be committed automatically to this repo.
+## 👨‍💻 Team Roles
 
-**Use your preferred IDE**
+**Frontend Development** – Shradha Thakur, Stuti Jain, Akshat Yadav
 
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
+**Backend & EasyChair Integration** – Madhav Dhall, Kabeer Khosla, Umesh, Shankar Mahadevan
 
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
 
-Follow these steps:
+## 📅 Development Workflow
 
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
+* Task breakdown in **Notion** (assigned by section & deadline)
+* Version control with **Git & GitHub**
+* Branch-based workflow (feature branches → pull request → review → merge)
+* Live preview via **Vercel.**
 
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
+## 📜 License
 
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
-```
-
-**Edit a file directly in GitHub**
-
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
-
-**Use GitHub Codespaces**
-
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
-
-## What technologies are used for this project?
-
-This project is built with:
-
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
-
-## How can I deploy this project?
-
-Simply open [Lovable](https://lovable.dev/projects/08a5eac0-6d8b-4db1-92e2-041c8d38d411) and click on Share -> Publish.
-
-## Can I connect a custom domain to my Lovable project?
-
-Yes, you can!
-
-To connect a domain, navigate to Project > Settings > Domains and click Connect Domain.
-
-Read more here: [Setting up a custom domain](https://docs.lovable.dev/tips-tricks/custom-domain#step-by-step-guide)
+This project is for academic & event purposes for IIT Roorkee.
