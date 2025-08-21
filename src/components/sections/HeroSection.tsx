@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin, Users, Download } from "lucide-react";
-import heroCampus from "@/assets/hero-campus.jpg";
+import heroCampus from "@/assets/hero-campus.webp";
 export const HeroSection = () => {
   const [timeLeft, setTimeLeft] = useState({
     days: 0,
@@ -10,7 +10,7 @@ export const HeroSection = () => {
     seconds: 0
   });
   useEffect(() => {
-    const targetDate = new Date("2025-12-15T09:00:00");
+    const targetDate = new Date("2026-12-10T09:00:00");
     const updateCountdown = () => {
       const now = new Date().getTime();
       const distance = targetDate.getTime() - now;
@@ -59,7 +59,7 @@ export const HeroSection = () => {
             animationDelay: '0.2s'
           }}>
               <Calendar className="h-5 w-5" />
-              <span>December 15–17, 2025</span>
+              <span>December 10–12, 2026</span>
             </div>
             <div className="flex items-center space-x-2 animate-fade-in" style={{
             animationDelay: '0.4s'
@@ -99,9 +99,11 @@ export const HeroSection = () => {
             <Button size="lg" className="bg-secondary hover:bg-secondary-dark text-secondary-foreground shadow-glow">
               Register Now
             </Button>
-            <Button size="lg" variant="outline" className="border-primary-foreground bg-slate-100 text-slate-700">
-              <Download className="h-4 w-4 mr-2" />
-              Download Brochure
+            <Button size="lg" variant="outline" className="border-primary-foreground bg-slate-100 text-slate-700" asChild>
+              <a href="/schedule.pdf" download>
+                <Download className="h-4 w-4 mr-2" />
+                Download Brochure
+              </a>
             </Button>
           </div>
         </div>

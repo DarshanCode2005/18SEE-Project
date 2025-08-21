@@ -145,7 +145,7 @@ export const AboutSection = () => {
                     that will shape the future of our discipline.
                   </p>
                   <div className="mt-6 pt-4 border-t border-border">
-                    <p className="font-semibold text-foreground">Prof. [Head of Department Name]</p>
+                    <p className="font-semibold text-foreground">Prof. B.K. Maheshwari</p>
                     <p className="text-sm text-muted-foreground">Head, Department of Earthquake Engineering</p>
                     <p className="text-sm text-muted-foreground">Indian Institute of Technology Roorkee</p>
                   </div>
@@ -155,7 +155,7 @@ export const AboutSection = () => {
           </div>
 
           {/* Existing Highlights Section */}
-          <div className="grid lg:grid-cols-2 gap-12">
+          <div className="grid lg:grid-cols-1 gap-12">
             <div className="space-y-8 animate-fade-in" style={{ animationDelay: '0.8s' }}>
               <Card className="border-0 shadow-card bg-gradient-card">
                 <CardContent className="p-8">
@@ -195,36 +195,6 @@ export const AboutSection = () => {
             </div>
 
             {/* Right Content - Highlights */}
-            <div className="space-y-6 animate-fade-in" style={{ animationDelay: '1s' }}>
-              <h3 className="font-serif text-2xl font-semibold text-foreground mb-8">
-                Why Attend 18SEE?
-              </h3>
-              
-              {highlights.map((highlight, index) => (
-                <Card 
-                  key={index} 
-                  className="border-0 shadow-card bg-gradient-card hover:shadow-elegant transition-all duration-300 group"
-                >
-                  <CardContent className="p-6">
-                    <div className="flex items-start space-x-4">
-                      <div className="bg-primary/10 p-3 rounded-lg group-hover:bg-primary/20 transition-colors">
-                        <div className="text-primary">
-                          {highlight.icon}
-                        </div>
-                      </div>
-                      <div className="flex-1">
-                        <h4 className="font-semibold text-foreground mb-2">
-                          {highlight.title}
-                        </h4>
-                        <p className="text-muted-foreground text-sm leading-relaxed">
-                          {highlight.description}
-                        </p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
           </div>
         </div>
 

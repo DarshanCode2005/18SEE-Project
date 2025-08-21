@@ -45,14 +45,14 @@ export const ContactSection = () => {
     {
       icon: <Phone className="h-5 w-5" />,
       title: "Phone",
-      content: "+91-1332-285-XXX",
-      action: "tel:+911332285000"
+      content: "+91-1332-285591\n+91-1332-285710",
+      action: "tel:+911332285591"
     },
     {
       icon: <MapPin className="h-5 w-5" />,
       title: "Address",
       content: "Department of Earthquake Engineering\nIIT Roorkee, Uttarakhand 247667, India",
-      action: "https://maps.google.com"
+      action: "https://maps.app.goo.gl/vManw69NJhXoWeAo9"
     },
     {
       icon: <Clock className="h-5 w-5" />,
@@ -282,7 +282,7 @@ export const ContactSection = () => {
                   </p>
                   <Button variant="outline" className="mt-4" asChild>
                     <a 
-                      href="https://maps.google.com/search/IIT+Roorkee" 
+                      href="https://maps.app.goo.gl/vManw69NJhXoWeAo9" 
                       target="_blank" 
                       rel="noopener noreferrer"
                     >

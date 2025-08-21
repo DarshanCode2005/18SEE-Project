@@ -1,6 +1,6 @@
 import { Separator } from "@/components/ui/separator";
 import { NewsletterForm } from "@/components/sections/NewsletterSection";
-import iitrLogo from "@/assets/iitr_logo.png";
+import iitrLogo from "@/assets/iitr_logo.svg";
 import { 
   Mail, 
   Phone, 
@@ -24,8 +24,8 @@ export const FooterSection = () => {
   const importantLinks = [
     { name: "IIT Roorkee", href: "https://www.iitr.ac.in", external: true },
     { name: "Earthquake Engineering Dept.", href: "#", external: true },
-    { name: "Accommodation", href: "#" },
-    { name: "Travel Information", href: "#" },
+    { name: "Accommodation", href: "#travel" },
+    { name: "Travel Information", href: "#travel" },
     { name: "Downloads", href: "#" }
   ];
 
@@ -47,11 +47,11 @@ export const FooterSection = () => {
             {/* Conference Info */}
             <div className="lg:col-span-1">
               <div className="flex items-center space-x-3 mb-6">
-                <div className="w-12 h-12 flex items-center justify-center">
+                <div className="w-16 h-16 flex items-center justify-center">
                   <img 
                     src={iitrLogo}
                     alt="IIT Roorkee Logo"
-                    className="w-full h-full object-contain"
+                    className="w-full h-full object-cover rounded-full border-2 border-primary bg-white"
                   />
                 </div>
                 <div>
@@ -59,11 +59,6 @@ export const FooterSection = () => {
                   <p className="text-primary-foreground/80 text-sm">IIT Roorkee</p>
                 </div>
               </div>
-              
-              <p className="text-primary-foreground/90 leading-relaxed mb-6 max-w-md">
-                The 18th Symposium on Earthquake Engineering brings together global experts to advance 
-                seismic engineering research and promote safer, more resilient infrastructure worldwide.
-              </p>
 
               {/* Contact Info */}
               <div className="space-y-3">
@@ -75,8 +70,8 @@ export const FooterSection = () => {
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="h-4 w-4 text-secondary" />
-                  <a href="tel:+911332285000" className="text-primary-foreground/90 hover:text-secondary transition-colors">
-                    +91-1332-285-XXX
+                  <a href="tel:+911332285591" className="text-primary-foreground/90 hover:text-secondary transition-colors">
+                  +91-1332-285591<br/>+91-1332-285710
                   </a>
                 </div>
                 <div className="flex items-start space-x-3">
