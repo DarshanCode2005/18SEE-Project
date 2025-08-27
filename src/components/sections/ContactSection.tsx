@@ -274,13 +274,19 @@ export const ContactSection = () => {
               </p>
             </CardHeader>
             <CardContent className="p-0">
-              <div className="h-96 bg-muted rounded-b-lg flex items-center justify-center">
-                <div className="text-center">
-                  <MapPin className="h-12 w-12 text-primary mx-auto mb-4" />
-                  <p className="text-muted-foreground">
-                    Interactive map will be embedded here
-                  </p>
-                  <Button variant="outline" className="mt-4" asChild>
+              <div className="rounded-b-lg overflow-hidden">
+                <div className="relative w-full h-96">
+                  <iframe
+                    title="IIT Roorkee Location Map"
+                    src="https://www.google.com/maps?q=IIT%20Roorkee&output=embed"
+                    className="absolute inset-0 w-full h-full border-0"
+                    loading="lazy"
+                    referrerPolicy="no-referrer-when-downgrade"
+                    allowFullScreen
+                  />
+                </div>
+                <div className="p-4 text-center">
+                  <Button variant="outline" asChild>
                     <a 
                       href="https://maps.app.goo.gl/vManw69NJhXoWeAo9" 
                       target="_blank" 
