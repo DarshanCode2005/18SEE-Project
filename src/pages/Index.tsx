@@ -3,7 +3,6 @@ import { HeroSection } from "@/components/sections/HeroSection";
 import { AboutSection } from "@/components/sections/AboutSection";
 import { ThemesSection } from "@/components/sections/ThemesSection";
 import { GallerySection } from "@/components/sections/GallerySection";
-import { TestimonialsSection } from "@/components/sections/TestimonialsSection";
 import { NewsletterSection } from "@/components/sections/NewsletterSection";
 import { RegistrationSection } from "@/components/sections/RegistrationSection";
 import { ContactSection } from "@/components/sections/ContactSection";
@@ -19,7 +18,6 @@ const Index = () => {
       {/* <ScheduleSection /> Removed from landing page */}
       {/* Download/View Schedule buttons removed as per new instructions */}
       <GallerySection />
-      <TestimonialsSection />
       <NewsletterSection />
       <RegistrationSection />
       {/* How to Reach & Accommodation Section */}
