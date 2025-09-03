@@ -8,12 +8,14 @@ import { RegistrationSection } from "@/components/sections/RegistrationSection";
 import { ContactSection } from "@/components/sections/ContactSection";
 import { FooterSection } from "@/components/sections/FooterSection";
 import { PostSymposiumTourSection } from "@/components/sections/PostSymposiumTourSection";
+import { OrganisedBySection } from "@/components/sections/OrganisedBySection";
 import { Accomodation } from "@/components/sections/Accomodation";
 const Index = () => {
   return (
     <div className="min-h-screen">
       <Navigation />
-      <HeroSection />
+  <HeroSection />
+  <OrganisedBySection />
       <AboutSection />
       <ThemesSection />
       {/* <ScheduleSection /> Removed from landing page */}

@@ -64,7 +64,7 @@ export const AboutSection = () => {
           About 18SEE
         </h3>
       </div>
-      <ul className="text-lg text-muted-foreground space-y-4 leading-relaxed list-disc list-outside pl-6">
+  <ul className="text-lg text-muted-foreground space-y-4 leading-relaxed list-disc list-outside pl-6 text-left">
         <li>
           <span className="font-semibold">Legacy of Excellence:</span> Continuing IIT Roorkee’s tradition of pioneering research in earthquake engineering since 1962.
         </li>

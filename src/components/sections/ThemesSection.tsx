@@ -82,7 +82,7 @@ export const ThemesSection = () => {
     { icon: <Clock className="h-5 w-5" />, title: "Earthquake Prediction and Early warning System" }
   ];
 
-  const initialCount = 6;
+  const initialCount = 8;
   const displayedThemes = showAll ? themes : themes.slice(0, initialCount);
 
   return (
