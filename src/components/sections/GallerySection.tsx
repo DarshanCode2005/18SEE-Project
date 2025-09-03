@@ -268,7 +268,8 @@ export const GallerySection = () => {
                     <img
                       src={currentItem.src}
                       alt={currentItem.alt}
-                      className="max-w-full max-h-full object-contain"
+                      style={{ maxWidth: '100%', maxHeight: '80vh', width: 'auto', height: 'auto', objectFit: 'contain', borderRadius: '1rem' }}
+                      className="shadow-lg"
                     />
                   ) : (
                     <div className="w-full h-full max-w-4xl">
