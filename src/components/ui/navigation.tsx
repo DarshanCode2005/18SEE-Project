@@ -70,12 +70,12 @@ export const Navigation = ({
   const navHover = isLanding && !isScrolled ? "hover:text-gold" : "hover:text-primary";
 
   return (
-    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBg} ${className}`}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center py-4 my-0">
+  <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBg} ${className}`} style={{marginBottom: '6rem'}}>
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex justify-around items-center py-4 my-0">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="w-16 h-16 flex items-center justify-center">
+            <div className="w-20 h-20 flex items-center justify-center">
               <img 
                 src={iitrLogo} 
                 alt="IIT Roorkee Logo" 
@@ -83,15 +83,15 @@ export const Navigation = ({
               />
             </div>
             <div className="hidden sm:block">
-              <h1 className={`font-serif text-xl font-bold ${navText}`}>18SEE</h1>
-              <p className={`text-sm ${isLanding && !isScrolled ? 'text-white/80' : 'text-muted-foreground'}`}>IIT Roorkee</p>
+              <h1 className={`font-serif text-3xl font-bold ${navText}`}>18SEE</h1>
+              <p className={`text-lg font-semibold ${isLanding && !isScrolled ? 'text-white/80' : 'text-muted-foreground'}`}>IIT Roorkee</p>
             </div>
           </div>
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-1">
+          <div className="hidden lg:flex items-center space-x-3">
             {navItems.map(item => (
-              <Button key={item.name} variant="ghost" className={`hover:bg-primary/10 ${navHover} transition-colors ${navText}`} asChild>
+              <Button key={item.name} variant="ghost" className={`hover:bg-primary/10 ${navHover} transition-colors ${navText} text-lg px-5 py-3`} asChild>
                 <a href={item.href}>{item.name}</a>
               </Button>
             ))}
@@ -101,29 +101,29 @@ export const Navigation = ({
           <div className="hidden sm:flex items-center space-x-2"></div>
 
           {/* Mobile Menu Button */}
-          <Button variant="ghost" size="sm" className={`lg:hidden ${navText}`} onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
+          <Button variant="ghost" size="sm" className={`lg:hidden ${navText} text-lg px-4 py-2`} onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </Button>
         </div>
 
         {/* Mobile Navigation */}
         {isOpen && (
           <div className="lg:hidden bg-card border border-border rounded-lg mt-2 p-4 shadow-card animate-fade-in-scale">
-            <div className="flex flex-col space-y-2">
+            <div className="flex flex-col space-y-3">
               {navItems.map(item => (
-                <Button key={item.name} variant="ghost" className="justify-start" asChild onClick={() => setIsOpen(false)}>
+                <Button key={item.name} variant="ghost" className="justify-start text-lg px-5 py-3" asChild onClick={() => setIsOpen(false)}>
                   <a href={item.href}>{item.name}</a>
                 </Button>
               ))}
               <div className="pt-4 border-t border-border">
-                <div className="flex flex-col space-y-2">
-                  <Button variant="outline" size="sm" asChild>
+                <div className="flex flex-col space-y-3">
+                  <Button variant="outline" size="lg" className="text-lg px-5 py-3" asChild>
                     <a href="/schedule.pdf" download>
                       Download Brochure
                     </a>
                   </Button>
-                  <Button size="sm" className="bg-gradient-primary border-0">
-                    Register Now
+                  <Button size="lg" className="bg-gradient-primary border-0 text-lg px-5 py-3" asChild>
+                    <a href="/registration-soon">Register Now</a>
                   </Button>
                 </div>
               </div>

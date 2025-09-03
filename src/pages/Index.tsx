@@ -18,8 +18,8 @@ const Index = () => {
       {/* <ScheduleSection /> Removed from landing page */}
       {/* Download/View Schedule buttons removed as per new instructions */}
       <GallerySection />
-      <NewsletterSection />
       <RegistrationSection />
+      <NewsletterSection />
       {/* How to Reach & Accommodation Section */}
       <section id="travel" className="py-20 bg-gradient-to-b from-background to-muted/40">
         <div className="max-w-4xl mx-auto px-4">

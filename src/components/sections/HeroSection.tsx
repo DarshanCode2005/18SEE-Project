@@ -72,7 +72,7 @@ export const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+      <div className="relative z-10 max-w-7xl mt-8 mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in mx-0 my-[80px]">
           <h1 className="font-serif text-4xl sm:text-5xl lg:text-7xl font-bold text-primary-foreground mb-6">
             18th Symposium on
@@ -85,8 +85,8 @@ export const HeroSection = () => {
             Department of Earthquake Engineering
           </p>
           
-          <p className="text-lg sm:text-xl text-primary-foreground/80 mb-8">
-            Indian Institute of Technology Roorkee
+          <p className="text-xl sm:text-xl text-primary-foreground/80 mb-8">
+              <span className="text-2xl sm:text-4xl font-bold">Indian Institute of Technology Roorkee</span>
           </p>
 
           {/* Event Details */}
@@ -134,8 +134,8 @@ export const HeroSection = () => {
           <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in" style={{
           animationDelay: '1s'
         }}>
-            <Button size="lg" className="bg-secondary hover:bg-secondary-dark text-secondary-foreground shadow-glow">
-              Register Now
+            <Button size="lg" className="bg-secondary hover:bg-secondary-dark text-secondary-foreground shadow-glow" asChild>
+              <a href="/registration-soon">Register Now</a>
             </Button>
             <Button size="lg" variant="outline" className="border-primary-foreground bg-slate-100 text-slate-700" asChild>
               <a href="/schedule.pdf" download>

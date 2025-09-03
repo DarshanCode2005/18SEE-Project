@@ -127,7 +127,7 @@ export const NewsletterForm = ({ variant = 'section' }: NewsletterFormProps) => 
               </div>
             </div>
             
-            <h2 className="text-3xl font-serif font-bold mb-4">
+            <h2 className="text-3xl font-serif font-bold mb-4 text-primary-foreground">
               Stay Connected with 18SEE 2025
             </h2>
             <p className="text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">

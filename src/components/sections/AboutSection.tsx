@@ -35,7 +35,7 @@ export const AboutSection = () => {
   ];
 
   const stats = [
-    { number: "18", label: "Years of Excellence" },
+    { number: "1962", label: "Year of Establishment" },
     { number: "500+", label: "Expected Participants" },
     { number: "50+", label: "Technical Papers" },
     { number: "25+", label: "Countries Represented" }
@@ -47,18 +47,48 @@ export const AboutSection = () => {
         
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
-          <Badge variant="outline" className="mb-4 bg-primary/10 text-primary border-primary/20">
+          <Badge variant="outline" className="mb-4 bg-primary/10 text-xl border-primary/20">
             About the Symposium
           </Badge>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Advancing Earthquake Engineering
             <span className="block text-primary">for a Safer Tomorrow</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            The 18th Symposium on Earthquake Engineering continues IIT Roorkee's legacy of pioneering 
-            research and innovation in seismic engineering, bringing together global experts to shape 
-            the future of earthquake-resistant infrastructure.
-          </p>
+         {/* <section className="max-w-8xl mx-auto text-center py-10"> */}
+<div className="animate-fade-in" style={{ animationDelay: '0.3s' }}>
+  <Card className="border-0 shadow-card bg-gradient-card">
+    <CardContent className="p-8">
+      <div className="flex items-center space-x-3 mb-6">
+        <Globe className="h-8 w-8 text-primary" />
+        <h3 className="font-serif text-2xl font-semibold text-foreground">
+          About 18SEE
+        </h3>
+      </div>
+      <ul className="text-lg text-muted-foreground space-y-4 leading-relaxed list-disc list-outside pl-6">
+        <li>
+          <span className="font-semibold">Legacy of Excellence:</span> Continuing IIT Roorkee’s tradition of pioneering research in earthquake engineering since 1962.
+        </li>
+        <li>
+          <span className="font-semibold">Global Gathering:</span> Bringing together leading researchers, practitioners, and policymakers from around the world.
+        </li>
+        <li>
+          <span className="font-semibold">Knowledge Exchange:</span> Showcasing breakthroughs in seismic analysis, design methodologies, and disaster resilience.
+        </li>
+        <li>
+          <span className="font-semibold">Future Focus:</span> Shaping the next generation of earthquake-resistant infrastructure and safer communities.
+        </li>
+        <li>
+          <span className="font-semibold">Hosted by IIT Roorkee:</span> Asia’s oldest technical institution, known for its leadership in engineering and innovation.
+        </li>
+      </ul>
+    </CardContent>
+  </Card>
+</div>
+
+
+  
+{/* </section> */}
+
         </div>
 
         {/* Main Content */}
@@ -152,49 +182,6 @@ export const AboutSection = () => {
                 </div>
               </CardContent>
             </Card>
-          </div>
-
-          {/* Existing Highlights Section */}
-          <div className="grid lg:grid-cols-1 gap-12">
-            <div className="space-y-8 animate-fade-in" style={{ animationDelay: '0.8s' }}>
-              <Card className="border-0 shadow-card bg-gradient-card">
-                <CardContent className="p-8">
-                  <div className="flex items-center space-x-3 mb-6">
-                    <Globe className="h-8 w-8 text-primary" />
-                    <h3 className="font-serif text-2xl font-semibold text-foreground">
-                      Global Impact
-                    </h3>
-                  </div>
-                  <p className="text-muted-foreground leading-relaxed mb-4">
-                    Since its inception, the Symposium on Earthquake Engineering has been at the forefront 
-                    of seismic research, contributing to safer building practices and disaster preparedness 
-                    strategies worldwide.
-                  </p>
-                  <p className="text-muted-foreground leading-relaxed">
-                    Our symposium has facilitated knowledge transfer and collaboration that has directly 
-                    influenced seismic design practices in earthquake-prone regions across the globe.
-                  </p>
-                </CardContent>
-              </Card>
-
-              <Card className="border-0 shadow-card bg-gradient-card">
-                <CardContent className="p-8">
-                  <div className="flex items-center space-x-3 mb-6">
-                    <TrendingUp className="h-8 w-8 text-secondary" />
-                    <h3 className="font-serif text-2xl font-semibold text-foreground">
-                      Innovation Focus
-                    </h3>
-                  </div>
-                  <p className="text-muted-foreground leading-relaxed">
-                    This year's symposium emphasizes emerging technologies, sustainable design practices, 
-                    and multidisciplinary approaches to earthquake engineering, including AI-driven 
-                    seismic monitoring, advanced materials, and smart structural systems.
-                  </p>
-                </CardContent>
-              </Card>
-            </div>
-
-            {/* Right Content - Highlights */}
           </div>
         </div>
 

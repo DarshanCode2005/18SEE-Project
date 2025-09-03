@@ -91,7 +91,7 @@ export const ThemesSection = () => {
         
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
-          <Badge variant="outline" className="mb-4 bg-secondary/10 text-secondary border-secondary/20">
+          <Badge variant="outline" className="mb-4 bg-secondary/10 text-2xl border-secondary/20">
             Conference Themes
           </Badge>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
@@ -325,7 +325,7 @@ export const ThemesSection = () => {
           </DialogContent>
         </Dialog>
 
-        {/* Important Dates */}
+        {/* Important Dates - Custom Responsive Grid */}
         <div className="mt-12 max-w-5xl mx-auto">
           <div className="relative">
             {/* Background decoration */}
@@ -333,10 +333,8 @@ export const ThemesSection = () => {
             <div className="absolute -top-4 -left-4 w-8 h-8 bg-primary/20 rounded-full"></div>
             <div className="absolute -top-2 -right-2 w-6 h-6 bg-secondary/20 rounded-full"></div>
             <div className="absolute -bottom-3 left-1/4 w-4 h-4 bg-primary/15 rounded-full"></div>
-            
             <Card className="relative border-2 border-primary/20 shadow-xl bg-gradient-to-br from-background via-background to-muted/30 backdrop-blur-sm">
               <CardContent className="p-8">
-                {/* Header with icon and emphasis */}
                 <div className="text-center mb-8">
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-br from-primary to-secondary rounded-full mb-4 shadow-lg">
                     <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
@@ -348,92 +346,40 @@ export const ThemesSection = () => {
                   </h3>
                   <p className="text-muted-foreground text-lg">Mark your calendar for these critical deadlines</p>
                 </div>
-
-                {/* Dates grid */}
-                <div className="grid md:grid-cols-2 gap-6 mb-8">
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3 p-4 bg-primary/5 rounded-lg border border-primary/20 hover:bg-primary/10 transition-colors">
-                      <div className="w-3 h-3 bg-red-500 rounded-full animate-pulse"></div>
-                      <div>
-                        <p className="text-sm text-muted-foreground">Abstract Submission Deadline</p>
-                        <p className="text-xl font-bold text-red-600">Dec. 15, 2025</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center gap-3 p-4 bg-secondary/5 rounded-lg border border-secondary/20 hover:bg-secondary/10 transition-colors">
-                      <div className="w-3 h-3 bg-blue-500 rounded-full"></div>
-                      <div>
-                        <p className="text-sm text-muted-foreground">Abstract Acceptance</p>
-                        <p className="text-xl font-bold text-blue-600">Jan. 15, 2026</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center gap-3 p-4 bg-green-500/5 rounded-lg border border-green-500/20 hover:bg-green-500/10 transition-colors">
-                      <div className="w-3 h-3 bg-green-500 rounded-full"></div>
-                      <div>
-                        <p className="text-sm text-muted-foreground">Full Manuscript Due</p>
-                        <p className="text-xl font-bold text-green-600">Mar. 15, 2026</p>
-                      </div>
+                {/* Custom Dates Grid */}
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
+                  {/* 1. Dec. 15 2025 - Abstract Submission Closes (Red color Card) */}
+                  <div className="flex flex-col justify-between items-center p-6 bg-red-500/10 border-2 border-red-500 rounded-xl shadow-md min-h-[180px]">
+                    <div className="w-4 h-4 bg-red-500 rounded-full animate-pulse" style={{marginBottom: '0.5rem'}}></div>
+                    <div className="flex-1 flex flex-col justify-center items-center">
+                      <p className="text-xl font-bold text-red-600 mb-1">Dec. 15, 2025</p>
+                      <p className="text-base text-red-700 font-semibold text-center">Abstract Submission Closes</p>
                     </div>
                   </div>
-                  
-                  <div className="space-y-4">
-                    <div className="flex items-center gap-3 p-4 bg-orange-500/5 rounded-lg border border-orange-500/20 hover:bg-orange-500/10 transition-colors">
-                      <div className="w-3 h-3 bg-orange-500 rounded-full"></div>
-                      <div>
-                        <p className="text-sm text-muted-foreground">Review Results</p>
-                        <p className="text-xl font-bold text-orange-600">Apr. 30, 2026</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center gap-3 p-4 bg-purple-500/5 rounded-lg border border-purple-500/20 hover:bg-purple-500/10 transition-colors">
-                      <div className="w-3 h-3 bg-purple-500 rounded-full"></div>
-                      <div>
-                        <p className="text-sm text-muted-foreground">Final Manuscript</p>
-                        <p className="text-xl font-bold text-purple-600">May 15, 2026</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-center gap-3 p-4 bg-gradient-to-r from-primary/5 to-secondary/5 rounded-lg border border-primary/30 hover:from-primary/10 hover:to-secondary/10 transition-all">
-                      <div className="w-3 h-3 bg-gradient-to-r from-primary to-secondary rounded-full animate-pulse"></div>
-                      <div>
-                        <p className="text-sm text-muted-foreground">Conference Dates</p>
-                        <p className="text-xl font-bold bg-gradient-to-r from-primary to-secondary bg-clip-text text-transparent">Dec 10-12, 2026</p>
-                      </div>
+                  {/* 2. Jan. 15 2026 - Confirmation of acceptance of abstract (Yellow card) */}
+                  <div className="flex flex-col justify-between items-center p-6 bg-yellow-300/20 border-2 border-yellow-400 rounded-xl shadow-md min-h-[180px]">
+                    <div className="w-4 h-4 bg-yellow-400 rounded-full" style={{marginBottom: '0.5rem'}}></div>
+                    <div className="flex-1 flex flex-col justify-center items-center">
+                      <p className="text-xl font-bold text-yellow-700 mb-1">Jan. 15, 2026</p>
+                      <p className="text-base text-yellow-800 font-semibold text-center">Confirmation of acceptance of abstract</p>
                     </div>
                   </div>
-                </div>
-
-                {/* Submission info with better styling */}
-                <div className="bg-gradient-to-r from-muted/50 to-muted/30 rounded-xl p-6 border border-border/50">
-                  <h4 className="font-semibold text-lg mb-3 flex items-center gap-2">
-                    <svg className="w-5 h-5 text-primary" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                      <path d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"/>
-                    </svg>
-                    Submit Your Abstract
-                  </h4>
-                  <div className="space-y-2 text-sm">
-                    <p className="flex items-center gap-2">
-                      <span className="w-2 h-2 bg-primary rounded-full"></span>
-                      <strong>Email:</strong> 
-                      <a href="mailto:18see@iitr.ac.in" className="text-primary hover:underline font-medium">18see@iitr.ac.in</a>
-                    </p>
-                    <p className="flex items-center gap-2">
-                      <span className="w-2 h-2 bg-secondary rounded-full"></span>
-                      <strong>Website:</strong> 
-                      <a href="https://www.iitr.ac.in/18see" target="_blank" rel="noreferrer" className="text-primary hover:underline font-medium">www.iitr.ac.in/18see</a>
-                    </p>
+                  {/* 3. March 15 2026 - Full-length manuscript submission closes (Yellow card) */}
+                  <div className="flex flex-col justify-between items-center p-6 bg-yellow-300/20 border-2 border-yellow-400 rounded-xl shadow-md min-h-[180px]">
+                    <div className="w-4 h-4 bg-yellow-400 rounded-full" style={{marginBottom: '0.5rem'}}></div>
+                    <div className="flex-1 flex flex-col justify-center items-center">
+                      <p className="text-xl font-bold text-yellow-700 mb-1">March 15, 2026</p>
+                      <p className="text-base text-yellow-800 font-semibold text-center">Full-length manuscript submission closes</p>
+                    </div>
                   </div>
-                </div>
-
-                {/* Call to action */}
-                <div className="mt-6 text-center">
-                  <Button className="bg-primary hover:bg-primary/90 text-white px-8 py-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105">
-                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                      <path d="M12 6v6m0 0v6m0-6h6m-6 0H6"/>
-                    </svg>
-                    Submit Abstract Now
-                  </Button>
+                  {/* 4. Dec. 10 2026 - Inauguration of 18SEE (Yellow card) */}
+                  <div className="flex flex-col justify-between items-center p-6 bg-yellow-300/20 border-2 border-yellow-400 rounded-xl shadow-md min-h-[180px]">
+                    <div className="w-4 h-4 bg-yellow-400 rounded-full" style={{marginBottom: '0.5rem'}}></div>
+                    <div className="flex-1 flex flex-col justify-center items-center">
+                      <p className="text-xl font-bold text-yellow-700 mb-1">Dec. 10, 2026</p>
+                      <p className="text-base text-yellow-800 font-semibold text-center">Inauguration of 18SEE</p>
+                    </div>
+                  </div>
                 </div>
               </CardContent>
             </Card>
