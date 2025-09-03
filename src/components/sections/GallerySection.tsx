@@ -4,7 +4,13 @@ import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
 import { Dialog, DialogContent, DialogTrigger } from "@/components/ui/dialog";
 import { ChevronLeft, ChevronRight, Play, X, Grid, Image as ImageIcon, Video } from "lucide-react";
-
+import GalleryImage1 from "@/assets/gallery_past_event_1.jpg";
+import GalleryImage2 from "@/assets/gallery_past_event_2.jpg";
+import GalleryImage3 from "@/assets/gallery_past_event_3.jpg";
+import GalleryImage4 from "@/assets/gallery_past_event_4.jpg";
+import GalleryImage5 from "@/assets/gallery_past_event_5.jpg";
+import GalleryImage6 from "@/assets/gallery_past_event_6.jpg";
+import GalleryImage7 from "@/assets/gallery_past_event_7.jpg";
 interface MediaItem {
   id: string;
   type: 'image' | 'video';
@@ -18,25 +24,70 @@ interface MediaItem {
 // Sample gallery data - in a real app, this would come from a CMS or API
 const galleryData: MediaItem[] = [
   {
-    id: '1',
-    type: 'image',
-    src: '/placeholder.svg',
-    thumbnail: '/placeholder.svg',
-    title: 'Opening Ceremony 2023',
-    category: 'past-events',
-    alt: 'Opening ceremony of 17th SEE'
-  },
-  {
     id: '2',
-    type: 'video',
-    src: 'https://www.youtube.com/embed/dQw4w9WgXcQ',
-    thumbnail: '/placeholder.svg',
-    title: 'Keynote Highlights',
+    type: 'image',
+    src: GalleryImage1,
+    thumbnail: GalleryImage1,
+    title: '10th Symposium',
     category: 'past-events',
-    alt: 'Keynote speaker presentation'
+    alt: '10th Symposium Keynote speaker presentation'
   },
   {
     id: '3',
+    type: 'image',
+    src: GalleryImage2,
+    thumbnail: GalleryImage2,
+    title: '11th Symposium',
+    category: 'past-events',
+    alt: '11th Symposium Keynote speaker presentation'
+  },
+  {
+    id: '4',
+    type: 'image',
+    src: GalleryImage3,
+    thumbnail: GalleryImage3,
+    title: '12th Symposium',
+    category: 'past-events',
+    alt: '12th Symposium Keynote speaker presentation'
+  },
+  {
+    id: '5',
+    type: 'image',
+    src: GalleryImage4,
+    thumbnail: GalleryImage4,
+    title: '13th Symposium',
+    category: 'past-events',
+    alt: '13th Symposium Keynote speaker presentation'
+  },
+  {
+    id: '6',
+    type: 'image',
+    src: GalleryImage5,
+    thumbnail: GalleryImage5,
+    title: '14th Symposium',
+    category: 'past-events',
+    alt: '14th Symposium Keynote speaker presentation'
+  },
+  {
+    id: '7',
+    type: 'image',
+    src: GalleryImage6,
+    thumbnail: GalleryImage6,
+    title: '15th Symposium',
+    category: 'past-events',
+    alt: '15th Symposium Keynote speaker presentation'
+  },
+  {
+    id: '8',
+    type: 'image',
+    src: GalleryImage7,
+    thumbnail: GalleryImage7,
+    title: '16th Symposium',
+    category: 'past-events',
+    alt: '16th Symposium Keynote speaker presentation'
+  },
+  {
+    id: '9',
     type: 'image',
     src: '/placeholder.svg',
     thumbnail: '/placeholder.svg',
@@ -45,7 +96,7 @@ const galleryData: MediaItem[] = [
     alt: 'Main conference hall preparation'
   },
   {
-    id: '4',
+    id: '10',
     type: 'image',
     src: '/placeholder.svg',
     thumbnail: '/placeholder.svg',
@@ -54,7 +105,7 @@ const galleryData: MediaItem[] = [
     alt: 'Beautiful IIT Roorkee campus view'
   },
   {
-    id: '5',
+    id: '11',
     type: 'image',
     src: '/placeholder.svg',
     thumbnail: '/placeholder.svg',
@@ -63,7 +114,7 @@ const galleryData: MediaItem[] = [
     alt: 'Best paper award ceremony'
   },
   {
-    id: '6',
+    id: '12',
     type: 'image',
     src: '/placeholder.svg',
     thumbnail: '/placeholder.svg',
@@ -74,7 +125,6 @@ const galleryData: MediaItem[] = [
 ];
 
 const categories = [
-  { id: 'all', label: 'All Media', icon: Grid },
   { id: 'past-events', label: 'Past Events', icon: ImageIcon },
   { id: 'preparations', label: 'Preparations', icon: ImageIcon },
   { id: 'venue', label: 'Venue', icon: ImageIcon },
@@ -82,17 +132,13 @@ const categories = [
 ];
 
 export const GallerySection = () => {
-  const [selectedCategory, setSelectedCategory] = useState<string>('all');
+  const [selectedCategory, setSelectedCategory] = useState<string>('past-events');
   const [lightboxOpen, setLightboxOpen] = useState(false);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [filteredItems, setFilteredItems] = useState<MediaItem[]>(galleryData);
 
   useEffect(() => {
-    if (selectedCategory === 'all') {
-      setFilteredItems(galleryData);
-    } else {
-      setFilteredItems(galleryData.filter(item => item.category === selectedCategory));
-    }
+    setFilteredItems(galleryData.filter(item => item.category === selectedCategory));
   }, [selectedCategory]);
 
   const openLightbox = (index: number) => {

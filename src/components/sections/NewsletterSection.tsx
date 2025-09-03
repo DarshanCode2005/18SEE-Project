@@ -131,7 +131,7 @@ export const NewsletterForm = ({ variant = 'section' }: NewsletterFormProps) => 
               Stay Connected with 18SEE 2025
             </h2>
             <p className="text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
-              Subscribe to our newsletter for the latest updates on speakers, schedule changes, 
+              Subscribe for the latest updates on speakers, schedule changes, 
               special announcements, and exclusive content from the symposium.
             </p>
             
