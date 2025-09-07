@@ -83,7 +83,7 @@ export const Navigation = ({
               />
             </div>
             <div className="hidden sm:block">
-              <h1 className={`font-serif text-3xl font-bold ${navText}`}>18SEE</h1>
+              <h1 className={`font-montserrat text-3xl font-bold tracking-tight ${navText}`}>18SEE</h1>
               <p className={`text-lg font-semibold ${isLanding && !isScrolled ? 'text-white/80' : 'text-muted-foreground'}`}>IIT Roorkee</p>
             </div>
           </div>

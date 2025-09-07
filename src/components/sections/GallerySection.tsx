@@ -11,6 +11,7 @@ import GalleryImage4 from "@/assets/gallery_past_event_4.jpg";
 import GalleryImage5 from "@/assets/gallery_past_event_5.jpg";
 import GalleryImage6 from "@/assets/gallery_past_event_6.jpg";
 import GalleryImage7 from "@/assets/gallery_past_event_7.jpg";
+import GalleryImage8 from "@/assets/gallery_past_event_8.jpg";
 interface MediaItem {
   id: string;
   type: 'image' | 'video';
@@ -121,6 +122,15 @@ const galleryData: MediaItem[] = [
     title: 'Panel Discussion',
     category: 'key-moments',
     alt: 'Expert panel discussion'
+  },
+  {
+    id:'13',
+    type: 'image',
+    src: GalleryImage8,
+    thumbnail: GalleryImage8,
+    title: '17th Symposium',
+    category: 'past-events',
+    alt: '17th Symposium Keynote speaker presentation'
   }
 ];
 

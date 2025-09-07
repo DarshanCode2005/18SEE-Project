@@ -89,7 +89,7 @@ export const NewsletterForm = ({ variant = 'section' }: NewsletterFormProps) => 
           <h4 className="font-semibold text-lg">Stay Updated</h4>
         </div>
         <p className="text-primary-foreground/80 text-sm">
-          Get the latest updates about 18SEE 2025
+          Get the latest updates about 18SEE 2026
         </p>
         {formContent}
         

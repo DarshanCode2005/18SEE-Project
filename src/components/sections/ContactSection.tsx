@@ -64,22 +64,22 @@ export const ContactSection = () => {
 
   const team = [
     {
-      role: "Conference Convener",
-      name: "Prof. [Name]",
-      department: "Earthquake Engineering",
-      email: "convener@18see.iitr.ac.in"
+      role: "Organizing Secretary",
+      name: "Prof. Ravi S. Jakka",
+      department: "Department of Earthquake Engineering\nIIT Roorkee",
+      email: "ravi.jakka@eq.iitr.ac.in"
     },
     {
-      role: "Registration Chair",
-      name: "Dr. [Name]",
-      department: "Earthquake Engineering", 
-      email: "registration@18see.iitr.ac.in"
+      role: "Joint Organizing Secretary",
+      name: "Prof. Varun K. Singla",
+      department: "Department of Earthquake Engineering\nIIT Roorkee",
+      email: "singlav@eq.iitr.ac.in"
     },
     {
-      role: "Technical Chair",
-      name: "Prof. [Name]",
-      department: "Earthquake Engineering",
-      email: "technical@18see.iitr.ac.in"
+      role: "Joint Organizing Secretary",
+      name: "Prof. Shiv Prakash",
+      department: "Department of Earthquake Engineering\nIIT Roorkee",
+      email: "shiv.prakash@eq.iitr.ac.in"
     }
   ];
 

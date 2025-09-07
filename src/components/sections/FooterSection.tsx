@@ -55,7 +55,7 @@ export const FooterSection = () => {
                   />
                 </div>
                 <div>
-                  <h3 className="font-serif text-xl font-bold">18SEE 2025</h3>
+                  <h3 className="font-montserrat text-xl font-bold tracking-tight">18SEE 2026</h3>
                   <p className="text-primary-foreground/80 text-sm">IIT Roorkee</p>
                 </div>
               </div>
