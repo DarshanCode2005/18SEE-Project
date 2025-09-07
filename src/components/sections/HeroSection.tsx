@@ -2,9 +2,11 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin, Users, Download } from "lucide-react";
 import heroCampus from "@/assets/hero-campus.webp";
+import ISETLogo from "@/assets/ISET_logo.png";
+import IITRLogo from "@/assets/IITR_organiser_logo.png";
 
 const milestones = [
-  { label: "Last date of receipt of abstract", date: "2025-12-15T00:00:00" },
+  { label: "Abstract submission ends in", date: "2025-12-15T00:00:00" },
   { label: "Acceptance of abstracts", date: "2026-01-15T00:00:00" },
   { label: "Full-length manuscript submission", date: "2026-03-15T00:00:00" },
   { label: "Intimation of acceptance / Reviewer comments", date: "2026-04-30T00:00:00" },
@@ -12,30 +14,22 @@ const milestones = [
   { label: "Symposium Start", date: "2026-12-10T09:00:00" },
 ];
 
+
 export const HeroSection = () => {
-  const [timeLeft, setTimeLeft] = useState({
-    days: 0,
-    hours: 0,
-    minutes: 0,
-    seconds: 0
+  const [timeLeft, setTimeLeft] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
+  const [currentMilestoneIdx, setCurrentMilestoneIdx] = useState<number>(() => {
+    const now = new Date();
+    return milestones.findIndex(m => new Date(m.date).getTime() > now.getTime());
   });
-  const [nextEvent, setNextEvent] = useState<{ label: string; date: Date } | null>(null);
 
   useEffect(() => {
-    const now = new Date();
-    const upcoming = milestones
-      .map(m => ({ label: m.label, date: new Date(m.date) }))
-      .filter(m => m.date.getTime() > now.getTime())
-      .sort((a, b) => a.date.getTime() - b.date.getTime())[0] || null;
-
-    setNextEvent(upcoming);
-
-    if (!upcoming) return;
-
-    const targetDate = upcoming.date;
-    const updateCountdown = () => {
-      const current = new Date().getTime();
-      const distance = targetDate.getTime() - current;
+    const updateMilestoneAndCountdown = () => {
+      const now = new Date();
+      let idx = milestones.findIndex(m => new Date(m.date).getTime() > now.getTime());
+      if (idx === -1) idx = milestones.length - 1; // If all milestones passed, stay at last
+      setCurrentMilestoneIdx(idx);
+      const targetDate = new Date(milestones[idx].date);
+      const distance = targetDate.getTime() - now.getTime();
       if (distance > 0) {
         setTimeLeft({
           days: Math.floor(distance / (1000 * 60 * 60 * 24)),
@@ -47,21 +41,16 @@ export const HeroSection = () => {
         setTimeLeft({ days: 0, hours: 0, minutes: 0, seconds: 0 });
       }
     };
-
-    updateCountdown();
-    const interval = setInterval(updateCountdown, 1000);
+    updateMilestoneAndCountdown();
+    const interval = setInterval(updateMilestoneAndCountdown, 1000);
     return () => clearInterval(interval);
   }, []);
 
-  const symposiumStart = milestones.find(m => m.label === "Symposium Start");
-  const symposiumStartDate = symposiumStart ? new Date(symposiumStart.date) : null;
-  const symposiumStartText = symposiumStartDate
-    ? symposiumStartDate.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })
-    : "Dec 10, 2026";
 
-  const headingText = nextEvent
-    ? (nextEvent.label === "Symposium Start" ? "Conference Starts In" : `Next: ${nextEvent.label}`)
-    : "Event Starts In";
+  const headingText =
+    currentMilestoneIdx >= 0 && currentMilestoneIdx < milestones.length
+      ? milestones[currentMilestoneIdx].label
+      : "Event Starts In";
 
   return <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
       {/* Background Image */}
@@ -72,21 +61,28 @@ export const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 max-w-7xl mt-8 mx-auto px-4 sm:px-6 lg:px-8 text-center">
+  <div className="relative z-10 max-w-7xl mt-8 mx-auto px-4 sm:px-6 lg:px-8 text-center pt-[70px]">
         <div className="animate-fade-in mx-0 my-[80px]">
-          <h1 className="font-serif text-4xl sm:text-5xl lg:text-7xl font-bold text-primary-foreground mb-6">
-            18th Symposium on
-            <span className="block bg-gradient-secondary bg-clip-text text-transparent">
-              Earthquake Engineering
-            </span>
-          </h1>
+          <div className="flex items-center justify-center gap-4 mb-6">
+            {/* ISET logo left */}
+            <img src={ISETLogo} alt="International Society of Earthquake Technology" className="hidden sm:block h-[150px] w-auto object-contain" />
+            <div>
+              <h1 className="font-serif text-4xl sm:text-5xl lg:text-7xl font-bold text-primary-foreground">
+                18th Symposium on
+                <span className="block bg-gradient-secondary bg-clip-text text-transparent">
+                  Earthquake Engineering
+                </span>
+              </h1>
+            </div>
+            {/* IITR logo right */}
+            <img src={IITRLogo} alt="Indian Institute of Technology Roorkee" className="hidden sm:block h-[150px] w-auto object-contain" />
+          </div>
           
-          <p className="text-xl sm:text-2xl text-primary-foreground/90 mb-4 font-light">
+          <p className="text-xl sm:text-2xl text-primary-foreground/90 mb-4 font-bold">
             Department of Earthquake Engineering
           </p>
-          
-          <p className="text-xl sm:text-xl text-primary-foreground/80 mb-8">
-              <span className="text-2xl sm:text-4xl font-bold">Indian Institute of Technology Roorkee</span>
+          <p className="text-xl sm:text-2xl text-primary-foreground/90 mb-8 font-bold">
+            Indian Institute of Technology Roorkee
           </p>
 
           {/* Event Details */}
@@ -115,8 +111,7 @@ export const HeroSection = () => {
           <div className="bg-card/10 backdrop-blur-sm rounded-2xl p-6 mb-8 border border-primary-foreground/20 max-w-2xl mx-auto animate-fade-in-scale" style={{
           animationDelay: '0.8s'
         }}>
-            <h3 className="text-lg font-semibold text-primary-foreground mb-1">{headingText}</h3>
-            {nextEvent && <p className="text-sm text-primary-foreground/80 mb-4">{nextEvent.date.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}</p>}
+            <h3 className="text-lg font-semibold text-primary-foreground mb-5">{headingText}</h3>
             <div className="grid grid-cols-4 gap-4">
               {Object.entries(timeLeft).map(([unit, value]) => <div key={unit} className="text-center">
                   <div className="bg-primary-foreground/20 rounded-lg p-3 mb-2">
@@ -127,7 +122,12 @@ export const HeroSection = () => {
                   <span className="text-sm text-primary-foreground/80 capitalize">{unit}</span>
                 </div>)}
             </div>
-            {symposiumStartText && <p className="text-xs text-primary-foreground/70 mt-4">Conference start: {symposiumStartText}</p>}
+            {/* Show Last Date after countdown (current milestone's date) */}
+            <p className="text-xs text-primary-foreground/70 mt-4">
+              Last Date: {currentMilestoneIdx >= 0 && currentMilestoneIdx < milestones.length
+                ? new Date(milestones[currentMilestoneIdx].date).toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })
+                : "-"}
+            </p>
           </div>
 
           {/* Call to Action */}

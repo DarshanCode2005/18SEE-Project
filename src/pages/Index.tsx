@@ -15,7 +15,6 @@ const Index = () => {
     <div className="min-h-screen">
       <Navigation />
   <HeroSection />
-  <OrganisedBySection />
       <AboutSection />
       <ThemesSection />
       {/* <ScheduleSection /> Removed from landing page */}

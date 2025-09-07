@@ -38,7 +38,7 @@ export const NewsletterForm = ({ variant = 'section' }: NewsletterFormProps) => 
       setEmail('');
       toast({
         title: "Successfully Subscribed!",
-        description: "You'll receive updates about 18SEE 2025.",
+        description: "You'll receive updates about 18SEE-2026.",
       });
     } catch (error) {
       toast({
@@ -88,8 +88,8 @@ export const NewsletterForm = ({ variant = 'section' }: NewsletterFormProps) => 
           <Mail className="h-5 w-5 text-secondary" />
           <h4 className="font-semibold text-lg">Stay Updated</h4>
         </div>
-        <p className="text-primary-foreground/80 text-sm">
-          Get the latest updates about 18SEE 2026
+        <p className="text-primary-foreground/80 text-sm font-montserrat">
+          Get the latest updates about 18SEE-2026
         </p>
         {formContent}
         
@@ -127,8 +127,8 @@ export const NewsletterForm = ({ variant = 'section' }: NewsletterFormProps) => 
               </div>
             </div>
             
-            <h2 className="text-3xl font-serif font-bold mb-4 text-primary-foreground">
-              Stay Connected with 18SEE 2025
+            <h2 className="text-3xl font-bold mb-4 text-primary-foreground font-montserrat">
+              Stay Connected with 18SEE-2026
             </h2>
             <p className="text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
               Subscribe for the latest updates on speakers, schedule changes, 

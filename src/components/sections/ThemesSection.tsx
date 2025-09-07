@@ -46,44 +46,58 @@ export const ThemesSection = () => {
   const [guidelinesOpen, setGuidelinesOpen] = useState(false);
   
   const themes = [
-    { icon: <Waves className="h-5 w-5" />, title: "Engineering Seismology and Seismotectonics" },
-    { icon: <Activity className="h-5 w-5" />, title: "Experience Derived from Recent Earthquakes and Tsunamis" },
-    { icon: <Map className="h-5 w-5" />, title: "Earthquake studies using GIS/GPS/SAR/Remote Sensing" },
-    { icon: <Target className="h-5 w-5" />, title: "Earthquake Hazard Assessment" },
-    { icon: <Gauge className="h-5 w-5" />, title: "Seismic Instrumentation" },
-    { icon: <TrendingUp className="h-5 w-5" />, title: "Strong Ground Motion, Site Characterization and its Effects" },
-    { icon: <Layers className="h-5 w-5" />, title: "Dynamic Properties of Soils and Ground Response" },
-    { icon: <Zap className="h-5 w-5" />, title: "Liquefaction and Seismic Ground Improvement" },
-    { icon: <Mountain className="h-5 w-5" />, title: "Seismic Safety of Foundations and Machine Foundations" },
-    { icon: <Settings className="h-5 w-5" />, title: "Seismic Soil Structure Interaction" },
-    { icon: <Shield className="h-5 w-5" />, title: "Slope Stability under Seismic Conditions and Design of Embankments" },
-    { icon: <Wrench className="h-5 w-5" />, title: "Earth Pressure and Retaining Walls under Seismic Conditions" },
-    { icon: <Radar className="h-5 w-5" />, title: "Seismic Safety of underground and Buried Structures and Pipelines" },
-    { icon: <Building className="h-5 w-5" />, title: "Special Materials, Structures and Systems" },
-    { icon: <FileText className="h-5 w-5" />, title: "Earthquake Response Analysis, Design and Construction" },
-    { icon: <BookOpen className="h-5 w-5" />, title: "Codal Provisions on Earthquake Resistant Design" },
-    { icon: <BarChart3 className="h-5 w-5" />, title: "Seismic Vulnerability, Risk and Resilience Assessment" },
-    { icon: <Play className="h-5 w-5" />, title: "Structural Response Control" },
-    { icon: <Search className="h-5 w-5" />, title: "Seismic Testing of Structures and Equipment" },
-    { icon: <Hammer className="h-5 w-5" />, title: "Seismic Evaluation and Retrofitting of Structures" },
-    { icon: <Settings className="h-5 w-5" />, title: "Seismic Safety of non-structural Components, Equipment and Services in Buildings" },
-    { icon: <Factory className="h-5 w-5" />, title: "Seismic Safety of Industrial Structures and Thermal and Nuclear Power Stations" },
-    { icon: <Construction className="h-5 w-5" />, title: "Seismic Safety of Bridges and Dams" },
-    { icon: <Landmark className="h-5 w-5" />, title: "Seismic Safety of Historical structures and Monuments" },
-    { icon: <Ship className="h-5 w-5" />, title: "Seismic Safety of Offshore and Onshore Structures, including Effects of Tsunami" },
-    { icon: <AlertTriangle className="h-5 w-5" />, title: "Damage Detection and System Identification" },
-    { icon: <Globe className="h-5 w-5" />, title: "Life Line and Urban Systems" },
-    { icon: <Map className="h-5 w-5" />, title: "Microzonation and Urban Planning" },
-    { icon: <Shield className="h-5 w-5" />, title: "Earthquake Disaster Mitigation and Management" },
-    { icon: <Users className="h-5 w-5" />, title: "Human Response and Socio-Economic issues" },
-    { icon: <Stethoscope className="h-5 w-5" />, title: "Post-earthquake Rehabilitation" },
-    { icon: <School className="h-5 w-5" />, title: "Earthquake Engineering Education" },
-    { icon: <Megaphone className="h-5 w-5" />, title: "Public Awareness, Participation and Enforcement of Building Safety Laws" },
-    { icon: <Clock className="h-5 w-5" />, title: "Earthquake Prediction and Early warning System" }
+    { icon: <Waves className="h-5 w-5" />, title: "Engineering seismology and seismotectonics" },
+    { icon: <Activity className="h-5 w-5" />, title: "Lessons from recent earthquakes and tsunamis" },
+    { icon: <Map className="h-5 w-5" />, title: "Earthquake studies using GIS/GPS/SAR/remote sensing" },
+    { icon: <Target className="h-5 w-5" />, title: "Seismic hazard assessment" },
+    { icon: <Gauge className="h-5 w-5" />, title: "Seismic instrumentation" },
+    { icon: <TrendingUp className="h-5 w-5" />, title: "Strong ground motion and site characterization" },
+    { icon: <Layers className="h-5 w-5" />, title: "Dynamic properties of soil and ground response" },
+    { icon: <Zap className="h-5 w-5" />, title: "Liquefaction and seismic ground improvement" },
+    { icon: <Mountain className="h-5 w-5" />, title: "Seismic safety of foundations and machine foundations" },
+    { icon: <Settings className="h-5 w-5" />, title: "Seismic soil-structure interaction" },
+    { icon: <Shield className="h-5 w-5" />, title: "Slope stability under earthquakes & embankment design" },
+    { icon: <Landmark className="h-5 w-5" />, title: "Gravity and embankment dams" },
+    { icon: <Wrench className="h-5 w-5" />, title: "Earth pressure and retaining walls under earthquakes" },
+    { icon: <Radar className="h-5 w-5" />, title: "Seismic safety of pipelines, underground & buried structures" },
+    { icon: <Hammer className="h-5 w-5" />, title: "Tunnels and rock mechanics" },
+    { icon: <Building className="h-5 w-5" />, title: "Special materials, structures, and systems" },
+    { icon: <FileText className="h-5 w-5" />, title: "Earthquake response analysis, design, and construction" },
+    { icon: <BookOpen className="h-5 w-5" />, title: "Codal provisions on earthquake-resistant design" },
+    { icon: <BarChart3 className="h-5 w-5" />, title: "Performance-based seismic design" },
+    { icon: <BarChart3 className="h-5 w-5" />, title: "Seismic vulnerability, risk, and resilience assessment" },
+    { icon: <Play className="h-5 w-5" />, title: "Structural response control" },
+    { icon: <Search className="h-5 w-5" />, title: "Seismic testing of structures and equipment" },
+    { icon: <Hammer className="h-5 w-5" />, title: "Seismic evaluation and retrofitting of structures" },
+    { icon: <Construction className="h-5 w-5" />, title: "Seismic safety of bridges and dams." },
+    { icon: <Settings className="h-5 w-5" />, title: "Seismic safety of non-structural components, equipment, and services in buildings" },
+    { icon: <Factory className="h-5 w-5" />, title: "Seismic safety of industrial structures, and thermal and nuclear power stations" },
+    { icon: <Landmark className="h-5 w-5" />, title: "Seismic safety of historical structures and monuments" },
+    { icon: <Ship className="h-5 w-5" />, title: "Seismic safety of offshore/onshore structures" },
+    { icon: <AlertTriangle className="h-5 w-5" />, title: "Damage detection and system identification" },
+    { icon: <Globe className="h-5 w-5" />, title: "Lifeline and urban systems" },
+    { icon: <Map className="h-5 w-5" />, title: "Microzonation and urban planning" },
+    { icon: <Shield className="h-5 w-5" />, title: "Earthquake disaster mitigation and management" },
+    { icon: <Users className="h-5 w-5" />, title: "Human response and socio-economic issues" },
+    { icon: <Stethoscope className="h-5 w-5" />, title: "Post-earthquake rehabilitation" },
+    { icon: <School className="h-5 w-5" />, title: "Earthquake engineering education" },
+    { icon: <Megaphone className="h-5 w-5" />, title: "Public awareness, participation, and enforcement of building safety laws" },
+    { icon: <Clock className="h-5 w-5" />, title: "Earthquake prediction and early warning system" },
+  { icon: <Zap className="h-5 w-5" />, title: "Applications of artificial intelligence and machine learning in earthquake engineering" }
   ];
 
-  const initialCount = 8;
-  const displayedThemes = showAll ? themes : themes.slice(0, initialCount);
+  // Only these 8 themes should be visible in the collapsed (show less) section
+  const collapsedTitles = [
+    "Earthquake response analysis, design, and construction",
+    "Codal provisions on earthquake-resistant design",
+    "Seismic hazard assessment",
+    "Strong ground motion and site characterization",
+    "Seismic soil-structure interaction",
+    "Liquefaction and seismic ground improvement",
+    "Seismic vulnerability, risk, and resilience assessment",
+    "Applications of artificial intelligence and machine learning in earthquake engineering"
+  ];
+  const displayedThemes = showAll ? themes : themes.filter(theme => collapsedTitles.includes(theme.title));
 
   return (
     <section id="themes" className="py-20 bg-background">
@@ -94,10 +108,6 @@ export const ThemesSection = () => {
           <Badge variant="outline" className="mb-4 bg-secondary/10 text-2xl border-secondary/20">
             Conference Themes
           </Badge>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Exploring the Future of
-            <span className="block text-primary">Earthquake Engineering</span>
-          </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Dive deep into cutting-edge research areas that are shaping the next generation 
             of seismic engineering solutions and earthquake-resistant infrastructure.
@@ -214,7 +224,7 @@ export const ThemesSection = () => {
                 <button
                   onClick={() => setGuidelinesOpen(true)}
                   className="border-2 border-primary-foreground text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary-foreground/10 transition-colors"
-                >
+                disabled={true}>
                   View Guidelines
                 </button>
               </div>
@@ -325,8 +335,8 @@ export const ThemesSection = () => {
           </DialogContent>
         </Dialog>
 
-        {/* Important Dates - Custom Responsive Grid */}
-        <div className="mt-12 max-w-5xl mx-auto">
+  {/* Important Dates - Custom Responsive Grid */}
+  <div className="mt-12 max-w-7xl mx-auto">
           <div className="relative">
             {/* Background decoration */}
             <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-secondary/5 to-primary/5 rounded-2xl"></div>
@@ -344,43 +354,57 @@ export const ThemesSection = () => {
                   <h3 className="text-3xl md:text-4xl font-bold bg-gradient-to-r from-primary via-secondary to-primary bg-clip-text text-transparent mb-2">
                     ⚡ Important Dates
                   </h3>
-                  <p className="text-muted-foreground text-lg">Mark your calendar for these critical deadlines</p>
                 </div>
                 {/* Custom Dates Grid */}
-                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-8">
-                  {/* 1. Dec. 15 2025 - Abstract Submission Closes (Red color Card) */}
-                  <div className="flex flex-col justify-between items-center p-6 bg-red-500/10 border-2 border-red-500 rounded-xl shadow-md min-h-[180px]">
-                    <div className="w-4 h-4 bg-red-500 rounded-full animate-pulse" style={{marginBottom: '0.5rem'}}></div>
-                    <div className="flex-1 flex flex-col justify-center items-center">
-                      <p className="text-xl font-bold text-red-600 mb-1">Dec. 15, 2025</p>
-                      <p className="text-base text-red-700 font-semibold text-center">Abstract Submission Closes</p>
+                {(() => {
+                  // Important Dates Data
+                  const importantDates = [
+                    {
+                      date: new Date("2025-12-15T00:00:00"),
+                      label: "Abstract submission closes",
+                      display: "Dec. 15, 2025"
+                    },
+                    {
+                      date: new Date("2026-01-15T00:00:00"),
+                      label: "Confirmation of acceptance of abstract",
+                      display: "Jan. 15, 2026"
+                    },
+                    {
+                      date: new Date("2026-03-15T00:00:00"),
+                      label: "Full-length manuscript submission closes",
+                      display: "March 15, 2026"
+                    },
+                    {
+                      date: new Date("2026-12-10T09:00:00"),
+                      label: "Inauguration of 18SEE",
+                      display: "Dec. 10, 2026"
+                    }
+                  ];
+                  const now = new Date();
+                  const nextIdx = importantDates.findIndex(d => d.date.getTime() > now.getTime());
+                  // If all dates are past, highlight the last one
+                  const highlightIdx = nextIdx === -1 ? importantDates.length - 1 : nextIdx;
+                  return (
+                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                      {importantDates.map((d, idx) => {
+                        const isNext = idx === highlightIdx;
+                        const cardBg = isNext ? "bg-red-500/10 border-red-500" : "bg-yellow-300/20 border-yellow-400";
+                        const dotBg = isNext ? "bg-red-500 animate-pulse" : "bg-yellow-400";
+                        const dateText = isNext ? "text-red-600" : "text-yellow-700";
+                        const labelText = isNext ? "text-red-700" : "text-yellow-800";
+                        return (
+                          <div key={idx} className={`flex flex-col items-center p-8 border-2 rounded-xl shadow-md min-h-[180px] min-w-[260px] ${cardBg}`}>
+                            <div className="flex flex-col items-center justify-start min-h-[80px]">
+                              <div className={`w-4 h-4 rounded-full mb-2 ${dotBg}`}></div>
+                              <p className={`text-xl font-bold mb-1 ${dateText}`}>{d.display}</p>
+                            </div>
+                            <p className={`text-base font-semibold text-center mt-2 ${labelText}`}>{d.label}</p>
+                          </div>
+                        );
+                      })}
                     </div>
-                  </div>
-                  {/* 2. Jan. 15 2026 - Confirmation of acceptance of abstract (Yellow card) */}
-                  <div className="flex flex-col justify-between items-center p-6 bg-yellow-300/20 border-2 border-yellow-400 rounded-xl shadow-md min-h-[180px]">
-                    <div className="w-4 h-4 bg-yellow-400 rounded-full" style={{marginBottom: '0.5rem'}}></div>
-                    <div className="flex-1 flex flex-col justify-center items-center">
-                      <p className="text-xl font-bold text-yellow-700 mb-1">Jan. 15, 2026</p>
-                      <p className="text-base text-yellow-800 font-semibold text-center">Confirmation of acceptance of abstract</p>
-                    </div>
-                  </div>
-                  {/* 3. March 15 2026 - Full-length manuscript submission closes (Yellow card) */}
-                  <div className="flex flex-col justify-between items-center p-6 bg-yellow-300/20 border-2 border-yellow-400 rounded-xl shadow-md min-h-[180px]">
-                    <div className="w-4 h-4 bg-yellow-400 rounded-full" style={{marginBottom: '0.5rem'}}></div>
-                    <div className="flex-1 flex flex-col justify-center items-center">
-                      <p className="text-xl font-bold text-yellow-700 mb-1">March 15, 2026</p>
-                      <p className="text-base text-yellow-800 font-semibold text-center">Full-length manuscript submission closes</p>
-                    </div>
-                  </div>
-                  {/* 4. Dec. 10 2026 - Inauguration of 18SEE (Yellow card) */}
-                  <div className="flex flex-col justify-between items-center p-6 bg-yellow-300/20 border-2 border-yellow-400 rounded-xl shadow-md min-h-[180px]">
-                    <div className="w-4 h-4 bg-yellow-400 rounded-full" style={{marginBottom: '0.5rem'}}></div>
-                    <div className="flex-1 flex flex-col justify-center items-center">
-                      <p className="text-xl font-bold text-yellow-700 mb-1">Dec. 10, 2026</p>
-                      <p className="text-base text-yellow-800 font-semibold text-center">Inauguration of 18SEE</p>
-                    </div>
-                  </div>
-                </div>
+                  );
+                })()}
               </CardContent>
             </Card>
           </div>

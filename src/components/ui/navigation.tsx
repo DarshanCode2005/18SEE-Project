@@ -75,7 +75,7 @@ export const Navigation = ({
         <div className="flex justify-around items-center py-4 my-0">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="w-20 h-20 flex items-center justify-center">
+            <div className="w-28 h-28 flex items-center justify-center">
               <img 
                 src={iitrLogo} 
                 alt="IIT Roorkee Logo" 

@@ -31,10 +31,10 @@ export const RegistrationSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
-          <span className="mb-4 inline-block bg-secondary/10 text-secondary border border-secondary/20 rounded-full px-4 py-2 font-semibold">Registration</span>
+          <span className="mb-4 text-xl inline-block bg-secondary/10 text-secondary border border-secondary/20 rounded-full px-4 py-2 font-semibold">Registration</span>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Secure Your Spot at
-            <span className="block text-primary">18SEE 2025</span>
+            <span className="block text-primary font-montserrat">18SEE-2026</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Join leading researchers, practitioners, and students from around the world. 
@@ -69,7 +69,7 @@ export const RegistrationSection = () => {
                 <div className="relative bg-gray-100 rounded-lg p-4 h-40 flex flex-col justify-center items-center">
                   <div className="absolute inset-0 bg-gray-300/70 backdrop-blur-sm flex items-center justify-center rounded-lg">
                     <span className="text-gray-700 font-semibold">
-                      Prices Coming Soon
+                      Details Coming Soon
                     </span>
                   </div>
                   <div className="opacity-0">

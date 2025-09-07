@@ -29,11 +29,9 @@ export const PostSymposiumTourSection = () => (
         <Badge variant="outline" className="mb-4 bg-secondary/10 text-secondary border-secondary/20 text-lg px-4 py-2">
           Post-Symposium Tour
         </Badge>
-        <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-          Explore India Beyond the Symposium
-        </h2>
-        <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed">
-          If a sufficient number of delegates express interest, a post-symposium tour will be organized to prominent destinations including the Taj Mahal (Agra), the Pink City (Jaipur), and the Garhwal Lesser Himalayas. Interested delegates are requested to contact the Organizing Secretary for further details.
+        <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-bold">
+          Extend your experience—discover the vibrant sights, sounds, and stories of India with fellow
+attendees after the Symposium!
         </p>
       </div>
       <div className="grid gap-8 md:grid-cols-3">
@@ -50,11 +48,6 @@ export const PostSymposiumTourSection = () => (
             </CardContent>
           </Card>
         ))}
-      </div>
-      <div className="text-center mt-10 animate-fade-in">
-        <span className="inline-block bg-primary/10 text-primary px-6 py-3 rounded-lg font-semibold">
-          Interested delegates are requested to contact the Organizing Secretary for further details.
-        </span>
       </div>
     </div>
   </section>

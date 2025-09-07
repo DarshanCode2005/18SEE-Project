@@ -174,7 +174,7 @@ export const GallerySection = () => {
             Gallery
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto">
-            Explore moments from past symposiums, venue preparations, and key highlights
+            Explore moments from past symposia, venue preparations, and key highlights
           </p>
         </div>
 
