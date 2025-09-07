@@ -12,6 +12,8 @@ import GalleryImage5 from "@/assets/gallery_past_event_5.jpg";
 import GalleryImage6 from "@/assets/gallery_past_event_6.jpg";
 import GalleryImage7 from "@/assets/gallery_past_event_7.jpg";
 import GalleryImage8 from "@/assets/gallery_past_event_8.jpg";
+import VenueImage1 from "@/assets/gallery_venue_1.jpg";
+import VenueImage2 from "@/assets/gallery_venue_3.jpg";
 interface MediaItem {
   id: string;
   type: 'image' | 'video';
@@ -97,15 +99,6 @@ const galleryData: MediaItem[] = [
     alt: 'Main conference hall preparation'
   },
   {
-    id: '10',
-    type: 'image',
-    src: '/placeholder.svg',
-    thumbnail: '/placeholder.svg',
-    title: 'IIT Roorkee Campus',
-    category: 'venue',
-    alt: 'Beautiful IIT Roorkee campus view'
-  },
-  {
     id: '11',
     type: 'image',
     src: '/placeholder.svg',
@@ -131,13 +124,31 @@ const galleryData: MediaItem[] = [
     title: '17th Symposium',
     category: 'past-events',
     alt: '17th Symposium Keynote speaker presentation'
-  }
+  },
+  {
+    id: '14',
+    type: 'image',
+    src: VenueImage1,
+    thumbnail: VenueImage1,
+    title: 'Department Building',
+    category: 'venue',
+    alt: 'Side view of Eathquake Engineering Department building at IIT Roorkee'
+  },
+  {
+    id: '15',
+    type: 'image',
+    src: VenueImage2,
+    thumbnail: VenueImage2,
+    title: 'Entrance View',
+    category: 'venue',
+    alt: 'Main entrance of Eathquake Engineering Department at IIT Roorkee'
+  },
 ];
 
 const categories = [
   { id: 'past-events', label: 'Past Events', icon: ImageIcon },
-  { id: 'preparations', label: 'Preparations', icon: ImageIcon },
   { id: 'venue', label: 'Venue', icon: ImageIcon },
+  { id: 'preparations', label: 'Preparations', icon: ImageIcon },
   { id: 'key-moments', label: 'Key Moments', icon: Video }
 ];
 
