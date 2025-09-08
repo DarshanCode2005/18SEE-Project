@@ -21,7 +21,7 @@ export default function RegistrationSoon() {
         </svg>
       </div>
       {/* Main Heading */}
-      <h1 className="text-4xl sm:text-5xl font-extrabold text-white drop-shadow-lg mb-4 animate-fade-in">Registrations Opening Soon</h1>
+      <h1 className="text-4xl sm:text-5xl font-extrabold text-white drop-shadow-lg mb-4 animate-fade-in text-center">Registrations Opening Soon</h1>
       {/* Subtitle */}
       <p className="text-lg sm:text-xl text-white/80 mb-8 animate-fade-in-delay">Stay tuned for updates!</p>
       {/* Action Button */}

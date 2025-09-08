@@ -1,11 +1,11 @@
 import { Navigation } from "@/components/ui/navigation";
 import { FooterSection } from "@/components/sections/FooterSection";
 import headshot from "@/assets/headshot_placeholder.png";
-import Image1 from "@/assets/Prof_Pant.jpeg";
-import Image2 from "@/assets/Prof_Maheshwari.jpeg";
+import Image1 from "@/assets/Prof_Pant.jpg";
+import Image2 from "@/assets/Prof_Maheshwari.jpg";
 import Image3 from "@/assets/Prof_Jakka.png";
 import Image4 from "@/assets/Prof_Singla.png";
-import Image5 from "@/assets/Prof_Prakash.png";
+import Image5 from "@/assets/Prof_Prakash.jpg";
 
 const committee = [
   {
@@ -81,7 +81,7 @@ const Committee = () => {
         {/* Level 1 */}
         <div className="flex flex-col items-center">
           <div className="flex flex-col items-center">
-            <img src={Image1} alt="Patron" className="w-32 h-32 rounded-full object-cover object-center border-4 border-primary shadow mb-4" />
+            <img src={Image1} alt="Patron" className="w-32 h-32 rounded-full object-cover object-center border-4 border-primary shadow mb-4 block mx-auto" style={{objectFit: 'cover', objectPosition: 'center'}} />
             <div className="text-center">
               <div className="text-lg font-semibold text-gold mb-1">Patron</div>
               <div className="text-xl font-bold text-foreground">Prof. Kamal Kishore Pant</div>
@@ -92,7 +92,7 @@ const Committee = () => {
         {/* Level 2 */}
         <div className="flex flex-col md:flex-row justify-center gap-12 mt-16">
           <div className="flex flex-col items-center">
-            <img src={Image2} alt={committee[1].title} className="w-28 h-28 rounded-full object-cover object-center border-4 border-secondary shadow mb-3" />
+            <img src={Image2} alt={committee[1].title} className="w-28 h-28 rounded-full object-cover object-center border-4 border-secondary shadow mb-3 block mx-auto" style={{objectFit: 'cover', objectPosition: 'center'}} />
             <div className="text-center">
               <div className="text-base font-semibold text-secondary mb-1">{committee[1].title}</div>
               <div className="text-lg font-bold text-foreground">{committee[1].name}</div>
@@ -100,7 +100,7 @@ const Committee = () => {
             </div>
           </div>
           <div className="flex flex-col items-center">
-            <img src={Image3} alt={committee[2].title} className="w-28 h-28 rounded-full object-cover object-center border-4 border-secondary shadow mb-3" />
+            <img src={Image3} alt={committee[2].title} className="w-28 h-28 rounded-full object-cover object-center border-4 border-secondary shadow mb-3 block mx-auto" style={{objectFit: 'cover', objectPosition: 'center'}} />
             <div className="text-center">
               <div className="text-base font-semibold text-secondary mb-1">{committee[2].title}</div>
               <div className="text-lg font-bold text-foreground">{committee[2].name}</div>
@@ -111,7 +111,14 @@ const Committee = () => {
         {/* Level 3 */}
         <div className="flex flex-col md:flex-row justify-center gap-12 mt-10">
           <div className="flex flex-col items-center">
-            <img src={Image4} alt={committee[3].title} className="w-28 h-28 rounded-full object-cover object-center border-4 border-accent shadow mb-2" />
+            <span className="w-28 h-28 rounded-full border-4 border-accent shadow mb-2 block mx-auto bg-gray-200 overflow-hidden flex items-center justify-center">
+              <img 
+                src={Image4} 
+                alt={committee[3].title} 
+                className="w-full h-full object-cover object-center block" 
+                style={{objectFit: 'cover', objectPosition: 'center', minWidth: '100%', minHeight: '100%'}} 
+              />
+            </span>
             <div className="text-center">
               <div className="text-base font-semibold text-secondary mb-1">{committee[3].title}</div>
               <div className="text-lg font-bold text-foreground">{committee[3].name}</div>
@@ -119,7 +126,7 @@ const Committee = () => {
             </div>
           </div>
           <div className="flex flex-col items-center">
-            <img src={Image5} alt={committee[4].title} className="w-28 h-28 rounded-full object-cover object-center border-4 border-accent shadow mb-2" />
+            <img src={Image5} alt={committee[4].title} className="w-28 h-28 rounded-full object-cover object-center border-4 border-accent shadow mb-2 block mx-auto" style={{objectFit: 'cover', objectPosition: 'center'}} />
             <div className="text-center">
               <div className="text-base font-semibold text-secondary mb-1">{committee[4].title}</div>
               <div className="text-lg font-bold text-foreground">{committee[4].name}</div>
