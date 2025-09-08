@@ -81,7 +81,7 @@ const Committee = () => {
         {/* Level 1 */}
         <div className="flex flex-col items-center">
           <div className="flex flex-col items-center">
-            <img src={Image1} alt="Patron" className="w-32 h-32 rounded-full object-cover border-4 border-primary shadow mb-4" />
+            <img src={Image1} alt="Patron" className="w-32 h-32 rounded-full object-cover object-center border-4 border-primary shadow mb-4" />
             <div className="text-center">
               <div className="text-lg font-semibold text-gold mb-1">Patron</div>
               <div className="text-xl font-bold text-foreground">Prof. Kamal Kishore Pant</div>
@@ -92,7 +92,7 @@ const Committee = () => {
         {/* Level 2 */}
         <div className="flex flex-col md:flex-row justify-center gap-12 mt-16">
           <div className="flex flex-col items-center">
-            <img src={Image2} alt={committee[1].title} className="w-28 h-28 rounded-full object-cover border-4 border-secondary shadow mb-3" />
+            <img src={Image2} alt={committee[1].title} className="w-28 h-28 rounded-full object-cover object-center border-4 border-secondary shadow mb-3" />
             <div className="text-center">
               <div className="text-base font-semibold text-secondary mb-1">{committee[1].title}</div>
               <div className="text-lg font-bold text-foreground">{committee[1].name}</div>
@@ -100,7 +100,7 @@ const Committee = () => {
             </div>
           </div>
           <div className="flex flex-col items-center">
-            <img src={Image3} alt={committee[2].title} className="w-28 h-28 rounded-full object-cover border-4 border-secondary shadow mb-3" />
+            <img src={Image3} alt={committee[2].title} className="w-28 h-28 rounded-full object-cover object-center border-4 border-secondary shadow mb-3" />
             <div className="text-center">
               <div className="text-base font-semibold text-secondary mb-1">{committee[2].title}</div>
               <div className="text-lg font-bold text-foreground">{committee[2].name}</div>
@@ -111,7 +111,7 @@ const Committee = () => {
         {/* Level 3 */}
         <div className="flex flex-col md:flex-row justify-center gap-12 mt-10">
           <div className="flex flex-col items-center">
-            <img src={Image4} alt={committee[3].title} className="w-28 h-28 rounded-full object-cover border-4 border-accent shadow mb-2" />
+            <img src={Image4} alt={committee[3].title} className="w-28 h-28 rounded-full object-cover object-center border-4 border-accent shadow mb-2" />
             <div className="text-center">
               <div className="text-base font-semibold text-secondary mb-1">{committee[3].title}</div>
               <div className="text-lg font-bold text-foreground">{committee[3].name}</div>
@@ -119,7 +119,7 @@ const Committee = () => {
             </div>
           </div>
           <div className="flex flex-col items-center">
-            <img src={Image5} alt={committee[4].title} className="w-28 h-28 rounded-full object-cover border-4 border-accent shadow mb-2" />
+            <img src={Image5} alt={committee[4].title} className="w-28 h-28 rounded-full object-cover object-center border-4 border-accent shadow mb-2" />
             <div className="text-center">
               <div className="text-base font-semibold text-secondary mb-1">{committee[4].title}</div>
               <div className="text-lg font-bold text-foreground">{committee[4].name}</div>
