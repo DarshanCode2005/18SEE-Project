@@ -52,22 +52,30 @@ export const NewsletterForm = ({ variant = 'section' }: NewsletterFormProps) => 
   };
 
   const formContent = (
-    <form onSubmit={handleSubmit} className="flex gap-2">
+    <form
+      onSubmit={handleSubmit}
+      className="flex flex-col gap-2 sm:flex-row"
+    >
       <div className="flex-1">
         <Input
           type="email"
           placeholder="Enter your email address"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          className={variant === 'footer' ? "bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/60" : ""}
+          className={
+            (variant === 'footer'
+              ? "bg-primary-foreground/10 border-primary-foreground/20 text-primary-foreground placeholder:text-primary-foreground/60 "
+              : "") +
+            "w-full"
+          }
           disabled={isLoading}
         />
       </div>
-      <Button 
-        type="submit" 
+      <Button
+        type="submit"
         disabled={isLoading}
         variant={variant === 'footer' ? "secondary" : "default"}
-        className="shrink-0"
+        className="w-full sm:w-auto shrink-0"
       >
         {isLoading ? (
           <div className="h-4 w-4 animate-spin rounded-full border-2 border-current border-t-transparent" />
