@@ -6,9 +6,9 @@ import {
   BookOpen, 
   Users, 
   Award, 
+  Globe,
   TrendingUp
 } from "lucide-react";
-import IITRSvgLogo from "@/assets/iitr_logo.svg";
 
 export const AboutSection = () => {
   const highlights = [
@@ -35,7 +35,7 @@ export const AboutSection = () => {
   ];
 
   const stats = [
-    { number: "64+", label: "Years of Excellence" },
+    { number: "1962", label: "Year of Establishment" },
     { number: "500+", label: "Expected Participants" },
     { number: "50+", label: "Technical Papers" },
     { number: "25+", label: "Countries Represented" }
@@ -55,8 +55,8 @@ export const AboutSection = () => {
   <Card className="border-0 shadow-card bg-gradient-card">
     <CardContent className="p-8">
       <div className="flex items-center space-x-3 mb-6">
-        <img src={IITRSvgLogo} alt="IIT Roorkee Logo" className="h-20 w-20 object-contain" />
-        <h3 className="font-serif text-2xl font-semibold text-foreground">
+        <Globe className="h-8 w-8 text-primary" />
+        <h3 className="font-montserrat text-2xl font-semibold text-foreground">
           About 18SEE
         </h3>
       </div>
@@ -72,6 +72,9 @@ export const AboutSection = () => {
         </li>
         <li>
           <span className="font-semibold">Future Focus:</span> Shaping the next generation of earthquake-resistant infrastructure and safer communities.
+        </li>
+        <li>
+          <span className="font-semibold">Hosted by IIT Roorkee:</span> Asia’s oldest technical institution, known for its leadership in engineering and innovation.
         </li>
       </ul>
     </CardContent>
