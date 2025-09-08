@@ -62,7 +62,8 @@ export const RegistrationSection = () => {
                   <h3 className="font-semibold text-xl">{plan.title}</h3>
                 </div>
                 <p className="text-sm text-muted-foreground mb-6">
-                  Deadline: {plan.deadline}
+                  Deadline: <span className="blur-sm select-none">{plan.deadline}</span>
+                  <span className="ml-2 text-xs text-gray-400 italic">(To be announced)</span>
                 </p>
 
                 {/* Price Section (Blurred/Disabled for now) */}
