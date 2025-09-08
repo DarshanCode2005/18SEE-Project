@@ -1,6 +1,11 @@
 import { Navigation } from "@/components/ui/navigation";
 import { FooterSection } from "@/components/sections/FooterSection";
 import headshot from "@/assets/headshot_placeholder.png";
+import Image1 from "@/assets/Prof_Pant.jpeg";
+import Image2 from "@/assets/Prof_Maheshwari.jpeg";
+import Image3 from "@/assets/Prof_Jakka.png";
+import Image4 from "@/assets/Prof_Singla.png";
+import Image5 from "@/assets/Prof_Prakash.png";
 
 const committee = [
   {
@@ -41,16 +46,42 @@ const levelStyles = [
   "mt-10", // Level 3
 ];
 
+import React, { useRef, useEffect, useState } from "react";
+
 const Committee = () => {
+  // Navbar hide on scroll logic
+  const navRef = useRef<HTMLDivElement>(null);
+  const [navHidden, setNavHidden] = useState(false);
+  const lastScroll = useRef(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const currentScroll = window.scrollY;
+      if (currentScroll > lastScroll.current && currentScroll > 80) {
+        setNavHidden(true);
+      } else {
+        setNavHidden(false);
+      }
+      lastScroll.current = currentScroll;
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <div className="min-h-screen bg-background">
-      <Navigation />
-      <div className="max-w-4xl mx-auto px-4 pt-32 pb-16">
+      <div
+        ref={navRef}
+        className={`fixed top-0 left-0 w-full z-50 transition-opacity duration-500 ${navHidden ? "opacity-0 pointer-events-none" : "opacity-100"}`}
+      >
+        <Navigation />
+      </div>
+      <div className="max-w-4xl mx-auto px-4 pt-36 md:pt-40 pb-16">
         <h1 className="text-3xl md:text-4xl font-bold text-center text-primary mb-12">Organizing Committee</h1>
         {/* Level 1 */}
         <div className="flex flex-col items-center">
           <div className="flex flex-col items-center">
-            <img src={headshot} alt="Patron" className="w-32 h-32 rounded-full object-cover border-4 border-primary shadow mb-4" />
+            <img src={Image1} alt="Patron" className="w-32 h-32 rounded-full object-cover border-4 border-primary shadow mb-4" />
             <div className="text-center">
               <div className="text-lg font-semibold text-gold mb-1">Patron</div>
               <div className="text-xl font-bold text-foreground">Prof. Kamal Kishore Pant</div>
@@ -60,29 +91,41 @@ const Committee = () => {
         </div>
         {/* Level 2 */}
         <div className="flex flex-col md:flex-row justify-center gap-12 mt-16">
-          {[committee[1], committee[2]].map((member, idx) => (
-            <div key={member.name} className="flex flex-col items-center">
-              <img src={headshot} alt={member.title} className="w-28 h-28 rounded-full object-cover border-4 border-secondary shadow mb-3" />
-              <div className="text-center">
-                <div className="text-base font-semibold text-secondary mb-1">{member.title}</div>
-                <div className="text-lg font-bold text-foreground">{member.name}</div>
-                <div className="text-muted-foreground mt-1 whitespace-pre-line">{member.position}</div>
-              </div>
+          <div className="flex flex-col items-center">
+            <img src={Image2} alt={committee[1].title} className="w-28 h-28 rounded-full object-cover border-4 border-secondary shadow mb-3" />
+            <div className="text-center">
+              <div className="text-base font-semibold text-secondary mb-1">{committee[1].title}</div>
+              <div className="text-lg font-bold text-foreground">{committee[1].name}</div>
+              <div className="text-muted-foreground mt-1 whitespace-pre-line">{committee[1].position}</div>
             </div>
-          ))}
+          </div>
+          <div className="flex flex-col items-center">
+            <img src={Image3} alt={committee[2].title} className="w-28 h-28 rounded-full object-cover border-4 border-secondary shadow mb-3" />
+            <div className="text-center">
+              <div className="text-base font-semibold text-secondary mb-1">{committee[2].title}</div>
+              <div className="text-lg font-bold text-foreground">{committee[2].name}</div>
+              <div className="text-muted-foreground mt-1 whitespace-pre-line">{committee[2].position}</div>
+            </div>
+          </div>
         </div>
         {/* Level 3 */}
         <div className="flex flex-col md:flex-row justify-center gap-12 mt-10">
-          {[committee[3], committee[4]].map((member, idx) => (
-            <div key={member.name} className="flex flex-col items-center">
-              <img src={headshot} alt={member.title} className="w-28 h-28 rounded-full object-cover border-4 border-accent shadow mb-2" />
-              <div className="text-center">
-                <div className="text-base font-semibold text-secondary mb-1">{member.title}</div>
-                <div className="text-lg font-bold text-foreground">{member.name}</div>
-                <div className="text-muted-foreground mt-1 whitespace-pre-line">{member.position}</div>
-              </div>
+          <div className="flex flex-col items-center">
+            <img src={Image4} alt={committee[3].title} className="w-28 h-28 rounded-full object-cover border-4 border-accent shadow mb-2" />
+            <div className="text-center">
+              <div className="text-base font-semibold text-secondary mb-1">{committee[3].title}</div>
+              <div className="text-lg font-bold text-foreground">{committee[3].name}</div>
+              <div className="text-muted-foreground mt-1 whitespace-pre-line">{committee[3].position}</div>
             </div>
-          ))}
+          </div>
+          <div className="flex flex-col items-center">
+            <img src={Image5} alt={committee[4].title} className="w-28 h-28 rounded-full object-cover border-4 border-accent shadow mb-2" />
+            <div className="text-center">
+              <div className="text-base font-semibold text-secondary mb-1">{committee[4].title}</div>
+              <div className="text-lg font-bold text-foreground">{committee[4].name}</div>
+              <div className="text-muted-foreground mt-1 whitespace-pre-line">{committee[4].position}</div>
+            </div>
+          </div>
         </div>
       </div>
       <FooterSection />

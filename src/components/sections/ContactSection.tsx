@@ -92,10 +92,6 @@ export const ContactSection = () => {
           <Badge variant="outline" className="mb-4 bg-primary/10 text-primary border-primary/20 text-2xl">
             Contact Us
           </Badge>
-          <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
-            Get in Touch
-            <span className="block text-primary">We're Here to Help</span>
-          </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Have questions about the symposium? Need assistance with registration or submissions? 
             Our organizing team is ready to assist you.
