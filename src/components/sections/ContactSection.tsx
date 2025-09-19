@@ -45,7 +45,7 @@ export const ContactSection = () => {
     {
       icon: <Phone className="h-5 w-5" />,
       title: "Phone",
-      content: "+91-1332-285591\n+91-1332-285710",
+      content: "+91-1332-285591\n+91-1332-285710\n+91-1332-285675",
       action: "tel:+911332285591"
     },
     {
@@ -54,12 +54,6 @@ export const ContactSection = () => {
       content: "Department of Earthquake Engineering\nIIT Roorkee, Uttarakhand 247667, India",
       action: "https://maps.app.goo.gl/vManw69NJhXoWeAo9"
     },
-    {
-      icon: <Clock className="h-5 w-5" />,
-      title: "Office Hours",
-      content: "Monday - Friday\n9:00 AM - 5:00 PM IST",
-      action: null
-    }
   ];
 
   const team = [
