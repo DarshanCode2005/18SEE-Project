@@ -110,7 +110,7 @@ export const ThemesSection = () => {
           </Badge>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Dive deep into cutting-edge research areas that are shaping the next generation 
-            of seismic engineering solutions and earthquake-resistant infrastructure.
+            of seismic engineering solutions and earthquake-resilient infrastructure.
           </p>
         </div>
 
