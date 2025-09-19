@@ -214,8 +214,8 @@ export const ThemesSection = () => {
                 Present Your Research
               </h3>
               <p className="text-primary-foreground/90 text-lg mb-6 leading-relaxed">
-                We invite researchers, practitioners, and students to share their innovative work 
-                across these themes. Submit your abstracts and contribute to advancing earthquake engineering.
+                We invite researchers, practitioners, innovators and students to share their innovative work 
+                across these themes. Submit your abstracts (around 300 words) and contribute to advancing earthquake engineering.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button className="bg-primary-foreground text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary-foreground/90 transition-colors">
@@ -225,7 +225,7 @@ export const ThemesSection = () => {
                   onClick={() => setGuidelinesOpen(true)}
                   className="border-2 border-primary-foreground text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary-foreground/10 transition-colors"
                 disabled={true}>
-                  View Guidelines
+                  Download Template
                 </button>
               </div>
             </CardContent>
