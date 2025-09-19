@@ -14,6 +14,7 @@ import GalleryImage7 from "@/assets/gallery_past_event_7.jpg";
 import GalleryImage8 from "@/assets/gallery_past_event_8.jpg";
 import VenueImage1 from "@/assets/gallery_venue_1.jpg";
 import VenueImage2 from "@/assets/gallery_venue_3.jpg";
+import VenueImage3 from "@/assets/gallery_venue_4.webp";
 interface MediaItem {
   id: string;
   type: 'image' | 'video';
@@ -143,6 +144,15 @@ const galleryData: MediaItem[] = [
     category: 'venue',
     alt: 'Main entrance of Eathquake Engineering Department at IIT Roorkee'
   },
+  {
+    id: '16',
+    type: 'image',
+    src: VenueImage3,
+    thumbnail: VenueImage3,
+    title: 'MAC Auditorium',
+    category: 'venue',
+    alt: 'MAC Auditorium at IIT Roorkee'
+  }
 ];
 
 const categories = [
