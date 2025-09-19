@@ -47,9 +47,9 @@ export const AboutSection = () => {
         
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
-          <Badge variant="outline" className="mb-4 bg-primary/10 text-xl border-primary/20">
+          {/* <Badge variant="outline" className="mb-4 bg-primary/10 text-xl border-primary/20">
             About the Symposium
-          </Badge>
+          </Badge> */}
          {/* <section className="max-w-8xl mx-auto text-center py-10"> */}
 <div className="animate-fade-in" style={{ animationDelay: '0.3s' }}>
   <Card className="border-0 shadow-card bg-gradient-card">
@@ -87,97 +87,113 @@ export const AboutSection = () => {
 
         </div>
 
-        {/* Main Content */}
-        <div className="space-y-16 mb-16">
-          
-          {/* About IIT Roorkee */}
-          <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <Card className="border-0 shadow-card bg-gradient-card">
-              <CardContent className="p-8">
-                <div className="flex items-center space-x-3 mb-6">
-                  <BookOpen className="h-8 w-8 text-primary" />
-                  <h3 className="font-serif text-2xl font-semibold text-foreground">
-                    About IIT Roorkee
-                  </h3>
-                </div>
-                <div className="space-y-4 text-muted-foreground leading-relaxed">
-                  <p>
-                    The Indian Institute of Technology Roorkee, established in 1847, stands as one of India's 
-                    oldest and most prestigious technical institutions. Originally founded as the Roorkee College, 
-                    it has evolved into a world-class center of excellence in engineering, technology, and research.
-                  </p>
-                  <p>
-                    Located in the foothills of the Himalayas in Uttarakhand, IIT Roorkee has been a pioneer 
-                    in civil engineering education and research for over 175 years. The institute has contributed 
-                    significantly to India's infrastructure development and continues to lead in cutting-edge 
-                    research across multiple disciplines.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* About Department */}
-          <div className="animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            <Card className="border-0 shadow-card bg-gradient-card">
-              <CardContent className="p-8">
-                <div className="flex items-center space-x-3 mb-6">
-                  <Activity className="h-8 w-8 text-secondary" />
-                  <h3 className="font-serif text-2xl font-semibold text-foreground">
-                    Department of Earthquake Engineering
-                  </h3>
-                </div>
-                <div className="space-y-4 text-muted-foreground leading-relaxed">
-                  <p>
-                    Established in 1960, the Department of Earthquake Engineering at IIT Roorkee was the 
-                    first of its kind in India and among the earliest in the world. The department has been 
-                    instrumental in developing India's seismic design codes and guidelines.
-                  </p>
-                  <p>
-                    With state-of-the-art laboratories including the National Seismic Test Facility, shake tables, 
-                    and advanced instrumentation, the department conducts cutting-edge research in seismic hazard 
-                    assessment, structural dynamics, geotechnical earthquake engineering, and disaster risk management.
-                  </p>
-                  <p>
-                    Our faculty and researchers have contributed to major projects worldwide, from earthquake-resistant 
-                    design of critical infrastructure to post-earthquake damage assessment and rehabilitation strategies.
-                  </p>
-                </div>
-              </CardContent>
-            </Card>
-          </div>
-
-          {/* Message from HOD */}
-          <div className="animate-fade-in" style={{ animationDelay: '0.6s' }}>
-            <Card className="border-0 shadow-card bg-gradient-card border-l-4 border-l-primary">
-              <CardContent className="p-8">
-                <div className="flex items-center space-x-3 mb-6">
-                  <Award className="h-8 w-8 text-primary" />
-                  <h3 className="font-serif text-2xl font-semibold text-foreground">
-                    Message from Head of Department
-                  </h3>
-                </div>
-                <div className="space-y-4">
-                  <div className="text-4xl text-primary mb-4">"</div>
-                  <p className="text-muted-foreground leading-relaxed text-lg italic">
-                    It is with great pleasure that we welcome you to the 18th Symposium on Earthquake Engineering. 
-                    This symposium represents our continued commitment to advancing the field of earthquake engineering 
-                    and fostering collaboration among researchers, practitioners, and students from around the world.
-                  </p>
-                  <p className="text-muted-foreground leading-relaxed text-lg italic">
-                    As we face increasing challenges from seismic hazards and climate change, the need for innovative 
-                    solutions in earthquake-resistant design has never been more critical. This symposium provides 
-                    a platform to share cutting-edge research, discuss emerging technologies, and build partnerships 
-                    that will shape the future of our discipline.
-                  </p>
-                  <div className="mt-6 pt-4 border-t border-border">
-                    <p className="font-semibold text-foreground">Prof. B.K. Maheshwari</p>
-                    <p className="text-sm text-muted-foreground">Head, Department of Earthquake Engineering</p>
-                    <p className="text-sm text-muted-foreground">Indian Institute of Technology Roorkee</p>
+        {/* Main Content - Responsive Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 mb-16">
+          {/* Left Column */}
+          <div className="flex flex-col gap-10">
+            {/* Department of Earthquake Engineering */}
+            <div className="animate-fade-in" style={{ animationDelay: '0.2s' }}>
+              <Card className="border-0 shadow-card bg-gradient-card">
+                <CardContent className="p-8">
+                  <div className="flex items-center space-x-3 mb-6">
+                    <Activity className="h-8 w-8 text-secondary" />
+                    <h3 className="font-serif text-2xl font-semibold text-foreground">
+                      Department of Earthquake Engineering
+                    </h3>
                   </div>
-                </div>
-              </CardContent>
-            </Card>
+                  <div className="space-y-4 text-muted-foreground leading-relaxed">
+                    <p>
+                      Established in 1960, the Department of Earthquake Engineering at IIT Roorkee was the 
+                      first of its kind in India and among the earliest in the world. The department has been 
+                      instrumental in developing India's seismic design codes and guidelines.
+                    </p>
+                    <p>
+                      With state-of-the-art laboratories including the National Seismic Test Facility, shake tables, 
+                      and advanced instrumentation, the department conducts cutting-edge research in seismic hazard 
+                      assessment, structural dynamics, geotechnical earthquake engineering, and disaster risk management.
+                    </p>
+                    <p>
+                      Our faculty and researchers have contributed to major projects worldwide, from earthquake-resistant 
+                      design of critical infrastructure to post-earthquake damage assessment and rehabilitation strategies.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+            {/* About IIT Roorkee */}
+            <div className="animate-fade-in flex flex-col h-full" style={{ animationDelay: '0.3s' }}>
+              <Card className="border-0 shadow-card bg-gradient-card flex flex-col h-full">
+                <CardContent className="p-8 flex flex-col h-full">
+                  <div className="flex items-center space-x-3 mb-6">
+                    <BookOpen className="h-8 w-8 text-primary" />
+                    <h3 className="font-serif text-2xl font-semibold text-foreground">
+                      About IIT Roorkee
+                    </h3>
+                  </div>
+                  <div className="space-y-4 text-muted-foreground leading-relaxed">
+                    <p>
+                      The Indian Institute of Technology Roorkee, established in 1847, stands as one of India's 
+                      oldest and most prestigious technical institutions. Originally founded as the Roorkee College, 
+                      it has evolved into a world-class center of excellence in engineering, technology, and research.
+                    </p>
+                    <p>
+                      Located in the foothills of the Himalayas in Uttarakhand, IIT Roorkee has been a pioneer 
+                      in civil engineering education and research for over 175 years. The institute has contributed 
+                      significantly to India's infrastructure development and continues to lead in cutting-edge 
+                      research across multiple disciplines.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+          {/* Right Column */}
+          <div className="flex flex-col gap-10">
+            {/* About ISET */}
+            <div className="animate-fade-in" style={{ animationDelay: '0.4s' }}>
+              <Card className="border-0 shadow-card bg-gradient-card">
+                <CardContent className="p-8">
+                  <div className="flex items-center space-x-3 mb-6">
+                    <TrendingUp className="h-8 w-8 text-secondary" />
+                    <h3 className="font-serif text-2xl font-semibold text-foreground">
+                      About ISET
+                    </h3>
+                  </div>
+                  <div className="space-y-4 text-muted-foreground leading-relaxed">
+                    <p>
+                      The Indian Society of Earthquake Technology (ISET) was founded in November 1962 with Late Prof. Jai Krishna as the founding President. ISET is a founding member of the International Association for Earthquake Engineering (IAEE), and its President represents the society as a National Delegate.
+                    </p>
+                    <p>
+                      With 2250+ members and 14 local chapters (Roorkee, New Delhi, Mumbai, Kolkata, Chennai, Bengaluru, Jorhat, Nagpur, Pune, Amravati, Guwahati, Vellore, Guntur, Dhanbad, and Varanasi), Its reach is nationwide. It conducts annual lectures, workshops, short-term training courses, and organizes SEE every four years.
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+            {/* Message from HOD */}
+            <div className="animate-fade-in flex flex-col h-full" style={{ animationDelay: '0.5s' }}>
+              <Card className="border-0 shadow-card bg-gradient-card border-l-4 border-l-primary flex flex-col h-full">
+                <CardContent className="p-8 flex flex-col h-full">
+                  <div className="flex items-center space-x-3 mb-6">
+                    <Award className="h-8 w-8 text-primary" />
+                    <h3 className="font-serif text-2xl font-semibold text-foreground">
+                      Message from Head of Department
+                    </h3>
+                  </div>
+                  <div className="space-y-4">
+                    <div className="text-4xl text-primary mb-4">"</div>
+                    <p className="text-muted-foreground leading-relaxed text-lg italic">
+                      Welcome to the 18th Symposium on Earthquake Engineering. Together, we drive innovation and resilience for a safer tomorrow. Let’s build lasting solutions and global partnerships that protect lives and communities.
+                    </p>
+                    <div className="mt-6 pt-4 border-t border-border">
+                      <p className="font-semibold text-foreground">Prof. B.K. Maheshwari</p>
+                      <p className="text-sm text-muted-foreground">Head, Department of Earthquake Engineering</p>
+                      <p className="text-sm text-muted-foreground">Indian Institute of Technology Roorkee</p>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
           </div>
         </div>
 
