@@ -35,9 +35,9 @@ export const AboutSection = () => {
   ];
 
   const stats = [
-    { number: "1962", label: "Year of Establishment" },
-    { number: "500+", label: "Expected Participants" },
-    { number: "50+", label: "Technical Papers" },
+    { number: "65+", label: "Years of Excellence" },
+    { number: "600+", label: "Expected Participants" },
+    { number: "400+", label: "Technical Papers" },
     { number: "25+", label: "Countries Represented" }
   ];
 
