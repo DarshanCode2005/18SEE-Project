@@ -21,7 +21,6 @@ export default {
 			fontFamily: {
 				'serif': ['Crimson Text', 'serif'],
 				'sans': ['Inter', 'sans-serif'],
-				'montserrat': ['Montserrat', 'Arial', 'sans-serif'],
 			},
 			colors: {
 				border: 'hsl(var(--border))',
