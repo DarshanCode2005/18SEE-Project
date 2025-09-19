@@ -146,10 +146,6 @@ export const NewsletterForm = ({ variant = 'section' }: NewsletterFormProps) => 
             <div className="max-w-md mx-auto">
               {formContent}
             </div>
-            
-            <p className="text-sm text-primary-foreground/70 mt-4">
-              We respect your privacy. Unsubscribe at any time.
-            </p>
           </CardContent>
         </Card>
         
