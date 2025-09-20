@@ -79,10 +79,12 @@ const Committee = () => {
       <div className="max-w-4xl mx-auto px-4 pt-36 md:pt-40 pb-16">
         <h1 className="text-3xl md:text-4xl font-bold text-center text-primary mb-12">Organizing Committee</h1>
         {/* Level 1 */}
-        <div className="flex flex-col items-center">
-          <div className="flex flex-col items-center">
-            <img src={Image1} alt="Patron" className="w-32 h-32 rounded-full object-cover object-center border-4 border-primary shadow mb-4 block mx-auto" style={{objectFit: 'cover', objectPosition: 'center'}} />
-            <div className="text-center">
+        <div className="flex justify-center w-full">
+          <div className="flex flex-col items-center max-w-xs">
+            <div className="w-32 h-32 rounded-full border-4 border-primary shadow mb-4 overflow-hidden flex items-center justify-center">
+              <img src={Image1} alt="Patron" className="w-full h-full object-center"/>
+            </div>
+            <div className="text-center w-full">
               <div className="text-lg font-semibold text-gold mb-1">Patron</div>
               <div className="text-xl font-bold text-foreground">Prof. Kamal Kishore Pant</div>
               <div className="text-muted-foreground mt-1">Director, IIT Roorkee</div>
@@ -111,11 +113,11 @@ const Committee = () => {
         {/* Level 3 */}
         <div className="flex flex-col md:flex-row justify-center gap-12 mt-10">
           <div className="flex flex-col items-center">
-            <span className="w-28 h-28 rounded-full border-4 border-accent shadow mb-2 block mx-auto bg-gray-200 overflow-hidden flex items-center justify-center">
+            <span className="w-28 h-28 rounded-full border-4 border-accent shadow mb-2 mx-auto bg-gray-200 overflow-hidden flex items-center justify-center">
               <img 
                 src={Image4} 
                 alt={committee[3].title} 
-                className="w-full h-full object-cover object-center block" 
+                className="w-full h-full object-cover object-center" 
                 style={{objectFit: 'cover', objectPosition: 'center', minWidth: '100%', minHeight: '100%'}} 
               />
             </span>
