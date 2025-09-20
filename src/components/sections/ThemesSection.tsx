@@ -35,10 +35,31 @@ import {
   Stethoscope,
   BookOpen,
   Megaphone,
-  Clock
+  Clock,
+  MapPin,
+  Monitor,
+  Home,
+  Link,
+  Archive,
+  HardDrive,
+  Earth,
+  BrickWall,
+  Database,
+  TrainFrontTunnel,
+  Cable,
+  Bot,
+  Dam,
+  BarChart2,
+  FileSearchIcon,
+  Sheet,
+  ChartArea,
+  LucideGlasses,
+  LucideSquareLibrary,
+  StepBack
 } from "lucide-react";
 import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogClose } from "@/components/ui/dialog";
 import { Accordion, AccordionItem, AccordionTrigger, AccordionContent } from "@/components/ui/accordion";
+import { Bar, Layer } from "recharts";
 
 export const ThemesSection = () => {
   const [showAll, setShowAll] = useState(false);
@@ -46,35 +67,35 @@ export const ThemesSection = () => {
   const [guidelinesOpen, setGuidelinesOpen] = useState(false);
   
   const themes = [
-    { icon: <Waves className="h-5 w-5" />, title: "Engineering seismology and seismotectonics" },
-    { icon: <Activity className="h-5 w-5" />, title: "Lessons from recent earthquakes and tsunamis" },
-    { icon: <Map className="h-5 w-5" />, title: "Earthquake studies using GIS/GPS/SAR/remote sensing" },
+    { icon: <Activity className="h-5 w-5" />, title: "Engineering seismology and seismotectonics" },
+    { icon: <AlertTriangle className="h-5 w-5" />, title: "Lessons from recent earthquakes and tsunamis" },
+    { icon: <MapPin className="h-5 w-5" />, title: "Earthquake studies using GIS/GPS/SAR/remote sensing" },
     { icon: <Target className="h-5 w-5" />, title: "Seismic hazard assessment" },
-    { icon: <Gauge className="h-5 w-5" />, title: "Seismic instrumentation" },
-    { icon: <TrendingUp className="h-5 w-5" />, title: "Strong ground motion and site characterization" },
+    { icon: <Monitor className="h-5 w-5" />, title: "Seismic instrumentation" },
+    { icon: <Earth className="h-5 w-5" />, title: "Strong ground motion and site characterization" },
     { icon: <Layers className="h-5 w-5" />, title: "Dynamic properties of soil and ground response" },
-    { icon: <Zap className="h-5 w-5" />, title: "Liquefaction and seismic ground improvement" },
-    { icon: <Mountain className="h-5 w-5" />, title: "Seismic safety of foundations and machine foundations" },
-    { icon: <Settings className="h-5 w-5" />, title: "Seismic soil-structure interaction" },
-    { icon: <Shield className="h-5 w-5" />, title: "Slope stability under earthquakes & embankment design" },
-    { icon: <Landmark className="h-5 w-5" />, title: "Gravity and embankment dams" },
-    { icon: <Wrench className="h-5 w-5" />, title: "Earth pressure and retaining walls under earthquakes" },
-    { icon: <Radar className="h-5 w-5" />, title: "Seismic safety of pipelines, underground & buried structures" },
-    { icon: <Hammer className="h-5 w-5" />, title: "Tunnels and rock mechanics" },
+    { icon: <TrendingUp className="h-5 w-5" />, title: "Liquefaction and seismic ground improvement" },
+    { icon: <Home className="h-5 w-5" />, title: "Seismic safety of foundations and machine foundations" },
+    { icon: <Link className="h-5 w-5" />, title: "Seismic soil-structure interaction" },
+    { icon: <Mountain className="h-5 w-5" />, title: "Slope stability under earthquakes & embankment design" },
+    { icon: <Dam className="h-5 w-5" />, title: "Gravity and embankment dams" },
+    { icon: <BrickWall className="h-5 w-5" />, title: "Earth pressure and retaining walls under earthquakes" },
+    { icon: <Wrench className="h-5 w-5" />, title: "Seismic safety of pipelines, underground & buried structures" },
+    { icon: <TrainFrontTunnel className="h-5 w-5" />, title: "Tunnels and rock mechanics" },
     { icon: <Building className="h-5 w-5" />, title: "Special materials, structures, and systems" },
     { icon: <FileText className="h-5 w-5" />, title: "Earthquake response analysis, design, and construction" },
     { icon: <BookOpen className="h-5 w-5" />, title: "Codal provisions on earthquake-resistant design" },
-    { icon: <BarChart3 className="h-5 w-5" />, title: "Performance-based seismic design" },
-    { icon: <BarChart3 className="h-5 w-5" />, title: "Seismic vulnerability, risk, and resilience assessment" },
-    { icon: <Play className="h-5 w-5" />, title: "Structural response control" },
-    { icon: <Search className="h-5 w-5" />, title: "Seismic testing of structures and equipment" },
+    { icon: <BarChart2 className="h-5 w-5" />, title: "Performance-based seismic design" },
+    { icon: <FileSearchIcon className="h-5 w-5" />, title: "Seismic vulnerability, risk, and resilience assessment" },
+    { icon: <Sheet className="h-5 w-5" />, title: "Structural response control" },
+    { icon: <ChartArea className="h-5 w-5" />, title: "Seismic testing of structures and equipment" },
     { icon: <Hammer className="h-5 w-5" />, title: "Seismic evaluation and retrofitting of structures" },
-    { icon: <Construction className="h-5 w-5" />, title: "Seismic safety of bridges and dams." },
+    { icon: <Dam className="h-5 w-5" />, title: "Seismic safety of bridges and dams." },
     { icon: <Settings className="h-5 w-5" />, title: "Seismic safety of non-structural components, equipment, and services in buildings" },
     { icon: <Factory className="h-5 w-5" />, title: "Seismic safety of industrial structures, and thermal and nuclear power stations" },
     { icon: <Landmark className="h-5 w-5" />, title: "Seismic safety of historical structures and monuments" },
-    { icon: <Ship className="h-5 w-5" />, title: "Seismic safety of offshore/onshore structures" },
-    { icon: <AlertTriangle className="h-5 w-5" />, title: "Damage detection and system identification" },
+    { icon: <Waves className="h-5 w-5" />, title: "Seismic safety of offshore/onshore structures" },
+    { icon: <Radar className="h-5 w-5" />, title: "Damage detection and system identification" },
     { icon: <Globe className="h-5 w-5" />, title: "Lifeline and urban systems" },
     { icon: <Map className="h-5 w-5" />, title: "Microzonation and urban planning" },
     { icon: <Shield className="h-5 w-5" />, title: "Earthquake disaster mitigation and management" },
@@ -83,7 +104,7 @@ export const ThemesSection = () => {
     { icon: <School className="h-5 w-5" />, title: "Earthquake engineering education" },
     { icon: <Megaphone className="h-5 w-5" />, title: "Public awareness, participation, and enforcement of building safety laws" },
     { icon: <Clock className="h-5 w-5" />, title: "Earthquake prediction and early warning system" },
-  { icon: <Zap className="h-5 w-5" />, title: "Applications of artificial intelligence and machine learning in earthquake engineering" }
+  { icon: <Bot className="h-5 w-5" />, title: "Applications of artificial intelligence and machine learning in earthquake engineering" }
   ];
 
   // Only these 8 themes should be visible in the collapsed (show less) section
