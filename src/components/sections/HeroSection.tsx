@@ -91,30 +91,22 @@ export const HeroSection = () => {
 
           {/* Event Details */}
           <div className="flex flex-wrap justify-center gap-6 mb-8 text-primary-foreground/90">
-            <div className="flex items-center space-x-2 animate-fade-in" style={{
-            animationDelay: '0.2s'
-          }}>
+            <div className="flex items-center space-x-2">
               <Calendar className="h-5 w-5" />
               <span>December 10–12, 2026</span>
             </div>
-            <div className="flex items-center space-x-2 animate-fade-in" style={{
-            animationDelay: '0.4s'
-          }}>
+            <div className="flex items-center space-x-2">
               <MapPin className="h-5 w-5" />
               <span>IIT Roorkee, Uttarakhand</span>
             </div>
-            <div className="flex items-center space-x-2 animate-fade-in" style={{
-            animationDelay: '0.6s'
-          }}>
+            <div className="flex items-center space-x-2">
               <Users className="h-5 w-5" />
               <span>500+ Participants Expected</span>
             </div>
           </div>
 
           {/* Countdown Timer */}
-          <div className="bg-card/10 backdrop-blur-sm rounded-2xl p-6 mb-8 border border-primary-foreground/20 max-w-2xl mx-auto animate-fade-in-scale" style={{
-          animationDelay: '0.8s'
-        }}>
+          <div className="bg-card/10 backdrop-blur-sm rounded-2xl p-6 mb-8 border border-primary-foreground/20 max-w-2xl mx-auto">
             <h3 className="text-lg font-semibold text-primary-foreground mb-1">{headingText}</h3>
             {nextEvent && <p className="text-sm text-primary-foreground/80 mb-4">{nextEvent.date.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}</p>}
             <div className="grid grid-cols-4 gap-4">
@@ -131,9 +123,7 @@ export const HeroSection = () => {
           </div>
 
           {/* Call to Action */}
-          <div className="flex flex-col sm:flex-row justify-center gap-4 animate-fade-in" style={{
-          animationDelay: '1s'
-        }}>
+          <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button size="lg" className="bg-secondary hover:bg-secondary-dark text-secondary-foreground shadow-glow" asChild>
               <a href="/registration-soon">Register Now</a>
             </Button>
