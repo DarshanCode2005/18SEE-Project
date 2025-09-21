@@ -9,7 +9,8 @@ import {
   Linkedin,
   Instagram,
   Youtube,
-  ExternalLink
+  ExternalLink,
+  X
 } from "lucide-react";
 
 export const FooterSection = () => {
@@ -22,16 +23,15 @@ export const FooterSection = () => {
 
   const importantLinks = [
     { name: "IIT Roorkee", href: "https://www.iitr.ac.in", external: true },
-    { name: "Earthquake Engineering Dept.", href: "#", external: true },
+    { name: "Earthquake Engineering Dept.", href: "https://iitr.ac.in/Departments/Earthquake%20Department/Home.html", external: true },
     { name: "ISET", href: "https://iset.org.in/", external: true },
     { name: "Travel Information", href: "#travel" },  
-    { name: "Downloads", href: "#" }
   ];
 
   const socialLinks = [
-    { name: "LinkedIn", icon: <Linkedin className="h-5 w-5" />, href: "#" },
-    { name: "Twitter", icon: <Twitter className="h-5 w-5" />, href: "#" },
-    { name: "YouTube", icon: <Youtube className="h-5 w-5" />, href: "#" }
+    { name: "LinkedIn", icon: <Linkedin className="h-5 w-5" />, href: "https://www.linkedin.com/in/deqiitr/" },
+    { name: "X", icon: <Twitter className="h-5 w-5" />, href: "https://x.com/deq_iitr" },
+    { name: "YouTube", icon: <Youtube className="h-5 w-5" />, href: "https://www.youtube.com/@depatmentofearthquakeengin8468" }
   ];
 
   return (
@@ -150,6 +150,7 @@ export const FooterSection = () => {
                   href={social.href}
                   className="bg-primary-foreground/10 hover:bg-secondary hover:text-secondary-foreground p-2 rounded-lg transition-colors"
                   aria-label={social.name}
+                  target="_blank"
                 >
                   {social.icon}
                 </a>

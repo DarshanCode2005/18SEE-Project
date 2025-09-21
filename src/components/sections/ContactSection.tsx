@@ -83,7 +83,7 @@ export const ContactSection = () => {
         
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
-          <Badge variant="outline" className="mb-4 bg-primary/10 text-primary border-primary/20 text-2xl">
+          <Badge variant="outline" className="mb-4 bg-secondary/10 text-secondary border-secondary/20 text-2xl">
             Contact Us
           </Badge>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
@@ -116,19 +116,39 @@ export const ContactSection = () => {
                       <h4 className="font-semibold text-foreground text-sm">
                         {info.title}
                       </h4>
-                      <div className="text-muted-foreground text-sm mt-1 whitespace-pre-line">
-                        {info.action ? (
-                          <a 
-                            href={info.action}
-                            className="hover:text-primary transition-colors flex items-center"
-                          >
-                            {info.content}
-                            <ExternalLink className="h-3 w-3 ml-1" />
-                          </a>
-                        ) : (
-                          info.content
-                        )}
-                      </div>
+                      {info.title === "Address" ? (
+                        <div className="mt-1">
+                          {info.action ? (
+                            <a 
+                              href={info.action}
+                              className="hover:text-primary transition-colors block"
+                            >
+                              <span className="block text-muted-foreground text-xs">Department of Earthquake Engineering</span>
+                              <span className="block text-muted-foreground text-xs">IIT Roorkee, Uttarakhand 247667, India</span>
+                              {/* <ExternalLink className="h-3 w-3 ml-1 align-middle" /> */}
+                            </a>
+                          ) : (
+                            <>
+                              <span className="block text-muted-foreground text-xs">Department of Earthquake Engineering</span>
+                              <span className="block text-muted-foreground text-xs">IIT Roorkee, Uttarakhand 247667, India</span>
+                            </>
+                          )}
+                        </div>
+                      ) : (
+                        <div className="text-muted-foreground text-sm mt-1 whitespace-pre-line">
+                          {info.action ? (
+                            <a 
+                              href={info.action}
+                              className="hover:text-primary transition-colors flex items-center"
+                            >
+                              {info.content}
+                              <ExternalLink className="h-3 w-3 ml-1" />
+                            </a>
+                          ) : (
+                            info.content
+                          )}
+                        </div>
+                      )}
                     </div>
                   </div>
                 ))}
