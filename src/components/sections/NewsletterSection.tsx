@@ -18,7 +18,7 @@ export const NewsletterForm = ({ variant = 'section' }: NewsletterFormProps) => 
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!email) {
       toast({
         title: "Email Required",
@@ -33,7 +33,20 @@ export const NewsletterForm = ({ variant = 'section' }: NewsletterFormProps) => 
     try {
       // Simulate API call - replace with actual Mailchimp/Formspree integration
       await new Promise(resolve => setTimeout(resolve, 1000));
-      
+
+      // post the email to the backend
+      const response = await fetch('/api/newsletter', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ email }),
+      });
+
+      if (!response.ok) {
+        throw new Error('Failed to subscribe');
+      }
+
       setShowConfirmation(true);
       setEmail('');
       toast({
@@ -100,7 +113,7 @@ export const NewsletterForm = ({ variant = 'section' }: NewsletterFormProps) => 
           Get the latest updates about 18SEE-2026
         </p>
         {formContent}
-        
+
         {/* Confirmation Dialog */}
         <Dialog open={showConfirmation} onOpenChange={setShowConfirmation}>
           <DialogContent className="sm:max-w-md">
@@ -134,21 +147,21 @@ export const NewsletterForm = ({ variant = 'section' }: NewsletterFormProps) => 
                 <Mail className="h-8 w-8 text-secondary-foreground" />
               </div>
             </div>
-            
+
             <h2 className="text-3xl font-bold mb-4 text-primary-foreground font-montserrat">
               Stay Connected with 18SEE-2026
             </h2>
             <p className="text-xl text-primary-foreground/90 mb-8 max-w-2xl mx-auto">
-              Subscribe for the latest updates on speakers, schedule changes, 
+              Subscribe for the latest updates on speakers, schedule changes,
               special announcements, and exclusive content from the symposium.
             </p>
-            
+
             <div className="max-w-md mx-auto">
               {formContent}
             </div>
           </CardContent>
         </Card>
-        
+
         {/* Confirmation Dialog */}
         <Dialog open={showConfirmation} onOpenChange={setShowConfirmation}>
           <DialogContent className="sm:max-w-md">

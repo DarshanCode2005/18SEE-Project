@@ -4,10 +4,10 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Badge } from "@/components/ui/badge";
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
+import {
+  Mail,
+  Phone,
+  MapPin,
   Clock,
   Send,
   ExternalLink,
@@ -22,10 +22,38 @@ export const ContactSection = () => {
     message: ""
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     // Handle form submission
     console.log("Form submitted:", formData);
+
+    //make a try catch block to send the form data to the backend
+    try {
+      const response = await fetch('/api/contact', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
+      });
+
+      console.log("Response:", response);
+
+      if (response.ok) {
+        alert("Message sent successfully!");
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: ""
+        });
+      } else {
+        alert("Failed to send message. Please try again later.");
+      }
+    } catch (error) {
+      console.error("Error sending message:", error);
+      alert("An error occurred. Please try again later.");
+    }
   };
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -80,21 +108,21 @@ export const ContactSection = () => {
   return (
     <section id="contact" className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
           <Badge variant="outline" className="mb-4 bg-secondary/10 text-secondary border-secondary/20 text-2xl">
             Contact Us
           </Badge>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Have questions about the symposium? Need assistance with registration or submissions? 
+            Have questions about the symposium? Need assistance with registration or submissions?
             Our organizing team is ready to assist you.
           </p>
         </div>
 
         {/* Main Content */}
         <div className="grid lg:grid-cols-3 gap-12">
-          
+
           {/* Contact Information */}
           <div className="lg:col-span-1 space-y-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
             <Card className="border-0 shadow-card bg-gradient-card">
@@ -119,7 +147,7 @@ export const ContactSection = () => {
                       {info.title === "Address" ? (
                         <div className="mt-1">
                           {info.action ? (
-                            <a 
+                            <a
                               href={info.action}
                               className="hover:text-primary transition-colors block"
                             >
@@ -137,7 +165,7 @@ export const ContactSection = () => {
                       ) : (
                         <div className="text-muted-foreground text-sm mt-1 whitespace-pre-line">
                           {info.action ? (
-                            <a 
+                            <a
                               href={info.action}
                               className="hover:text-primary transition-colors flex items-center"
                             >
@@ -174,7 +202,7 @@ export const ContactSection = () => {
                     <p className="text-muted-foreground text-xs">
                       {member.department}
                     </p>
-                    <a 
+                    <a
                       href={`mailto:${member.email}`}
                       className="text-primary text-xs hover:underline"
                     >
@@ -258,7 +286,7 @@ export const ContactSection = () => {
                     />
                   </div>
 
-                  <Button 
+                  <Button
                     type="submit"
                     className="bg-gradient-primary border-0 w-full sm:w-auto"
                     size="lg"
@@ -297,9 +325,9 @@ export const ContactSection = () => {
                 </div>
                 <div className="p-4 text-center">
                   <Button variant="outline" asChild>
-                    <a 
-                      href="https://maps.app.goo.gl/vManw69NJhXoWeAo9" 
-                      target="_blank" 
+                    <a
+                      href="https://maps.app.goo.gl/vManw69NJhXoWeAo9"
+                      target="_blank"
                       rel="noopener noreferrer"
                     >
                       Open in Google Maps
