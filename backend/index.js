@@ -4,9 +4,13 @@ dotenv.config()
 const express = require('express');
 const path = require('path');
 const bodyParser = require('body-parser');
+const cors = require('cors');
 const { MongoClient } = require('mongodb');
 
 const app = express();
+
+// Enable CORS for all routes
+app.use(cors());
 
 // Serve the static files from the React app
 app.use(express.static(path.join(__dirname, '../dist')));
@@ -76,7 +80,5 @@ app.get(/.*/, (req, res) => {
     res.sendFile(path.join(__dirname, '../dist', 'index.html'));
 });
 
-// Start the server
-app.listen(4000, () => {
-    console.log('Server is running on port 4000');
-});
+// Export the app for Vercel
+module.exports = app;
