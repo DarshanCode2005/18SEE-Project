@@ -9,6 +9,7 @@ import {
   Globe,
   TrendingUp
 } from "lucide-react";
+import iitrlogo from "@/assets/iitr_logo.png";
 
 export const AboutSection = () => {
   const highlights = [
@@ -55,7 +56,7 @@ export const AboutSection = () => {
   <Card className="border-0 shadow-card bg-gradient-card">
     <CardContent className="p-8">
       <div className="flex items-center space-x-3 mb-6">
-        <Globe className="h-8 w-8 text-primary" />
+  <img src={iitrlogo} alt="IITR Logo" className="h-16 w-21" />
         <h3 className="font-montserrat text-2xl font-semibold text-foreground">
           About 18SEE
         </h3>
@@ -72,9 +73,6 @@ export const AboutSection = () => {
         </li>
         <li>
           <span className="font-semibold">Future Focus:</span> Shaping the next generation of earthquake-resistant infrastructure and safer communities.
-        </li>
-        <li>
-          <span className="font-semibold">Hosted by IIT Roorkee:</span> Asia’s oldest technical institution, known for its leadership in engineering and innovation.
         </li>
       </ul>
     </CardContent>
