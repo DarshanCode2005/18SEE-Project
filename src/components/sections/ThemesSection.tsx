@@ -368,9 +368,17 @@ export const ThemesSection = () => {
               <CardContent className="p-8">
                 <div className="text-center mb-8">
                   <div className="inline-flex items-center justify-center w-16 h-16 bg-primary rounded-full mb-4 shadow-lg">
-                    <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                      <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                    </svg>
+                    <a
+                      href="https://calendar.google.com/"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      aria-label="Open Google Calendar"
+                      className="cursor-pointer transition-transform hover:scale-110 active:scale-95"
+                    >
+                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
+                        <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                      </svg>
+                    </a>
                   </div>
                  <h3 className="text-3xl md:text-4xl font-bold text-secondary mb-2">
   ⚡ Important Dates
