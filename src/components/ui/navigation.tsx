@@ -70,7 +70,7 @@ export const Navigation = ({
   const navHover = isLanding && !isScrolled ? "hover:text-gold" : "hover:text-primary";
 
   return (
-  <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBg} ${className}`} style={{marginBottom: '6rem'}}>
+  <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBg} ${className}`} style={{marginBottom: '8rem'}}>
   <div className="max-w-8xl mx-auto px-6 sm:px-10 lg:px-12">
         <div className="flex items-center py-4 my-0">
           {/* Logo */}
