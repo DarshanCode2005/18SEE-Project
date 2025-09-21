@@ -1,13 +1,13 @@
 import { Separator } from "@/components/ui/separator";
 import { NewsletterForm } from "@/components/sections/NewsletterSection";
 import iitrLogo from "@/assets/iitr_logo.svg";
-import { 
-  Mail, 
-  Phone, 
-  MapPin, 
-  Twitter, 
-  Linkedin, 
-  Instagram, 
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Twitter,
+  Linkedin,
+  Instagram,
   Youtube,
   ExternalLink
 } from "lucide-react";
@@ -15,50 +15,35 @@ import {
 export const FooterSection = () => {
   const quickLinks = [
     { name: "Home", href: "#home" },
-    { name: "About", href: "#about" },
-    { name: "Call for Papers", href: "#papers" },
-    { name: "Registration", href: "/registration-soon" },
-    { name: "Contact", href: "#contact" }
+    { name: "Brochure", href: "/schedule.pdf" },
+    { name: "Abstract Submission", href: "#papers" },
+    { name: "Registration", href: "/registration-soon" }
   ];
 
   const importantLinks = [
     { name: "IIT Roorkee", href: "https://www.iitr.ac.in", external: true },
     { name: "Earthquake Engineering Dept.", href: "#", external: true },
-    { name: "Accommodation", href: "#travel" },
-    { name: "Travel Information", href: "#travel" },
+    { name: "ISET", href: "https://iset.org.in/", external: true },
+    { name: "Travel Information", href: "#travel" },  
     { name: "Downloads", href: "#" }
   ];
 
   const socialLinks = [
     { name: "LinkedIn", icon: <Linkedin className="h-5 w-5" />, href: "#" },
     { name: "Twitter", icon: <Twitter className="h-5 w-5" />, href: "#" },
-    { name: "Instagram", icon: <Instagram className="h-5 w-5" />, href: "#" },
     { name: "YouTube", icon: <Youtube className="h-5 w-5" />, href: "#" }
   ];
 
   return (
     <footer className="bg-primary text-primary-foreground">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Main Footer Content */}
         <div className="py-16">
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            
+
             {/* Conference Info */}
             <div className="lg:col-span-1">
-              <div className="flex items-center space-x-3 mb-6">
-                <div className="w-16 h-16 flex items-center justify-center">
-                  <img 
-                    src={iitrLogo}
-                    alt="IIT Roorkee Logo"
-                    className="w-full h-full object-cover rounded-full border-2 border-primary bg-white"
-                  />
-                </div>
-                <div>
-                  <h3 className="font-montserrat text-xl font-bold tracking-tight">18SEE-2026</h3>
-                  <p className="text-primary-foreground/80 text-sm">IIT Roorkee</p>
-                </div>
-              </div>
 
               {/* Contact Info */}
               <div className="space-y-3">
@@ -71,14 +56,14 @@ export const FooterSection = () => {
                 <div className="flex items-center space-x-3">
                   <Phone className="h-4 w-4 text-secondary" />
                   <a href="tel:+911332285591" className="text-primary-foreground/90 hover:text-secondary transition-colors">
-                  +91-1332-285591<br/>+91-1332-285710
+                    +91-1332-285591<br />+91-1332-285710 <br /> +91-1332-285675
                   </a>
                 </div>
                 <div className="flex items-start space-x-3">
                   <MapPin className="h-4 w-4 text-secondary mt-1" />
-                  <address className="text-primary-foreground/90 not-italic">
+                  <address className="text-xs text-primary-foreground/90 not-italic">
                     Department of Earthquake Engineering<br />
-                    IIT Roorkee, Uttarakhand 247667, India
+                    Indian Institute of Technology Roorkee, <br />Uttarakhand 247667, India
                   </address>
                 </div>
               </div>
@@ -90,7 +75,7 @@ export const FooterSection = () => {
               <ul className="space-y-3">
                 {quickLinks.map((link) => (
                   <li key={link.name}>
-                    <a 
+                    <a
                       href={link.href}
                       className="text-primary-foreground/80 hover:text-secondary transition-colors text-sm"
                     >
@@ -107,7 +92,7 @@ export const FooterSection = () => {
               <ul className="space-y-3">
                 {importantLinks.map((link) => (
                   <li key={link.name}>
-                    <a 
+                    <a
                       href={link.href}
                       className="text-primary-foreground/80 hover:text-secondary transition-colors text-sm flex items-center"
                       target={link.external ? "_blank" : undefined}
@@ -124,6 +109,19 @@ export const FooterSection = () => {
             {/* Newsletter Subscription */}
             <div>
               <NewsletterForm variant="footer" />
+              <div className="flex items-center space-x-3 mb-6 mt-12">
+                <div className="w-20 h-20 flex items-center justify-center">
+                  <img
+                    src={iitrLogo}
+                    alt="IIT Roorkee Logo"
+                    className="w-full h-full object-cover rounded-full border-2 border-primary bg-white"
+                  />
+                </div>
+                <div>
+                  <h3 className="font-montserrat text-2xl font-bold tracking-tight">18SEE-2026</h3>
+                  <p className="text-primary-foreground/80 text-md">IIT Roorkee</p>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -133,7 +131,7 @@ export const FooterSection = () => {
         {/* Bottom Footer */}
         <div className="py-8">
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            
+
             {/* Copyright */}
             <div className="text-primary-foreground/80 text-sm text-center md:text-left">
               <p>
