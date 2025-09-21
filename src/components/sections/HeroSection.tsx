@@ -80,30 +80,22 @@ export const HeroSection = () => {
               Earthquake Engineering
             </span>
           </h1>
-          
-          <p className="text-xl sm:text-2xl text-primary-foreground/90 mb-4 font-light">
-            Department of Earthquake Engineering
-          </p>
-          
-          <p className="text-xl sm:text-xl text-primary-foreground/80 mb-8">
-              <span className="text-2xl sm:text-4xl font-bold">Indian Institute of Technology Roorkee</span>
-          </p>
-
           {/* Event Details */}
           <div className="flex flex-wrap justify-center gap-6 mb-8 text-primary-foreground/90">
             <div className="flex items-center space-x-2">
               <Calendar className="h-5 w-5" />
-              <span>December 10–12, 2026</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <MapPin className="h-5 w-5" />
-              <span>IIT Roorkee, Uttarakhand</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Users className="h-5 w-5" />
-              <span>500+ Participants Expected</span>
+              <span className="font-bold text-xl sm:text-2xl lg:text-3xl text-secondary bg-clip-text tracking-wide">
+                December 10–12, 2026
+              </span>
             </div>
           </div>
+          <p className="text-2xl sm:text-3xl text-primary-foreground/90 mb-4 font-bold">
+            Department of Earthquake Engineering
+          </p>
+          
+          <p className="text-2xl sm:text-3xl text-primary-foreground/80 mb-8 font-bold tracking-widest">
+               Institute of Technology Roorkee
+          </p>
 
           {/* Countdown Timer */}
           <div className="bg-card/10 backdrop-blur-sm rounded-2xl p-6 mb-8 border border-primary-foreground/20 max-w-2xl mx-auto">
