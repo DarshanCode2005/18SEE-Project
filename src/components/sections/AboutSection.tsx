@@ -7,7 +7,8 @@ import {
   Users, 
   Award, 
   Globe,
-  TrendingUp
+  TrendingUp,
+  ExternalLink
 } from "lucide-react";
 import iitrlogo from "@/assets/iitr_logo.png";
 
@@ -96,7 +97,15 @@ export const AboutSection = () => {
                   <div className="flex items-center space-x-3 mb-6">
                     <Activity className="h-8 w-8 text-secondary" />
                     <h3 className="font-serif text-2xl font-semibold text-foreground">
-                      Department of Earthquake Engineering
+                      <a
+                        href="https://iitr.ac.in/Departments/Earthquake%20Department/Home.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline flex items-center gap-2"
+                      >
+                        Department of Earthquake Engineering
+                        <ExternalLink className="h-5 w-5 inline text-muted-foreground" />
+                      </a>
                     </h3>
                   </div>
                   <div className="space-y-4 text-muted-foreground leading-relaxed">
@@ -125,7 +134,15 @@ export const AboutSection = () => {
                   <div className="flex items-center space-x-3 mb-6">
                     <BookOpen className="h-8 w-8 text-primary" />
                     <h3 className="font-serif text-2xl font-semibold text-foreground">
-                      About IIT Roorkee
+                      <a
+                        href="https://www.iitr.ac.in/"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="hover:underline flex items-center gap-2"
+                      >
+                        About IIT Roorkee
+                        <ExternalLink className="h-5 w-5 inline text-muted-foreground" />
+                      </a>
                     </h3>
                   </div>
                   <div className="space-y-4 text-muted-foreground leading-relaxed">
@@ -175,7 +192,7 @@ export const AboutSection = () => {
                   <div className="flex items-center space-x-3 mb-6">
                     <Award className="h-8 w-8 text-primary" />
                     <h3 className="font-serif text-2xl font-semibold text-foreground">
-                      Message from Head of Department
+                      Message from Conference Chair
                     </h3>
                   </div>
                   <div className="space-y-4">
