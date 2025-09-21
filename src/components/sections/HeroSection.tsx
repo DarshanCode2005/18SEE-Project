@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Calendar, MapPin, Users, Download } from "lucide-react";
 import heroCampus from "@/assets/hero-campus.webp";
+import Image1 from "@/assets/ISET.svg";
+import Image2 from "@/assets/IITR_organiser_logo.png";
 
 const milestones = [
   { label: "Last date of receipt of abstract", date: "2025-12-15T00:00:00" },
@@ -74,12 +76,23 @@ export const HeroSection = () => {
       {/* Content */}
       <div className="relative z-10 max-w-7xl mt-20 mx-auto px-4 sm:px-6 lg:px-8 text-center">
         <div className="animate-fade-in mx-0 my-[80px]">
-          <h1 className="font-serif text-4xl sm:text-5xl lg:text-7xl font-bold text-primary-foreground mb-6">
-            18th Symposium on
-            <span className="block bg-gradient-secondary bg-clip-text text-transparent">
-              Earthquake Engineering
-            </span>
-          </h1>
+          <div className="flex items-center justify-center gap-6 mb-6">
+            <div className="relative flex items-center justify-center" style={{height: '8rem', width: '8rem'}}>
+              <span className="absolute inset-0 rounded-full bg-white/80 shadow-lg" style={{height: '100%', width: '100%'}}></span>
+              <div className="absolute inset-0 flex items-center justify-center">
+                <img src={Image1} alt="ISET Logo" className="h-30 w-auto sm:h-32 z-10" />
+              </div>
+            </div>
+            <div>
+              <h1 className="font-serif text-4xl sm:text-5xl lg:text-7xl font-bold text-primary-foreground">
+                18th Symposium on
+                <span className="block bg-gradient-secondary bg-clip-text text-transparent">
+                  Earthquake Engineering
+                </span>
+              </h1>
+            </div>
+            <img src={Image2} alt="IITR Logo" className="h-28 w-auto sm:h-32" />
+          </div>
           {/* Event Details */}
           <div className="flex flex-wrap justify-center gap-6 mb-8 text-primary-foreground/90">
             <div className="flex items-center space-x-2">
