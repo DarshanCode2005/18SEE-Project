@@ -47,6 +47,10 @@ app.post('/api/contact', async (req, res) => {
     }
 });
 
+app.get("/api/test", (req, res) => {
+    res.json({ message: "API is working!" });
+});
+
 // api route to handle newsletter subscriptions
 app.post('/api/newsletter', async (req, res) => {
     const uri = process.env.DB_URL;

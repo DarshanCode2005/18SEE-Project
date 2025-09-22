@@ -9,7 +9,6 @@
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
-    "postinstall": "npm install && npm run build",
     "start": "node ./backend/index.cjs"
   },
   "dependencies": {
