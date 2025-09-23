@@ -31,19 +31,24 @@ export const NewsletterForm = ({ variant = 'section' }: NewsletterFormProps) => 
     setIsLoading(true);
 
     try {
-      // Simulate API call - replace with actual Mailchimp/Formspree integration
-      await new Promise(resolve => setTimeout(resolve, 1000));
-
-      // post the email to the backend
-      const response = await fetch('/api/newsletter', {
+      const response = await fetch('https://sheetdb.io/api/v1/c4ziwoevuyb5f', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
-        body: JSON.stringify({ email }),
+        body: JSON.stringify({
+          "data": {
+            "Email": email,
+            "Date": new Date().toLocaleDateString(),
+            "Time": new Date().toLocaleTimeString()
+          }
+        })
       });
 
       if (!response.ok) {
+        const errorData = await response.json();
+        console.error('Subscription error:', errorData);
         throw new Error('Failed to subscribe');
       }
 

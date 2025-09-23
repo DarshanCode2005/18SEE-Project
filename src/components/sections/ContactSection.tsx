@@ -24,20 +24,23 @@ export const ContactSection = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    // Handle form submission
     console.log("Form submitted:", formData);
 
-    //make a try catch block to send the form data to the backend
     try {
-      const response = await fetch('/api/contact', {
+      const response = await fetch('https://formsubmit.co/662ad6d33d5cd9f5f54ef6b93f15d496', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
+          'Accept': 'application/json'
         },
-        body: JSON.stringify(formData),
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          subject: formData.subject,
+          message: formData.message,
+          _subject: `New contact from ${formData.name}: ${formData.subject}`,
+        })
       });
-
-      console.log("Response:", response);
 
       if (response.ok) {
         alert("Message sent successfully!");
@@ -48,7 +51,7 @@ export const ContactSection = () => {
           message: ""
         });
       } else {
-        alert("Failed to send message. Please try again later.");
+        throw new Error('Failed to send message');
       }
     } catch (error) {
       console.error("Error sending message:", error);
