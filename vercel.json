@@ -2,10 +2,6 @@
   "version": 2,
   "builds": [
     {
-      "src": "backend/index.cjs",
-      "use": "@vercel/node"
-    },
-    {
       "src": "package.json",
       "use": "@vercel/static-build",
       "config": {
@@ -14,10 +10,6 @@
     }
   ],
   "routes": [
-    {
-      "src": "/api/(.*)",
-      "dest": "/backend/index.cjs"
-    },
     {
       "src": "/assets/(.*)",
       "dest": "/assets/$1"
