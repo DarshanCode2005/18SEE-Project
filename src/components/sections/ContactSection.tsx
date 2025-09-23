@@ -13,58 +13,31 @@ import {
   ExternalLink,
   Building
 } from "lucide-react";
+import { useForm } from "react-hook-form";
+import useWeb3Forms from "@web3forms/react";
 
 export const ContactSection = () => {
-  const [formData, setFormData] = useState({
-    name: "",
-    email: "",
-    subject: "",
-    message: ""
+ const {
+    register,
+    handleSubmit,
+    reset,
+    formState: { errors }
+  } = useForm();
+
+  const { submit } = useWeb3Forms({
+    access_key: "ef31016c-6016-4107-b186-1501acd01a92",
+    settings: {
+      from_name: "Symposium Contact Form",
+      subject: "New Contact Form Submission",
+    },
+    onSuccess: (msg, data) => {
+      alert("Message sent successfully!");
+      reset(); // clear form after success
+    },
+    onError: (msg, data) => {
+      alert("Something went wrong. Please try again.");
+    },
   });
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Form submitted:", formData);
-
-    try {
-      const response = await fetch('https://formsubmit.co/662ad6d33d5cd9f5f54ef6b93f15d496', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          subject: formData.subject,
-          message: formData.message,
-          _subject: `New contact from ${formData.name}: ${formData.subject}`,
-        })
-      });
-
-      if (response.ok) {
-        alert("Message sent successfully!");
-        setFormData({
-          name: "",
-          email: "",
-          subject: "",
-          message: ""
-        });
-      } else {
-        throw new Error('Failed to send message');
-      }
-    } catch (error) {
-      console.error("Error sending message:", error);
-      alert("An error occurred. Please try again later.");
-    }
-  };
-
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
-    setFormData(prev => ({
-      ...prev,
-      [e.target.name]: e.target.value
-    }));
-  };
 
   const contactInfo = [
     {
@@ -219,87 +192,79 @@ export const ContactSection = () => {
 
           {/* Contact Form */}
           <div className="lg:col-span-2 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-            <Card className="border-0 shadow-card bg-gradient-card">
-              <CardHeader>
-                <CardTitle className="font-serif text-2xl">
-                  Send us a Message
-                </CardTitle>
-                <p className="text-muted-foreground">
-                  Fill out the form below and we'll get back to you within 24 hours.
-                </p>
-              </CardHeader>
-              <CardContent>
-                <form onSubmit={handleSubmit} className="space-y-6">
-                  <div className="grid md:grid-cols-2 gap-4">
-                    <div>
-                      <label className="text-sm font-medium text-foreground mb-2 block">
-                        Full Name *
-                      </label>
-                      <Input
-                        name="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        placeholder="Enter your full name"
-                        required
-                        className="border-border"
-                      />
-                    </div>
-                    <div>
-                      <label className="text-sm font-medium text-foreground mb-2 block">
-                        Email Address *
-                      </label>
-                      <Input
-                        name="email"
-                        type="email"
-                        value={formData.email}
-                        onChange={handleChange}
-                        placeholder="Enter your email"
-                        required
-                        className="border-border"
-                      />
-                    </div>
-                  </div>
-
+          <Card className="border-0 shadow-card bg-gradient-card">
+            <CardHeader>
+              <CardTitle className="font-serif text-2xl">
+                Send us a Message
+              </CardTitle>
+              <p className="text-muted-foreground">
+                Fill out the form below and we'll get back to you within 24 hours.
+              </p>
+            </CardHeader>
+            <CardContent>
+              <form onSubmit={handleSubmit(submit)} className="space-y-6">
+                <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="text-sm font-medium text-foreground mb-2 block">
-                      Subject *
+                      Full Name *
                     </label>
                     <Input
-                      name="subject"
-                      value={formData.subject}
-                      onChange={handleChange}
-                      placeholder="What is this regarding?"
-                      required
+                      {...register("name", { required: "Name is required" })}
+                      placeholder="Enter your full name"
                       className="border-border"
                     />
+                    {errors.name?.message && <p className="text-red-500 text-xs">{String(errors.name.message)}</p>}
                   </div>
-
                   <div>
                     <label className="text-sm font-medium text-foreground mb-2 block">
-                      Message *
+                      Email Address *
                     </label>
-                    <Textarea
-                      name="message"
-                      value={formData.message}
-                      onChange={handleChange}
-                      placeholder="Please provide details about your inquiry..."
-                      rows={6}
-                      required
-                      className="border-border resize-none"
+                    <Input
+                      type="email"
+                      {...register("email", { required: "Email is required" })}
+                      placeholder="Enter your email"
+                      className="border-border"
                     />
+                    {errors.email && <p className="text-red-500 text-xs">{String(errors.email.message)}</p>}
                   </div>
+                </div>
 
-                  <Button
-                    type="submit"
-                    className="bg-gradient-primary border-0 w-full sm:w-auto"
-                    size="lg"
-                  >
-                    <Send className="h-4 w-4 mr-2" />
-                    Send Message
-                  </Button>
-                </form>
-              </CardContent>
-            </Card>
+                <div>
+                  <label className="text-sm font-medium text-foreground mb-2 block">
+                    Subject *
+                  </label>
+                  <Input
+                    {...register("subject", { required: "Subject is required" })}
+                    placeholder="What is this regarding?"
+                    className="border-border"
+                  />
+                  {errors.subject && <p className="text-red-500 text-xs">{String(errors.subject.message)}</p>}
+                </div>
+
+                <div>
+                  <label className="text-sm font-medium text-foreground mb-2 block">
+                    Message *
+                  </label>
+                  <Textarea
+                    rows={6}
+                    {...register("message", { required: "Message is required" })}
+                    placeholder="Please provide details about your inquiry..."
+                    className="border-border resize-none"
+                  />
+                  {errors.message && <p className="text-red-500 text-xs">{String(errors.message.message)}</p>}
+                </div>
+
+                <Button
+                  type="submit"
+                  className="bg-gradient-primary border-0 w-full sm:w-auto"
+                  size="lg"
+                >
+                  <Send className="h-4 w-4 mr-2" />
+                  Send Message
+                </Button>
+              </form>
+            </CardContent>
+          </Card>
           </div>
         </div>
 
