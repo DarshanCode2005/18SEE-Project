@@ -6,12 +6,10 @@ import Image1 from "@/assets/ISET.svg";
 import Image2 from "@/assets/IITR_organiser_logo.png";
 
 const milestones = [
-  { label: "Last date of receipt of abstract", date: "2025-12-15T00:00:00" },
-  { label: "Acceptance of abstracts", date: "2026-01-15T00:00:00" },
-  { label: "Full-length manuscript submission", date: "2026-03-15T00:00:00" },
-  { label: "Intimation of acceptance / Reviewer comments", date: "2026-04-30T00:00:00" },
-  { label: "Submission of final revised manuscripts", date: "2026-05-15T00:00:00" },
-  { label: "Symposium Start", date: "2026-12-10T09:00:00" },
+  { label: "Abstract submission ends on", date: "2025-12-15T00:00:00" },
+  { label: "Confirmation of acceptance of abstracts", date: "2026-01-15T00:00:00" },
+  { label: "Full-length manuscript submission closes on", date: "2026-03-15T00:00:00" },
+  { label: "Symposium Starts on", date: "2026-12-10T09:00:00" },
 ];
 
 export const HeroSection = () => {
@@ -62,7 +60,7 @@ export const HeroSection = () => {
     : "Dec 10, 2026";
 
   const headingText = nextEvent
-    ? (nextEvent.label === "Symposium Start" ? "Conference Starts In" : `Next: ${nextEvent.label}`)
+    ? (nextEvent.label === "Symposium Start" ? "Conference Starts In" : `${nextEvent.label}`)
     : "Event Starts In";
 
   return <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
@@ -106,14 +104,31 @@ export const HeroSection = () => {
             Department of Earthquake Engineering
           </p>
           
-          <p className="text-2xl sm:text-3xl text-primary-foreground/80 mb-8 font-bold tracking-widest">
-               Institute of Technology Roorkee
+          <p className="text-2xl sm:text-3xl text-primary-foreground/80 mb-8 font-bold">
+               Indian Institute of Technology Roorkee
           </p>
 
           {/* Countdown Timer */}
           <div className="bg-card/10 backdrop-blur-sm rounded-2xl p-6 mb-8 border border-primary-foreground/20 max-w-2xl mx-auto">
             <h3 className="text-lg font-semibold text-primary-foreground mb-1">{headingText}</h3>
-            {nextEvent && <p className="text-sm text-primary-foreground/80 mb-4">{nextEvent.date.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}</p>}
+            {nextEvent && (
+              <p className="text-md text-primary-foreground/80 mb-4 animate-blink">
+              {nextEvent.date.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}
+              </p>
+            )}
+            <style>
+              {`
+              @keyframes blink {
+                0%, 100% { opacity: 1; }
+                50% { opacity: 0.2; }
+              }
+
+              .animate-blink {
+                animation: blink 1s ease-in-out infinite;
+              }
+
+              `}
+            </style>
             <div className="grid grid-cols-4 gap-4">
               {Object.entries(timeLeft).map(([unit, value]) => <div key={unit} className="text-center">
                   <div className="bg-primary-foreground/20 rounded-lg p-3 mb-2">
@@ -124,7 +139,6 @@ export const HeroSection = () => {
                   <span className="text-sm text-primary-foreground/80 capitalize">{unit}</span>
                 </div>)}
             </div>
-            {symposiumStartText && <p className="text-xs text-primary-foreground/70 mt-4">Conference start: {symposiumStartText}</p>}
           </div>
 
           {/* Call to Action */}
