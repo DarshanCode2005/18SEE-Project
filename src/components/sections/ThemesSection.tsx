@@ -235,7 +235,7 @@ export const ThemesSection = () => {
                 Present Your Research
               </h3>
               <p className="text-primary-foreground/90 text-lg mb-6 leading-relaxed">
-                We invite researchers, practitioners, innovators and students to share their innovative work 
+                We invite researchers, practitioners, innovators and students to share their original work 
                 across these themes. Submit your abstracts (around 300 words) and contribute to advancing earthquake engineering.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
