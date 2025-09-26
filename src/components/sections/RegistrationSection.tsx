@@ -38,7 +38,7 @@ export const RegistrationSection = () => {
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Join leading researchers, practitioners, and students from around the world. 
-            Early bird registration offers significant savings – <a href="/registration-soon" className="text-primary font-bold">register</a> now!
+            Early bird registration offers significant savings – <a href={`${import.meta.env.BASE_URL || '/'}registration-soon`} className="text-primary font-bold">register</a> now!
           </p>
         </div>
         {/* Pricing Widget */}

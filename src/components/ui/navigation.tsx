@@ -12,7 +12,9 @@ export const Navigation = ({
 }: NavigationProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
-  const isLanding = window.location.pathname === "/";
+  const baseUrl = import.meta.env.BASE_URL || "/";
+  const normalizedBase = baseUrl.endsWith("/") ? baseUrl : `${baseUrl}/`;
+  const isLanding = window.location.pathname === normalizedBase || window.location.pathname === normalizedBase.slice(0, -1);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -23,38 +25,39 @@ export const Navigation = ({
   }, []);
 
   // Nav links: on landing page use section anchors, on other pages use /#section
+  const toBase = (path: string) => `${normalizedBase}${path.replace(/^\//, "")}`;
   const navItems = [
     {
       name: "Home",
-      href: isLanding ? "#home" : "/#home"
+      href: isLanding ? "#home" : toBase("/#home")
     },
     {
       name: "About",
-      href: isLanding ? "#about" : "/#about"
+      href: isLanding ? "#about" : toBase("/#about")
     },
     {
       name: "Themes",
-      href: isLanding ? "#themes" : "/#themes"
+      href: isLanding ? "#themes" : toBase("/#themes")
     },
     {
       name: "Schedule",
-      href: "/schedule"
+      href: toBase("/schedule")
     },
     {
       name: "Committee",
-      href: "/committee"
+      href: toBase("/committee")
     },
     {
       name: "Gallery",
-      href: isLanding ? "#gallery" : "/#gallery"
+      href: isLanding ? "#gallery" : toBase("/#gallery")
     },
     {
       name: "Registration",
-      href: isLanding ? "#registration" : "/#registration"
+      href: isLanding ? "#registration" : toBase("/#registration")
     },
     {
       name: "Contact",
-      href: isLanding ? "#contact" : "/#contact"
+      href: isLanding ? "#contact" : toBase("/#contact")
     }
   ];
 
@@ -119,13 +122,13 @@ export const Navigation = ({
               ))}
               <div className="pt-4 border-t border-border">
                 <div className="flex flex-col space-y-3">
-                  <Button variant="outline" size="lg" className="text-lg px-5 py-3" asChild>
-                    <a href="/schedule.pdf" download>
+              <Button variant="outline" size="lg" className="text-lg px-5 py-3" asChild>
+                    <a href={toBase("/schedule.pdf")} download>
                       Download Brochure
                     </a>
                   </Button>
                   <Button size="lg" className="bg-gradient-primary border-0 text-lg px-5 py-3" asChild>
-                    <a href="/registration-soon">Register Now</a>
+                    <a href={toBase("/registration-soon")}>Register Now</a>
                   </Button>
                 </div>
               </div>

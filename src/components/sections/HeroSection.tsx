@@ -94,7 +94,6 @@ export const HeroSection = () => {
           {/* Event Details */}
           <div className="flex flex-wrap justify-center gap-6 mb-8 text-primary-foreground/90">
             <div className="flex items-center space-x-2">
-              <Calendar className="h-5 w-5" />
               <span className="font-bold text-xl sm:text-2xl lg:text-3xl text-secondary bg-clip-text tracking-wide">
                 December 10–12, 2026
               </span>
@@ -110,23 +109,33 @@ export const HeroSection = () => {
 
           {/* Countdown Timer */}
           <div className="bg-card/10 backdrop-blur-sm rounded-2xl p-6 mb-8 border border-primary-foreground/20 max-w-2xl mx-auto">
-            <h3 className="text-lg font-semibold text-primary-foreground mb-1">{headingText}</h3>
+            <h3 className="text-2xl font-semibold text-primary-foreground mb-1">{headingText}</h3>
             {nextEvent && (
-              <p className="text-md text-primary-foreground/80 mb-4 animate-blink">
-              {nextEvent.date.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}
+              <p className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground mb-4 animate-blink mx-auto w-auto">
+                {nextEvent.date.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}
               </p>
             )}
             <style>
               {`
-              @keyframes blink {
-                0%, 100% { opacity: 1; }
-                50% { opacity: 0.2; }
-              }
+                @keyframes blinkGlow {
+                  0%, 100% {
+                    opacity: 1;
+                    filter: drop-shadow(0 0 6px rgba(255, 215, 0, 0.6));
+                  }
+                  50% {
+                    opacity: 0.35;
+                    filter: drop-shadow(0 0 14px rgba(255, 215, 0, 1));
+                  }
+                }
 
-              .animate-blink {
-                animation: blink 1s ease-in-out infinite;
-              }
+                @keyframes popPulse {
+                  0%, 100% { transform: scale(1); }
+                  50% { transform: scale(1.03); }
+                }
 
+                .animate-blink {
+                  animation: blinkGlow 1.6s ease-in-out infinite, popPulse 3.2s ease-in-out infinite;
+                }
               `}
             </style>
             <div className="grid grid-cols-4 gap-4">
@@ -144,10 +153,10 @@ export const HeroSection = () => {
           {/* Call to Action */}
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <Button size="lg" className="bg-secondary hover:bg-secondary-dark text-secondary-foreground shadow-glow" asChild>
-              <a href="/registration-soon">Register Now</a>
+              <a href={`${import.meta.env.BASE_URL || '/'}registration-soon`}>Submit Abstract</a>
             </Button>
             <Button size="lg" variant="outline" className="border-primary-foreground bg-slate-100 text-slate-700" asChild>
-              <a href="/schedule.pdf" download>
+              <a href={`${import.meta.env.BASE_URL || '/'}schedule.pdf`} download>
                 <Download className="h-4 w-4 mr-2" />
                 Download Brochure
               </a>
