@@ -64,19 +64,19 @@ export const ContactSection = () => {
     {
       role: "Organizing Secretary",
       name: "Prof. Ravi S. Jakka",
-      department: "Department of Earthquake Engineering\nIIT Roorkee",
+      department: "DEE, IIT Roorkee",
       email: "ravi.jakka@eq.iitr.ac.in"
     },
     {
       role: "Joint Organizing Secretary",
       name: "Prof. Varun K. Singla",
-      department: "Department of Earthquake Engineering\nIIT Roorkee",
+      department: "DEE, IIT Roorkee",
       email: "singlav@eq.iitr.ac.in"
     },
     {
       role: "Joint Organizing Secretary",
       name: "Prof. Shiv Prakash",
-      department: "Department of Earthquake Engineering\nIIT Roorkee",
+      department: "DEE, IIT Roorkee",
       email: "shiv.prakash@eq.iitr.ac.in"
     }
   ];
@@ -86,7 +86,7 @@ export const ContactSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Section Header */}
-        <div className="text-center mb-16 animate-fade-in">
+        <div className="text-center mb-12 animate-fade-in">
           <Badge variant="outline" className="mb-4 bg-secondary/10 text-secondary border-secondary/20 text-2xl">
             Contact Us
           </Badge>
@@ -97,10 +97,10 @@ export const ContactSection = () => {
         </div>
 
         {/* Main Content */}
-        <div className="grid lg:grid-cols-3 gap-12">
+        <div className="grid lg:grid-cols-3 gap-8">
 
           {/* Contact Information */}
-          <div className="lg:col-span-1 space-y-6 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+          <div className="lg:col-span-1 space-y-2 animate-fade-in" style={{ animationDelay: '0.2s' }}>
             <Card className="border-0 shadow-card bg-gradient-card">
               <CardHeader>
                 <CardTitle className="font-serif text-xl flex items-center">
@@ -194,10 +194,10 @@ export const ContactSection = () => {
           <div className="lg:col-span-2 animate-fade-in" style={{ animationDelay: '0.4s' }}>
           <Card className="border-0 shadow-card bg-gradient-card">
             <CardHeader>
-              <CardTitle className="font-serif text-2xl">
+              <CardTitle className="font-serif text-3xl">
                 Send us a Message
               </CardTitle>
-              <p className="text-muted-foreground">
+              <p className="text-muted-foreground text-lg">
                 Fill out the form below and we'll get back to you within 24 hours.
               </p>
             </CardHeader>
@@ -205,7 +205,7 @@ export const ContactSection = () => {
               <form onSubmit={handleSubmit(submit)} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
-                    <label className="text-sm font-medium text-foreground mb-2 block">
+                    <label className="text-md font-medium text-foreground mb-2 block">
                       Full Name *
                     </label>
                     <Input
@@ -213,10 +213,10 @@ export const ContactSection = () => {
                       placeholder="Enter your full name"
                       className="border-border"
                     />
-                    {errors.name?.message && <p className="text-red-500 text-xs">{String(errors.name.message)}</p>}
+                    {errors.name?.message && <p className="text-red-500 text-sm">{String(errors.name.message)}</p>}
                   </div>
                   <div>
-                    <label className="text-sm font-medium text-foreground mb-2 block">
+                    <label className="text-md font-medium text-foreground mb-2 block">
                       Email Address *
                     </label>
                     <Input
@@ -225,12 +225,12 @@ export const ContactSection = () => {
                       placeholder="Enter your email"
                       className="border-border"
                     />
-                    {errors.email && <p className="text-red-500 text-xs">{String(errors.email.message)}</p>}
+                    {errors.email && <p className="text-red-500 text-sm">{String(errors.email.message)}</p>}
                   </div>
                 </div>
 
                 <div>
-                  <label className="text-sm font-medium text-foreground mb-2 block">
+                  <label className="text-md font-medium text-foreground mb-2 block">
                     Subject *
                   </label>
                   <Input
@@ -238,11 +238,11 @@ export const ContactSection = () => {
                     placeholder="What is this regarding?"
                     className="border-border"
                   />
-                  {errors.subject && <p className="text-red-500 text-xs">{String(errors.subject.message)}</p>}
+                  {errors.subject && <p className="text-red-500 text-sm">{String(errors.subject.message)}</p>}
                 </div>
 
                 <div>
-                  <label className="text-sm font-medium text-foreground mb-2 block">
+                  <label className="text-md font-medium text-foreground mb-2 block">
                     Message *
                   </label>
                   <Textarea
@@ -251,7 +251,7 @@ export const ContactSection = () => {
                     placeholder="Please provide details about your inquiry..."
                     className="border-border resize-none"
                   />
-                  {errors.message && <p className="text-red-500 text-xs">{String(errors.message.message)}</p>}
+                  {errors.message && <p className="text-red-500 text-sm">{String(errors.message.message)}</p>}
                 </div>
 
                 <Button

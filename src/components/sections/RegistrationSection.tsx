@@ -31,7 +31,7 @@ export const RegistrationSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
-          <span className="mb-4 text-xl inline-block bg-secondary/10 text-secondary border border-secondary/20 rounded-full px-4 py-2 font-semibold">Registration</span>
+          <span className="mb-4 text-2xl inline-block bg-secondary/10 text-secondary border border-secondary/20 rounded-full px-4 py-2 font-semibold">Registration</span>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Secure Your Spot at
             <span className="block text-primary font-montserrat">18SEE-2026</span>

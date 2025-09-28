@@ -1,11 +1,11 @@
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Separator } from "@/components/ui/separator";
-import { 
-  Activity, 
-  BookOpen, 
-  Users, 
-  Award, 
+import {
+  Activity,
+  BookOpen,
+  Users,
+  Award,
   Globe,
   TrendingUp,
   ExternalLink,
@@ -47,50 +47,50 @@ export const AboutSection = () => {
   ];
 
   return (
-    <section id="about" className="py-20 bg-gradient-card">
+    <section id="about" className="pt-20 pb-12 bg-gradient-card">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
           {/* <Badge variant="outline" className="mb-4 bg-primary/10 text-xl border-primary/20">
             About the Symposium
           </Badge> */}
-         {/* <section className="max-w-8xl mx-auto text-center py-10"> */}
-<div className="animate-fade-in" style={{ animationDelay: '0.3s' }}>
-  <Card className="border-0 shadow-card bg-gradient-card">
-    <CardContent className="p-8">
-      <div className="flex items-center space-x-3 mb-6">
-  <img src={iitrlogo} alt="IITR Logo" className="h-16 w-21" style={{marginLeft:'-1rem'}}/>
-        <h3 className="font-montserrat text-2xl font-semibold text-foreground" style={{marginLeft: '0rem'}}>
-          About 18SEE
-        </h3>
-      </div>
-  <ul className="text-lg text-muted-foreground space-y-4 leading-relaxed list-disc list-outside pl-6 text-left ml-4">
-        <li>
-          <span className="font-semibold">Legacy of Excellence:</span> Continuing IIT Roorkee’s tradition of pioneering research in earthquake engineering since 1960s.
-        </li>
-        <li>
-          <span className="font-semibold">Global Gathering:</span> Bringing together leading researchers, practitioners, and policymakers from around the world.
-        </li>
-        <li>
-          <span className="font-semibold">Knowledge Exchange:</span> Showcasing breakthroughs in seismic analysis, design methodologies, and disaster resilience.
-        </li>
-        <li>
-          <span className="font-semibold">Future Focus:</span> Shaping the next generation of earthquake-resistant infrastructure and safer communities.
-        </li>
-      </ul>
-    </CardContent>
-  </Card>
-</div>
+          {/* <section className="max-w-8xl mx-auto text-center py-10"> */}
+          <div className="animate-fade-in" style={{ animationDelay: '0.3s' }}>
+            <Card className="border-0 shadow-card bg-gradient-card">
+              <CardContent className="p-8">
+                <div className="flex items-center space-x-3 mb-6">
+                  <img src={iitrlogo} alt="IITR Logo" className="h-16 w-21" style={{ marginLeft: '-1rem' }} />
+                  <h3 className="font-montserrat text-2xl font-semibold text-foreground" style={{ marginLeft: '0rem' }}>
+                    About 18SEE
+                  </h3>
+                </div>
+                <ul className="text-lg text-muted-foreground space-y-4 leading-relaxed list-disc list-outside pl-6 text-left ml-4">
+                  <li>
+                    <span className="font-semibold">Legacy of Excellence:</span> Continuing IIT Roorkee’s tradition of pioneering research in earthquake engineering since 1960s.
+                  </li>
+                  <li>
+                    <span className="font-semibold">Global Gathering:</span> Bringing together leading researchers, practitioners, and policymakers from around the world.
+                  </li>
+                  <li>
+                    <span className="font-semibold">Knowledge Exchange:</span> Showcasing breakthroughs in seismic analysis, design methodologies, and disaster resilience.
+                  </li>
+                  <li>
+                    <span className="font-semibold">Future Focus:</span> Shaping the next generation of earthquake-resistant infrastructure and safer communities.
+                  </li>
+                </ul>
+              </CardContent>
+            </Card>
+          </div>
 
 
-  
-{/* </section> */}
+
+          {/* </section> */}
 
         </div>
 
         {/* Main Content - Responsive Grid with Vertical Separator and Equal Height Columns */}
-        <div className="grid grid-cols-1 md:[grid-template-columns:1fr_auto_1fr] gap-10 md:gap-12 items-stretch mb-16">
+        <div className="grid grid-cols-1 md:[grid-template-columns:1fr_auto_1fr] gap-10 md:gap-12 items-stretch mb-12">
           {/* Left Column */}
           <div className="flex flex-col gap-10 h-full">
             {/* Department of Earthquake Engineering */}
@@ -112,23 +112,23 @@ export const AboutSection = () => {
                     </h3>
                   </div>
                   <div className="space-y-4 text-muted-foreground leading-relaxed">
-                  <p>
-                      The Indian Institute of Technology Roorkee, established in 1847, stands as one of India's 
-                      oldest and most prestigious technical institutions. Originally founded as the Roorkee College, 
+                    <p>
+                      The Indian Institute of Technology Roorkee, established in 1847, stands as one of India's
+                      oldest and most prestigious technical institutions. Originally founded as the Roorkee College,
                       it has evolved into a world-class center of excellence in engineering, technology, and research.
                     </p>
                     <p>
-                      Established in 1960, the Department of Earthquake Engineering at IIT Roorkee was the 
-                      first of its kind in India and among the earliest in the world. The department has been 
+                      Established in 1960, the Department of Earthquake Engineering at IIT Roorkee was the
+                      first of its kind in India and among the earliest in the world. The department has been
                       instrumental in developing India's seismic design codes and guidelines.
                     </p>
                     <p>
-                      With state-of-the-art laboratories including the National Seismic Test Facility, shake tables, 
-                      and advanced instrumentation, the department conducts cutting-edge research in seismic hazard 
+                      With state-of-the-art laboratories including the National Seismic Test Facility, shake tables,
+                      and advanced instrumentation, the department conducts cutting-edge research in seismic hazard
                       assessment, structural dynamics, geotechnical earthquake engineering, and disaster risk management.
                     </p>
                     <p>
-                      Our faculty and researchers have contributed to major projects worldwide, from earthquake-resistant 
+                      Our faculty and researchers have contributed to major projects worldwide, from earthquake-resistant
                       design of critical infrastructure to post-earthquake damage assessment and rehabilitation strategies.
                     </p>
                   </div>
@@ -153,7 +153,7 @@ export const AboutSection = () => {
                       </a>
                     </h3>
                   </div> */}
-                  {/* <div className="space-y-4 text-muted-foreground leading-relaxed">
+            {/* <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>
                       The Indian Institute of Technology Roorkee, established in 1847, stands as one of India's 
                       oldest and most prestigious technical institutions. Originally founded as the Roorkee College, 
@@ -166,7 +166,7 @@ export const AboutSection = () => {
                       research across multiple disciplines.
                     </p>
                   </div> */}
-                {/* </CardContent>
+            {/* </CardContent>
               </Card>
             </div> */}
           </div>
@@ -185,7 +185,7 @@ export const AboutSection = () => {
                   <div className="flex items-center space-x-3 mb-6">
                     <Earth className="h-8 w-8 text-secondary" />
                     <h3 className="font-serif text-2xl font-semibold text-foreground">
-                    <a
+                      <a
                         href="https://iset.org.in/"
                         target="_blank"
                         rel="noopener noreferrer"

@@ -30,6 +30,7 @@ export const FooterSection = () => {
 
   const socialLinks = [
     { name: "LinkedIn", icon: <Linkedin className="h-5 w-5" />, href: "https://www.linkedin.com/in/deqiitr/" },
+    { name: "Instagram", icon: <Instagram className="h-5 w-5" />, href: "https://www.instagram.com/see_deq_iitr" },
     { name: "X", icon: <Twitter className="h-5 w-5" />, href: "https://x.com/deq_iitr" },
     { name: "YouTube", icon: <Youtube className="h-5 w-5" />, href: "https://www.youtube.com/@depatmentofearthquakeengin8468" }
   ];
@@ -46,20 +47,20 @@ export const FooterSection = () => {
             <div className="lg:col-span-1">
 
               {/* Contact Info */}
-              <div className="space-y-3">
-                <div className="flex items-center space-x-3">
+              <div className="space-y-6">
+                <div className="flex items-center space-x-4">
                   <Mail className="h-4 w-4 text-secondary" />
                   <a href="mailto:18see@iitr.ac.in" className="text-primary-foreground/90 hover:text-secondary transition-colors">
                     18see@iitr.ac.in
                   </a>
                 </div>
-                <div className="flex items-center space-x-3">
+                <div className="flex items-center space-x-4">
                   <Phone className="h-4 w-4 text-secondary" />
                   <a href="tel:+911332285591" className="text-primary-foreground/90 hover:text-secondary transition-colors">
                     +91-1332-285591<br />+91-1332-285710 <br /> +91-1332-285675
                   </a>
                 </div>
-                <div className="flex items-start space-x-3">
+                <div className="flex items-start space-x-4">
                   <MapPin className="h-4 w-4 text-secondary mt-1" />
                   <address className="text-xs text-primary-foreground/90 not-italic">
                     Department of Earthquake Engineering<br />
@@ -71,13 +72,13 @@ export const FooterSection = () => {
 
             {/* Quick Links */}
             <div>
-              <h4 className="font-semibold text-lg mb-6">Quick Links</h4>
+              <h4 className="font-semibold text-xl mb-6">Quick Links</h4>
               <ul className="space-y-3">
                 {quickLinks.map((link) => (
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-primary-foreground/80 hover:text-secondary transition-colors text-sm"
+                      className="text-primary-foreground/80 hover:text-secondary transition-colors text-md"
                     >
                       {link.name}
                     </a>
@@ -94,12 +95,12 @@ export const FooterSection = () => {
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-primary-foreground/80 hover:text-secondary transition-colors text-sm flex items-center"
+                      className="text-primary-foreground/80 hover:text-secondary transition-colors text-md flex items-center"
                       target={link.external ? "_blank" : undefined}
                       rel={link.external ? "noopener noreferrer" : undefined}
                     >
                       {link.name}
-                      {link.external && <ExternalLink className="h-3 w-3 ml-1" />}
+                      {link.external && <ExternalLink className="h-3 w-3" />}
                     </a>
                   </li>
                 ))}
@@ -110,7 +111,7 @@ export const FooterSection = () => {
             <div>
               <NewsletterForm variant="footer" />
               <div className="flex items-center space-x-3 mb-6 mt-12">
-                <div className="w-20 h-20 flex items-center justify-center">
+                <div className="w-24 h-24 flex items-center justify-center">
                   <img
                     src={iitrLogo}
                     alt="IIT Roorkee Logo"
