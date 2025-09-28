@@ -40,7 +40,7 @@ export const FooterSection = () => {
     {
       name: "Instagram",
       icon: <Instagram className="h-5 w-5" />,
-      href: "https://www.instagram.com/see_deq_iitr"
+      href: "https://www.instagram.com/see_deq_iitr?igsh=MWJtNWVjdzUwOHZ3cQ=="
     },
     {
       name: "X",
@@ -60,7 +60,7 @@ export const FooterSection = () => {
 
         {/* Main Footer Content */}
         <div className="py-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-4">
 
             {/* Contact Info */}
             <div className="lg:col-span-1">
@@ -80,7 +80,7 @@ export const FooterSection = () => {
                     href="tel:+911332285591"
                     className="text-primary-foreground/90 hover:text-secondary transition-colors"
                   >
-                    +91-1332-285591<br />+91-1332-285710 <br />+91-1332-285675
+                    +91-1332-285710 <br />+91-1332-285675<br />+91-1332-285591
                   </a>
                 </div>
                 <div className="flex items-start space-x-3">
@@ -95,7 +95,7 @@ export const FooterSection = () => {
             </div>
 
             {/* Quick Links */}
-            <div>
+            <div className="md:ml-0">
               <h4 className="font-semibold text-lg mb-4">Quick Links</h4>
               <ul className="space-y-2">
                 {quickLinks.map((link) => (

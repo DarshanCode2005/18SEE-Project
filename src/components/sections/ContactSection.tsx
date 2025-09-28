@@ -49,8 +49,7 @@ export const ContactSection = () => {
     {
       icon: <Phone className="h-5 w-5" />,
       title: "Phone",
-      content: "+91-1332-285591\n+91-1332-285710\n+91-1332-285675",
-      action: "tel:+911332285591"
+      content: "+91-1332-285710\n+91-1332-285675\n+91-1332-285591",
     },
     {
       icon: <MapPin className="h-5 w-5" />,
@@ -64,19 +63,19 @@ export const ContactSection = () => {
     {
       role: "Organizing Secretary",
       name: "Prof. Ravi S. Jakka",
-      department: "DEE, IIT Roorkee",
+      department: "DEQ, IIT Roorkee",
       email: "ravi.jakka@eq.iitr.ac.in"
     },
     {
       role: "Joint Organizing Secretary",
       name: "Prof. Varun K. Singla",
-      department: "DEE, IIT Roorkee",
+      department: "DEQ, IIT Roorkee",
       email: "singlav@eq.iitr.ac.in"
     },
     {
       role: "Joint Organizing Secretary",
       name: "Prof. Shiv Prakash",
-      department: "DEE, IIT Roorkee",
+      department: "DEQ, IIT Roorkee",
       email: "shiv.prakash@eq.iitr.ac.in"
     }
   ];
@@ -110,7 +109,7 @@ export const ContactSection = () => {
               </CardHeader>
               <CardContent className="space-y-6">
                 {contactInfo.map((info, index) => (
-                  <div key={index} className="flex items-start space-x-3">
+                  <div key={index} className="flex items-center space-x-3">
                     <div className="bg-primary/10 p-2 rounded-lg">
                       <div className="text-primary">
                         {info.icon}
@@ -120,8 +119,8 @@ export const ContactSection = () => {
                       {/* <h4 className="font-semibold text-foreground text-sm">
                         {info.title}
                       </h4> */}
-                      {info.title === "Address" ? (
-                        <div className="mt-1">
+                      {(info.title === "Address") ? (
+                        <div>
                           {info.action ? (
                             <a
                               href={info.action}
@@ -138,8 +137,19 @@ export const ContactSection = () => {
                             </>
                           )}
                         </div>
-                      ) : (
-                        <div className="text-muted-foreground text-sm mt-1 whitespace-pre-line">
+                      ) : (info.title === "Phone") ?
+                      <div className="text-muted-foreground text-sm whitespace-pre-line">
+                          {info.action ? (
+                            <p
+                              className="hover:text-primary transition-colors flex items-center"
+                            >
+                              {info.content}
+                            </p>
+                          ) : (
+                            info.content
+                          )}
+                        </div> :(
+                        <div className="text-muted-foreground text-sm whitespace-pre-line">
                           {info.action ? (
                             <a
                               href={info.action}
