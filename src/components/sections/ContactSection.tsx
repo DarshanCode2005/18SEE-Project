@@ -117,9 +117,9 @@ export const ContactSection = () => {
                       </div>
                     </div>
                     <div className="flex-1">
-                      <h4 className="font-semibold text-foreground text-sm">
+                      {/* <h4 className="font-semibold text-foreground text-sm">
                         {info.title}
-                      </h4>
+                      </h4> */}
                       {info.title === "Address" ? (
                         <div className="mt-1">
                           {info.action ? (

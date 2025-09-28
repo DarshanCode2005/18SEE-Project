@@ -367,7 +367,7 @@ export const ThemesSection = () => {
             <Card className="relative border-2 border-primary/20 shadow-xl bg-gradient-to-br from-background via-background to-muted/30 backdrop-blur-sm">
               <CardContent className="p-8">
                 <div className="text-center mb-8">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-primary rounded-full mb-4 shadow-lg">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-secondary rounded-full mb-4 shadow-lg">
                     <a
                       href="https://calendar.google.com/"
                       target="_blank"
@@ -380,8 +380,8 @@ export const ThemesSection = () => {
                       </svg>
                     </a>
                   </div>
-                 <h3 className="text-3xl md:text-4xl font-bold text-secondary mb-2">
-  ⚡ Important Dates
+                 <h3 className="text-3xl md:text-4xl font-bold text-red-600 mb-2">
+Important Dates !
 </h3>
 
                 </div>
@@ -423,12 +423,12 @@ export const ThemesSection = () => {
                         const dateText = isNext ? "text-red-600" : "text-yellow-700";
                         const labelText = isNext ? "text-red-700" : "text-yellow-800";
                         return (
-                          <div key={idx} className={`flex flex-col items-center p-8 border-2 rounded-xl shadow-md min-h-[180px] min-w-[260px] ${cardBg}`}>
+                          <div key={idx} className={`flex flex-col items-center py-8 px-4 border-2 rounded-xl shadow-md min-h-[180px] min-w-[260px] ${cardBg}`}>
                             <div className="flex flex-col items-center justify-start min-h-[80px]">
-                              <div className={`w-4 h-4 rounded-full mb-2 ${dotBg}`}></div>
+                              <div className={`w-4 h-4 rounded-full mb-6 ${dotBg}`}></div>
                               <p className={`text-xl font-bold mb-1 ${dateText}`}>{d.display}</p>
                             </div>
-                            <p className={`text-base font-semibold text-center mt-2 ${labelText}`}>{d.label}</p>
+                            <p className={`text-lg font-semibold text-center mt-2 ${labelText}`}>{d.label}</p>
                           </div>
                         );
                       })}
