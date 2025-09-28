@@ -87,9 +87,9 @@ export const ContactSection = () => {
 
         {/* Section Header */}
         <div className="text-center mb-12 animate-fade-in">
-          <Badge variant="outline" className="mb-4 bg-secondary/10 text-secondary border-secondary/20 text-2xl">
-            Contact Us
-          </Badge>
+          <Badge variant="outline" className="mb-4 bg-secondary/10 text-secondary border-secondary/20 text-2xl px-4 py-2">
+          Contact Us
+        </Badge>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Have questions about the symposium? Need assistance with registration or submissions?
             Our organizing team is ready to assist you.
@@ -97,11 +97,11 @@ export const ContactSection = () => {
         </div>
 
         {/* Main Content */}
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-3 gap-8 items-stretch">
 
           {/* Contact Information */}
-          <div className="lg:col-span-1 space-y-2 animate-fade-in" style={{ animationDelay: '0.2s' }}>
-            <Card className="border-0 shadow-card bg-gradient-card">
+          <div className="lg:col-span-1 flex flex-col space-y-2 animate-fade-in" style={{ animationDelay: '0.2s' }}>
+            <Card className="border-0 shadow-card bg-gradient-card flex-1">
               <CardHeader>
                 <CardTitle className="font-serif text-xl flex items-center">
                   <Building className="h-5 w-5 text-primary mr-3" />
@@ -160,7 +160,7 @@ export const ContactSection = () => {
             </Card>
 
             {/* Key Contacts */}
-            <Card className="border-0 shadow-card bg-gradient-card">
+            <Card className="border-0 shadow-card bg-gradient-card flex-1">
               <CardHeader>
                 <CardTitle className="font-serif text-xl">
                   Key Contacts
@@ -191,8 +191,8 @@ export const ContactSection = () => {
           </div>
 
           {/* Contact Form */}
-          <div className="lg:col-span-2 animate-fade-in" style={{ animationDelay: '0.4s' }}>
-          <Card className="border-0 shadow-card bg-gradient-card">
+          <div className="lg:col-span-2 animate-fade-in flex" style={{ animationDelay: '0.4s' }}>
+          <Card className="border-0 shadow-card bg-gradient-card flex-1 flex flex-col">
             <CardHeader>
               <CardTitle className="font-serif text-3xl">
                 Send us a Message
@@ -201,8 +201,8 @@ export const ContactSection = () => {
                 Fill out the form below and we'll get back to you within 24 hours.
               </p>
             </CardHeader>
-            <CardContent>
-              <form onSubmit={handleSubmit(submit)} className="space-y-6">
+            <CardContent className="flex-1 flex flex-col">
+              <form onSubmit={handleSubmit(submit)} className="space-y-6 flex-1 flex flex-col">
                 <div className="grid md:grid-cols-2 gap-4">
                   <div>
                     <label className="text-md font-medium text-foreground mb-2 block">
@@ -241,27 +241,29 @@ export const ContactSection = () => {
                   {errors.subject && <p className="text-red-500 text-sm">{String(errors.subject.message)}</p>}
                 </div>
 
-                <div>
+                <div className="flex-1 flex flex-col">
                   <label className="text-md font-medium text-foreground mb-2 block">
                     Message *
                   </label>
                   <Textarea
-                    rows={6}
+                    rows={5}
                     {...register("message", { required: "Message is required" })}
                     placeholder="Please provide details about your inquiry..."
-                    className="border-border resize-none"
+                    className="border-border resize-none flex-1"
                   />
                   {errors.message && <p className="text-red-500 text-sm">{String(errors.message.message)}</p>}
                 </div>
 
-                <Button
-                  type="submit"
-                  className="bg-gradient-primary border-0 w-full sm:w-auto"
-                  size="lg"
-                >
-                  <Send className="h-4 w-4 mr-2" />
-                  Send Message
-                </Button>
+                <div className="pt-4">
+                  <Button
+                    type="submit"
+                    className="bg-gradient-primary border-0 w-full sm:w-auto"
+                    size="lg"
+                  >
+                    <Send className="h-4 w-4 mr-2" />
+                    Send Message
+                  </Button>
+                </div>
               </form>
             </CardContent>
           </Card>

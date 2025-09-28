@@ -1,7 +1,7 @@
 import { Navigation } from "@/components/ui/navigation";
 import { FooterSection } from "@/components/sections/FooterSection";
 import headshot from "@/assets/headshot_placeholder.png";
-import Image1 from "@/assets/Prof_Pant.jpg";
+import Image1 from "@/assets/Prof_Pant.png";
 import Image2 from "@/assets/Prof_Maheshwari.jpg";
 import Image3 from "@/assets/Prof_Jakka.png";
 import Image4 from "@/assets/Prof_Singla.png";

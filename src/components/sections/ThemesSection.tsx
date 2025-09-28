@@ -126,9 +126,9 @@ export const ThemesSection = () => {
         
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
-          <Badge variant="outline" className="mb-4 bg-secondary/10 text-2xl border-secondary/20 text-secondary">
-            Conference Themes
-          </Badge>
+          <Badge variant="outline" className="mb-4 bg-secondary/10 text-secondary border-secondary/20 text-2xl px-4 py-2">
+          Conference Themes
+        </Badge>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
             Dive deep into cutting-edge research areas that are shaping the next generation 
             of seismic engineering solutions and earthquake-resilient infrastructure.

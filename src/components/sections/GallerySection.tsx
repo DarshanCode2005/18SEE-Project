@@ -14,7 +14,7 @@ import GalleryImage7 from "@/assets/gallery_past_event_7.jpg";
 import GalleryImage8 from "@/assets/gallery_past_event_8.jpg";
 import VenueImage1 from "@/assets/gallery_venue_1.jpg";
 import VenueImage2 from "@/assets/gallery_venue_3.jpg";
-import VenueImage3 from "@/assets/gallery_venue_4.webp";
+import VenueImage3 from "@/assets/gallery_venue_4.jpg";
 interface MediaItem {
   id: string;
   type: 'image' | 'video';
