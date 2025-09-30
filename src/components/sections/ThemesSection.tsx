@@ -2,11 +2,11 @@ import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
-import { 
-  Waves, 
-  Building, 
-  Activity, 
-  Shield, 
+import {
+  Waves,
+  Building,
+  Activity,
+  Shield,
   Mountain,
   Radar,
   ChevronDown,
@@ -65,7 +65,7 @@ export const ThemesSection = () => {
   const [showAll, setShowAll] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const [guidelinesOpen, setGuidelinesOpen] = useState(false);
-  
+
   const themes = [
     { icon: <Activity className="h-5 w-5" />, title: "Engineering seismology and seismotectonics" },
     { icon: <AlertTriangle className="h-5 w-5" />, title: "Lessons from recent earthquakes and tsunamis" },
@@ -104,7 +104,7 @@ export const ThemesSection = () => {
     { icon: <School className="h-5 w-5" />, title: "Earthquake engineering education" },
     { icon: <Megaphone className="h-5 w-5" />, title: "Public awareness, participation, and enforcement of building safety laws" },
     { icon: <Clock className="h-5 w-5" />, title: "Earthquake prediction and early warning system" },
-  { icon: <Bot className="h-5 w-5" />, title: "Applications of artificial intelligence and machine learning in earthquake engineering" }
+    { icon: <Bot className="h-5 w-5" />, title: "Applications of artificial intelligence and machine learning in earthquake engineering" }
   ];
 
   // Only these 8 themes should be visible in the collapsed (show less) section
@@ -123,14 +123,14 @@ export const ThemesSection = () => {
   return (
     <section id="themes" className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
           <Badge variant="outline" className="mb-4 bg-secondary/10 text-secondary border-secondary/20 text-2xl px-4 py-2">
           Conference Themes
         </Badge>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
-            Dive deep into cutting-edge research areas that are shaping the next generation 
+            Dive deep into cutting-edge research areas that are shaping the next generation
             of seismic engineering solutions and earthquake-resilient infrastructure.
           </p>
         </div>
@@ -138,7 +138,7 @@ export const ThemesSection = () => {
         {/* Themes Grid */}
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {displayedThemes.map((theme, index) => (
-            <Card 
+            <Card
               key={index}
               className="group border border-border/50 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg animate-fade-in"
               style={{ animationDelay: `${index * 0.05}s` }}
@@ -235,7 +235,7 @@ export const ThemesSection = () => {
                 Present Your Research
               </h3>
               <p className="text-primary-foreground/90 text-lg mb-6 leading-relaxed">
-                We invite researchers, practitioners, innovators and students to share their original work 
+                We invite researchers, practitioners, innovators and students to share their original work
                 across these themes. Submit your abstracts (around 300 words) and contribute to advancing earthquake engineering.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -245,7 +245,7 @@ export const ThemesSection = () => {
                 <button
                   onClick={() => setGuidelinesOpen(true)}
                   className="border-2 border-primary-foreground text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary-foreground/10 transition-colors"
-                disabled={true}>
+                  disabled={true}>
                   Download Template
                 </button>
               </div>
@@ -272,7 +272,7 @@ export const ThemesSection = () => {
                     </ul>
                   </AccordionContent>
                 </AccordionItem>
-                
+
                 <AccordionItem value="formatting">
                   <AccordionTrigger>Abstract Formatting</AccordionTrigger>
                   <AccordionContent>
@@ -356,8 +356,8 @@ export const ThemesSection = () => {
           </DialogContent>
         </Dialog>
 
-  {/* Important Dates - Custom Responsive Grid */}
-  <div className="mt-12 max-w-7xl mx-auto">
+        {/* Important Dates - Custom Responsive Grid */}
+        <div className="mt-12 min-w-7xl mx-auto">
           <div className="relative">
             {/* Background decoration */}
             <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-secondary/5 to-primary/5 rounded-2xl"></div>
@@ -376,13 +376,13 @@ export const ThemesSection = () => {
                       className="cursor-pointer transition-transform hover:scale-110 active:scale-95"
                     >
                       <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                        <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
+                        <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
                       </svg>
                     </a>
                   </div>
-                 <h3 className="text-3xl md:text-4xl font-bold text-red-600 mb-2">
-Important Dates !
-</h3>
+                  <h3 className="text-3xl md:text-4xl font-bold text-red-600 mb-2">
+                    Important Dates !
+                  </h3>
 
                 </div>
                 {/* Custom Dates Grid */}
@@ -415,7 +415,7 @@ Important Dates !
                   // If all dates are past, highlight the last one
                   const highlightIdx = nextIdx === -1 ? importantDates.length - 1 : nextIdx;
                   return (
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                    <div className="grid gap-4 mb-8 grid-cols-[repeat(auto-fit,minmax(260px,1fr))]">
                       {importantDates.map((d, idx) => {
                         const isNext = idx === highlightIdx;
                         const cardBg = isNext ? "bg-red-500/10 border-red-500" : "bg-yellow-300/20 border-yellow-400";
@@ -423,7 +423,7 @@ Important Dates !
                         const dateText = isNext ? "text-red-600" : "text-yellow-700";
                         const labelText = isNext ? "text-red-700" : "text-yellow-800";
                         return (
-                          <div key={idx} className={`flex flex-col items-center py-8 px-4 border-2 rounded-xl shadow-md min-h-[180px] min-w-[260px] ${cardBg}`}>
+                          <div key={idx} className={`flex flex-col items-center py-8 px-4 border-2 rounded-xl shadow-md min-h-[180px] ${cardBg}`}>
                             <div className="flex flex-col items-center justify-start min-h-[80px]">
                               <div className={`w-4 h-4 rounded-full mb-6 ${dotBg}`}></div>
                               <p className={`text-xl font-bold mb-1 ${dateText}`}>{d.display}</p>
