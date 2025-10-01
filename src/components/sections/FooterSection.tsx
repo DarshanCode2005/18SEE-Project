@@ -83,7 +83,7 @@ export const FooterSection = () => {
                 </div>
                 <div className="flex items-start space-x-3">
                   <MapPin className="h-4 w-4 text-secondary flex-shrink-0 mt-0.5" />
-                  <address className="text-sm text-primary-foreground/90 not-italic leading-relaxed">
+                  <address className="text-xs text-primary-foreground/90 not-italic leading-relaxed">
                     Department of Earthquake Engineering<br />
                     Indian Institute of Technology Roorkee,<br />
                     Uttarakhand 247667, India
@@ -93,7 +93,7 @@ export const FooterSection = () => {
             </div>
 
             {/* Quick Links */}
-            <div>
+            <div className="lg:ml-[50px] md:ml-0 sm:ml-0">
               <h4 className="font-semibold text-base sm:text-lg mb-4">Quick Links</h4>
               <ul className="space-y-2">
                 {quickLinks.map((link) => (
@@ -140,7 +140,7 @@ export const FooterSection = () => {
                     className="w-full h-full object-cover rounded-full border-2 border-primary bg-white"
                   />
                 </div>
-                <div className="text-center sm:text-left">
+                <div className="text-center sm:text-left mt-2 sm:mt-0">
                   <h3 className="font-montserrat text-lg sm:text-xl font-bold tracking-tight">
                     18SEE-2026
                   </h3>
