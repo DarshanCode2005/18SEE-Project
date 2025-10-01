@@ -103,7 +103,7 @@ export const AboutSection = () => {
               <Card className="border-0 shadow-card bg-gradient-card h-full flex flex-col">
                 <CardContent className="p-8 flex-1 flex flex-col">
                   <div className="flex items-center space-x-3 mb-6">
-                    <Activity className="h-8 w-8 text-secondary" />
+                    {/* <Activity className="h-8 w-8 text-secondary" /> */}
                     <h3 className="font-serif text-2xl  font-semibold text-foreground">
                       <a
                         href="https://iitr.ac.in/Departments/Earthquake%20Department/Home.html"
@@ -119,9 +119,7 @@ export const AboutSection = () => {
                   <div className="space-y-4 text-muted-foreground leading-relaxed text-justify flex-1">
                   <p className="line-height-2">Established in 1960 (as the School for Research and Training in Earthquake Engineering at the erstwhile University of Roorkee), the Department of Earthquake Engineering at IIT Roorkee was among the earliest departments of its kind worldwide and the very first in India.</p>
 
-                  <p className="line-height-2">Equipped with state-of-the-art facilities such as the shake table laboratory, pseudo-dynamic testing laboratory, soil dynamics laboratory, foundation testing laboratory, and seismological observatory, the department spearheads advanced research in structural dynamics, geotechnical earthquake engineering, seismic hazard assessment, and seismic instrumentation.</p>
-
-                  <p className="line-height-2">It has also played a pioneering role in developing India's seismic design codes and guidelines. In addition, through its rigorous postgraduate programmes (M. Tech. and Ph.D.), the department nurtures and empowers the next generation of earthquake engineers, researchers, and educators.</p>
+                  <p className="line-height-2">Equipped with state-of-the-art facilities such as the shake table laboratory, pseudo-dynamic testing laboratory, soil dynamics laboratory, foundation testing laboratory, and seismological observatory, the department spearheads advanced research in structural dynamics, geotechnical earthquake engineering, seismic hazard assessment, and seismic instrumentation. It has also played a pioneering role in developing India's seismic design codes and guidelines. In addition, through its rigorous postgraduate programmes (M. Tech. and Ph.D.), the department nurtures and empowers the next generation of earthquake engineers, researchers, and educators.</p>
 
                   <p className="line-height-2">The Indian Institute of Technology Roorkee, one of India's oldest and most esteemed technical institutions, serves as the proud home to this distinguished department. Established in 1847 as Thomason College of Civil Engineering, IIT Roorkee has grown into a globally recognized hub for excellence in engineering, science, technology, and research.</p>  
 
@@ -177,7 +175,7 @@ export const AboutSection = () => {
               <Card className="border-0 shadow-card bg-gradient-card h-full">
                 <CardContent className="p-8">
                   <div className="flex items-center space-x-3 mb-6">
-                    <Earth className="h-8 w-8 text-secondary" />
+                    {/* <Earth className="h-8 w-8 text-secondary" /> */}
                     <h3 className="font-serif text-2xl font-semibold text-foreground">
                       <a
                         href="https://iset.org.in/"
