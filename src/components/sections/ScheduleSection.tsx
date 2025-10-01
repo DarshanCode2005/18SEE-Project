@@ -235,7 +235,7 @@ export const ScheduleSection = () => {
       <div className="container mx-auto px-4">
         <div className="text-center mb-12">
           <h2 className="text-3xl md:text-4xl font-bold text-primary mb-4">
-            Technical Program Schedule
+            Technical Program
           </h2>
           <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
             Three days packed with keynotes, technical sessions, workshops, and networking opportunities
@@ -270,19 +270,19 @@ export const ScheduleSection = () => {
             {/* Schedule will be updated soon */}
             <TabsContent value="day1" className="mt-0">
               <div className="text-center text-lg text-muted-foreground">
-                <p>Schedule will be updated soon</p>
+                <p>Schedule will be updated soon.</p>
               </div>
             </TabsContent>
             {/* Schedule will be updated soon */}
             <TabsContent value="day2" className="mt-0">
               <div className="text-center text-lg text-muted-foreground">
-                <p>Schedule will be updated soon</p>
+                <p>Schedule will be updated soon.</p>
               </div>
             </TabsContent>
             {/* Schedule will be updated soon */}
             <TabsContent value="day3" className="mt-0">
               <div className="text-center text-lg text-muted-foreground">
-                <p>Schedule will be updated soon</p>
+                <p>Schedule will be updated soon.</p>
               </div>
             </TabsContent>
 
