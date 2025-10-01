@@ -141,7 +141,7 @@ export const ContactSection = () => {
                       <div className="text-muted-foreground text-sm whitespace-pre-line">
                           {info.action ? (
                             <p
-                              className="hover:text-primary transition-colors flex items-center"
+                              className="hover:text-primary transition-colors flex items-center text-sm"
                             >
                               {info.content}
                             </p>

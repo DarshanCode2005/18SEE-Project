@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
+import googleCalendar from "@/assets/google-calendar.webp";
 import { 
   Waves, 
   Building, 
@@ -239,14 +240,14 @@ export const ThemesSection = () => {
                 across these themes. Submit your abstracts (around 300 words) and contribute to advancing earthquake engineering.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <button className="bg-primary-foreground text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary-foreground/90 transition-colors">
-                  Submit Abstract
-                </button>
-                <button
+              <button
                   onClick={() => setGuidelinesOpen(true)}
                   className="border-2 border-primary-foreground text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary-foreground/10 transition-colors"
                 disabled={true}>
                   Download Template
+                </button>
+                <button className="bg-primary-foreground text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary-foreground/90 transition-colors">
+                  Submit Abstract
                 </button>
               </div>
             </CardContent>
@@ -367,7 +368,7 @@ export const ThemesSection = () => {
             <Card className="relative border-2 border-primary/20 shadow-xl bg-gradient-to-br from-background via-background to-muted/30 backdrop-blur-sm">
               <CardContent className="p-8">
                 <div className="text-center mb-8">
-                  <div className="inline-flex items-center justify-center w-16 h-16 bg-secondary rounded-full mb-4 shadow-lg">
+                  <div className="inline-flex items-center justify-center w-16 h-16 bg-white rounded-xl mb-4 shadow-lg border border-gray-200">
                     <a
                       href="https://calendar.google.com/"
                       target="_blank"
@@ -375,9 +376,9 @@ export const ThemesSection = () => {
                       aria-label="Open Google Calendar"
                       className="cursor-pointer transition-transform hover:scale-110 active:scale-95"
                     >
-                      <svg className="w-8 h-8 text-white" fill="none" stroke="currentColor" strokeWidth="2" viewBox="0 0 24 24">
-                        <path d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/>
-                      </svg>
+                      
+                        <img src={googleCalendar} alt="Google Calendar" className="w-10 h-10" />
+                       
                     </a>
                   </div>
                  <h3 className="text-3xl md:text-4xl font-bold text-red-600 mb-2">

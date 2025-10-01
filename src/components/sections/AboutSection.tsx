@@ -92,9 +92,9 @@ export const AboutSection = () => {
         {/* Main Content - Responsive Grid with Vertical Separator and Equal Height Columns */}
         <div className="grid grid-cols-1 md:[grid-template-columns:1fr_auto_1fr] gap-10 md:gap-12 items-stretch mb-12">
           {/* Left Column */}
-          <div className="flex flex-col gap-10 h-full">
+          <div className="flex flex-col gap-10 md:gap-12 h-full">
             {/* Department of Earthquake Engineering */}
-            <div className="animate-fade-in h-full flex" style={{ animationDelay: '0.2s' }}>
+            <div className="animate-fade-in flex-1 flex flex-col" style={{ animationDelay: '0.2s' }}>
               <Card className="border-0 shadow-card bg-gradient-card h-full flex flex-col">
                 <CardContent className="p-8 flex-1 flex flex-col">
                   <div className="flex items-center space-x-3 mb-6">
@@ -111,26 +111,15 @@ export const AboutSection = () => {
                       </a>
                     </h3>
                   </div>
-                  <div className="space-y-4 text-muted-foreground leading-relaxed">
-                    <p>
-                      The Indian Institute of Technology Roorkee, established in 1847, stands as one of India's
-                      oldest and most prestigious technical institutions. Originally founded as the Roorkee College,
-                      it has evolved into a world-class center of excellence in engineering, technology, and research.
-                    </p>
-                    <p>
-                      Established in 1960, the Department of Earthquake Engineering at IIT Roorkee was the
-                      first of its kind in India and among the earliest in the world. The department has been
-                      instrumental in developing India's seismic design codes and guidelines.
-                    </p>
-                    <p>
-                      With state-of-the-art laboratories including the National Seismic Test Facility, shake tables,
-                      and advanced instrumentation, the department conducts cutting-edge research in seismic hazard
-                      assessment, structural dynamics, geotechnical earthquake engineering, and disaster risk management.
-                    </p>
-                    <p>
-                      Our faculty and researchers have contributed to major projects worldwide, from earthquake-resistant
-                      design of critical infrastructure to post-earthquake damage assessment and rehabilitation strategies.
-                    </p>
+                  <div className="space-y-4 text-muted-foreground leading-relaxed text-justify flex-1">
+                  <p className="line-height-2">Established in 1960 (as the School for Research and Training in Earthquake Engineering at the erstwhile University of Roorkee), the Department of Earthquake Engineering at IIT Roorkee was among the earliest departments of its kind worldwide and the very first in India.</p>
+
+                  <p className="line-height-2">Equipped with state-of-the-art facilities such as the shake table laboratory, pseudo-dynamic testing laboratory, soil dynamics laboratory, foundation testing laboratory, and seismological observatory, the department spearheads advanced research in structural dynamics, geotechnical earthquake engineering, seismic hazard assessment, and seismic instrumentation.</p>
+
+                  <p className="line-height-2">It has also played a pioneering role in developing India's seismic design codes and guidelines. In addition, through its rigorous postgraduate programmes (M. Tech. and Ph.D.), the department nurtures and empowers the next generation of earthquake engineers, researchers, and educators.</p>
+
+                  <p className="line-height-2">The Indian Institute of Technology Roorkee, one of India's oldest and most esteemed technical institutions, serves as the proud home to this distinguished department. Established in 1847 as Thomason College of Civil Engineering, IIT Roorkee has grown into a globally recognized hub for excellence in engineering, science, technology, and research.</p>  
+
                   </div>
                 </CardContent>
               </Card>
@@ -196,17 +185,14 @@ export const AboutSection = () => {
                       </a>
                     </h3>
                   </div>
-                  <div className="space-y-4 text-muted-foreground leading-relaxed">
-                    <p>
-                      The Indian Society of Earthquake Technology (ISET) was founded in November 1962 with Late Prof. Jai Krishna as the founding President. ISET is a founding member of the International Association for Earthquake Engineering (IAEE), and its President represents the society as a National Delegate.
-                      With 2250+ members and 14 local chapters across India. It conducts annual lectures, workshops, short-term training courses, and organizes SEE every four years.
-                    </p>
+                  <div className="space-y-4 text-muted-foreground leading-relaxed text-justify">
+                  <p>The Indian Society of Earthquake Technology (ISET) was established in November 1962 with Late Prof. Jai Krishna as its founding President. ISET is a founding member of the International Association for Earthquake Engineering (IAEE). With over 2,300 members and 14 local chapters across India, the society organizes annual lectures, workshops and short-term training courses on earthquake technology, and co-hosts the Symposium on Earthquake Engineering (SEE) every four years. Additionally, ISET publishes the quarterly ISET Journal of Earthquake Technology, which features research across a wide range of earthquake engineering topics.</p>
                   </div>
                 </CardContent>
               </Card>
             </div>
             {/* Message from HOD */}
-            <div className="animate-fade-in flex flex-col h-full mt-auto" style={{ animationDelay: '0.5s' }}>
+            <div className="animate-fade-in flex flex-col h-full mt-auto" style={{ animationDelay: '0.5s' ,marginTop:'-1rem'}}>
               <Card className="border-0 shadow-card bg-gradient-card flex flex-col h-full">
                 <CardContent className="p-8 flex flex-col h-full">
                   <div className="flex items-center space-x-3 mb-6">
@@ -216,14 +202,12 @@ export const AboutSection = () => {
                     </h3>
                   </div>
                   <div className="space-y-4">
-                    <div className="text-4xl text-primary mb-4">"</div>
-                    <p className="text-muted-foreground leading-relaxed text-lg italic">
-                      Welcome to the 18th Symposium on Earthquake Engineering. Together, we drive innovation and resilience for a safer tomorrow. Let’s build lasting solutions and global partnerships that protect lives and communities.
+                    <p className="text-muted-foreground leading-relaxed italic text-justify">
+                    "It gives me immense pleasure to invite you to join us at the 18th Symposium on Earthquake Engineering. This symposium represents our continued commitment to advancing the field of earthquake engineering and fostering collaboration among researchers, practitioners, and students from around the world. Let us drive scientific innovation and build lasting engineering solutions that prevent an earthquake hazard from turning into a disaster!"
                     </p>
                     <div className="mt-6 pt-4 border-t border-border">
                       <p className="font-semibold text-foreground">Prof. B.K. Maheshwari</p>
                       <p className="text-sm text-muted-foreground">Head, Department of Earthquake Engineering, IIT Roorkee</p>
-                      <p className="text-sm text-muted-foreground">Indian Institute of Technology Roorkee</p>
                       <p className="text-sm text-muted-foreground">President, Indian Society of Earthquake Technology</p>
                     </div>
                   </div>

@@ -76,16 +76,15 @@ export const FooterSection = () => {
                 </div>
                 <div className="flex items-center space-x-3">
                   <Phone className="h-4 w-4 text-secondary" />
-                  <a
-                    href="tel:+911332285591"
-                    className="text-primary-foreground/90 hover:text-secondary transition-colors"
+                  <p
+                    className="text-sm text-primary-foreground/90 not-italic leading-relaxed"
                   >
                     +91-1332-285710 <br />+91-1332-285675<br />+91-1332-285591
-                  </a>
+                  </p>
                 </div>
                 <div className="flex items-start space-x-3">
                   <MapPin className="h-4 w-4 text-secondary mt-1" />
-                  <address className="text-xs text-primary-foreground/90 not-italic leading-relaxed">
+                  <address className="text-sm text-primary-foreground/90 not-italic leading-relaxed">
                     Department of Earthquake Engineering<br />
                     Indian Institute of Technology Roorkee,<br />
                     Uttarakhand 247667, India
@@ -95,7 +94,7 @@ export const FooterSection = () => {
             </div>
 
             {/* Quick Links */}
-            <div className="md:ml-0">
+            <div className="md:ml-[50px]">
               <h4 className="font-semibold text-lg mb-4">Quick Links</h4>
               <ul className="space-y-2">
                 {quickLinks.map((link) => (
@@ -135,7 +134,7 @@ export const FooterSection = () => {
             <div>
               <NewsletterForm variant="footer" />
               <div className="flex items-center space-x-3 mt-6">
-                <div className="w-20 h-20 flex items-center justify-center">
+                <div className="w-24 h-24 flex items-center justify-center">
                   <img
                     src={iitrLogo}
                     alt="IIT Roorkee Logo"
