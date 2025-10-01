@@ -59,31 +59,30 @@ export const FooterSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
         {/* Main Footer Content */}
-        <div className="py-8">
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-2 lg:gap-4">
+        <div className="py-6 sm:py-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-4 lg:gap-6">
 
             {/* Contact Info */}
-            <div className="lg:col-span-1">
-              <div className="space-y-4">
+            <div className="sm:col-span-2 lg:col-span-1">
+              <h4 className="font-semibold text-base sm:text-lg mb-4 sm:hidden">Contact Information</h4>
+              <div className="space-y-3 sm:space-y-4">
                 <div className="flex items-center space-x-3">
-                  <Mail className="h-4 w-4 text-secondary" />
+                  <Mail className="h-4 w-4 text-secondary flex-shrink-0" />
                   <a
                     href="mailto:18see@iitr.ac.in"
-                    className="text-primary-foreground/90 hover:text-secondary transition-colors"
+                    className="text-sm sm:text-base text-primary-foreground/90 hover:text-secondary transition-colors break-all"
                   >
                     18see@iitr.ac.in
                   </a>
                 </div>
-                <div className="flex items-center space-x-3">
-                  <Phone className="h-4 w-4 text-secondary" />
-                  <p
-                    className="text-sm text-primary-foreground/90 not-italic leading-relaxed"
-                  >
+                <div className="flex items-start space-x-3">
+                  <Phone className="h-4 w-4 text-secondary flex-shrink-0 mt-0.5" />
+                  <p className="text-sm text-primary-foreground/90 not-italic leading-relaxed">
                     +91-1332-285710 <br />+91-1332-285675<br />+91-1332-285591
                   </p>
                 </div>
                 <div className="flex items-start space-x-3">
-                  <MapPin className="h-4 w-4 text-secondary mt-1" />
+                  <MapPin className="h-4 w-4 text-secondary flex-shrink-0 mt-0.5" />
                   <address className="text-sm text-primary-foreground/90 not-italic leading-relaxed">
                     Department of Earthquake Engineering<br />
                     Indian Institute of Technology Roorkee,<br />
@@ -94,14 +93,14 @@ export const FooterSection = () => {
             </div>
 
             {/* Quick Links */}
-            <div className="md:ml-[50px]">
-              <h4 className="font-semibold text-lg mb-4">Quick Links</h4>
+            <div>
+              <h4 className="font-semibold text-base sm:text-lg mb-4">Quick Links</h4>
               <ul className="space-y-2">
                 {quickLinks.map((link) => (
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-primary-foreground/80 hover:text-secondary transition-colors text-sm"
+                      className="text-sm text-primary-foreground/80 hover:text-secondary transition-colors block"
                     >
                       {link.name}
                     </a>
@@ -112,18 +111,18 @@ export const FooterSection = () => {
 
             {/* Important Links */}
             <div>
-              <h4 className="font-semibold text-lg mb-4">Resources</h4>
+              <h4 className="font-semibold text-base sm:text-lg mb-4">Resources</h4>
               <ul className="space-y-2">
                 {importantLinks.map((link) => (
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-primary-foreground/80 hover:text-secondary transition-colors text-sm flex items-center"
+                      className="text-sm text-primary-foreground/80 hover:text-secondary transition-colors flex items-center"
                       target={link.external ? "_blank" : undefined}
                       rel={link.external ? "noopener noreferrer" : undefined}
                     >
-                      {link.name}
-                      {link.external && <ExternalLink className="h-3 w-3 ml-1" />}
+                      <span className="break-words">{link.name}</span>
+                      {link.external && <ExternalLink className="h-3 w-3 ml-1 flex-shrink-0" />}
                     </a>
                   </li>
                 ))}
@@ -131,18 +130,18 @@ export const FooterSection = () => {
             </div>
 
             {/* Logo + Newsletter */}
-            <div>
+            <div className="sm:col-span-2 lg:col-span-1">
               <NewsletterForm variant="footer" />
-              <div className="flex items-center space-x-3 mt-6">
-                <div className="w-24 h-24 flex items-center justify-center">
+              <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-3 sm:space-y-0 sm:space-x-3 mt-6">
+                <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 flex items-center justify-center">
                   <img
                     src={iitrLogo}
                     alt="IIT Roorkee Logo"
                     className="w-full h-full object-cover rounded-full border-2 border-primary bg-white"
                   />
                 </div>
-                <div>
-                  <h3 className="font-montserrat text-xl font-bold tracking-tight">
+                <div className="text-center sm:text-left">
+                  <h3 className="font-montserrat text-lg sm:text-xl font-bold tracking-tight">
                     18SEE-2026
                   </h3>
                   <p className="text-primary-foreground/80 text-sm">IIT Roorkee</p>
@@ -155,18 +154,18 @@ export const FooterSection = () => {
         <Separator className="bg-primary-foreground/20" />
 
         {/* Bottom Footer */}
-        <div className="py-3">
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-3 md:space-y-0">
-            <div className="text-primary-foreground/80 text-xs text-center md:text-left leading-snug">
+        <div className="py-4 sm:py-3">
+          <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
+            <div className="text-primary-foreground/80 text-xs sm:text-xs text-center sm:text-left leading-relaxed max-w-2xl">
               <p>© 2025 IIT Roorkee – 18th Symposium on Earthquake Engineering. All rights reserved.</p>
               <p>Organized by the Department of Earthquake Engineering, IIT Roorkee</p>
             </div>
-            <div className="flex items-center space-x-3">
+            <div className="flex items-center space-x-2 sm:space-x-3">
               {socialLinks.map((social) => (
                 <a
                   key={social.name}
                   href={social.href}
-                  className="bg-primary-foreground/10 hover:bg-secondary hover:text-secondary-foreground p-2 rounded-md transition-colors"
+                  className="bg-primary-foreground/10 hover:bg-secondary hover:text-secondary-foreground p-2 sm:p-2 rounded-md transition-colors"
                   aria-label={social.name}
                   target="_blank"
                 >

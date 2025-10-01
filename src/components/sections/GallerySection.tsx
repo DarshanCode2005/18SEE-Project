@@ -200,7 +200,7 @@ export const GallerySection = () => {
         </div>
 
         {/* Category Filters */}
-        <div className="flex flex-wrap justify-center gap-4 mb-12">
+        <div className="flex flex-wrap justify-center gap-4 mb-12 px-2 sm:px-0">
           {categories.map((category) => {
             const IconComponent = category.icon;
             return (
@@ -218,7 +218,7 @@ export const GallerySection = () => {
         </div>
 
         {/* Gallery Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6 px-2 sm:px-0">
           {filteredItems.map((item, index) => (
             <Card 
               key={item.id} 

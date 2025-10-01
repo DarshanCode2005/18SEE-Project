@@ -47,13 +47,32 @@ export const PostSymposiumTourSection = () => (
           Extend your experience—discover the vibrant sights, sounds, and stories of India with fellow attendees after the Symposium!
         </p>
       </div>
-      {/* Carousel */}
-      <div className="relative">
+      {/* Mobile Vertical Layout (screens < 890px) */}
+      <div className="block lg:hidden">
+        <div className="grid grid-cols-1 gap-6 px-6">
+          {tourDestinations.map((dest, idx) => (
+            <Card key={idx} className="border border-border bg-card shadow-md hover:shadow-lg transition-shadow duration-300 animate-fade-in w-full max-w-md mx-auto">
+              <CardContent className="p-0">
+                <div className="h-48 w-full overflow-hidden rounded-t-2xl">
+                  <img src={dest.image} alt={dest.name} className="w-full h-full object-cover scale-105 hover:scale-110 transition-transform duration-500" />
+                </div>
+                <div className="p-6 text-center">
+                  <h3 className="font-serif text-xl font-bold text-primary mb-2">{dest.name}</h3>
+                  <p className="text-muted-foreground text-base mb-2">{dest.description}</p>
+                </div>
+              </CardContent>
+            </Card>
+          ))}
+        </div>
+      </div>
+
+      {/* Desktop Carousel (screens >= 890px) */}
+      <div className="hidden lg:block relative px-4 sm:px-0">
         <Carousel className="w-full">
-          <CarouselContent>
+          <CarouselContent className="-ml-2 md:-ml-4">
             {tourDestinations.map((dest, idx) => (
-              <CarouselItem key={idx} className="max-w-xs w-full mx-auto">
-                <Card className="border border-border bg-card shadow-md hover:shadow-lg transition-shadow duration-300 animate-fade-in max-w-xs w-full mx-auto">
+              <CarouselItem key={idx} className="pl-2 md:pl-4 basis-1/3 xl:basis-1/4">
+                <Card className="border border-border bg-card shadow-md hover:shadow-lg transition-shadow duration-300 animate-fade-in w-full">
                   <CardContent className="p-0">
                     <div className="h-56 w-full overflow-hidden rounded-t-2xl">
                       <img src={dest.image} alt={dest.name} className="w-full h-full object-cover scale-105 hover:scale-110 transition-transform duration-500" />
@@ -67,8 +86,8 @@ export const PostSymposiumTourSection = () => (
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious className="-left-4 lg:-left-8" />
+          <CarouselNext className="-right-4 lg:-right-8" />
         </Carousel>
       </div>
     </div>
