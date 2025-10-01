@@ -151,7 +151,7 @@ export const ThemesSection = () => {
                   </div>
                   <div className="flex-1 min-w-0">
                     <h3 className="font-medium text-sm text-foreground leading-tight group-hover:text-primary transition-colors duration-300">
-                      {index + 1}. {theme.title}
+                      {theme.title}
                     </h3>
                   </div>
                 </div>
@@ -240,12 +240,14 @@ export const ThemesSection = () => {
                 across these themes. Submit your abstracts (around 300 words) and contribute to advancing earthquake engineering.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button
-                  onClick={() => setGuidelinesOpen(true)}
-                  className="border-2 border-primary-foreground text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary-foreground/10 transition-colors"
-                disabled={true}>
+              <a
+                  href={`${import.meta.env.BASE_URL || '/'}Abstract_Template.docx`}
+                  download
+                  className="border-2 border-primary-foreground text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary-foreground/10 transition-colors text-center"
+                  role="button"
+                >
                   Download Template
-                </button>
+                </a>
                 <button className="bg-primary-foreground text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary-foreground/90 transition-colors">
                   Submit Abstract
                 </button>

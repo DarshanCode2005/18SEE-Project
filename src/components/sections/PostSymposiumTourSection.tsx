@@ -66,30 +66,45 @@ export const PostSymposiumTourSection = () => (
         </div>
       </div>
 
-      {/* Desktop Carousel (screens >= 890px) */}
-      <div className="hidden lg:block relative px-4 sm:px-0">
-        <Carousel className="w-full">
-          <CarouselContent className="-ml-2 md:-ml-4">
-            {tourDestinations.map((dest, idx) => (
-              <CarouselItem key={idx} className="pl-2 md:pl-4 basis-1/3 xl:basis-1/4">
-                <Card className="border border-border bg-card shadow-md hover:shadow-lg transition-shadow duration-300 animate-fade-in w-full">
-                  <CardContent className="p-0">
-                    <div className="h-56 w-full overflow-hidden rounded-t-2xl">
-                      <img src={dest.image} alt={dest.name} className="w-full h-full object-cover scale-105 hover:scale-110 transition-transform duration-500" />
-                    </div>
-                    <div className="p-6 text-center">
-                      <h3 className="font-serif text-xl font-bold text-primary mb-2">{dest.name}</h3>
-                      <p className="text-muted-foreground text-base mb-2">{dest.description}</p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </CarouselItem>
-            ))}
-          </CarouselContent>
-          <CarouselPrevious className="-left-4 lg:-left-8" />
-          <CarouselNext className="-right-4 lg:-right-8" />
-        </Carousel>
-      </div>
+     {/* Desktop Carousel (screens >= 890px) */}
+<div className="hidden lg:block relative px-4 sm:px-0">
+  <Carousel className="w-full mx-auto">
+    <CarouselContent className="items-stretch">
+      {tourDestinations.map((dest, idx) => (
+        <CarouselItem
+          key={idx}
+          className="max-w-xs w-full mx-auto"
+        >
+          <Card className="border border-border bg-card shadow-md hover:shadow-lg transition-shadow duration-300 animate-fade-in w-full h-full flex flex-col">
+            <CardContent className="p-0 flex flex-col h-full">
+              {/* Image */}
+              <div className="h-56 w-full overflow-hidden rounded-t-2xl">
+                <img
+                  src={dest.image}
+                  alt={dest.name}
+                  className="w-full h-full object-cover scale-105 hover:scale-110 transition-transform duration-500"
+                />
+              </div>
+
+              {/* Text */}
+              <div className="p-6 text-center flex flex-col flex-1 justify-between">
+                <h3 className="font-serif text-xl font-bold text-primary mb-2">
+                  {dest.name}
+                </h3>
+                <p className="text-muted-foreground text-base mb-2">
+                  {dest.description}
+                </p>
+              </div>
+            </CardContent>
+          </Card>
+        </CarouselItem>
+      ))}
+    </CarouselContent>
+    <CarouselPrevious className="-left-4 lg:-left-8" />
+    <CarouselNext className="-right-4 lg:-right-8" />
+  </Carousel>
+</div>
+
     </div>
   </section>
 );
