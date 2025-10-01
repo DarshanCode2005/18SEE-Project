@@ -83,7 +83,7 @@ export const FooterSection = () => {
                 </div>
                 <div className="flex items-start space-x-3">
                   <MapPin className="h-4 w-4 text-secondary flex-shrink-0 mt-0.5" />
-                  <address className="text-xs text-primary-foreground/90 not-italic leading-relaxed">
+                  <address className="text-[12px] text-primary-foreground/90 not-italic leading-relaxed">
                     Department of Earthquake Engineering<br />
                     Indian Institute of Technology Roorkee,<br />
                     Uttarakhand 247667, India
@@ -156,7 +156,7 @@ export const FooterSection = () => {
         {/* Bottom Footer */}
         <div className="py-4 sm:py-3">
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
-            <div className="text-primary-foreground/80 text-xs sm:text-xs text-center sm:text-left leading-relaxed max-w-2xl">
+            <div className="text-primary-foreground/80 text-xs sm:text-xs text-justify sm:text-left leading-relaxed max-w-2xl">
               <p>© 2025 IIT Roorkee – 18th Symposium on Earthquake Engineering. All rights reserved.</p>
               <p>Organized by the Department of Earthquake Engineering, IIT Roorkee</p>
             </div>

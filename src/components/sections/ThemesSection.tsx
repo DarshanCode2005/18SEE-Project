@@ -130,7 +130,7 @@ export const ThemesSection = () => {
           <Badge variant="outline" className="mb-4 bg-secondary/10 text-secondary border-secondary/20 text-2xl px-4 py-2">
           Symposium Themes
         </Badge>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed text-justify sm:text-center">
             Dive deep into cutting-edge research areas that are shaping the next generation 
             of seismic engineering solutions and earthquake-resilient infrastructure.
           </p>
@@ -235,7 +235,7 @@ export const ThemesSection = () => {
               <h3 className="font-serif text-2xl sm:text-3xl font-bold mb-4">
                 Present Your Research
               </h3>
-              <p className="text-primary-foreground/90 text-lg mb-6 leading-relaxed">
+              <p className="text-primary-foreground/90 text-lg mb-6 leading-relaxed text-justify sm:text-center">
                 We invite researchers, practitioners, innovators and students to share their original work 
                 across these themes. Submit your abstracts (around 300 words) and contribute to advancing earthquake engineering.
               </p>

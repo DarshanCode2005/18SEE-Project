@@ -89,7 +89,7 @@ export const ContactSection = () => {
           <Badge variant="outline" className="mb-4 bg-secondary/10 text-secondary border-secondary/20 text-2xl px-4 py-2">
           Contact Us
         </Badge>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed text-justify sm:text-center">
             Have questions about the symposium? Need assistance with registration or submissions?
             Our organizing team is ready to assist you.
           </p>

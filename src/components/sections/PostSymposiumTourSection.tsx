@@ -43,7 +43,7 @@ export const PostSymposiumTourSection = () => (
         <Badge variant="outline" className="mb-4 bg-secondary/10 text-secondary border-secondary/20 text-2xl px-4 py-2">
           Post-Symposium Tour
         </Badge>
-        <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-bold">
+        <p className="text-xl text-muted-foreground max-w-2xl mx-auto leading-relaxed font-bold text-justify sm:text-center">
           Extend your experience—discover the vibrant sights, sounds, and stories of India with fellow attendees after the Symposium!
         </p>
       </div>

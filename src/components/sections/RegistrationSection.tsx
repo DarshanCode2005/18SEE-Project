@@ -39,9 +39,9 @@ export const RegistrationSection = () => {
             Secure Your Spot at
             <span className="block text-primary font-montserrat">18SEE-2026</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed text-justify sm:text-center">
             Join leading researchers, practitioners, and students from around the world. 
-            Early bird registration offers significant savings – <a href={`${import.meta.env.BASE_URL || '/'}registration-soon`} className="text-primary font-bold">register</a> now!
+            Early bird registration offers significant savings – <a href={`${import.meta.env.BASE_URL || '/' }registration-soon`} className="text-primary font-bold">register</a> now!
           </p>
         </div>
         {/* Pricing Widget */}
