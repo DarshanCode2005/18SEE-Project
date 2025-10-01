@@ -146,15 +146,14 @@ export const ThemesSection = () => {
             >
               <CardContent className="p-4">
                 <div className="flex items-start gap-3">
-                  <div className="bg-primary/10 text-primary p-2 rounded-lg flex-shrink-0 group-hover:bg-primary/20 transition-colors duration-300">
-                    {theme.icon}
-                  </div>
+                  <span className="mt-0.5 ml-3 inline-block w-0.5 h-5 bg-primary/60 rounded-sm flex-shrink-0"></span>
                   <div className="flex-1 min-w-0">
                     <h3 className="font-medium text-sm text-foreground leading-tight group-hover:text-primary transition-colors duration-300">
                       {theme.title}
                     </h3>
                   </div>
                 </div>
+                <div className="mt-2 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-primary/5 h-1"></div>
               </CardContent>
             </Card>
           ))}
@@ -199,15 +198,14 @@ export const ThemesSection = () => {
                 <Card key={index} className="group border border-border/50 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg animate-fade-in">
                   <CardContent className="p-4">
                     <div className="flex items-start gap-3">
-                      <div className="bg-primary/10 text-primary p-2 rounded-lg flex-shrink-0 group-hover:bg-primary/20 transition-colors duration-300">
-                        {theme.icon}
-                      </div>
+                      <span className="mt-0.5 ml-3 inline-block w-0.5 h-5 bg-primary/60 rounded-sm flex-shrink-0"></span>
                       <div className="flex-1 min-w-0">
                         <h3 className="font-medium text-sm text-foreground leading-tight group-hover:text-primary transition-colors duration-300">
                           {index + 1}. {theme.title}
                         </h3>
                       </div>
                     </div>
+                    <div className="mt-2 rounded-md opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-primary/5 h-1"></div>
                   </CardContent>
                 </Card>
               ))}
@@ -235,7 +233,7 @@ export const ThemesSection = () => {
               <h3 className="font-serif text-2xl sm:text-3xl font-bold mb-4">
                 Present Your Research
               </h3>
-              <p className="text-primary-foreground/90 text-lg mb-6 leading-relaxed text-justify sm:text-center">
+              <p className="text-primary-foreground/90 text-lg mb-6 leading-relaxed">
                 We invite researchers, practitioners, innovators and students to share their original work 
                 across these themes. Submit your abstracts (around 300 words) and contribute to advancing earthquake engineering.
               </p>
