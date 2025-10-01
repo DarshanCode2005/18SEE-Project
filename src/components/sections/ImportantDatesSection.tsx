@@ -50,7 +50,7 @@ export const ImportantDatesSection = () => {
                       </svg>
                     </a>
                   </div>
-                  <h3 className="text-3xl md:text-4xl font-bold text-red-600 mb-2">Important Dates !</h3>
+                  <h3 className="text-3xl md:text-4xl font-bold text-primary mb-2">Important Dates !</h3>
                 </div>
                 {(() => {
                   const importantDates = [

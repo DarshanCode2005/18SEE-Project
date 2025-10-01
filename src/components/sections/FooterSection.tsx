@@ -131,17 +131,17 @@ export const FooterSection = () => {
 
             {/* Logo + Newsletter */}
             <div className="sm:col-span-2 lg:col-span-1">
-              <NewsletterForm variant="footer" />
-              <div className="flex flex-col sm:flex-row items-center sm:items-start space-y-3 sm:space-y-0 sm:space-x-3 mt-6">
-                <div className="w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24 flex items-center justify-center">
+              {/* <NewsletterForm variant="footer" /> */}
+              <div className="flex flex-col sm:flex-row items-center sm:items-center space-y-3 sm:space-y-0 sm:space-x-3 mt-6">
+                <div className="w-20 h-20 sm:w-20 sm:h-20 lg:w-24 lg:h-24 flex items-center justify-center">
                   <img
                     src={iitrLogo}
                     alt="IIT Roorkee Logo"
                     className="w-full h-full object-cover rounded-full border-2 border-primary bg-white"
                   />
                 </div>
-                <div className="text-center sm:text-left mt-2 sm:mt-0">
-                  <h3 className="font-montserrat text-lg sm:text-xl font-bold tracking-tight">
+                <div className="text-center mt-2 sm:mt-0">
+                  <h3 className="font-montserrat text-xl sm:text-2xl font-bold tracking-tight">
                     18SEE-2026
                   </h3>
                   <p className="text-primary-foreground/80 text-sm">IIT Roorkee</p>

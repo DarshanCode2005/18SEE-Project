@@ -50,7 +50,7 @@ const Index = () => {
         {/* <ScheduleSection /> Removed from landing page */}
         {/* Download/View Schedule buttons removed as per new instructions */}
         <RegistrationSection />
-        <NewsletterSection />
+        {/* <NewsletterSection /> */}
         {/* How to Reach & Accommodation Section */}
         <Accomodation />
         <PostSymposiumTourSection />
