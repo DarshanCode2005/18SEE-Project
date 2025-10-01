@@ -74,11 +74,11 @@ export const Navigation = ({
 
   return (
   <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBg} ${className}`} style={{marginBottom: '8rem'}}>
-  <div className="max-w-8xl mx-auto px-6 sm:px-10 lg:px-12">
+  <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 xl:px-12">
         <div className="flex items-center py-4 my-0">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="w-28 h-28 flex items-center justify-center">
+            <div className="w-20 h-20 lg:w-24 lg:h-24 xl:w-28 xl:h-28 flex items-center justify-center">
               <img 
                 src={iitrLogo} 
                 alt="IIT Roorkee Logo" 
@@ -86,17 +86,17 @@ export const Navigation = ({
               />
             </div>
             <div className="hidden sm:block">
-              <h1 className={`font-montserrat text-3xl font-bold ${navText}`}>18SEE</h1>
-              <p className={`text-lg font-semibold ${isLanding && !isScrolled ? 'text-white/80' : 'text-muted-foreground'}`}>IIT Roorkee</p>
+              <h1 className={`font-montserrat text-2xl lg:text-3xl font-bold ${navText}`}>18SEE</h1>
+              <p className={`text-base lg:text-lg font-semibold ${isLanding && !isScrolled ? 'text-white/80' : 'text-muted-foreground'}`}>IIT Roorkee</p>
             </div>
           </div>
 
           <div className="flex-1" />
 
           {/* Desktop Navigation */}
-          <div className="hidden lg:flex items-center space-x-3 justify-end">
+          <div className="hidden xl:flex items-center space-x-2 justify-end">
             {navItems.map(item => (
-              <Button key={item.name} variant="ghost" className={`hover:bg-primary/10 ${navHover} transition-colors ${navText} text-lg px-5 py-3`} asChild>
+              <Button key={item.name} variant="ghost" className={`hover:bg-primary/10 ${navHover} transition-colors ${navText} text-base px-3 py-2`} asChild>
                 <a href={item.href}>{item.name}</a>
               </Button>
             ))}
@@ -106,14 +106,14 @@ export const Navigation = ({
           <div className="hidden sm:flex items-center space-x-2"></div>
 
           {/* Mobile Menu Button */}
-          <Button variant="ghost" size="sm" className={`lg:hidden ${navText} text-lg px-4 py-2 ml-2`} onClick={() => setIsOpen(!isOpen)}>
+          <Button variant="ghost" size="sm" className={`xl:hidden ${navText} text-lg px-4 py-2 ml-2`} onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
           </Button>
         </div>
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="lg:hidden bg-card border border-border rounded-lg mt-2 p-4 shadow-card animate-fade-in-scale">
+          <div className="xl:hidden bg-card border border-border rounded-lg mt-2 p-4 shadow-card animate-fade-in-scale">
             <div className="flex flex-col space-y-3">
               {navItems.map(item => (
                 <Button key={item.name} variant="ghost" className="justify-start text-lg px-5 py-3" asChild onClick={() => setIsOpen(false)}>

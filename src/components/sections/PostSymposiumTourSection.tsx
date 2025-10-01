@@ -48,7 +48,7 @@ export const PostSymposiumTourSection = () => (
         </p>
       </div>
       {/* Carousel */}
-      <div className="relative">
+      <div className="relative px-6 sm:px-12 lg:px-16">
         <Carousel className="w-full">
           <CarouselContent>
             {tourDestinations.map((dest, idx) => (
@@ -67,8 +67,8 @@ export const PostSymposiumTourSection = () => (
               </CarouselItem>
             ))}
           </CarouselContent>
-          <CarouselPrevious />
-          <CarouselNext />
+          <CarouselPrevious className="hidden sm:flex lg:-left-12 sm:-left-6 md:-left-8" />
+          <CarouselNext className="hidden sm:flex lg:-right-12 sm:-right-6 md:-right-8" />
         </Carousel>
       </div>
     </div>
