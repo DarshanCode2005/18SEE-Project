@@ -81,12 +81,11 @@ export const FooterSection = () => {
                     +91-1332-285710 <br />+91-1332-285675<br />+91-1332-285591
                   </p>
                 </div>
-                <div className="flex items-start space-x-3">
+                <div className="flex items-start space-x-3 width-[300px]">
                   <MapPin className="h-4 w-4 text-secondary flex-shrink-0 mt-0.5" />
-                  <address className="text-[12px] text-primary-foreground/90 not-italic leading-relaxed">
+                  <address className="text-[14px] text-primary-foreground/90 not-italic leading-relaxed">
                     Department of Earthquake Engineering<br />
-                    Indian Institute of Technology Roorkee,<br />
-                    Uttarakhand 247667, India
+                    IIT Roorkee, Uttarakhand 247667, India
                   </address>
                 </div>
               </div>
