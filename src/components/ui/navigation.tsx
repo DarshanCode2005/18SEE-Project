@@ -86,6 +86,11 @@ export const Navigation = ({
   const importantDatesHref = isLanding ? "#important-dates" : toBase("/#important-dates");
   const scheduleHref = toBase("/schedule");
 
+  // Split items to place dropdown right after Themes
+  const themesIndex = navItems.findIndex(i => i.name === "Themes");
+  const beforeItems = themesIndex >= 0 ? navItems.slice(0, themesIndex + 1) : navItems;
+  const afterItems = themesIndex >= 0 ? navItems.slice(themesIndex + 1) : [];
+
   return (
   <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBg} ${className}`} style={{marginBottom: '8rem'}}>
   <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-12">
@@ -109,24 +114,29 @@ export const Navigation = ({
 
           {/* Desktop Navigation */}
           <div className="hidden min-[1200px]:flex items-center space-x-2 xl:space-x-3 justify-end">
-            {navItems.map(item => (
+            {beforeItems.map(item => (
               <Button key={item.name} variant="ghost" className={`hover:bg-primary/10 ${navHover} transition-colors ${navText} text-base xl:text-lg px-4 xl:px-5 py-2 xl:py-3`} asChild>
                 <a href={item.href}>{item.name}</a>
               </Button>
             ))}
-            {/* Schedule dropdown */}
+            {/* Schedule dropdown placed immediately after Themes */}
             <div ref={dropdownRef} className="relative">
               <Button onClick={() => setScheduleOpen(o => !o)} variant="ghost" aria-haspopup="menu" aria-expanded={scheduleOpen} className={`hover:bg-primary/10 ${navHover} transition-colors ${navText} text-base xl:text-lg px-4 xl:px-5 py-2 xl:py-3 flex items-center`}>
-                <span>Schedule</span>
+                <span>Technical Program</span>
                 <svg className={`ml-2 h-4 w-4 transition-transform ${scheduleOpen ? 'rotate-180' : ''}`} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                   <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 011.08 1.04l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clipRule="evenodd" />
                 </svg>
               </Button>
               <div className={`absolute right-0 mt-2 w-56 bg-card border border-border rounded-md shadow-card transition ${scheduleOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} role="menu">
                 <a href={importantDatesHref} className={`block px-4 py-2 text-black ${navHover} hover:bg-primary/10`} onClick={() => setScheduleOpen(false)}>Important Dates</a>
-                <a href={scheduleHref} className={`block px-4 py-2 text-black ${navHover} hover:bg-primary/10`} onClick={() => setScheduleOpen(false)}>Schedule</a>
+                <a href={scheduleHref} className={`block px-4 py-2 text-black ${navHover} hover:bg-primary/10`} onClick={() => setScheduleOpen(false)}>Technical Program</a>
               </div>
             </div>
+            {afterItems.map(item => (
+              <Button key={item.name} variant="ghost" className={`hover:bg-primary/10 ${navHover} transition-colors ${navText} text-base xl:text-lg px-4 xl:px-5 py-2 xl:py-3`} asChild>
+                <a href={item.href}>{item.name}</a>
+              </Button>
+            ))}
           </div>
 
           {/* CTA Button */}
@@ -142,22 +152,25 @@ export const Navigation = ({
         {isOpen && (
           <div className="lg:hidden bg-card border border-border rounded-lg mt-2 p-4 shadow-card animate-fade-in-scale w-full max-h-[70vh] overflow-y-auto">
             <div className="flex flex-col space-y-2">
-              {navItems.map(item => (
+              {beforeItems.map(item => (
                 <Button key={item.name} variant="ghost" className="justify-start text-base sm:text-lg px-4 sm:px-5 py-2 sm:py-3" asChild onClick={() => setIsOpen(false)}>
                   <a href={item.href}>{item.name}</a>
                 </Button>
               ))}
-              {/* Schedule group for mobile */}
-              <div className="pt-2 border-t border-border mt-2">
-                <div className="flex flex-col">
-                  <Button variant="ghost" className="justify-start text-base sm:text-lg px-4 sm:px-5 py-2 sm:py-3" asChild onClick={() => setIsOpen(false)}>
-                    <a href={importantDatesHref}>Important Dates</a>
-                  </Button>
-                  <Button variant="ghost" className="justify-start text-base sm:text-lg px-4 sm:px-5 py-2 sm:py-3" asChild onClick={() => setIsOpen(false)}>
-                    <a href={scheduleHref}>Schedule</a>
-                  </Button>
-                </div>
+              {/* Schedule group placed after Themes on mobile */}
+              <div className="flex flex-col">
+                <Button variant="ghost" className="justify-start text-base sm:text-lg px-4 sm:px-5 py-2 sm:py-3" asChild onClick={() => setIsOpen(false)}>
+                  <a href={importantDatesHref}>Important Dates</a>
+                </Button>
+                <Button variant="ghost" className="justify-start text-base sm:text-lg px-4 sm:px-5 py-2 sm:py-3" asChild onClick={() => setIsOpen(false)}>
+                  <a href={scheduleHref}>Schedule</a>
+                </Button>
               </div>
+              {afterItems.map(item => (
+                <Button key={item.name} variant="ghost" className="justify-start text-base sm:text-lg px-4 sm:px-5 py-2 sm:py-3" asChild onClick={() => setIsOpen(false)}>
+                  <a href={item.href}>{item.name}</a>
+                </Button>
+              ))}
 
               <div className="pt-4 border-t border-border">
                 <div className="flex flex-col space-y-3">
