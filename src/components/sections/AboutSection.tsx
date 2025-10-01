@@ -90,7 +90,12 @@ export const AboutSection = () => {
         </div>
 
         {/* Main Content - Responsive Grid with Vertical Separator and Equal Height Columns */}
-        <div className="grid grid-cols-1 md:[grid-template-columns:0.9fr_auto_1fr] gap-10 md:gap-12 items-stretch mb-12">
+        <div className="grid grid-cols-1   /* Default: single column */
+  [@media(min-width:888px)]:grid-cols-[0.9fr_auto_1fr] /* Custom from 888px */
+  [@media(min-width:1020px)]:grid-cols-[0.95fr_auto_1fr] /* Custom from 1020px */
+  gap-10
+  [@media(min-width:888px)]:gap-12
+  items-stretch mb-12">
           {/* Left Column */}
           <div className="flex flex-col gap-10 md:gap-12 h-full">
             {/* Department of Earthquake Engineering */}
