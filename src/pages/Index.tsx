@@ -10,6 +10,7 @@ import { FooterSection } from "@/components/sections/FooterSection";
 import { PostSymposiumTourSection } from "@/components/sections/PostSymposiumTourSection";
 import { OrganisedBySection } from "@/components/sections/OrganisedBySection";
 import { Accomodation } from "@/components/sections/Accomodation";
+import { ImportantDatesSection } from "@/components/sections/ImportantDatesSection";
 
 import React, { useRef, useEffect, useState } from "react";
 
@@ -45,6 +46,7 @@ const Index = () => {
         <HeroSection />
         <AboutSection />
         <ThemesSection />
+        <ImportantDatesSection />
         {/* <ScheduleSection /> Removed from landing page */}
         {/* Download/View Schedule buttons removed as per new instructions */}
         <RegistrationSection />

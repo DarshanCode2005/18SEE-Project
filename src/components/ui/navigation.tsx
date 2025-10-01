@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
 import iitrLogo from "@/assets/iitr_logo.svg";
 import { Menu, X } from "lucide-react";
@@ -12,6 +12,8 @@ export const Navigation = ({
 }: NavigationProps) => {
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
+  const [scheduleOpen, setScheduleOpen] = useState(false);
+  const dropdownRef = useRef<HTMLDivElement | null>(null);
   const baseUrl = import.meta.env.BASE_URL || "/";
   const normalizedBase = baseUrl.endsWith("/") ? baseUrl : `${baseUrl}/`;
   const isLanding = window.location.pathname === normalizedBase || window.location.pathname === normalizedBase.slice(0, -1);
@@ -22,6 +24,17 @@ export const Navigation = ({
     };
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (e: MouseEvent) => {
+      if (!dropdownRef.current) return;
+      if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
+        setScheduleOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
   // Nav links: on landing page use section anchors, on other pages use /#section
@@ -39,10 +52,7 @@ export const Navigation = ({
       name: "Themes",
       href: isLanding ? "#themes" : toBase("/#themes")
     },
-    {
-      name: "Schedule",
-      href: toBase("/schedule")
-    },
+    // Schedule handled as dropdown below
     {
       name: "Committee",
       href: toBase("/committee")
@@ -72,6 +82,10 @@ export const Navigation = ({
   // Determine hover color for nav links
   const navHover = isLanding && !isScrolled ? "hover:text-gold" : "hover:text-primary";
 
+  // Dropdown destinations
+  const importantDatesHref = isLanding ? "#important-dates" : toBase("/#important-dates");
+  const scheduleHref = toBase("/schedule");
+
   return (
   <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBg} ${className}`} style={{marginBottom: '8rem'}}>
   <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-12">
@@ -100,6 +114,19 @@ export const Navigation = ({
                 <a href={item.href}>{item.name}</a>
               </Button>
             ))}
+            {/* Schedule dropdown */}
+            <div ref={dropdownRef} className="relative">
+              <Button onClick={() => setScheduleOpen(o => !o)} variant="ghost" aria-haspopup="menu" aria-expanded={scheduleOpen} className={`hover:bg-primary/10 ${navHover} transition-colors ${navText} text-base xl:text-lg px-4 xl:px-5 py-2 xl:py-3 flex items-center`}>
+                <span>Schedule</span>
+                <svg className={`ml-2 h-4 w-4 transition-transform ${scheduleOpen ? 'rotate-180' : ''}`} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 011.08 1.04l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clipRule="evenodd" />
+                </svg>
+              </Button>
+              <div className={`absolute right-0 mt-2 w-56 bg-card border border-border rounded-md shadow-card transition ${scheduleOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} role="menu">
+                <a href={importantDatesHref} className={`block px-4 py-2 text-black ${navHover} hover:bg-primary/10`} onClick={() => setScheduleOpen(false)}>Important Dates</a>
+                <a href={scheduleHref} className={`block px-4 py-2 text-black ${navHover} hover:bg-primary/10`} onClick={() => setScheduleOpen(false)}>Schedule</a>
+              </div>
+            </div>
           </div>
 
           {/* CTA Button */}
@@ -120,6 +147,18 @@ export const Navigation = ({
                   <a href={item.href}>{item.name}</a>
                 </Button>
               ))}
+              {/* Schedule group for mobile */}
+              <div className="pt-2 border-t border-border mt-2">
+                <div className="flex flex-col">
+                  <Button variant="ghost" className="justify-start text-base sm:text-lg px-4 sm:px-5 py-2 sm:py-3" asChild onClick={() => setIsOpen(false)}>
+                    <a href={importantDatesHref}>Important Dates</a>
+                  </Button>
+                  <Button variant="ghost" className="justify-start text-base sm:text-lg px-4 sm:px-5 py-2 sm:py-3" asChild onClick={() => setIsOpen(false)}>
+                    <a href={scheduleHref}>Schedule</a>
+                  </Button>
+                </div>
+              </div>
+
               <div className="pt-4 border-t border-border">
                 <div className="flex flex-col space-y-3">
               <Button variant="outline" size="lg" className="text-base sm:text-lg px-4 sm:px-5 py-2 sm:py-3" asChild>

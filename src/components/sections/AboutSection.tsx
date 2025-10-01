@@ -99,7 +99,7 @@ export const AboutSection = () => {
                 <CardContent className="p-8 flex-1 flex flex-col">
                   <div className="flex items-center space-x-3 mb-6">
                     <Activity className="h-8 w-8 text-secondary" />
-                    <h3 className="font-serif text-2xl font-semibold text-foreground">
+                    <h3 className="font-serif text-2xl  font-semibold text-foreground">
                       <a
                         href="https://iitr.ac.in/Departments/Earthquake%20Department/Home.html"
                         target="_blank"
