@@ -249,21 +249,21 @@ export const ScheduleSection = () => {
                 <Calendar className="w-4 h-4" />
                 <div className="text-center">
                   <div className="font-semibold text-sm">Day 1</div>
-                  <div className="text-xs">Dec 15, 2025</div>
+                  <div className="text-xs">Dec 10, 2025</div>
                 </div>
               </TabsTrigger>
               <TabsTrigger value="day2" className="flex items-center gap-2 py-2 px-3 h-auto data-[state=active]:text-primary">
                 <Calendar className="w-4 h-4" />
                 <div className="text-center">
                   <div className="font-semibold text-sm">Day 2</div>
-                  <div className="text-xs">Dec 16, 2025</div>
+                  <div className="text-xs">Dec 11, 2025</div>
                 </div>
               </TabsTrigger>
               <TabsTrigger value="day3" className="flex items-center gap-2 py-2 px-3 h-auto data-[state=active]:text-primary">
                 <Calendar className="w-4 h-4" />
                 <div className="text-center">
                   <div className="font-semibold text-sm">Day 3</div>
-                  <div className="text-xs">Dec 17, 2025</div>
+                  <div className="text-xs">Dec 12, 2025</div>
                 </div>
               </TabsTrigger>
             </TabsList>

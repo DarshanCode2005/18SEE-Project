@@ -37,7 +37,7 @@ const Schedule = () => {
       <div className="mt-28">
         <ScheduleSection />
       </div>
-      <div className="flex justify-center my-12">
+      {/* <div className="flex justify-center my-12">
         <Button
           asChild
           size="lg"
@@ -48,7 +48,7 @@ const Schedule = () => {
             Download Schedule
           </a>
         </Button>
-      </div>
+      </div> */}
       <FooterSection />
     </div>
   );
