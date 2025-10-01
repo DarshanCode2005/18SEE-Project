@@ -132,7 +132,7 @@ export const FooterSection = () => {
             <div className="sm:col-span-2 lg:col-span-1">
               {/* <NewsletterForm variant="footer" /> */}
               <div className="flex flex-col sm:flex-row items-center sm:items-center space-y-3 sm:space-y-0 sm:space-x-3 mt-6">
-                <div className="w-20 h-20 sm:w-20 sm:h-20 lg:w-24 lg:h-24 flex items-center justify-center">
+                <div className="w-28 h-28 sm:w-24 sm:h-24 lg:w-32 lg:h-32 flex items-center justify-center">
                   <img
                     src={iitrLogo}
                     alt="IIT Roorkee Logo"
