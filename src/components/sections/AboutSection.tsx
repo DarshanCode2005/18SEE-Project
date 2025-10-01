@@ -90,7 +90,7 @@ export const AboutSection = () => {
         </div>
 
         {/* Main Content - Responsive Grid with Vertical Separator and Equal Height Columns */}
-        <div className="grid grid-cols-1 md:[grid-template-columns:1fr_auto_1fr] gap-10 md:gap-12 items-stretch mb-12">
+        <div className="grid grid-cols-1 md:[grid-template-columns:0.9fr_auto_1fr] gap-10 md:gap-12 items-stretch mb-12">
           {/* Left Column */}
           <div className="flex flex-col gap-10 md:gap-12 h-full">
             {/* Department of Earthquake Engineering */}
@@ -180,7 +180,7 @@ export const AboutSection = () => {
                         rel="noopener noreferrer"
                         className="hover:underline flex items-center gap-2"
                       >
-                        About ISET
+                         ISET
                         <ExternalLink className="h-4 w-4 inline text-muted-foreground" />
                       </a>
                     </h3>
