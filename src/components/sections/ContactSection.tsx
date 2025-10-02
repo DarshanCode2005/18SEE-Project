@@ -61,19 +61,19 @@ export const ContactSection = () => {
 
   const team = [
     {
-      role: "Organizing Secretary",
+      role: "Organising Secretary",
       name: "Prof. Ravi S. Jakka",
       department: "DEQ, IIT Roorkee",
       email: "ravi.jakka@eq.iitr.ac.in"
     },
     {
-      role: "Joint Organizing Secretary",
+      role: "Joint Organising Secretary",
       name: "Prof. Varun K. Singla",
       department: "DEQ, IIT Roorkee",
       email: "singlav@eq.iitr.ac.in"
     },
     {
-      role: "Joint Organizing Secretary",
+      role: "Joint Organising Secretary",
       name: "Prof. Shiv Prakash",
       department: "DEQ, IIT Roorkee",
       email: "shiv.prakash@eq.iitr.ac.in"
@@ -91,7 +91,7 @@ export const ContactSection = () => {
         </Badge>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed text-justify sm:text-center">
             Have questions about the symposium? Need assistance with registration or submissions?
-            Our organizing team is ready to assist you.
+            Our organising team is ready to assist you.
           </p>
         </div>
 

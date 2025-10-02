@@ -30,7 +30,7 @@ export const FooterSection = () => {
       external: true
     },
     { name: "ISET", href: "https://iset.org.in/", external: true },
-    { name: "Travel Information", href: "#travel" }
+    { name: "Travel Information", href: "/#travel" }
   ];
 
   const socialLinks = [

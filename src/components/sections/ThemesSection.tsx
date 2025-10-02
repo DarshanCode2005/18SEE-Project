@@ -146,7 +146,6 @@ export const ThemesSection = () => {
             >
               <CardContent className="p-4">
                 <div className="flex items-start gap-3">
-                  <span className="mt-0.5 text-primary/80 font-semibold text-sm flex-shrink-0">{index + 1}.</span>
                   <div className="flex-1 min-w-0">
                     <h3 className="font-medium text-sm text-foreground leading-tight group-hover:text-primary transition-colors duration-300">
                       {theme.title}
