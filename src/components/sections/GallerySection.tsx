@@ -140,7 +140,7 @@ const galleryData: MediaItem[] = [
     type: 'image',
     src: VenueImage2,
     thumbnail: VenueImage2,
-    title: 'Entrance View',
+    title: 'Department Building',
     category: 'venue',
     alt: 'Main entrance of Eathquake Engineering Department at IIT Roorkee'
   },

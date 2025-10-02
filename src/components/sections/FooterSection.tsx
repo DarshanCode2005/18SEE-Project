@@ -15,7 +15,7 @@ import xLogo from "@/assets/x-logo.png";
 
 export const FooterSection = () => {
   const quickLinks = [
-    { name: "Home", href: "#home" },
+    { name: "Home", href: "/" },
     { name: "Brochure", href: "/schedule.pdf" },
     { name: "Abstract Submission", href: "/registration-soon" },
     { name: "Registration", href: "/registration-soon" }
@@ -29,7 +29,7 @@ export const FooterSection = () => {
       external: true
     },
     { name: "ISET", href: "https://iset.org.in/", external: true },
-    { name: "Travel Information", href: "#travel" }
+    { name: "Travel Information", href: "/#travel" }
   ];
 
   const socialLinks = [
