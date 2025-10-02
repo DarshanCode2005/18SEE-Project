@@ -55,7 +55,7 @@ export const Navigation = ({
     // Schedule handled as dropdown below
     {
       name: "Committee",
-      href: toBase("/committee")
+      href: toBase("/18see/committee")
     },
     {
       name: "Gallery",
