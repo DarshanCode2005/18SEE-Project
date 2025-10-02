@@ -14,11 +14,12 @@ import {
 import xLogo from "@/assets/x-logo.png";
 
 export const FooterSection = () => {
+  const rootUrl = import.meta.env.VITE_ROOT_URL || "";
   const quickLinks = [
-    { name: "Home", href: "/" },
-    { name: "Brochure", href: "/schedule.pdf" },
-    { name: "Abstract Submission", href: "/registration-soon" },
-    { name: "Registration", href: "/registration-soon" }
+    { name: "Home", href: "#home" },
+    { name: "Brochure", href: rootUrl ? rootUrl + "/schedule.pdf" : "/schedule.pdf" },
+    { name: "Abstract Submission", href: rootUrl ? rootUrl + "/registration-soon" : "/registration-soon" },
+    { name: "Registration", href: rootUrl ? rootUrl + "/registration-soon" : "/registration-soon" }
   ];
 
   const importantLinks = [

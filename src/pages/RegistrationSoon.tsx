@@ -25,7 +25,7 @@ export default function RegistrationSoon() {
       {/* Subtitle */}
       <p className="text-lg sm:text-xl text-white/80 mb-8 animate-fade-in-delay">Stay tuned for updates!</p>
       {/* Action Button */}
-      <Button size="lg" className="bg-white text-purple-600 font-bold shadow-lg hover:bg-purple-100 transition-all animate-fade-in-delay" onClick={() => navigate("/")}>Go Back to Home</Button>
+      <Button size="lg" className="bg-white text-purple-600 font-bold shadow-lg hover:bg-purple-100 transition-all animate-fade-in-delay" onClick={() => navigate("/18see/")}>Go Back to Home</Button>
     </div>
   );
 }

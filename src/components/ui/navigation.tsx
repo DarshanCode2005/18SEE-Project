@@ -14,9 +14,9 @@ export const Navigation = ({
   const [isScrolled, setIsScrolled] = useState(false);
   const [scheduleOpen, setScheduleOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
-  const baseUrl = import.meta.env.BASE_URL || "/";
-  const normalizedBase = baseUrl.endsWith("/") ? baseUrl : `${baseUrl}/`;
-  const isLanding = window.location.pathname === normalizedBase || window.location.pathname === normalizedBase.slice(0, -1);
+  const rootUrl = import.meta.env.VITE_ROOT_URL || "";
+  const homePath = rootUrl ? rootUrl + "/" : "/";
+  const isLanding = window.location.pathname === homePath || window.location.pathname === homePath.slice(0, -1);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -37,20 +37,20 @@ export const Navigation = ({
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  // Nav links: on landing page use section anchors, on other pages use /#section
-  const toBase = (path: string) => `${normalizedBase}${path.replace(/^\//, "")}`;
+  // Nav links: on landing page use section anchors, on other pages use rootUrl + /#section
+  const toBase = (path: string) => rootUrl ? rootUrl + path : path;
   const navItems = [
     {
       name: "Home",
-      href: isLanding ? "#home" : toBase("/#home")
+      href: isLanding ? "#home" : toBase("#home")
     },
     {
       name: "About",
-      href: isLanding ? "#about" : toBase("/#about")
+      href: isLanding ? "#about" : toBase("#about")
     },
     {
       name: "Themes",
-      href: isLanding ? "#themes" : toBase("/#themes")
+      href: isLanding ? "#themes" : toBase("#themes")
     },
     // Schedule handled as dropdown below
     {
@@ -59,15 +59,15 @@ export const Navigation = ({
     },
     {
       name: "Gallery",
-      href: isLanding ? "#gallery" : toBase("/#gallery")
+      href: isLanding ? "#gallery" : toBase("#gallery")
     },
     {
       name: "Registration",
-      href: isLanding ? "#registration" : toBase("/#registration")
+      href: isLanding ? "#registration" : toBase("#registration")
     },
     {
       name: "Contact",
-      href: isLanding ? "#contact" : toBase("/#contact")
+      href: isLanding ? "#contact" : toBase("#contact")
     }
   ];
 
@@ -83,7 +83,7 @@ export const Navigation = ({
   const navHover = isLanding && !isScrolled ? "hover:text-gold" : "hover:text-primary";
 
   // Dropdown destinations
-  const importantDatesHref = isLanding ? "#important-dates" : toBase("/#important-dates");
+  const importantDatesHref = isLanding ? "#important-dates" : toBase("#important-dates");
   const scheduleHref = toBase("/schedule");
 
   // Split items to place dropdown right after Themes
@@ -92,15 +92,15 @@ export const Navigation = ({
   const afterItems = themesIndex >= 0 ? navItems.slice(themesIndex + 1) : [];
 
   return (
-  <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBg} ${className}`} style={{marginBottom: '8rem'}}>
-  <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-12">
+    <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBg} ${className}`} style={{ marginBottom: '8rem' }}>
+      <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-12">
         <div className="flex items-center py-2 sm:py-3 md:py-4 my-0">
           {/* Logo */}
           <div className="flex items-center space-x-3">
             <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 flex items-center justify-center">
-              <img 
-                src={iitrLogo} 
-                alt="IIT Roorkee Logo" 
+              <img
+                src={iitrLogo}
+                alt="IIT Roorkee Logo"
                 className={`w-full h-full object-cover rounded-full border-2 border-primary bg-white ${isLanding && !isScrolled ? 'brightness-110' : 'brightness-90'}`}
               />
             </div>
@@ -174,8 +174,8 @@ export const Navigation = ({
 
               <div className="pt-4 border-t border-border">
                 <div className="flex flex-col space-y-3">
-              <Button variant="outline" size="lg" className="text-base sm:text-lg px-4 sm:px-5 py-2 sm:py-3" asChild>
-                    <a href="/schedule.pdf" download>
+                  <Button variant="outline" size="lg" className="text-base sm:text-lg px-4 sm:px-5 py-2 sm:py-3" asChild>
+                    <a href={rootUrl ? rootUrl + "/schedule.pdf" : "/schedule.pdf"} download>
                       Download Brochure
                     </a>
                   </Button>
