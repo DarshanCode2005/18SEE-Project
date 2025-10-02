@@ -146,7 +146,7 @@ export const ThemesSection = () => {
             >
               <CardContent className="p-4">
                 <div className="flex items-start gap-3">
-                  <span className="mt-0.5 ml-3 inline-block w-0.5 h-5 bg-primary/60 rounded-sm flex-shrink-0"></span>
+                  <span className="mt-0.5 text-primary/80 font-semibold text-sm flex-shrink-0">{index + 1}.</span>
                   <div className="flex-1 min-w-0">
                     <h3 className="font-medium text-sm text-foreground leading-tight group-hover:text-primary transition-colors duration-300">
                       {theme.title}
@@ -191,7 +191,7 @@ export const ThemesSection = () => {
         }}>
           <DialogContent className="max-w-3xl max-h-[calc(100vh-4rem)] sm:max-h[calc(100vh-6rem)] overflow-y-auto">
             <DialogHeader>
-              <DialogTitle>All Conference Themes</DialogTitle>
+              <DialogTitle>All Symposium Themes</DialogTitle>
             </DialogHeader>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
               {themes.map((theme, index) => (

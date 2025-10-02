@@ -11,12 +11,13 @@ import {
   Youtube,
   ExternalLink
 } from "lucide-react";
+import xLogo from "@/assets/x-logo.png";
 
 export const FooterSection = () => {
   const quickLinks = [
     { name: "Home", href: "#home" },
     { name: "Brochure", href: "/schedule.pdf" },
-    { name: "Abstract Submission", href: "#papers" },
+    { name: "Abstract Submission", href: "/registration-soon" },
     { name: "Registration", href: "/registration-soon" }
   ];
 
@@ -44,7 +45,7 @@ export const FooterSection = () => {
     },
     {
       name: "X",
-      icon: <Twitter className="h-5 w-5" />,
+      icon: <img src={xLogo} alt="X Logo" className="h-5 w-5" />,
       href: "https://x.com/deq_iitr"
     },
     {

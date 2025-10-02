@@ -122,7 +122,7 @@ export const Navigation = ({
             {/* Schedule dropdown placed immediately after Themes */}
             <div ref={dropdownRef} className="relative">
               <Button onClick={() => setScheduleOpen(o => !o)} variant="ghost" aria-haspopup="menu" aria-expanded={scheduleOpen} className={`hover:bg-primary/10 ${navHover} transition-colors ${navText} text-base xl:text-lg px-4 xl:px-5 py-2 xl:py-3 flex items-center`}>
-                <span>Technical Program</span>
+                <span>Schedule</span>
                 <svg className={`ml-2 h-4 w-4 transition-transform ${scheduleOpen ? 'rotate-180' : ''}`} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
                   <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 011.08 1.04l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clipRule="evenodd" />
                 </svg>
