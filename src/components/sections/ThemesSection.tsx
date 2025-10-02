@@ -237,7 +237,7 @@ export const ThemesSection = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="https://docs.google.com/document/d/1vheD8zXDVVCeTLEai6izvB4ghBASczlf/edit?usp=sharing&ouid=103833907627443510563&rtpof=true&sd=true" target="_blank" rel="noreferrer"
+                  href="https://1drv.ms/w/c/86f35d902950155c/EZ1dHdo-xidOoMtBIQdJ9nkBr7zvDd18AJIdDfWPKYgg4w?e=bkrCg4" target="_blank" rel="noreferrer"
                   className="border-2 border-primary-foreground text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary-foreground/10 transition-colors"
                 >
                   Download Template
