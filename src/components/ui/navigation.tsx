@@ -150,7 +150,7 @@ export const Navigation = ({
 
         {/* Mobile Navigation */}
         {isOpen && (
-          <div className="lg:hidden bg-card border border-border rounded-lg mt-2 p-4 shadow-card animate-fade-in-scale w-full max-h-[70vh] overflow-y-auto">
+          <div className="min-[1200px]:hidden bg-card border border-border rounded-lg mt-2 p-4 shadow-card animate-fade-in-scale w-full max-h-[70vh] overflow-y-auto">
             <div className="flex flex-col space-y-2">
               {beforeItems.map(item => (
                 <Button key={item.name} variant="ghost" className="justify-start text-base sm:text-lg px-4 sm:px-5 py-2 sm:py-3" asChild onClick={() => setIsOpen(false)}>
