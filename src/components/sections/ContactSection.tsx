@@ -25,7 +25,7 @@ export const ContactSection = () => {
   } = useForm();
 
   const { submit } = useWeb3Forms({
-    access_key: "ef31016c-6016-4107-b186-1501acd01a92",
+    access_key: "84df8c3d-1013-4f17-9b54-5c49708ad533",
     settings: {
       from_name: "Symposium Contact Form",
       subject: "New Contact Form Submission",
