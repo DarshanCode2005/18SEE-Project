@@ -238,12 +238,13 @@ export const ThemesSection = () => {
                 across these themes. Submit your abstracts (around 300 words) and contribute to advancing earthquake engineering.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <button
-                  onClick={() => setGuidelinesOpen(true)}
+              <a
+                  href="/Abstract_Template.docx"
+                  download="Abstract_Template.docx"
                   className="border-2 border-primary-foreground text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary-foreground/10 transition-colors"
                 >
                   Download Template
-                </button>
+                </a>
                 <button className="bg-primary-foreground text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary-foreground/90 transition-colors">
                   Submit Abstract
                 </button>
@@ -253,7 +254,7 @@ export const ThemesSection = () => {
         </div>
 
         {/* Guidelines Modal */}
-        <Dialog open={guidelinesOpen} onOpenChange={setGuidelinesOpen}>
+        {/* <Dialog open={guidelinesOpen} onOpenChange={setGuidelinesOpen}>
           <DialogContent className="max-w-3xl max-h-[calc(100vh-4rem)] sm:max-h-[calc(100vh-6rem)] overflow-y-auto">
             <DialogHeader>
               <DialogTitle>Submission & Presentation Guidelines</DialogTitle>
@@ -353,7 +354,7 @@ export const ThemesSection = () => {
               </div>
             </div>
           </DialogContent>
-        </Dialog>
+        </Dialog> */}
       </div>
     </section>
   );
