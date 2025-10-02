@@ -33,11 +33,6 @@ The site provides conference details, schedule, call for papers, EasyChair integ
 * **Formspree / EmailJS** – Contact & registration form handling
 * **Vercel** - For Deployment
 
-## 👨‍💻 Team Roles
-
-**Frontend Development** – Shradha Thakur, Stuti Jain, Akshat Yadav
-
-**Backend & EasyChair Integration** – Madhav Dhall, Kabeer Khosla, Umesh, Shankar Mahadevan
 
 ## 📅 Development Workflow
 
