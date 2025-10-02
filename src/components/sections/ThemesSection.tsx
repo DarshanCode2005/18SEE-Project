@@ -197,7 +197,6 @@ export const ThemesSection = () => {
                 <Card key={index} className="group border border-border/50 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg animate-fade-in">
                   <CardContent className="p-4">
                     <div className="flex items-start gap-3">
-                      <span className="mt-0.5 ml-3 inline-block w-0.5 h-5 bg-primary/60 rounded-sm flex-shrink-0"></span>
                       <div className="flex-1 min-w-0">
                         <h3 className="font-medium text-sm text-foreground leading-tight group-hover:text-primary transition-colors duration-300">
                           {index + 1}. {theme.title}
