@@ -3,11 +3,11 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import googleCalendar from "@/assets/google-calendar.webp";
-import { 
-  Waves, 
-  Building, 
-  Activity, 
-  Shield, 
+import {
+  Waves,
+  Building,
+  Activity,
+  Shield,
   Mountain,
   Radar,
   ChevronDown,
@@ -66,7 +66,7 @@ export const ThemesSection = () => {
   const [showAll, setShowAll] = useState(false);
   const [modalOpen, setModalOpen] = useState(false);
   const [guidelinesOpen, setGuidelinesOpen] = useState(false);
-  
+
   const themes = [
     { icon: <Activity className="h-5 w-5" />, title: "Engineering seismology and seismotectonics" },
     { icon: <AlertTriangle className="h-5 w-5" />, title: "Lessons from recent earthquakes and tsunamis" },
@@ -105,7 +105,7 @@ export const ThemesSection = () => {
     { icon: <School className="h-5 w-5" />, title: "Earthquake engineering education" },
     { icon: <Megaphone className="h-5 w-5" />, title: "Public awareness, participation, and enforcement of building safety laws" },
     { icon: <Clock className="h-5 w-5" />, title: "Earthquake prediction and early warning system" },
-  { icon: <Bot className="h-5 w-5" />, title: "Applications of artificial intelligence and machine learning in earthquake engineering" }
+    { icon: <Bot className="h-5 w-5" />, title: "Applications of artificial intelligence and machine learning in earthquake engineering" }
   ];
 
   // Only these 8 themes should be visible in the collapsed (show less) section
@@ -124,14 +124,14 @@ export const ThemesSection = () => {
   return (
     <section id="themes" className="py-20 bg-background">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
+
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
           <Badge variant="outline" className="mb-4 bg-secondary/10 text-secondary border-secondary/20 text-2xl px-4 py-2">
-          Symposium Themes
-        </Badge>
+            Symposium Themes
+          </Badge>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed text-justify sm:text-center">
-            Dive deep into cutting-edge research areas that are shaping the next generation 
+            Dive deep into cutting-edge research areas that are shaping the next generation
             of seismic engineering solutions and earthquake-resilient infrastructure.
           </p>
         </div>
@@ -139,7 +139,7 @@ export const ThemesSection = () => {
         {/* Themes Grid */}
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
           {displayedThemes.map((theme, index) => (
-            <Card 
+            <Card
               key={index}
               className="group border border-border/50 hover:border-primary/30 transition-all duration-300 hover:-translate-y-1 hover:shadow-lg animate-fade-in"
               style={{ animationDelay: `${index * 0.05}s` }}
@@ -234,12 +234,12 @@ export const ThemesSection = () => {
                 Present Your Research
               </h3>
               <p className="text-primary-foreground/90 text-lg mb-6 leading-relaxed">
-                We invite researchers, practitioners, innovators and students to share their original work 
+                We invite researchers, practitioners, innovators and students to share their original work
                 across these themes. Submit your abstracts (around 300 words) and contribute to advancing earthquake engineering.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <a
-                  href="/Abstract_Template.docx"
+                <a
+                  href={`${import.meta.env.VITE_ROOT_URL || ''}${import.meta.env.VITE_ROOT_URL ? '/Abstract_Template.docx' : '/Abstract_Template.docx'}`}
                   download="Abstract_Template.docx"
                   className="border-2 border-primary-foreground text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary-foreground/10 transition-colors"
                 >

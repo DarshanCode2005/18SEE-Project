@@ -13,12 +13,14 @@ import { Accomodation } from "@/components/sections/Accomodation";
 import { ImportantDatesSection } from "@/components/sections/ImportantDatesSection";
 
 import React, { useRef, useEffect, useState } from "react";
+import { useLocation } from "react-router-dom";
 
 const Index = () => {
   // Navbar hide on scroll logic (fade)
   const navRef = useRef<HTMLDivElement>(null);
   const [navHidden, setNavHidden] = useState(false);
   const lastScroll = useRef(0);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -33,6 +35,22 @@ const Index = () => {
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  // Handle hash scrolling on page load
+  useEffect(() => {
+    if (location.hash) {
+      const elementId = location.hash.substring(1);
+      const element = document.getElementById(elementId);
+      if (element) {
+        setTimeout(() => {
+          element.scrollIntoView({
+            behavior: "smooth",
+            block: "start"
+          });
+        }, 500); // Increased timeout to ensure page is fully loaded
+      }
+    }
+  }, [location.hash]);
 
   return (
     <div className="min-h-screen">

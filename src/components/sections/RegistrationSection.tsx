@@ -33,15 +33,15 @@ export const RegistrationSection = () => {
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
           <Badge variant="outline" className="mb-4 bg-secondary/10 text-secondary border-secondary/20 text-2xl px-4 py-2">
-          Registration
-        </Badge>
+            Registration
+          </Badge>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">
             Secure Your Spot at
             <span className="block text-primary font-montserrat">18SEE-2026</span>
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed text-justify sm:text-center">
-            Join leading researchers, practitioners, and students from around the world. 
-            Early bird registration offers significant savings – <a href={`${import.meta.env.BASE_URL || '/' }registration-soon`} className="text-primary font-bold">register</a> now!
+            Join leading researchers, practitioners, and students from around the world.
+            Early bird registration offers significant savings – <a href={`${import.meta.env.VITE_ROOT_URL || ''}${import.meta.env.VITE_ROOT_URL ? '/registration-soon' : '/registration-soon'}`} className="text-primary font-bold">register</a> now!
           </p>
         </div>
         {/* Pricing Widget */}
@@ -52,15 +52,15 @@ export const RegistrationSection = () => {
               className={`relative border ${plan.highlight ? "border-yellow-400" : "border-gray-200"} shadow-lg rounded-2xl`}
             >
               <CardContent className="p-6"> */}
-                {/* Highlight Badge */}
-                {/* {plan.highlight && (
+        {/* Highlight Badge */}
+        {/* {plan.highlight && (
                   <span className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-xs font-semibold text-white px-3 py-1 rounded-full">
                     {plan.highlight}
                   </span>
                 )} */}
 
-                {/* Header */}
-                {/* <div className="flex items-center space-x-3 mb-4">
+        {/* Header */}
+        {/* <div className="flex items-center space-x-3 mb-4">
                   {plan.icon}
                   <h3 className="font-semibold text-xl">{plan.title}</h3>
                 </div>
@@ -69,8 +69,8 @@ export const RegistrationSection = () => {
                   <span className="ml-2 text-xs text-gray-400 italic">(To be announced)</span>
                 </p> */}
 
-                {/* Price Section (Blurred/Disabled for now) */}
-                {/* <div className="relative bg-gray-100 rounded-lg p-4 h-40 flex flex-col justify-center items-center">
+        {/* Price Section (Blurred/Disabled for now) */}
+        {/* <div className="relative bg-gray-100 rounded-lg p-4 h-40 flex flex-col justify-center items-center">
                   <div className="absolute inset-0 bg-gray-300/70 backdrop-blur-sm flex items-center justify-center rounded-lg">
                     <span className="text-gray-700 font-semibold">
                       Details Coming Soon
@@ -82,8 +82,8 @@ export const RegistrationSection = () => {
                   </div>
                 </div> */}
 
-                {/* Button */}
-                {/* <Button
+        {/* Button */}
+        {/* <Button
                   className={`w-full mt-6 ${plan.buttonColor}`}
                   disabled
                 >
