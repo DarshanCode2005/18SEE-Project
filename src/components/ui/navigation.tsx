@@ -175,7 +175,7 @@ export const Navigation = ({
               <div className="pt-4 border-t border-border">
                 <div className="flex flex-col space-y-3">
               <Button variant="outline" size="lg" className="text-base sm:text-lg px-4 sm:px-5 py-2 sm:py-3" asChild>
-                    <a href={toBase("/schedule.pdf")} download>
+                    <a href="/schedule.pdf" download>
                       Download Brochure
                     </a>
                   </Button>
