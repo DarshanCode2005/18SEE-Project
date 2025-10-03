@@ -17,8 +17,9 @@ export const FooterSection = () => {
   const rootUrl = import.meta.env.VITE_ROOT_URL || "";
   const quickLinks = [
     { name: "Home", href: "#home" },
-    { name: "Brochure", href: rootUrl ? rootUrl + "/schedule.pdf" : "/schedule.pdf" },
-    { name: "Abstract Submission", href: rootUrl ? rootUrl + "/registration-soon" : "/registration-soon" },
+    { name: "Brochure", href: rootUrl ? rootUrl + "/18SEE%20Brochure_V1.pdf" : "/18SEE%20Brochure_V1.pdf" },
+    // { name: "Abstract Submission", href: rootUrl ? rootUrl + "/registration-soon" : "/registration-soon" },
+    { name: "Abstract Submission", href: "" },
     { name: "Registration", href: rootUrl ? rootUrl + "/registration-soon" : "/registration-soon" }
   ];
 
@@ -30,7 +31,7 @@ export const FooterSection = () => {
       external: true
     },
     { name: "ISET", href: "https://iset.org.in/", external: true },
-    { name: "Travel Information", href: "/#travel" }
+    { name: "Travel Information", href: rootUrl ? rootUrl + "/#travel" : "/#travel" }
   ];
 
   const socialLinks = [
@@ -100,7 +101,7 @@ export const FooterSection = () => {
                 {quickLinks.map((link) => (
                   <li key={link.name}>
                     <a
-                      href={link.href}
+                      href={link.href || undefined}
                       className="text-sm text-primary-foreground/80 hover:text-secondary transition-colors block"
                     >
                       {link.name}

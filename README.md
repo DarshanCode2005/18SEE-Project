@@ -34,7 +34,6 @@ The site provides conference details, schedule, call for papers, EasyChair integ
 * **Vercel** - For Deployment
 
 
-
 ## 📅 Development Workflow
 
 * Task breakdown in **Notion** (assigned by section & deadline)
