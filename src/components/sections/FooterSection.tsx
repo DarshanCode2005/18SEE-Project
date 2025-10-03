@@ -177,6 +177,11 @@ export const FooterSection = () => {
             </div>
           </div>
         </div>
+        <div className="py-2">
+          <p className="text-primary-foreground/80 text-xs sm:text-xs text-left leading-relaxed w-full">
+            The Microsoft CMT service was used for managing the peer-reviewing process for this conference. This service was provided for free by Microsoft and they bore all expenses, including costs for Azure cloud services as well as for software development and support.
+          </p>
+        </div>
       </div>
     </footer>
   );
