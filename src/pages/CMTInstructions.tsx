@@ -1,6 +1,7 @@
 import { Button } from "@/components/ui/button";
-import { ArrowLeft, ExternalLink, Download } from "lucide-react";
+import { ArrowLeft, ExternalLink, Download, X, ZoomIn } from "lucide-react";
 import { Link } from "react-router-dom";
+import { useState } from "react";
 
 // Import instruction images
 import step1 from "@/assets/instructions image/step 1.png";
@@ -15,6 +16,8 @@ import step8 from "@/assets/instructions image/step 8.png";
 import step9 from "@/assets/instructions image/step 9.png";
 
 export const CMTInstructions = () => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   const steps = [
     {
       id: 1,
@@ -191,11 +194,16 @@ export const CMTInstructions = () => {
                       {step.content}
                     </p>
                     <div className="bg-muted/50 rounded-lg p-4">
-                      <img 
-                        src={step.image} 
-                        alt={`Step ${step.id} illustration`}
-                        className="w-full h-auto rounded border"
-                      />
+                      <div className="relative group cursor-pointer" onClick={() => setSelectedImage(step.image)}>
+                        <img 
+                          src={step.image} 
+                          alt={`Step ${step.id} illustration`}
+                          className="w-full h-auto rounded border transition-transform group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors rounded border flex items-center justify-center">
+                          <ZoomIn className="h-8 w-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -226,6 +234,29 @@ export const CMTInstructions = () => {
           </div>
         </div>
       </div>
+
+      {/* Image Modal */}
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
+          onClick={() => setSelectedImage(null)}
+        >
+          <div className="relative max-w-4xl max-h-[90vh] w-full">
+            <button
+              onClick={() => setSelectedImage(null)}
+              className="absolute -top-12 right-0 text-white hover:text-gray-300 transition-colors z-10"
+            >
+              <X className="h-8 w-8" />
+            </button>
+            <img 
+              src={selectedImage} 
+              alt="Enlarged instruction image"
+              className="w-full h-auto max-h-[90vh] object-contain rounded-lg shadow-2xl"
+              onClick={(e) => e.stopPropagation()}
+            />
+          </div>
+        </div>
+      )}
     </div>
   );
 };
