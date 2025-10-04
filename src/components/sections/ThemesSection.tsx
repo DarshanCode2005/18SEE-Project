@@ -242,9 +242,12 @@ export const ThemesSection = () => {
                 >
                   Download Template
                 </a>
-                <button className="bg-primary-foreground text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary-foreground/90 transition-colors">
+                <a 
+                  href={`${import.meta.env.VITE_ROOT_URL || ''}/cmt-instructions`}
+                  className="bg-primary-foreground text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary-foreground/90 transition-colors inline-block"
+                >
                   Submit Abstract
-                </button>
+                </a>
               </div>
             </CardContent>
           </Card>

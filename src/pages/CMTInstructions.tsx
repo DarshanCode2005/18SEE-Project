@@ -132,7 +132,7 @@ export const CMTInstructions = () => {
       <div className="bg-primary text-primary-foreground py-8">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex items-center gap-4 mb-6">
-            <Button variant="ghost" size="sm" asChild className="text-primary-foreground hover:bg-primary-foreground/10">
+            <Button variant="ghost" size="sm" asChild className="text-primary-foreground hover:bg-primary-foreground/10 hover:text-white">
               <Link to="/">
                 <ArrowLeft className="h-4 w-4 mr-2" />
                 Back to Home
