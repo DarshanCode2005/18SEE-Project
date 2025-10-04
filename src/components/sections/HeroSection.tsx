@@ -153,7 +153,7 @@ export const HeroSection = () => {
         {/* Call to Action */}
         <div className="flex flex-col sm:flex-row justify-center gap-4">
           <Button size="lg" className="bg-secondary hover:bg-secondary-dark text-secondary-foreground shadow-glow" asChild>
-            <a aria-disabled>Submit Abstract</a>
+            <a href={`${import.meta.env.VITE_ROOT_URL || ''}/cmt-instructions`}>Submit Abstract</a>
           </Button>
           <Button size="lg" variant="outline" className="border-primary-foreground bg-slate-100 text-slate-700" asChild>
             <a href={`${import.meta.env.VITE_ROOT_URL || ''}${import.meta.env.VITE_ROOT_URL ? '/18SEE%20Brochure_V1.pdf' : '/18SEE%20Brochure_V1.pdf'}`} download>
