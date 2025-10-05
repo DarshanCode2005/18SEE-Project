@@ -30,6 +30,7 @@ import iitroorkee from "@/assets/iitr_logo_about.png";
 
 export const CMTInstructions = () => {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
+  const rootUrl = import.meta.env.VITE_ROOT_URL || "";
 
   // Custom footer for CMT Instructions page (without Microsoft CMT acknowledgement)
   const CMTFooter = () => {
@@ -200,7 +201,7 @@ export const CMTInstructions = () => {
   const steps = [
     {
       id: 1,
-      title: "CMT Registration and Account Setup",
+      title: "CMT Account Setup",
       content: (
         <>
           <div className="space-y-6">
@@ -250,7 +251,7 @@ export const CMTInstructions = () => {
 
             <div>
               <p className="mb-4">
-                You should see the following webpage and, as directed, next login to your registered email.
+                You should see the following webpage and, as directed, next log into your registered email.
               </p>
               <div className="bg-muted/50 rounded-lg p-2 sm:p-4">
                 <div className="relative group cursor-pointer overflow-hidden rounded border" onClick={() => setSelectedImage(step3)}>
@@ -286,7 +287,7 @@ export const CMTInstructions = () => {
 
             <div>
               <p className="mb-4">
-                On doing so, you shall be directed to the below webpage. This means that you can now login at 18SEE CMT Portal using the credentials just created.
+                On doing so, you shall be directed to the below webpage. This means that you can now login into 18SEE CMT Portal using the credentials just created.
               </p>
               <div className="bg-muted/50 rounded-lg p-2 sm:p-4">
                 <div className="relative group cursor-pointer overflow-hidden rounded border" onClick={() => setSelectedImage(step4b)}>
@@ -341,9 +342,7 @@ export const CMTInstructions = () => {
       title: "Submission Confirmation",
       content: (
         <>
-          <span className="text-teal-600 font-medium">
-            You and your co-authors shall be notified about this submission on your respective emails.
-          </span>{" "}
+            You and your co-authors shall be notified about this submission on your respective emails.{" "}
           Click <span className="text-teal-600 font-medium">Done</span> at the bottom of the page and you shall subsequently see a summary of your submission (see the next image).
         </>
       ),
@@ -408,7 +407,7 @@ export const CMTInstructions = () => {
               </a>
             </Button>
             <Button variant="outline" asChild className="border-2 border-gray-600 hover:border-gray-700">
-              <a href="/Abstract_Template.docx" download>
+              <a href={rootUrl ? rootUrl + "/Abstract_Template.docx" : "/Abstract_Template.docx"} download>
                 <Download className="h-4 w-4 mr-2" />
                 Download Abstract Template
               </a>
