@@ -287,7 +287,7 @@ export const CMTInstructions = () => {
 
             <div>
               <p className="mb-4">
-                On doing so, you shall be directed to the below webpage. This means that you can now login into 18SEE CMT Portal using the credentials just created.
+                On doing so, you shall be directed to the below webpage. This means that you can now log into 18SEE CMT Portal using the credentials just created.
               </p>
               <div className="bg-muted/50 rounded-lg p-2 sm:p-4">
                 <div className="relative group cursor-pointer overflow-hidden rounded border" onClick={() => setSelectedImage(step4b)}>
