@@ -407,7 +407,7 @@ export const CMTInstructions = () => {
               </a>
             </Button>
             <Button variant="outline" asChild className="border-2 border-gray-600 hover:border-gray-700">
-              <a href={rootUrl ? rootUrl + "/Abstract_Template.docx" : "/Abstract_Template.docx"} download>
+              <a href="https://1drv.ms/w/c/86f35d902950155c/EZ1dHdo-xidOoMtBIQdJ9nkBr7zvDd18AJIdDfWPKYgg4w?e=bkrCg4">
                 <Download className="h-4 w-4 mr-2" />
                 Download Abstract Template
               </a>
