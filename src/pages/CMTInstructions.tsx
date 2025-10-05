@@ -341,7 +341,10 @@ export const CMTInstructions = () => {
       title: "Submission Confirmation",
       content: (
         <>
-          You and your co-authors shall be notified about this submission on your respective emails. Click Done at the bottom of the page and you shall subsequently see a summary of your submission (see the next image).
+          <span className="text-teal-600 font-medium">
+            You and your co-authors shall be notified about this submission on your respective emails.
+          </span>{" "}
+          Click <span className="text-teal-600 font-medium">Done</span> at the bottom of the page and you shall subsequently see a summary of your submission (see the next image).
         </>
       ),
       image: step8
