@@ -200,83 +200,114 @@ export const CMTInstructions = () => {
   const steps = [
     {
       id: 1,
-      title: "CMT Registration",
+      title: "CMT Registration and Account Setup",
       content: (
         <>
-          Visit 18SEE CMT portal {" "}
-          (<a 
-            href="https://cmt3.research.microsoft.com/SEE2026" 
-            target="_blank" 
-            rel="noopener noreferrer"
-            className="text-blue-600 hover:text-blue-700 underline hover:no-underline transition-all duration-200"
-          >
-            https://cmt3.research.microsoft.com/SEE2026
-          </a>)
-          . If you already hold a CMT account, skip to step 3. Otherwise, click <span className="text-teal-600 font-medium">Register</span>.
-        </>
-      ),
-      image: step1
-    },
-    {
-      id: 2,
-      title: "Account Registration Process",
-      content: (
-        <>
-          Complete the registration process by following the substeps below to create and activate your CMT account.
+          <div className="space-y-6">
+            <div>
+              <p className="mb-4">
+                Visit 18SEE CMT portal {" "}
+                (<a
+                  href="https://cmt3.research.microsoft.com/SEE2026"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:text-blue-700 underline hover:no-underline transition-all duration-200"
+                >
+                  https://cmt3.research.microsoft.com/SEE2026
+                </a>). If you already hold a CMT account, skip to step 2. Otherwise, click <span className="text-teal-600 font-medium">Register</span>.
+              </p>
+              <div className="bg-muted/50 rounded-lg p-2 sm:p-4">
+                <div className="relative group cursor-pointer overflow-hidden rounded border" onClick={() => setSelectedImage(step1)}>
+                  <img
+                    src={step1}
+                    alt="Step 1 illustration"
+                    className="w-full h-auto rounded border transition-transform group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                    <ZoomIn className="h-6 w-6 sm:h-8 sm:w-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <p className="mb-4">
+                Create your login credentials (include the email address you wish to receive updates on about the event), fill in your particulars, enter the captcha characters (under Verification), and tick the agreement statement. Finally, click <span className="text-teal-600 font-medium">Register</span>.
+              </p>
+              <div className="bg-muted/50 rounded-lg p-2 sm:p-4">
+                <div className="relative group cursor-pointer overflow-hidden rounded border" onClick={() => setSelectedImage(step2)}>
+                  <img
+                    src={step2}
+                    alt="Create CMT Account"
+                    className="w-full h-auto rounded border transition-transform group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                    <ZoomIn className="h-6 w-6 sm:h-8 sm:w-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <p className="mb-4">
+                You should see the following webpage and, as directed, next login to your registered email.
+              </p>
+              <div className="bg-muted/50 rounded-lg p-2 sm:p-4">
+                <div className="relative group cursor-pointer overflow-hidden rounded border" onClick={() => setSelectedImage(step3)}>
+                  <img
+                    src={step3}
+                    alt="CMT Registration Confirmation"
+                    className="w-full h-auto rounded border transition-transform group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                    <ZoomIn className="h-6 w-6 sm:h-8 sm:w-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <p className="mb-4">
+                On your registered email, open the 'Account Verification' message from CMT and click the activation link.
+              </p>
+              <div className="bg-muted/50 rounded-lg p-2 sm:p-4">
+                <div className="relative group cursor-pointer overflow-hidden rounded border" onClick={() => setSelectedImage(step4a)}>
+                  <img
+                    src={step4a}
+                    alt="Account Activation"
+                    className="w-full h-auto rounded border transition-transform group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                    <ZoomIn className="h-6 w-6 sm:h-8 sm:w-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div>
+              <p className="mb-4">
+                On doing so, you shall be directed to the below webpage. This means that you can now login at 18SEE CMT Portal using the credentials just created.
+              </p>
+              <div className="bg-muted/50 rounded-lg p-2 sm:p-4">
+                <div className="relative group cursor-pointer overflow-hidden rounded border" onClick={() => setSelectedImage(step4b)}>
+                  <img
+                    src={step4b}
+                    alt="Account Activated"
+                    className="w-full h-auto rounded border transition-transform group-hover:scale-105"
+                  />
+                  <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-colors flex items-center justify-center">
+                    <ZoomIn className="h-6 w-6 sm:h-8 sm:w-8 text-white opacity-0 group-hover:opacity-100 transition-opacity" />
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </>
       ),
       image: null
     },
     {
-      id: '2A',
-      title: "Create CMT Account",
-      isSubstep: true,
-      parentStep: "Step 2",
-      content: (
-        <>
-          Create your login credentials (include the email address you wish to receive updates on about the event), fill in your particulars, enter the captcha characters (under Verification), and tick the agreement statement. Finally, click <span className="text-teal-600 font-medium">Register</span>.
-        </>
-      ),
-      image: step2
-    },
-    {
-      id: '2B',
-      title: "CMT Registration Confirmation",
-      isSubstep: true,
-      parentStep: "Step 2",
-      content: (
-        <>
-          You should see the following webpage and, as directed, next login to your registered email. 
-        </>
-      ),
-      image: step3
-    },
-    {
-      id: '2C',
-      title: "Account Activation",
-      isSubstep: true,
-      parentStep: "Step 2",
-      content: (
-        <>
-          On your registered email, open the 'Account Verification' message from CMT and click the activation link.
-        </>
-      ),
-      image: step4a
-    },
-    {
-      id: '2D',
-      title: "Account Activated",
-      isSubstep: true,
-      parentStep: "Step 2",
-      content: (
-        <>
-          On doing so, you shall be directed to the below webpage. This means that you can now login at 18SEE CMT Portal using the credentials just created.
-        </>
-      ),
-      image: step4b
-    },
-    {
-      id: 3,
+      id: 2,
       title: "18SEE CMT Login",
       content: (
         <>
@@ -286,7 +317,7 @@ export const CMTInstructions = () => {
       image: step5
     },
     {
-      id: 4,
+      id: 3,
       title: "Create Submission",
       content: (
         <>
@@ -296,17 +327,17 @@ export const CMTInstructions = () => {
       image: step6
     },
     {
-      id: 5,
+      id: 4,
       title: "Submit Abstract",
       content: (
         <>
-          Enter the <span className="text-teal-600 font-medium">title of your abstract</span> and add <span className="text-teal-600 font-medium">other contributing authors</span> (if applicable). Next, upload the <span className="text-teal-600 font-medium">.docx</span> file containing your Abstract. Further, select <span className="text-teal-600 font-medium">Yes</span> from the drop-down menu under <span className="text-teal-600 font-medium">1. Corresponding Author</span> query if you are indeed the corresponding author <span className="text-teal-600 font-medium">or</span> else, <span className="text-teal-600 font-medium">No</span>. After carefully reviewing the above information, click the <span className="text-teal-600 font-medium">Submit</span> button and you will have successfully submitted your abstract!
+          Enter the <span className="text-black font-bold">title of your abstract</span> and add <span className="text-black font-bold">other contributing authors</span> (if applicable). Next, upload the <span className="text-black font-bold">.docx</span> file containing your Abstract. Further, select <span className="text-teal-600 font-medium">Yes</span> from the drop-down menu under <span className="text-teal-600 font-medium">1. Corresponding Author</span> query if you are indeed the corresponding author <span className="text-teal-600 font-medium">or</span> else, <span className="text-teal-600 font-medium">No</span>. After carefully reviewing the above information, click the <span className="text-teal-600 font-medium">Submit</span> button and you will have successfully submitted your abstract!
         </>
       ),
       image: step7
     },
     {
-      id: 6,
+      id: 5,
       title: "Submission Confirmation",
       content: (
         <>
@@ -316,7 +347,7 @@ export const CMTInstructions = () => {
       image: step8
     },
     {
-      id: 7,
+      id: 6,
       title: "Edit Submission (Optional)",
       content: (
         <>
@@ -332,11 +363,11 @@ export const CMTInstructions = () => {
       {/* Header */}
       <div className="bg-primary text-primary-foreground py-4">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4">
-          
+
           <div className="flex items-center justify-center gap-4 sm:gap-6 min-h-[120px]">
-            <img 
-              src={iitroorkee} 
-              alt="IIT Roorkee Logo" 
+            <img
+              src={iitroorkee}
+              alt="IIT Roorkee Logo"
               className="h-16 sm:h-20 md:h-24 lg:h-28 xl:h-32 w-auto flex-shrink-0"
             />
             <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-bold text-center">
@@ -344,7 +375,8 @@ export const CMTInstructions = () => {
             </h1>
           </div>
 
-          <div className="flex items-center gap-4 mb-2 mt-2 ml-2">
+          {/* Back to Home Button - Positioned below logo/title area */}
+          <div className="flex items-center gap-4 -mt-6 -ml-6">
             <Button variant="ghost" size="sm" asChild className="text-primary-foreground hover:bg-primary-foreground/10 hover:text-white">
               <Link to="/">
                 <ArrowLeft className="h-4 w-4 mr-2" />
@@ -353,7 +385,7 @@ export const CMTInstructions = () => {
             </Button>
           </div>
 
-          
+
         </div>
       </div>
 
@@ -363,7 +395,7 @@ export const CMTInstructions = () => {
         <div className="bg-card border rounded-lg p-6 mb-8">
           <h2 className="text-xl font-semibold mb-4 text-primary">Dear Authors,</h2>
           <p className="font-semibold mb-4 text-primary text-lg">
-          Please follow the simple steps below to submit your Abstract for 18SEE-2026. In summary, the Abstract must be uploaded as a single file through the Microsoft CMT portal of 18SEE. Further, it should be prepared using the provided template, preferably in .docx format.
+            Please follow the simple steps below to submit your Abstract for 18SEE-2026. In summary, the Abstract must be uploaded as a single file through the Microsoft CMT portal of 18SEE. Further, it should be prepared using the provided template, preferably in .docx format.
           </p>
           <div className="mt-4 flex flex-col sm:flex-row gap-4">
             <Button asChild className="bg-primary hover:bg-primary/90">
@@ -384,37 +416,29 @@ export const CMTInstructions = () => {
         {/* Steps */}
         <div className="space-y-6">
           {steps.map((step, index) => {
-            const isSubstep = step.isSubstep;
-            
             return (
               <div key={step.id}>
                 {/* Step Card */}
-                <div className={`bg-card border rounded-lg overflow-hidden ${isSubstep ? 'ml-6 sm:ml-8 md:ml-12' : ''}`}>
+                <div className="bg-card border rounded-lg overflow-hidden">
                   <div className="p-4 sm:p-6">
                     <div className="flex items-start gap-3 sm:gap-4">
                       <div className="flex-shrink-0">
-                        <div className={`rounded-full flex items-center justify-center font-bold ${
-                          isSubstep 
-                            ? 'w-8 h-8 sm:w-10 sm:h-10 bg-secondary text-secondary-foreground border-2 border-primary/20' 
-                            : 'w-10 h-10 sm:w-12 sm:h-12 bg-primary text-primary-foreground'
-                        }`}>
-                          {isSubstep ? step.id.replace('2', '') : step.id}
+                        <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary text-primary-foreground rounded-full flex items-center justify-center font-bold">
+                          {step.id}
                         </div>
                       </div>
                       <div className="flex-1 min-w-0">
-                        <h3 className={`font-semibold mb-2 sm:mb-3 text-primary ${
-                          isSubstep ? 'text-lg sm:text-xl' : 'text-xl sm:text-2xl'
-                        }`}>
+                        <h3 className="text-xl sm:text-2xl font-semibold mb-2 sm:mb-3 text-primary">
                           {step.title}
                         </h3>
-                        <p className="text-muted-foreground leading-relaxed mb-3 sm:mb-4 text-sm sm:text-base">
+                        <div className="text-muted-foreground leading-relaxed mb-3 sm:mb-4 text-sm sm:text-base">
                           {step.content}
-                        </p>
+                        </div>
                         {step.image && (
                           <div className="bg-muted/50 rounded-lg p-2 sm:p-4">
                             <div className="relative group cursor-pointer overflow-hidden rounded border" onClick={() => setSelectedImage(step.image!)}>
-                              <img 
-                                src={step.image} 
+                              <img
+                                src={step.image}
                                 alt={`Step ${step.id} illustration`}
                                 className="w-full h-auto rounded border transition-transform group-hover:scale-105"
                               />
@@ -437,8 +461,8 @@ export const CMTInstructions = () => {
         <div className="mt-12 bg-card border rounded-lg p-6">
           <h3 className="text-center text-3xl font-semibold mb-4 text-primary">Ready to Submit?</h3>
           <p className="text-muted-foreground mb-6 text-center">
-          Follow the above steps to submit your Abstract. If you encounter any issues, do not hesitate to
-          contact us.
+            Follow the above steps to submit your Abstract. If you encounter any issues, do not hesitate to
+            contact us.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Button asChild className="bg-primary hover:bg-primary/90">
@@ -453,7 +477,7 @@ export const CMTInstructions = () => {
 
       {/* Image Modal */}
       {selectedImage && (
-        <div 
+        <div
           className="fixed inset-0 bg-black/80 z-50 flex items-center justify-center p-4"
           onClick={() => setSelectedImage(null)}
         >
@@ -464,8 +488,8 @@ export const CMTInstructions = () => {
             >
               <X className="h-8 w-8" />
             </button>
-            <img 
-              src={selectedImage} 
+            <img
+              src={selectedImage}
               alt="Enlarged instruction image"
               className="w-full h-auto max-h-[90vh] object-contain rounded-lg shadow-2xl"
               onClick={(e) => e.stopPropagation()}
@@ -473,7 +497,7 @@ export const CMTInstructions = () => {
           </div>
         </div>
       )}
-      
+
       {/* Footer */}
       <CMTFooter />
     </div>
