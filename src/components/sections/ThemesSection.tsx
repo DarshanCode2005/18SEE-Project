@@ -237,12 +237,12 @@ export const ThemesSection = () => {
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <a
-                  href="https://1drv.ms/w/c/86f35d902950155c/EZ1dHdo-xidOoMtBIQdJ9nkBr7zvDd18AJIdDfWPKYgg4w?e=bkrCg4" target="_blank" rel="noreferrer"
+                  href="https://channeli.in/api/django_filemanager/media_files/128931/" target="_blank" rel="noreferrer"
                   className="border-2 border-primary-foreground text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary-foreground/10 transition-colors"
                 >
                   Download Template
                 </a>
-                <a 
+                <a
                   href={`${import.meta.env.VITE_ROOT_URL || ''}/cmt-instructions`}
                   className="bg-primary-foreground text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary-foreground/90 transition-colors inline-block"
                 >

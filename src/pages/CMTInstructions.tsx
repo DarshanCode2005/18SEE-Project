@@ -342,7 +342,7 @@ export const CMTInstructions = () => {
       title: "Submission Confirmation",
       content: (
         <>
-            You and your co-authors shall be notified about this submission on your respective emails.{" "}
+          You and your co-authors shall be notified about this submission on your respective emails.{" "}
           Click <span className="text-teal-600 font-medium">Done</span> at the bottom of the page and you shall subsequently see a summary of your submission (see the next image).
         </>
       ),
@@ -380,7 +380,7 @@ export const CMTInstructions = () => {
           {/* Back to Home Button - Positioned below logo/title area */}
           <div className="flex items-center gap-4 -mt-6 -ml-6">
             <Button variant="ghost" size="sm" asChild className="text-primary-foreground hover:bg-primary-foreground/10 hover:text-white">
-              <Link to="/">
+              <Link to={rootUrl ? rootUrl + "/" : "/"}>
                 <ArrowLeft className="h-4 w-4 mr-2" />
                 Back to Home
               </Link>
@@ -393,7 +393,7 @@ export const CMTInstructions = () => {
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        
+
         <div className="bg-card border rounded-lg p-6 mb-8">
           <h2 className="text-xl font-semibold mb-4 text-primary">Dear Authors,</h2>
           <p className="font-semibold mb-4 text-primary text-lg">
@@ -407,7 +407,7 @@ export const CMTInstructions = () => {
               </a>
             </Button>
             <Button variant="outline" asChild className="border-2 border-gray-600 hover:border-gray-700">
-              <a href="https://1drv.ms/w/c/86f35d902950155c/EZ1dHdo-xidOoMtBIQdJ9nkBr7zvDd18AJIdDfWPKYgg4w?e=bkrCg4">
+              <a href="https://channeli.in/api/django_filemanager/media_files/128931/">
                 <Download className="h-4 w-4 mr-2" />
                 Download Abstract Template
               </a>
