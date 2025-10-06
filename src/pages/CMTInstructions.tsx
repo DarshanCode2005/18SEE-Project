@@ -397,7 +397,7 @@ export const CMTInstructions = () => {
         <div className="bg-card border rounded-lg p-6 mb-8">
           <h2 className="text-xl font-semibold mb-4 text-primary">Dear Authors,</h2>
           <p className="font-semibold mb-4 text-primary text-lg">
-            Please follow the simple steps below to submit your Abstract for 18SEE-2026. In summary, the Abstract must be uploaded as a single file through the Microsoft CMT portal of 18SEE. Further, it should be prepared using the provided template, preferably in .docx format.
+            Please prepare a one-page abstract of around 300 words using the prescribed template, preferably in .docx format. This is to be uploaded as a single file through the Microsoft CMT portal of 18SEE-2026. Follow the simple steps given below to complete your submission.
           </p>
           <div className="mt-4 flex flex-col sm:flex-row gap-4">
             <Button asChild className="bg-primary hover:bg-primary/90">
