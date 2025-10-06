@@ -393,7 +393,7 @@ export const CMTInstructions = () => {
 
       {/* Main Content */}
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        {/* Introduction Message */}
+        
         <div className="bg-card border rounded-lg p-6 mb-8">
           <h2 className="text-xl font-semibold mb-4 text-primary">Dear Authors,</h2>
           <p className="font-semibold mb-4 text-primary text-lg">
