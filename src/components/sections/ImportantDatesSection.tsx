@@ -55,19 +55,19 @@ export const ImportantDatesSection = () => {
                 {(() => {
                   const importantDates = [
                     {
-                      date: new Date("2025-12-15T00:00:00"),
-                      label: "Abstract submission closes",
-                      display: "Dec. 15, 2025"
-                    },
-                    {
                       date: new Date("2026-01-15T00:00:00"),
-                      label: "Confirmation of acceptance of abstract",
-                      display: "Jan. 15, 2026"
+                      label: "Abstract submission closes",
+                      display: (<span><s>Dec. 15, 2025</s><br />Jan. 15, 2026</span>)
                     },
                     {
-                      date: new Date("2026-03-15T00:00:00"),
+                      date: new Date("2026-02-15T00:00:00"),
+                      label: "Confirmation of acceptance of abstract",
+                      display: (<span><s>Jan. 15, 2026</s><br />Feb. 15, 2026</span>)
+                    },
+                    {
+                      date: new Date("2026-04-15T00:00:00"),
                       label: "Full-length manuscript submission closes",
-                      display: "March 15, 2026"
+                      display: (<span><s>March 15, 2026</s><br />Apr. 15, 2026</span>)
                     },
                     {
                       date: new Date("2026-12-10T09:00:00"),
@@ -90,7 +90,9 @@ export const ImportantDatesSection = () => {
                           <div key={idx} className={`flex flex-col items-center py-8 px-4 border-2 rounded-xl shadow-md min-h-[180px] min-w-[260px] ${cardBg}`}>
                             <div className="flex flex-col items-center justify-start min-h[80px]">
                               <div className={`w-4 h-4 rounded-full mb-6 ${dotBg}`}></div>
-                              <p className={`text-xl font-bold mb-1 ${dateText}`}>{d.display}</p>
+                              <div className="flex flex-col items-center w-full">
+                                <p className={`text-xl font-bold mb-1 ${dateText} text-center`}>{typeof d.display === 'string' ? d.display : d.display}</p>
+                              </div>
                             </div>
                             <p className={`text-lg font-semibold text-center mt-2 ${labelText}`}>{d.label}</p>
                           </div>
