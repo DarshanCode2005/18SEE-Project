@@ -57,22 +57,26 @@ export const ImportantDatesSection = () => {
                     {
                       date: new Date("2026-01-15T00:00:00"),
                       label: "Abstract submission closes",
-                      display: (<span><s>Dec. 15, 2025</s><br />Jan. 15, 2026</span>)
+                      old: "Dec. 15, 2025",
+                      revised: "Jan. 15, 2026"
                     },
                     {
                       date: new Date("2026-02-15T00:00:00"),
                       label: "Confirmation of acceptance of abstract",
-                      display: (<span><s>Jan. 15, 2026</s><br />Feb. 15, 2026</span>)
+                      old: "Jan. 15, 2026",
+                      revised: "Feb. 15, 2026"
                     },
                     {
                       date: new Date("2026-04-15T00:00:00"),
                       label: "Full-length manuscript submission closes",
-                      display: (<span><s>March 15, 2026</s><br />Apr. 15, 2026</span>)
+                      old: "March 15, 2026",
+                      revised: "Apr. 15, 2026"
                     },
                     {
                       date: new Date("2026-12-10T09:00:00"),
                       label: "Inauguration of 18SEE",
-                      display: "Dec. 10, 2026"
+                      old: null,
+                      revised: "Dec. 10, 2026"
                     }
                   ];
                   const now = new Date();
@@ -86,12 +90,26 @@ export const ImportantDatesSection = () => {
                         const dotBg = isNext ? "bg-red-600 ring-2 ring-red-300 animate-pulse" : "bg-yellow-400";
                         const dateText = isNext ? "text-red-700" : "text-yellow-700";
                         const labelText = isNext ? "text-red-800" : "text-yellow-800";
+                        // For vertical alignment, add invisible old date for the last card
                         return (
                           <div key={idx} className={`flex flex-col items-center py-8 px-4 border-2 rounded-xl shadow-md min-h-[180px] min-w-[260px] ${cardBg}`}>
-                            <div className="flex flex-col items-center justify-start min-h[80px]">
+                            <div className="flex flex-col items-center justify-start min-h-[80px] w-full">
                               <div className={`w-4 h-4 rounded-full mb-6 ${dotBg}`}></div>
                               <div className="flex flex-col items-center w-full">
-                                <p className={`text-xl font-bold mb-1 ${dateText} text-center`}>{typeof d.display === 'string' ? d.display : d.display}</p>
+                                {/* Old date (strikethrough, faded, small) */}
+                                {d.old ? (
+                                  <span
+                                    className={`line-through mb-0.5 ${dateText}`}
+                                    style={{ fontSize: '0.9rem', opacity: 0.55 }}
+                                  >
+                                    {d.old}
+                                  </span>
+                                ) : (
+                                  // For alignment, render an invisible placeholder if no old date
+                                  <span className="invisible select-none mb-0.5" style={{ fontSize: '1.05rem' }}>&nbsp;</span>
+                                )}
+                                {/* Revised date (prominent, bold, original color) */}
+                                <span className={`font-bold text-lg md:text-xl mb-1 ${dateText}`} style={{ display: 'inline-block' }}>{d.revised}</span>
                               </div>
                             </div>
                             <p className={`text-lg font-semibold text-center mt-2 ${labelText}`}>{d.label}</p>
