@@ -85,17 +85,17 @@ export const RegistrationSection = () => {
 {/* Price Section */}
                 <div className="space-y-2 mb-2">
                   <div className="bg-slate-50 rounded-lg p-3 border border-slate-200 transition-all duration-200 hover:bg-slate-100 hover:scale-[1.02] hover:shadow-md">
-                    <div className="text-xs font-medium text-slate-600 mb-1">SAARC Delegates #</div>
+                    <div className="text-xs font-medium text-slate-600 mb-1">SAARC Delegates</div>
                     <div className="text-2xl font-bold text-slate-800">₹{plan.Delegates_from_SAARC_fees}</div>
                   </div>
                   
                   <div className="bg-slate-50 rounded-lg p-3 border border-slate-200 transition-all duration-200 hover:bg-slate-100 hover:scale-[1.02] hover:shadow-md">
-                    <div className="text-xs font-medium text-slate-600 mb-1">ISET Life Members/Fellow</div>
+                    <div className="text-xs font-medium text-slate-600 mb-1">ISET Life Members/Fellows</div>
                     <div className="text-2xl font-bold text-slate-800">₹{plan.ISET_Members_Fees}</div>
                   </div>
                   
                   <div className="bg-slate-50 rounded-lg p-3 border border-slate-200 transition-all duration-200 hover:bg-slate-100 hover:scale-[1.02] hover:shadow-md">
-                    <div className="text-xs font-medium text-slate-600 mb-1">Students/Research Scholars</div>
+                    <div className="text-xs font-medium text-slate-600 mb-1">Students/Research Scholars/Spouses</div>
                     <div className="text-2xl font-bold text-slate-800">₹{plan.Students_Fees}</div>
                   </div>
                   
@@ -105,7 +105,7 @@ export const RegistrationSection = () => {
                   </div>
                   
                   <div className="bg-slate-50 rounded-lg p-3 border border-slate-200 transition-all duration-200 hover:bg-slate-100 hover:scale-[1.02] hover:shadow-md">
-                    <div className="text-xs font-medium text-slate-600 mb-1">Foreign (ISET Member)</div>
+                    <div className="text-xs font-medium text-slate-600 mb-1">Foreign Delegates with ISET Membership</div>
                     <div className="text-2xl font-bold text-slate-800">${plan.Foreign_Delegates_ISET_Fees}</div>
                   </div>
                 </div>
@@ -119,9 +119,10 @@ export const RegistrationSection = () => {
             </Card>
           ))}
         </div>
-        <div className="text-md mt-0 mx-8">
-          # Participants who register for the symposium and apply for ISET membership simultaneously will receive a waiver of INR 1000 on the membership fee. 
+        <div className="text-md mt-2 mx-8 text-gray-600 text-center">
+          *Participants who register for the symposium and apply for ISET membership together are eligible for a ₹1,000 waiver on the membership fee.
         </div>
+
       </div>
     </section>
   )
