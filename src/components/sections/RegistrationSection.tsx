@@ -82,14 +82,31 @@ export const RegistrationSection = () => {
                   Deadline: <span className="select-none">{plan.deadline}</span>
                 </p> 
 
-                {/* Price Section (Blurred/Disabled for now) */}
-                <div className="bg-gray-100 rounded-lg p-4 h-auto flex flex-col justify-center items-center">
-                  <div className="inset-0 bg-gray-300/70 backdrop-blur-sm flex items-start justify-center rounded-lg flex-col p-4 h-auto gap-3 max-w-[25vw]">
-                    <div className= "text-md">Delegates from SAARC Nations(INR) # : {plan.Delegates_from_SAARC_fees}</div>
-                    <div className= "text-md">ISET Life Members/Fellow(INR) : {plan.ISET_Members_Fees}</div>
-                    <div className= "text-md">Students/Research Scholars/Spouses(INR) : {plan.Students_Fees}</div>
-                    <div className= "text-md">Foreign Delegates(USD) : {plan.Foreign_Delegates_Fees}</div>
-                    <div className= "text-md">Foreign Delegates with ISET Membership (USD) : {plan.Foreign_Delegates_ISET_Fees}</div>
+{/* Price Section */}
+                <div className="space-y-2 mb-2">
+                  <div className="bg-slate-50 rounded-lg p-3 border border-slate-200 transition-all duration-200 hover:bg-slate-100 hover:scale-[1.02] hover:shadow-md">
+                    <div className="text-xs font-medium text-slate-600 mb-1">SAARC Delegates #</div>
+                    <div className="text-2xl font-bold text-slate-800">₹{plan.Delegates_from_SAARC_fees}</div>
+                  </div>
+                  
+                  <div className="bg-slate-50 rounded-lg p-3 border border-slate-200 transition-all duration-200 hover:bg-slate-100 hover:scale-[1.02] hover:shadow-md">
+                    <div className="text-xs font-medium text-slate-600 mb-1">ISET Life Members/Fellow</div>
+                    <div className="text-2xl font-bold text-slate-800">₹{plan.ISET_Members_Fees}</div>
+                  </div>
+                  
+                  <div className="bg-slate-50 rounded-lg p-3 border border-slate-200 transition-all duration-200 hover:bg-slate-100 hover:scale-[1.02] hover:shadow-md">
+                    <div className="text-xs font-medium text-slate-600 mb-1">Students/Research Scholars</div>
+                    <div className="text-2xl font-bold text-slate-800">₹{plan.Students_Fees}</div>
+                  </div>
+                  
+                  <div className="bg-slate-50 rounded-lg p-3 border border-slate-200 transition-all duration-200 hover:bg-slate-100 hover:scale-[1.02] hover:shadow-md">
+                    <div className="text-xs font-medium text-slate-600 mb-1">Foreign Delegates</div>
+                    <div className="text-2xl font-bold text-slate-800">${plan.Foreign_Delegates_Fees}</div>
+                  </div>
+                  
+                  <div className="bg-slate-50 rounded-lg p-3 border border-slate-200 transition-all duration-200 hover:bg-slate-100 hover:scale-[1.02] hover:shadow-md">
+                    <div className="text-xs font-medium text-slate-600 mb-1">Foreign (ISET Member)</div>
+                    <div className="text-2xl font-bold text-slate-800">${plan.Foreign_Delegates_ISET_Fees}</div>
                   </div>
                 </div>
 
