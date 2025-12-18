@@ -37,7 +37,7 @@ export const CMTInstructions = () => {
     const rootUrl = import.meta.env.VITE_ROOT_URL || "";
     const quickLinks = [
       { name: "Home", href: "#home" },
-      { name: "Brochure", href: rootUrl ? rootUrl + "/18SEE%20Brochure_V1.pdf" : "/18SEE%20Brochure_V1.pdf" },
+      { name: "Brochure", href: rootUrl ? rootUrl + "/18SEE%20Brochure_V2.pdf" : "/18SEE%20Brochure_V2.pdf" },
       { name: "Abstract Submission", href: rootUrl ? rootUrl + "/cmt-instructions" : "/cmt-instructions" },
       { name: "Registration", href: rootUrl ? rootUrl + "/registration-soon" : "/registration-soon" }
     ];
@@ -407,7 +407,7 @@ export const CMTInstructions = () => {
               </a>
             </Button>
             <Button variant="outline" asChild className="border-2 border-gray-600 hover:border-gray-700">
-              <a href="https://channeli.in/api/django_filemanager/media_files/128931/">
+              <a href="https://channeli.in/api/django_filemanager/media_files/136151/">
                 <Download className="h-4 w-4 mr-2" />
                 Download Abstract Template
               </a>
