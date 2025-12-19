@@ -127,7 +127,7 @@ export const ThemesSection = () => {
 
         {/* Section Header */}
         <div className="text-center mb-16 animate-fade-in">
-          <Badge variant="outline" className="mb-4 bg-secondary/10 text-secondary border-secondary/20 text-2xl px-4 py-2">
+          <Badge variant="outline" className="mb-4 bg-secondary/10 text-foreground border-secondary/20 text-2xl px-4 py-2">
             Symposium Themes
           </Badge>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed text-justify sm:text-center">
