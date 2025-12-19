@@ -52,6 +52,10 @@ export const Navigation = ({
       name: "Themes",
       href: isLanding ? "#themes" : toBase("#themes")
     },
+    {
+      name: "Keynote Speakers",
+      href: isLanding ? "#keynote-speakers" : toBase("#keynote-speakers")
+    },
     // Schedule handled as dropdown below
     {
       name: "Committee",
@@ -86,10 +90,10 @@ export const Navigation = ({
   const importantDatesHref = isLanding ? "#important-dates" : toBase("#important-dates");
   const scheduleHref = toBase("/schedule");
 
-  // Split items to place dropdown right after Themes
-  const themesIndex = navItems.findIndex(i => i.name === "Themes");
-  const beforeItems = themesIndex >= 0 ? navItems.slice(0, themesIndex + 1) : navItems;
-  const afterItems = themesIndex >= 0 ? navItems.slice(themesIndex + 1) : [];
+  // Split items to place dropdown right after Keynote Speakers
+  const keynoteSpeakersIndex = navItems.findIndex(i => i.name === "Keynote Speakers");
+  const beforeItems = keynoteSpeakersIndex >= 0 ? navItems.slice(0, keynoteSpeakersIndex + 1) : navItems;
+  const afterItems = keynoteSpeakersIndex >= 0 ? navItems.slice(keynoteSpeakersIndex + 1) : [];
 
   return (
     <nav className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${navBg} ${className}`} style={{ marginBottom: '8rem' }}>

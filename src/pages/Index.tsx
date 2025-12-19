@@ -11,6 +11,7 @@ import { PostSymposiumTourSection } from "@/components/sections/PostSymposiumTou
 import { OrganisedBySection } from "@/components/sections/OrganisedBySection";
 import { Accomodation } from "@/components/sections/Accomodation";
 import { ImportantDatesSection } from "@/components/sections/ImportantDatesSection";
+import { KeynoteSpeakersSection } from "@/components/sections/KeynoteSpeakersSection";
 
 import React, { useRef, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
@@ -65,6 +66,7 @@ const Index = () => {
         <AboutSection />
         <ThemesSection />
         <ImportantDatesSection />
+        <KeynoteSpeakersSection />
         {/* <ScheduleSection /> Removed from landing page */}
         {/* Download/View Schedule buttons removed as per new instructions */}
         <RegistrationSection />
