@@ -156,7 +156,7 @@ export const HeroSection = () => {
             <a href={`${import.meta.env.VITE_ROOT_URL || ''}/cmt-instructions`}>Submit Abstract</a>
           </Button>
           <Button size="lg" variant="outline" className="border-primary-foreground bg-slate-100 text-slate-700" asChild>
-            <a href={`${import.meta.env.VITE_ROOT_URL || ''}${import.meta.env.VITE_ROOT_URL ? '/18SEE%20Brochure_V1.pdf' : '/18SEE%20Brochure_V1.pdf'}`} download>
+            <a href={`${import.meta.env.VITE_ROOT_URL || ''}${import.meta.env.VITE_ROOT_URL ? '/18SEE%20Brochure_V2.pdf' : '/18SEE%20Brochure_V2.pdf'}`} download>
               <Download className="h-4 w-4 mr-2" />
               Download Brochure
             </a>

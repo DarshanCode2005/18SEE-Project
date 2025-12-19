@@ -17,7 +17,7 @@ export const FooterSection = () => {
   const rootUrl = import.meta.env.VITE_ROOT_URL || "";
   const quickLinks = [
     { name: "Home", href: "#home" },
-    { name: "Brochure", href: rootUrl ? rootUrl + "/18SEE%20Brochure_V1.pdf" : "/18SEE%20Brochure_V1.pdf" },
+    { name: "Brochure", href: rootUrl ? rootUrl + "/18SEE%20Brochure_V2.pdf" : "/18SEE%20Brochure_V2.pdf" },
     { name: "Abstract Submission", href: rootUrl ? rootUrl + "/cmt-instructions" : "/cmt-instructions" },
     { name: "Registration", href: rootUrl ? rootUrl + "/registration-soon" : "/registration-soon" }
   ];
