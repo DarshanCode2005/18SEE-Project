@@ -47,7 +47,7 @@ export const RegistrationSection = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="text-center mb-10 animate-fade-in">
-          <Badge variant="outline" className="mb-4 bg-secondary/10 text-secondary border-secondary/20 text-2xl px-4 py-2">
+          <Badge variant="outline" className="mb-4 bg-secondary/10 text-foreground border-secondary/20 text-2xl px-4 py-2">
             Registration
           </Badge>
           <h2 className="font-serif text-3xl sm:text-4xl lg:text-5xl font-bold text-foreground mb-6">

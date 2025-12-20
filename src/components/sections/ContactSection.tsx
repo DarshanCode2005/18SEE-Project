@@ -86,7 +86,7 @@ export const ContactSection = () => {
 
         {/* Section Header */}
         <div className="text-center mb-12 animate-fade-in">
-          <Badge variant="outline" className="mb-4 bg-secondary/10 text-secondary border-secondary/20 text-2xl px-4 py-2">
+          <Badge variant="outline" className="mb-4 bg-secondary/10 text-foreground border-secondary/20 text-2xl px-4 py-2">
           Contact Us
         </Badge>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed text-justify sm:text-center">
