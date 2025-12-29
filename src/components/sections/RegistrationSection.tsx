@@ -56,7 +56,7 @@ export const RegistrationSection = () => {
           </h2>
           <p className="text-xl text-muted-foreground max-w-3xl mx-auto leading-relaxed text-justify sm:text-center">
             Join leading researchers, practitioners, and students from around the world.
-            Early bird registration offers significant savings – <a href={`${import.meta.env.VITE_ROOT_URL || ''}${import.meta.env.VITE_ROOT_URL ? '/registration-soon' : '/registration-soon'}`} className="text-primary font-bold">register</a> now!
+            Early bird registration offers significant savings – register now!
           </p>
         </div>
         {/* Pricing Widget */}
