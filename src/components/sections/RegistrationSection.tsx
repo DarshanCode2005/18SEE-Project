@@ -80,7 +80,7 @@ export const RegistrationSection = () => {
           max-w-xl sm:max-w-2xl lg:max-w-3xl
           mx-auto
           leading-relaxed
-          text-center sm:text-justify
+          text-center
         "
       >
         Join leading researchers, practitioners, and students from around the world.
@@ -91,7 +91,7 @@ export const RegistrationSection = () => {
     {/* Pricing Grid */}
     <div
       className="
- grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto py-12
+ grid grid-cols-1 lg:grid-cols-3 gap-6 max-w-6xl mx-auto py-4
       "
     >
       {plans.map((plan, idx) => (
@@ -123,14 +123,14 @@ export const RegistrationSection = () => {
               {plan.icon}
               <h3 className="font-semibold text-xl">{plan.title}</h3>
             </div>
-
             <p className="text-sm sm:text-md text-muted-foreground mb-6">
-              Deadline:{" "}
-              <span className="select-none">
-                {plan.title === "Late Registration"
-                  ? "On-site Registration"
-                  : plan.deadline}
-              </span>
+              {plan.title !== "Late Registration" ? (
+                <>
+                  Deadline: <span className="select-none">{plan.deadline}</span>
+                </>
+              ) : (
+                <span aria-hidden className="opacity-0">Deadline placeholder</span>
+              )}
             </p>
 
             {/* Prices */}
@@ -195,11 +195,11 @@ export const RegistrationSection = () => {
       className="
         text-sm sm:text-base
         mx-4 sm:mx-8
-        mt-6 sm:mt-10
+        mt-2 sm:mt-3
         text-gray-600
         text-center
         font-bold
-        -translate-y-6 sm:-translate-y-10
+        -translate-y-2 sm:-translate-y-3
       "
     >
       Participants who register for the symposium and apply for ISET membership
