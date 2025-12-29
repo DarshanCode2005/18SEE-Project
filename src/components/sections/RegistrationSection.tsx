@@ -130,8 +130,8 @@ export const RegistrationSection = () => {
             </Card>
           ))}
         </div>
-        <div className="text-md mt-2 mx-8 text-gray-600 text-center">
-          *Participants who register for the symposium and apply for ISET membership together are eligible for a ₹1,000 waiver on the membership fee.
+        <div className="text-md mx-8 text-gray-600 text-center font-bold" style={{transform: "translateY(-30px)"}}>
+          Participants who register for the symposium and apply for ISET membership together will receive a waiver of ₹1000 on the registration fee.
         </div>
 
       </div>
