@@ -78,9 +78,11 @@ export const RegistrationSection = () => {
                         {plan.icon}
                         <h3 className="font-semibold text-xl">{plan.title}</h3>
                       </div>
-                      <p className="text-sm text-muted-foreground mb-6">
-                        Deadline: <span className="select-none">{plan.deadline}</span>
-                      </p> 
+                      <p className="text-md text-muted-foreground mb-6">
+                        Deadline: <span className="select-none">
+                          {plan.title === "Late Registration" ? "On-site Registration" : plan.deadline}
+                        </span>
+                      </p>
 
               {/* Price Section */}
                       <div className="space-y-2 mb-2">
