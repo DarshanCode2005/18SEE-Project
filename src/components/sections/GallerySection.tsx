@@ -166,6 +166,7 @@ const categories = [
 function LazyImage({ src, alt, className }: { src: string; alt?: string; className?: string }) {
   const imgRef = useRef<HTMLImageElement | null>(null);
   const [visible, setVisible] = useState(false);
+  const [loaded, setLoaded] = useState(false);
 
   useEffect(() => {
     const el = imgRef.current;
@@ -194,14 +195,18 @@ function LazyImage({ src, alt, className }: { src: string; alt?: string; classNa
   // tiny transparent placeholder until visible
   const placeholder = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';
 
+  const imgSrc = visible ? src : placeholder;
+  const combinedClass = `${className ?? ""} filter transition-all duration-700 ${loaded ? 'blur-0 scale-100 opacity-100' : 'blur-lg scale-105 opacity-80'}`;
+
   return (
     // eslint-disable-next-line jsx-a11y/alt-text
     <img
       ref={imgRef}
-      src={visible ? src : placeholder}
+      src={imgSrc}
       alt={alt}
-      className={className}
+      className={combinedClass}
       loading="lazy"
+      onLoad={() => setLoaded(true)}
     />
   );
 }
