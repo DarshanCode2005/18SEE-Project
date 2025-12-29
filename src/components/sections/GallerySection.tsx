@@ -1,4 +1,4 @@
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
@@ -162,6 +162,50 @@ const categories = [
   { id: 'key-moments', label: 'Key Moments', icon: Video }
 ];
 
+// Small lazy-loading image component using IntersectionObserver
+function LazyImage({ src, alt, className }: { src: string; alt?: string; className?: string }) {
+  const imgRef = useRef<HTMLImageElement | null>(null);
+  const [visible, setVisible] = useState(false);
+
+  useEffect(() => {
+    const el = imgRef.current;
+    if (!el) return;
+
+    if ('IntersectionObserver' in window) {
+      const obs = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              setVisible(true);
+              if (entry.target) obs.unobserve(entry.target);
+            }
+          });
+        },
+        { rootMargin: '200px' }
+      );
+      obs.observe(el);
+      return () => obs.disconnect();
+    }
+
+    // Fallback: load immediately
+    setVisible(true);
+  }, []);
+
+  // tiny transparent placeholder until visible
+  const placeholder = 'data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///ywAAAAAAQABAAACAUwAOw==';
+
+  return (
+    // eslint-disable-next-line jsx-a11y/alt-text
+    <img
+      ref={imgRef}
+      src={visible ? src : placeholder}
+      alt={alt}
+      className={className}
+      loading="lazy"
+    />
+  );
+}
+
 export const GallerySection = () => {
   const [selectedCategory, setSelectedCategory] = useState<string>('past-events');
   const [lightboxOpen, setLightboxOpen] = useState(false);
@@ -227,11 +271,10 @@ export const GallerySection = () => {
             >
               <CardContent className="p-0 relative">
                 <div className="aspect-[4/3] overflow-hidden">
-                  <img
+                  <LazyImage
                     src={item.thumbnail}
                     alt={item.alt}
                     className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-                    loading="lazy"
                   />
                   <div className="absolute inset-0 bg-primary/0 group-hover:bg-primary/20 transition-colors duration-300" />
                   
