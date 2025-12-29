@@ -67,37 +67,37 @@ export const RegistrationSection = () => {
               className={`relative border ${plan.highlight ? "border-yellow-400" : "border-gray-200"} shadow-lg rounded-2xl`}
             >
               <CardContent className="p-6">
-                {plan.highlight && (
-                  <span className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-xs font-semibold text-white px-3 py-1 rounded-full" >
-                    {plan.highlight}
-                  </span>
-                )} 
+                      {plan.highlight && (
+                        <span className="absolute -top-3 left-1/2 transform -translate-x-1/2 bg-yellow-400 text-xs font-semibold text-white px-3 py-1 rounded-full" >
+                        {plan.highlight}
+                        </span>
+                      )} 
 
-                {/* Header */}
-                <div className="flex items-center space-x-3 mb-4">
-                  {plan.icon}
-                  <h3 className="font-semibold text-xl">{plan.title}</h3>
-                </div>
-                <p className="text-sm text-muted-foreground mb-6">
-                  Deadline: <span className="select-none">{plan.deadline}</span>
-                </p> 
+                      {/* Header */}
+                      <div className="flex items-center space-x-3 mb-4">
+                        {plan.icon}
+                        <h3 className="font-semibold text-xl">{plan.title}</h3>
+                      </div>
+                      <p className="text-sm text-muted-foreground mb-6">
+                        Deadline: <span className="select-none">{plan.deadline}</span>
+                      </p> 
 
-{/* Price Section */}
-                <div className="space-y-2 mb-2">
-                  <div className="bg-slate-50 rounded-lg p-3 border border-slate-200 transition-all duration-200 hover:bg-slate-100 hover:scale-[1.02] hover:shadow-md">
-                    <div className="text-xs font-medium text-slate-600 mb-1">SAARC Delegates</div>
-                    <div className="text-2xl font-bold text-slate-800">₹{plan.Delegates_from_SAARC_fees}</div>
-                  </div>
-                  
-                  <div className="bg-slate-50 rounded-lg p-3 border border-slate-200 transition-all duration-200 hover:bg-slate-100 hover:scale-[1.02] hover:shadow-md">
-                    <div className="text-xs font-medium text-slate-600 mb-1">ISET Life Members/Fellows</div>
-                    <div className="text-2xl font-bold text-slate-800">₹{plan.ISET_Members_Fees}</div>
-                  </div>
-                  
-                  <div className="bg-slate-50 rounded-lg p-3 border border-slate-200 transition-all duration-200 hover:bg-slate-100 hover:scale-[1.02] hover:shadow-md">
-                    <div className="text-xs font-medium text-slate-600 mb-1">Students/Research Scholars/Spouses</div>
-                    <div className="text-2xl font-bold text-slate-800">₹{plan.Students_Fees}</div>
-                  </div>
+              {/* Price Section */}
+                      <div className="space-y-2 mb-2">
+                        <div className="bg-slate-50 rounded-lg p-3 border border-slate-200 transition-all duration-200 hover:bg-slate-100 hover:scale-[1.02] hover:shadow-md">
+                        <div className="text-xs font-medium text-slate-600 mb-1">SAARC Delegates</div>
+                        <div className="text-2xl font-bold text-slate-800">₹{plan.Delegates_from_SAARC_fees}</div>
+                        </div>
+                        
+                        <div className="bg-slate-50 rounded-lg p-3 border border-slate-200 transition-all duration-200 hover:bg-slate-100 hover:scale-[1.02] hover:shadow-md">
+                        <div className="text-xs font-medium text-slate-600 mb-1">ISET Life Members/Fellows</div>
+                        <div className="text-2xl font-bold text-slate-800">₹{plan.ISET_Members_Fees}</div>
+                        </div>
+                        
+                        <div className="bg-slate-50 rounded-lg p-3 border border-slate-200 transition-all duration-200 hover:bg-slate-100 hover:scale-[1.02] hover:shadow-md">
+                        <div className="text-xs font-medium text-slate-600 mb-1">Students/Research Scholars/Spouses</div>
+                        <div className="text-2xl font-bold text-slate-800">₹{plan.Students_Fees}</div>
+                        </div>
 
                             <div className="bg-slate-50 rounded-lg p-3 border border-slate-200 transition-all duration-200 hover:bg-slate-100 hover:scale-[1.02] hover:shadow-md">
                             <div className="text-xs font-medium text-slate-600 mb-1">Foreign Delegates/Students</div>
@@ -108,14 +108,23 @@ export const RegistrationSection = () => {
                             <div className="text-xs font-medium text-slate-600 mb-1">Foreign Delegates/Students with ISET Membership</div>
                             <div className="text-2xl font-bold text-slate-800">${plan.Foreign_Delegates_ISET_Fees}</div>
                             </div>
-                </div>
+                      </div>
 
-                <Button
-                  className={`w-full mt-6 ${plan.buttonColor}`}
-                >
-                  Register Now
-                </Button>
-              </CardContent>
+                      {plan.highlight ? (
+                        <a href={`${import.meta.env.VITE_ROOT_URL || ''}${import.meta.env.VITE_ROOT_URL ? '/registration-soon' : '/registration-soon'}`} target="_blank" rel="noopener noreferrer">
+                          <Button className={`w-full mt-6 ${plan.buttonColor}`}>
+                            Register Now
+                          </Button>
+                        </a>
+                      ) : (
+                        <Button
+                        className={`w-full mt-6 ${plan.buttonColor}`}
+                        disabled
+                        >
+                        Register Now
+                        </Button>
+                      )}
+                      </CardContent>
             </Card>
           ))}
         </div>
