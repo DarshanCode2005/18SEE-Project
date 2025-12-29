@@ -98,16 +98,16 @@ export const RegistrationSection = () => {
                     <div className="text-xs font-medium text-slate-600 mb-1">Students/Research Scholars/Spouses</div>
                     <div className="text-2xl font-bold text-slate-800">₹{plan.Students_Fees}</div>
                   </div>
-                  
-                  <div className="bg-slate-50 rounded-lg p-3 border border-slate-200 transition-all duration-200 hover:bg-slate-100 hover:scale-[1.02] hover:shadow-md">
-                    <div className="text-xs font-medium text-slate-600 mb-1">Foreign Delegates</div>
-                    <div className="text-2xl font-bold text-slate-800">${plan.Foreign_Delegates_Fees}</div>
-                  </div>
-                  
-                  <div className="bg-slate-50 rounded-lg p-3 border border-slate-200 transition-all duration-200 hover:bg-slate-100 hover:scale-[1.02] hover:shadow-md">
-                    <div className="text-xs font-medium text-slate-600 mb-1">Foreign Delegates with ISET Membership</div>
-                    <div className="text-2xl font-bold text-slate-800">${plan.Foreign_Delegates_ISET_Fees}</div>
-                  </div>
+
+                            <div className="bg-slate-50 rounded-lg p-3 border border-slate-200 transition-all duration-200 hover:bg-slate-100 hover:scale-[1.02] hover:shadow-md">
+                            <div className="text-xs font-medium text-slate-600 mb-1">Foreign Delegates/Students</div>
+                            <div className="text-2xl font-bold text-slate-800">${plan.Foreign_Delegates_Fees}</div>
+                            </div>
+                            
+                            <div className="bg-slate-50 rounded-lg p-3 border border-slate-200 transition-all duration-200 hover:bg-slate-100 hover:scale-[1.02] hover:shadow-md">
+                            <div className="text-xs font-medium text-slate-600 mb-1">Foreign Delegates/Students with ISET Membership</div>
+                            <div className="text-2xl font-bold text-slate-800">${plan.Foreign_Delegates_ISET_Fees}</div>
+                            </div>
                 </div>
 
                 <Button
