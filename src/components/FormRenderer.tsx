@@ -1,15 +1,22 @@
-import React, { useState, useCallback, useEffect, useMemo } from 'react';
-import { formConfig, FormField as FormFieldType, DocumentConfig, getRequiredDocuments, areDocumentsVisible } from '../config/form-config';
+import React, { useState, useCallback, useMemo } from 'react';
+import { 
+  formConfig, 
+  FormField as FormFieldType, 
+  DocumentConfig, 
+  getRequiredDocuments, 
+  areDocumentsVisible 
+} from '../config/form-config';
 import FormField from './FormField';
+import DocumentUpload from './DocumentUpload';
 
 /**
  * FormRenderer - Main form component that handles:
- * - Form state management (single object keyed by field.id)
- * - Document state management (separate File objects)
+ * - Form data state management (single object keyed by field.id)
+ * - Document state management (separate File objects keyed by document id)
  * - Conditional field visibility based on config
  * - Dynamic document requirements based on registration category
  * - Field validation
- * - Form submission via multipart/form-data
+ * - Form submission via multipart/form-data to POST /api/register
  */
 interface FormRendererProps {
   onSubmit?: (data: FormData) => Promise<void>;
@@ -78,7 +85,6 @@ export const FormRenderer: React.FC<FormRendererProps> = ({ onSubmit }) => {
   // Validate a single field
   const validateField = useCallback((field: FormFieldType): string | null => {
     const value = formData[field.id];
-    const file = documents[field.id];
 
     // Check required for different field types
     if (field.required) {
@@ -113,7 +119,7 @@ export const FormRenderer: React.FC<FormRendererProps> = ({ onSubmit }) => {
     }
 
     return null;
-  }, [formData, documents]);
+  }, [formData]);
 
   // Validate a document field
   const validateDocument = useCallback((doc: DocumentConfig): string | null => {
@@ -447,8 +453,17 @@ export const FormRenderer: React.FC<FormRendererProps> = ({ onSubmit }) => {
                   </label>
 
                   {/* Document upload component */}
-                  <DocumentUploadField
-                    document={doc}
+                  <DocumentUpload
+                    field={{
+                      id: doc.id,
+                      section: 'documents',
+                      label: doc.label,
+                      type: 'file' as const,
+                      required: doc.required,
+                      accept: doc.accept,
+                      maxSizeMB: doc.maxSizeMB,
+                      helpText: doc.helpText,
+                    }}
                     files={documents[doc.id] || []}
                     error={errors[doc.id]}
                     onChange={(files) => handleDocumentChange(doc.id, files)}
@@ -515,4 +530,23 @@ export const FormRenderer: React.FC<FormRendererProps> = ({ onSubmit }) => {
                 <path
                   className="opacity-75"
                   fill="currentColor"
-                  d="M4 12
+                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
+                />
+              </svg>
+              Submitting...
+            </span>
+          ) : (
+            'Submit Registration'
+          )}
+        </button>
+      </div>
+
+      {/* Required fields note */}
+      <p className="text-sm text-gray-500 text-center mt-4">
+        <span className="text-red-500">*</span> Required fields
+      </p>
+    </form>
+  );
+};
+
+export default FormRenderer;

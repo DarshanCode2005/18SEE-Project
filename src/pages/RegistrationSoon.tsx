@@ -1,5 +1,5 @@
 import React from "react";
-import FormRenderer from "@/components/FormRenderer";
+import { FormRenderer } from "@/components/FormRenderer";
 import { useNavigate } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { ArrowLeft } from "lucide-react";
@@ -27,10 +27,10 @@ export default function RegistrationSoon() {
           Conference Registration
         </h1>
         <p className="text-lg text-gray-600">
-          18th International Conference on Sustainable Energy Engineering
+          18th Symposium of Earthquake Engineering
         </p>
         <p className="text-sm text-gray-500 mt-1">
-          IIT Roorkee, India • June 15-17, 2026
+          IIT Roorkee, India • Dec 10-12, 2026
         </p>
       </div>
 
