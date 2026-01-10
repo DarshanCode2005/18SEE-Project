@@ -3,8 +3,16 @@ import { Card, CardContent } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
 import { Calendar, Crown, Clock } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
+import { useNavigate } from "react-router-dom";
 
 export const RegistrationSection = () => {
+  const navigate = useNavigate();
+  const rootUrl = import.meta.env.VITE_ROOT_URL || "";
+
+  const handleRegisterClick = () => {
+    navigate(`${rootUrl}/registration-soon`);
+  };
+
   const plans = [
     {
       title: "Early Bird Registration",
@@ -167,15 +175,12 @@ export const RegistrationSection = () => {
 
             {/* Button */}
             {plan.highlight ? (
-              <a
-                href={`${import.meta.env.VITE_ROOT_URL || ""}/registration-soon`}
-                target="_blank"
-                rel="noopener noreferrer"
+              <Button
+                className={`w-full mt-6 py-3 text-base ${plan.buttonColor}`}
+                onClick={handleRegisterClick}
               >
-                <Button className={`w-full mt-6 py-3 text-base ${plan.buttonColor}`}>
-                  Register Now
-                </Button>
-              </a>
+                Register Now
+              </Button>
             ) : (
               <Button
                 className={`w-full mt-6 py-3 text-base ${plan.buttonColor}`}

@@ -1,39 +1,54 @@
 import React from "react";
-import { Button } from "@/components/ui/button";
+import FormRenderer from "@/components/FormRenderer";
 import { useNavigate } from "react-router-dom";
+import { Button } from "@/components/ui/button";
+import { ArrowLeft } from "lucide-react";
 
 export default function RegistrationSoon() {
   const navigate = useNavigate();
+
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-500 via-purple-500 to-pink-400 animate-gradient-motion">
-      {/* Animated Illustration */}
-      <div className="mb-8">
-        <svg className="w-32 h-32 animate-bounce" viewBox="0 0 100 100" fill="none">
-          <circle cx="50" cy="50" r="40" fill="url(#grad)" />
-          <path d="M30 60 Q50 80 70 60" stroke="#fff" strokeWidth="4" fill="none" />
-          <ellipse cx="50" cy="45" rx="18" ry="10" fill="#fff" opacity="0.2" />
-          <defs>
-            <radialGradient id="grad" cx="0.5" cy="0.5" r="0.5">
-              <stop offset="0%" stopColor="#fff" />
-              <stop offset="100%" stopColor="#a78bfa" />
-            </radialGradient>
-          </defs>
-        </svg>
+    <div className="min-h-screen bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+      {/* Header with back button */}
+      <div className="max-w-4xl mx-auto mb-8">
+        <Button
+          variant="ghost"
+          onClick={() => navigate("/18see/")}
+          className="flex items-center gap-2 text-gray-600 hover:text-gray-900"
+        >
+          <ArrowLeft className="w-4 h-4" />
+          Back to Home
+        </Button>
       </div>
-      {/* Main Heading */}
-      <h1 className="text-4xl sm:text-5xl font-extrabold text-white drop-shadow-lg mb-4 animate-fade-in text-center">Registrations Opening Soon</h1>
-      {/* Subtitle */}
-      <p className="text-lg sm:text-xl text-white/80 mb-8 animate-fade-in-delay">Stay tuned for updates!</p>
-      {/* Action Button */}
-      <Button size="lg" className="bg-white text-purple-600 font-bold shadow-lg hover:bg-purple-100 transition-all animate-fade-in-delay" onClick={() => navigate("/18see/")}>Go Back to Home</Button>
+
+      {/* Page Title */}
+      <div className="max-w-4xl mx-auto mb-8 text-center">
+        <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">
+          Conference Registration
+        </h1>
+        <p className="text-lg text-gray-600">
+          18th International Conference on Sustainable Energy Engineering
+        </p>
+        <p className="text-sm text-gray-500 mt-1">
+          IIT Roorkee, India • June 15-17, 2026
+        </p>
+      </div>
+
+      {/* Registration Form */}
+      <FormRenderer />
+
+      {/* Footer note */}
+      <div className="max-w-3xl mx-auto mt-8 text-center text-sm text-gray-500">
+        <p>
+          For any queries, please contact:{" "}
+          <a
+            href="mailto:18see@iitr.ac.in"
+            className="text-blue-600 hover:underline"
+          >
+            18see@iitr.ac.in
+          </a>
+        </p>
+      </div>
     </div>
   );
 }
-
-// Tailwind animation utilities
-// Add these to your global CSS if not present:
-// .animate-gradient-motion { background-size: 200% 200%; animation: gradientMotion 6s ease-in-out infinite; }
-// @keyframes gradientMotion { 0%, 100% { background-position: 0% 50%; } 50% { background-position: 100% 50%; } }
-// .animate-fade-in { animation: fadeIn 1s ease; }
-// .animate-fade-in-delay { animation: fadeIn 2s ease; }
-// @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: none; } }
