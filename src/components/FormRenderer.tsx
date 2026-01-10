@@ -1,14 +1,15 @@
-import React, { useState, useCallback, useEffect } from 'react';
-import { formConfig, FormField as FormFieldType } from '../config/form-config';
+import React, { useState, useCallback, useEffect, useMemo } from 'react';
+import { formConfig, FormField as FormFieldType, DocumentConfig, getRequiredDocuments, areDocumentsVisible } from '../config/form-config';
 import FormField from './FormField';
 
 /**
  * FormRenderer - Main form component that handles:
  * - Form state management (single object keyed by field.id)
  * - Document state management (separate File objects)
- * - Conditional field visibility
+ * - Conditional field visibility based on config
+ * - Dynamic document requirements based on registration category
  * - Field validation
- * - Form submission
+ * - Form submission via multipart/form-data
  */
 interface FormRendererProps {
   onSubmit?: (data: FormData) => Promise<void>;
@@ -19,7 +20,7 @@ export const FormRenderer: React.FC<FormRendererProps> = ({ onSubmit }) => {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const [formData, setFormData] = useState<Record<string, any>>({});
   
-  // Document data - separate from formData
+  // Document data - separate from formData (keyed by document id)
   const [documents, setDocuments] = useState<Record<string, File[]>>({});
   
   // Validation errors
@@ -29,6 +30,16 @@ export const FormRenderer: React.FC<FormRendererProps> = ({ onSubmit }) => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitError, setSubmitError] = useState<string | null>(null);
+
+  // Computed required documents based on current selections
+  const requiredDocuments = useMemo(() => {
+    return getRequiredDocuments(formData);
+  }, [formData]);
+
+  // Check if documents section should be visible
+  const documentsSectionVisible = useMemo(() => {
+    return areDocumentsVisible(formData);
+  }, [formData]);
 
   // Reset form
   const resetForm = useCallback(() => {
@@ -41,6 +52,11 @@ export const FormRenderer: React.FC<FormRendererProps> = ({ onSubmit }) => {
 
   // Check if a field should be visible based on conditions
   const isFieldVisible = useCallback((field: FormFieldType): boolean => {
+    // Hide static document fields - documents are rendered dynamically
+    if (field.section === 'documents') {
+      return false;
+    }
+    
     if (!field.condition) return true;
     
     const conditionValue = formData[field.condition.field];
@@ -52,6 +68,12 @@ export const FormRenderer: React.FC<FormRendererProps> = ({ onSubmit }) => {
     
     return conditionValue === field.condition.value;
   }, [formData]);
+
+  // Check if a document field should be visible
+  const isDocumentVisible = useCallback((doc: DocumentConfig): boolean => {
+    // Document is visible if it's in the required documents list
+    return requiredDocuments.some(d => d.id === doc.id);
+  }, [requiredDocuments]);
 
   // Validate a single field
   const validateField = useCallback((field: FormFieldType): string | null => {
@@ -75,12 +97,6 @@ export const FormRenderer: React.FC<FormRendererProps> = ({ onSubmit }) => {
             return `You must accept ${field.label.toLowerCase().replace('i agree to ', '')}`;
           }
           break;
-        case 'file':
-          // Only validate file if field is visible and required
-          if (isFieldVisible(field) && (!file || file.length === 0)) {
-            return `${field.label} is required`;
-          }
-          break;
       }
     }
 
@@ -96,22 +112,34 @@ export const FormRenderer: React.FC<FormRendererProps> = ({ onSubmit }) => {
       }
     }
 
+    return null;
+  }, [formData, documents]);
+
+  // Validate a document field
+  const validateDocument = useCallback((doc: DocumentConfig): string | null => {
+    const file = documents[doc.id];
+
+    if (doc.required && (!file || file.length === 0)) {
+      return `${doc.label} is required for verification`;
+    }
+
     // File size validation
-    if (file && file.length > 0 && field.maxSizeMB) {
-      const maxBytes = field.maxSizeMB * 1024 * 1024;
+    if (file && file.length > 0 && doc.maxSizeMB) {
+      const maxBytes = doc.maxSizeMB * 1024 * 1024;
       if (file[0].size > maxBytes) {
-        return `File exceeds maximum size of ${field.maxSizeMB}MB`;
+        return `File exceeds maximum size of ${doc.maxSizeMB}MB`;
       }
     }
 
     return null;
-  }, [formData, documents, isFieldVisible]);
+  }, [documents]);
 
   // Validate entire form
   const validateForm = useCallback((): boolean => {
     const newErrors: Record<string, string> = {};
     let isValid = true;
 
+    // Validate static fields
     formConfig.fields.forEach((field) => {
       if (isFieldVisible(field)) {
         const error = validateField(field);
@@ -122,9 +150,20 @@ export const FormRenderer: React.FC<FormRendererProps> = ({ onSubmit }) => {
       }
     });
 
+    // Validate required documents
+    requiredDocuments.forEach((doc) => {
+      if (isDocumentVisible(doc)) {
+        const error = validateDocument(doc);
+        if (error) {
+          newErrors[doc.id] = error;
+          isValid = false;
+        }
+      }
+    });
+
     setErrors(newErrors);
     return isValid;
-  }, [validateField, isFieldVisible]);
+  }, [validateField, validateDocument, isFieldVisible, requiredDocuments, isDocumentVisible]);
 
   // Handle field value change
   const handleFieldChange = useCallback((fieldId: string, value: string | boolean | File | undefined) => {
@@ -141,30 +180,54 @@ export const FormRenderer: React.FC<FormRendererProps> = ({ onSubmit }) => {
         return newErrors;
       });
     }
-  }, [errors]);
 
-  // Handle file change
-  const handleFileChange = useCallback((fieldId: string, files: File[]) => {
+    // Reset uploaded files if critical selection changes
+    if (fieldId === 'delegate_role' || fieldId === 'nationality_category' || fieldId === 'iset_member') {
+      const newDocuments = { ...documents };
+      let hasChanges = false;
+      
+      // Check if any uploaded files are no longer required
+      const currentRequiredDocs = getRequiredDocuments({
+        ...formData,
+        [fieldId]: value,
+      });
+      
+      Object.keys(newDocuments).forEach((docId) => {
+        const isStillRequired = currentRequiredDocs.some(d => d.id === docId);
+        if (!isStillRequired && newDocuments[docId]?.length > 0) {
+          delete newDocuments[docId];
+          hasChanges = true;
+        }
+      });
+      
+      if (hasChanges) {
+        setDocuments(newDocuments);
+      }
+    }
+  }, [errors, formData, documents]);
+
+  // Handle document file change
+  const handleDocumentChange = useCallback((docId: string, files: File[]) => {
     setDocuments((prev) => ({
       ...prev,
-      [fieldId]: files,
+      [docId]: files,
     }));
 
     // Clear error when file is uploaded
-    if (errors[fieldId]) {
+    if (errors[docId]) {
       setErrors((prev) => {
         const newErrors = { ...prev };
-        delete newErrors[fieldId];
+        delete newErrors[docId];
         return newErrors;
       });
     }
   }, [errors]);
 
-  // Handle file removal
-  const handleRemoveFile = useCallback((fieldId: string) => {
+  // Handle document file removal
+  const handleRemoveDocument = useCallback((docId: string) => {
     setDocuments((prev) => ({
       ...prev,
-      [fieldId]: [],
+      [docId]: [],
     }));
   }, []);
 
@@ -191,10 +254,10 @@ export const FormRenderer: React.FC<FormRendererProps> = ({ onSubmit }) => {
       // Add form data as JSON string
       formDataToSend.append('form_data', JSON.stringify(formData));
       
-      // Add documents
-      Object.entries(documents).forEach(([fieldId, files]) => {
+      // Add documents with keys matching document ids
+      Object.entries(documents).forEach(([docId, files]) => {
         files.forEach((file) => {
-          formDataToSend.append(`documents_${fieldId}`, file);
+          formDataToSend.append(`documents[${docId}]`, file);
         });
       });
 
@@ -223,13 +286,16 @@ export const FormRenderer: React.FC<FormRendererProps> = ({ onSubmit }) => {
     }
   };
 
-  // Group fields by section
+  // Group static fields by section
   const fieldsBySection = formConfig.fields.reduce((acc, field) => {
     const sectionId = field.section;
     if (!acc[sectionId]) {
       acc[sectionId] = [];
     }
-    acc[sectionId].push(field);
+    // Only include static fields (not documents)
+    if (field.section !== 'documents') {
+      acc[sectionId].push(field);
+    }
     return acc;
   }, {} as Record<string, FormFieldType[]>);
 
@@ -260,7 +326,7 @@ export const FormRenderer: React.FC<FormRendererProps> = ({ onSubmit }) => {
           </h2>
           <p className="text-green-700 mb-6">
             You will receive an email after verification. Please check your inbox
-            for confirmation and further instructions.
+            for confirmation and further instructions regarding payment.
           </p>
           <button
             onClick={resetForm}
@@ -293,11 +359,14 @@ export const FormRenderer: React.FC<FormRendererProps> = ({ onSubmit }) => {
 
       {/* Render sections */}
       {formConfig.sections.map((section) => {
+        // Skip documents section - we render it separately with dynamic content
+        if (section.id === 'documents') return null;
+
         const sectionFields = fieldsBySection[section.id] || [];
         const visibleFields = sectionFields.filter(isFieldVisible);
 
         // Skip rendering empty sections
-        if (visibleFields.length === 0) return null;
+        if (visibleFields.length === 0 && section.id !== 'registration') return null;
 
         return (
           <div
@@ -331,8 +400,8 @@ export const FormRenderer: React.FC<FormRendererProps> = ({ onSubmit }) => {
                     value={formData[field.id]}
                     error={errors[field.id]}
                     onChange={(value) => handleFieldChange(field.id, value)}
-                    onFileChange={(files) => handleFileChange(field.id, files)}
-                    onRemoveFile={() => handleRemoveFile(field.id)}
+                    onFileChange={(files) => handleDocumentChange(field.id, files)}
+                    onRemoveFile={() => handleRemoveDocument(field.id)}
                     files={documents[field.id]}
                   />
                 </div>
@@ -341,6 +410,81 @@ export const FormRenderer: React.FC<FormRendererProps> = ({ onSubmit }) => {
           </div>
         );
       })}
+
+      {/* Dynamic Documents Section */}
+      {documentsSectionVisible && (
+        <div className="mb-8 bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden">
+          {/* Section header */}
+          <div className="bg-gray-50 px-6 py-4 border-b border-gray-200">
+            <h3 className="text-lg font-semibold text-gray-800">
+              Supporting Documents
+            </h3>
+            <p className="text-sm text-gray-600 mt-1">
+              Upload required documents based on your registration category for verification.
+            </p>
+          </div>
+
+          {/* Document fields */}
+          <div className="p-6 space-y-6">
+            {requiredDocuments.length === 0 ? (
+              <p className="text-gray-500 text-center py-4">
+                No additional documents required based on your selections.
+              </p>
+            ) : (
+              requiredDocuments.map((doc) => (
+                <div
+                  key={doc.id}
+                  id={doc.id}
+                  className="flex flex-col gap-1"
+                >
+                  {/* Document label */}
+                  <label
+                    htmlFor={doc.id}
+                    className="text-sm font-medium text-gray-700 font-semibold"
+                  >
+                    {doc.label}
+                    {doc.required && <span className="text-red-500 ml-1">*</span>}
+                  </label>
+
+                  {/* Document upload component */}
+                  <DocumentUploadField
+                    document={doc}
+                    files={documents[doc.id] || []}
+                    error={errors[doc.id]}
+                    onChange={(files) => handleDocumentChange(doc.id, files)}
+                    onRemoveFile={() => handleRemoveDocument(doc.id)}
+                  />
+
+                  {/* Help text */}
+                  {doc.helpText && !errors[doc.id] && (
+                    <span className="text-sm text-gray-500">
+                      {doc.helpText}
+                    </span>
+                  )}
+
+                  {/* Error message */}
+                  {errors[doc.id] && (
+                    <span
+                      id={`${doc.id}-error`}
+                      className="text-sm text-red-600 flex items-center gap-1"
+                      role="alert"
+                    >
+                      <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 20 20">
+                        <path
+                          fillRule="evenodd"
+                          d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z"
+                          clipRule="evenodd"
+                        />
+                      </svg>
+                      {errors[doc.id]}
+                    </span>
+                  )}
+                </div>
+              ))
+            )}
+          </div>
+        </div>
+      )}
 
       {/* Submit button */}
       <div className="flex justify-end pt-6">
@@ -371,23 +515,4 @@ export const FormRenderer: React.FC<FormRendererProps> = ({ onSubmit }) => {
                 <path
                   className="opacity-75"
                   fill="currentColor"
-                  d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"
-                />
-              </svg>
-              Submitting...
-            </span>
-          ) : (
-            'Submit Registration'
-          )}
-        </button>
-      </div>
-
-      {/* Required fields note */}
-      <p className="text-sm text-gray-500 text-center mt-4">
-        <span className="text-red-500">*</span> Required fields
-      </p>
-    </form>
-  );
-};
-
-export default FormRenderer;
+                  d="M4 12
