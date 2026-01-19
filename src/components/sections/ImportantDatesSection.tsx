@@ -58,19 +58,19 @@ export const ImportantDatesSection = () => {
                       date: new Date("2026-01-15T00:00:00"),
                       label: "Abstract submission closes",
                       old: "Dec. 15, 2025",
-                      revised: "Jan. 15, 2026"
+                      revised: "Feb. 15, 2026"
                     },
                     {
                       date: new Date("2026-02-15T00:00:00"),
                       label: "Confirmation of acceptance of abstract",
                       old: "Jan. 15, 2026",
-                      revised: "Feb. 15, 2026"
+                      revised: "March 15, 2026"
                     },
                     {
                       date: new Date("2026-04-15T00:00:00"),
                       label: "Full-length manuscript submission closes",
                       old: "March 15, 2026",
-                      revised: "Apr. 15, 2026"
+                      revised: "May 1, 2026"
                     },
                     {
                       date: new Date("2026-12-10T09:00:00"),
