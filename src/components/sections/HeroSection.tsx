@@ -6,9 +6,8 @@ import Image1 from "@/assets/ISET.svg";
 import Image2 from "@/assets/IITR_organiser_logo.png";
 
 const milestones = [
-  { label: "Abstract submission ends on", date: "2026-01-15T00:00:00" },
-  { label: "Confirmation of acceptance of abstracts", date: "2026-01-15T00:00:00" },
-  { label: "Abstract submission closes on", date: "2026-02-15T00:00:00" },
+  { label: "Abstract submission closes on", date: "2026-03-01T23:59:00" },
+  { label: "Confirmation of acceptance of abstracts", date: "2026-03-31T00:00:00" },
   { label: "Symposium Starts on", date: "2026-12-10T09:00:00" },
 ];
 

@@ -55,22 +55,22 @@ export const ImportantDatesSection = () => {
                 {(() => {
                   const importantDates = [
                     {
-                      date: new Date("2026-01-15T00:00:00"),
-                      label: "Abstract submission closes",
+                      date: new Date("2026-03-01T23:59:00"),
+                      label: "Final Date for\nAbstract Submission",
                       old: "Dec. 15, 2025",
-                      revised: "Feb. 15, 2026"
+                      revised: "March 01, 2026"
                     },
                     {
-                      date: new Date("2026-02-15T00:00:00"),
+                      date: new Date("2026-03-31T00:00:00"),
                       label: "Confirmation of acceptance of abstract",
                       old: "Jan. 15, 2026",
-                      revised: "March 15, 2026"
+                      revised: "March 31, 2026"
                     },
                     {
-                      date: new Date("2026-04-15T00:00:00"),
+                      date: new Date("2026-05-15T00:00:00"),
                       label: "Full-length manuscript submission closes",
                       old: "March 15, 2026",
-                      revised: "May 1, 2026"
+                      revised: "May 15, 2026"
                     },
                     {
                       date: new Date("2026-12-10T09:00:00"),
@@ -112,7 +112,7 @@ export const ImportantDatesSection = () => {
                                 <span className={`font-bold text-lg md:text-xl mb-1 ${dateText}`} style={{ display: 'inline-block' }}>{d.revised}</span>
                               </div>
                             </div>
-                            <p className={`text-lg font-semibold text-center mt-2 ${labelText}`}>{d.label}</p>
+                            <p className={`text-lg font-semibold text-center mt-2 whitespace-pre-line ${labelText}`}>{d.label}</p>
                           </div>
                         );
                       })}
