@@ -56,7 +56,7 @@ export const ImportantDatesSection = () => {
                   const importantDates = [
                     {
                       date: new Date("2026-03-01T23:59:00"),
-                      label: "Final Date for\nAbstract Submission",
+                      label: "Final date for\nabstract submission",
                       old: "Dec. 15, 2025",
                       revised: "March 01, 2026"
                     },
