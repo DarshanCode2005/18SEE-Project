@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node -e \"const fs=require('fs');const routes=['cmt-instructions','committee','registration-soon','schedule'];routes.forEach(r=>{const d='dist/'+r;if(!fs.existsSync(d))fs.mkdirSync(d,{recursive:true});fs.copyFileSync('dist/index.html',d+'/index.html');});console.log('Copied index.html to sub-routes');\"",
     "build:dev": "vite build --mode development",
     "lint": "eslint .",
     "preview": "vite preview",
