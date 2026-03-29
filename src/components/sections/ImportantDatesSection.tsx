@@ -64,13 +64,13 @@ export const ImportantDatesSection = () => {
                       date: new Date("2026-03-31T00:00:00"),
                       label: "Confirmation of acceptance of abstract",
                       old: "Jan. 15, 2026",
-                      revised: "March 31, 2026"
+                      revised: "April 15, 2026"
                     },
                     {
                       date: new Date("2026-05-15T00:00:00"),
                       label: "Full-length manuscript submission closes",
                       old: "March 15, 2026",
-                      revised: "May 15, 2026"
+                      revised: "May 30, 2026"
                     },
                     {
                       date: new Date("2026-12-10T09:00:00"),

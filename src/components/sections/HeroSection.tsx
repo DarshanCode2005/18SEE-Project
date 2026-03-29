@@ -7,7 +7,7 @@ import Image2 from "@/assets/IITR_organiser_logo.png";
 
 const milestones = [
   { label: "Abstract submission closes on", date: "2026-03-01T23:59:59" },
-  { label: "Confirmation of acceptance of abstracts", date: "2026-03-31T00:00:00" },
+  { label: "Confirmation of acceptance of abstracts", date: "2026-04-15T23:59:00" },
   { label: "Symposium Starts on", date: "2026-12-10T09:00:00" },
 ];
 
@@ -151,9 +151,9 @@ export const HeroSection = () => {
 
         {/* Call to Action */}
         <div className="flex flex-col sm:flex-row justify-center gap-4">
-          <Button size="lg" className="bg-secondary hover:bg-secondary-dark text-secondary-foreground shadow-glow" asChild>
+          {/* <Button size="lg" className="bg-secondary hover:bg-secondary-dark text-secondary-foreground shadow-glow" asChild>
             <a href={`${import.meta.env.VITE_ROOT_URL || ''}/cmt-instructions`}>Submit Abstract</a>
-          </Button>
+          </Button> */}
           <Button size="lg" variant="outline" className="border-primary-foreground bg-slate-100 text-slate-700" asChild>
             <a href={`${import.meta.env.VITE_ROOT_URL || ''}${import.meta.env.VITE_ROOT_URL ? '/18SEE%20Brochure_V2.pdf' : '/18SEE%20Brochure_V2.pdf'}`} download>
               <Download className="h-4 w-4 mr-2" />
