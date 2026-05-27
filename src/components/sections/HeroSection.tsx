@@ -6,9 +6,10 @@ import Image1 from "@/assets/ISET.svg";
 import Image2 from "@/assets/IITR_organiser_logo.png";
 
 const milestones = [
-  { label: "Abstract submission closes on", date: "2026-03-01T23:59:59" },
-  { label: "Confirmation of acceptance of abstracts", date: "2026-04-15T23:59:00" },
-  { label: "Symposium Starts on", date: "2026-12-10T09:00:00" },
+  { heading: "Abstract submission closes in", date: "2026-03-01T23:59:59" },
+  { heading: "Confirmation of acceptance of abstracts in", date: "2026-04-15T23:59:00" },
+  { heading: "Full-length manuscript submission closes in", date: "2026-06-30T23:59:59" },
+  { heading: "Conference starts in", date: "2026-12-10T09:00:00" },
 ];
 
 export const HeroSection = () => {
@@ -18,12 +19,12 @@ export const HeroSection = () => {
     minutes: 0,
     seconds: 0
   });
-  const [nextEvent, setNextEvent] = useState<{ label: string; date: Date } | null>(null);
+  const [nextEvent, setNextEvent] = useState<{ heading: string; date: Date } | null>(null);
 
   useEffect(() => {
     const now = new Date();
     const upcoming = milestones
-      .map(m => ({ label: m.label, date: new Date(m.date) }))
+      .map(m => ({ heading: m.heading, date: new Date(m.date) }))
       .filter(m => m.date.getTime() > now.getTime())
       .sort((a, b) => a.date.getTime() - b.date.getTime())[0] || null;
 
@@ -52,15 +53,7 @@ export const HeroSection = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const symposiumStart = milestones.find(m => m.label === "Symposium Start");
-  const symposiumStartDate = symposiumStart ? new Date(symposiumStart.date) : null;
-  const symposiumStartText = symposiumStartDate
-    ? symposiumStartDate.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })
-    : "Dec 10, 2026";
-
-  const headingText = nextEvent
-    ? (nextEvent.label === "Symposium Start" ? "Conference Starts In" : `${nextEvent.label}`)
-    : "Event Starts In";
+  const headingText = nextEvent?.heading ?? "Event starts in";
 
   return <section id="home" className="relative min-h-screen flex items-center justify-center overflow-hidden">
     {/* Background Image */}
@@ -111,7 +104,9 @@ export const HeroSection = () => {
           <h3 className="text-2xl font-semibold text-primary-foreground mb-1">{headingText}</h3>
           {nextEvent && (
             <p className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primary-foreground/10 border border-primary-foreground/20 text-primary-foreground mb-4 animate-blink mx-auto w-auto">
-              {nextEvent.date.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}
+              <span className="text-xl font-bold text-secondary">
+                {nextEvent.date.toLocaleDateString(undefined, { year: 'numeric', month: 'short', day: 'numeric' })}
+              </span>
             </p>
           )}
           <style>
