@@ -8,7 +8,7 @@ export const RegistrationSection = () => {
   const plans = [
     {
       title: "Early Bird Registration",
-      deadline: "June 30, 2026",
+      deadline: "August 31, 2026",
       icon: <Crown className="h-6 w-6 text-primary" />,
       highlight: "Most Popular",
       buttonColor: "bg-yellow-500 hover:bg-yellow-600 text-white",
@@ -20,7 +20,7 @@ export const RegistrationSection = () => {
     },
     {
       title: "Regular Registration",
-      deadline: "October 31, 2026",
+      deadline: "November 10, 2026",
       icon: <Calendar className="h-6 w-6 text-primary" />,
       buttonColor: "bg-blue-600 hover:bg-blue-700 text-white",
       Delegates_from_SAARC_fees : "14,000",
