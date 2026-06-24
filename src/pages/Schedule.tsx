@@ -43,7 +43,7 @@ const Schedule = () => {
           size="lg"
           className="bg-secondary hover:bg-secondary-dark text-secondary-foreground shadow-glow px-8 py-4 text-lg font-semibold gap-2"
         >
-          <a href={`${import.meta.env.VITE_ROOT_URL || ''}${import.meta.env.VITE_ROOT_URL ? '/18SEE%20Brochure_V1.pdf' : '/18SEE%20Brochure_V1.pdf'}`} download>
+          <a href={`${import.meta.env.VITE_ROOT_URL || ''}${import.meta.env.VITE_ROOT_URL ? '/18SEE%20Brochure_V3.pdf' : '/18SEE%20Brochure_V3.pdf'}`} download>
             <Download className="h-5 w-5 mr-2" />
             Download Schedule
           </a>
