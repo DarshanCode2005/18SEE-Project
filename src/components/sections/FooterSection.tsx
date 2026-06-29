@@ -19,6 +19,7 @@ export const FooterSection = () => {
     { name: "Home", href: "#home" },
     { name: "Brochure", href: rootUrl ? rootUrl + "/18SEE%20Brochure_V3.pdf" : "/18SEE%20Brochure_V3.pdf" },
     { name: "Abstract Submission", href: rootUrl ? rootUrl + "/cmt-instructions" : "/cmt-instructions" },
+    { name: "Manuscript Submission", href: rootUrl ? rootUrl + "/manuscript-instructions" : "/manuscript-instructions" },
     { name: "Registration", href: rootUrl ? rootUrl + "/registration-soon" : "/registration-soon" }
   ];
 

@@ -13,7 +13,9 @@ export const Navigation = ({
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
   const [scheduleOpen, setScheduleOpen] = useState(false);
+  const [submissionsOpen, setSubmissionsOpen] = useState(false);
   const dropdownRef = useRef<HTMLDivElement | null>(null);
+  const submissionsDropdownRef = useRef<HTMLDivElement | null>(null);
   const rootUrl = import.meta.env.VITE_ROOT_URL || "";
   const homePath = rootUrl ? rootUrl + "/" : "/";
   const isLanding = window.location.pathname === homePath || window.location.pathname === homePath.slice(0, -1);
@@ -28,9 +30,11 @@ export const Navigation = ({
 
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
-      if (!dropdownRef.current) return;
       if (dropdownRef.current && !dropdownRef.current.contains(e.target as Node)) {
         setScheduleOpen(false);
+      }
+      if (submissionsDropdownRef.current && !submissionsDropdownRef.current.contains(e.target as Node)) {
+        setSubmissionsOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
@@ -132,6 +136,19 @@ export const Navigation = ({
                 <a href={scheduleHref} className={`block px-4 py-2 text-black ${navHover} hover:bg-primary/10`} onClick={() => setScheduleOpen(false)}>Technical Program</a>
               </div>
             </div>
+            {/* Submissions dropdown */}
+            <div ref={submissionsDropdownRef} className="relative">
+              <Button onClick={() => setSubmissionsOpen(o => !o)} variant="ghost" aria-haspopup="menu" aria-expanded={submissionsOpen} className={`hover:bg-primary/10 ${navHover} transition-colors ${navText} text-base xl:text-lg px-4 xl:px-5 py-2 xl:py-3 flex items-center`}>
+                <span>Submissions</span>
+                <svg className={`ml-2 h-4 w-4 transition-transform ${submissionsOpen ? 'rotate-180' : ''}`} viewBox="0 0 20 20" fill="currentColor" aria-hidden="true">
+                  <path fillRule="evenodd" d="M5.23 7.21a.75.75 0 011.06.02L10 10.94l3.71-3.71a.75.75 0 011.08 1.04l-4.25 4.25a.75.75 0 01-1.06 0L5.21 8.27a.75.75 0 01.02-1.06z" clipRule="evenodd" />
+                </svg>
+              </Button>
+              <div className={`absolute right-0 mt-2 w-56 bg-card border border-border rounded-md shadow-card transition ${submissionsOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`} role="menu">
+                <a href={toBase("/cmt-instructions")} className={`block px-4 py-2 text-black ${navHover} hover:bg-primary/10`} onClick={() => setSubmissionsOpen(false)}>Abstract Submission</a>
+                <a href={toBase("/manuscript-instructions")} className={`block px-4 py-2 text-black ${navHover} hover:bg-primary/10`} onClick={() => setSubmissionsOpen(false)}>Manuscript Submission</a>
+              </div>
+            </div>
             {afterItems.map(item => (
               <Button key={item.name} variant="ghost" className={`hover:bg-primary/10 ${navHover} transition-colors ${navText} text-base xl:text-lg px-4 xl:px-5 py-2 xl:py-3`} asChild>
                 <a href={item.href}>{item.name}</a>
@@ -164,6 +181,15 @@ export const Navigation = ({
                 </Button>
                 <Button variant="ghost" className="justify-start text-base sm:text-lg px-4 sm:px-5 py-2 sm:py-3" asChild onClick={() => setIsOpen(false)}>
                   <a href={scheduleHref}>Schedule</a>
+                </Button>
+              </div>
+              {/* Submissions group on mobile */}
+              <div className="flex flex-col">
+                <Button variant="ghost" className="justify-start text-base sm:text-lg px-4 sm:px-5 py-2 sm:py-3" asChild onClick={() => setIsOpen(false)}>
+                  <a href={toBase("/cmt-instructions")}>Abstract Submission</a>
+                </Button>
+                <Button variant="ghost" className="justify-start text-base sm:text-lg px-4 sm:px-5 py-2 sm:py-3" asChild onClick={() => setIsOpen(false)}>
+                  <a href={toBase("/manuscript-instructions")}>Manuscript Submission</a>
                 </Button>
               </div>
               {afterItems.map(item => (
