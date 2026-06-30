@@ -233,7 +233,7 @@ export const ThemesSection = () => {
               </h3>
               <p className="text-primary-foreground/90 text-lg mb-6 leading-relaxed">
                 We invite researchers, practitioners, innovators and students to share their original work
-                across these themes. Submit your abstracts (around 300 words) and contribute to advancing earthquake engineering.
+                across these themes and contribute to advancing earthquake engineering
               </p>
               <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center">
                 <a
