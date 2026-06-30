@@ -3,9 +3,16 @@ import react from "@vitejs/plugin-react-swc";
 import path from "path";
 import { componentTagger } from "lovable-tagger";
 
+const isVercel = process.env.VERCEL === "1";
+
+// Chakra hosts at /18see/; Vercel deploys at the domain root.
+if (isVercel) {
+  process.env.VITE_ROOT_URL = "";
+}
+
 // https://vitejs.dev/config/
 export default defineConfig(({ mode }) => ({
-  base: mode === 'production' ? '/18see/' : '/',
+  base: mode === "production" ? (isVercel ? "/" : "/18see/") : "/",
   server: {
     host: "::",
     port: 8080,
