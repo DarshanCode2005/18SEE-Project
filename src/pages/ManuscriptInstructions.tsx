@@ -15,10 +15,10 @@ import {
 import xLogo from "@/assets/x-logo.png";
 import iitroorkee from "@/assets/iitr_logo_about.png";
 
-import step1 from "@/assets/manuscript_instructions/step 1.png";
-import step2 from "@/assets/manuscript_instructions/step 2.png";
-import step3 from "@/assets/manuscript_instructions/step 3.png";
-import step4 from "@/assets/manuscript_instructions/step 4.png";
+import step1 from "@/assets/manuscript_instructions/manuscript-step-1.png";
+import step2 from "@/assets/manuscript_instructions/manuscript-step-2.png";
+import step3 from "@/assets/manuscript_instructions/manuscript-step-3.png";
+import step4 from "@/assets/manuscript_instructions/manuscript-step-4.png";
 
 const CMT_PORTAL_URL = "https://cmt3.research.microsoft.com/SEE2026";
 const MANUSCRIPT_TEMPLATE_URL =
@@ -32,7 +32,6 @@ export const ManuscriptInstructions = () => {
     const quickLinks = [
       { name: "Home", href: rootUrl ? rootUrl + "/" : "/" },
       { name: "Brochure", href: rootUrl ? rootUrl + "/18SEE%20Brochure_V3.pdf" : "/18SEE%20Brochure_V3.pdf" },
-      { name: "Abstract Submission", href: rootUrl ? rootUrl + "/cmt-instructions" : "/cmt-instructions" },
       { name: "Manuscript Submission", href: rootUrl ? rootUrl + "/manuscript-instructions" : "/manuscript-instructions" },
       { name: "Registration", href: rootUrl ? rootUrl + "/registration-soon" : "/registration-soon" }
     ];
@@ -219,7 +218,7 @@ export const ManuscriptInstructions = () => {
             className="text-blue-600 hover:text-blue-700 underline hover:no-underline transition-all duration-200"
           >
             {CMT_PORTAL_URL}
-          </a>) and log in using the credentials used to upload the abstract.
+          </a>) and <span className="text-teal-600 font-medium">Log In</span> using the credentials used to upload the abstract.
         </>
       ),
       image: step1
@@ -240,7 +239,7 @@ export const ManuscriptInstructions = () => {
       id: 3,
       title: "Upload Manuscript",
       content: (
-        <>
+        <div className="text-justify">
           Information on the <span className="text-black font-bold">title</span> and{" "}
           <span className="text-black font-bold">contributing author(s)</span> of your abstract should be visible.
           You may enter the (accepted) abstract in the space provided. Next,{" "}
@@ -248,9 +247,9 @@ export const ManuscriptInstructions = () => {
           Secondary Subject Areas (optional) that best describe your study. Finally, upload the{" "}
           <span className="text-black font-bold">PDF</span> file containing your full-length manuscript. If you are not
           the corresponding author, please also enter the particulars of the corresponding author in the space
-          provided. Click the <span className="text-teal-600 font-medium">Save Changes</span> button once you
-          implemented above instructions and you will have successfully submitted the manuscript!
-        </>
+          provided. Click <span className="text-teal-600 font-medium">Save Changes</span> after implementing these
+          instructions and you will have successfully submitted the manuscript!
+        </div>
       ),
       image: step3
     },

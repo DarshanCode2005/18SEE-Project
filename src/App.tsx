@@ -9,7 +9,6 @@ import NotFound from "./pages/NotFound";
 import Schedule from "./pages/Schedule";
 import Committee from "./pages/Committee";
 import RegistrationSoon from "./pages/RegistrationSoon";
-import { CMTInstructions } from "./pages/CMTInstructions";
 import { ManuscriptInstructions } from "./pages/ManuscriptInstructions";
 
 const queryClient = new QueryClient();
@@ -62,7 +61,6 @@ const App = () => {
             <Route path={rootUrl ? rootUrl + "/schedule" : "/schedule"} element={<Schedule />} />
             <Route path={rootUrl ? rootUrl + "/committee" : "/committee"} element={<Committee />} />
             <Route path={rootUrl ? rootUrl + "/registration-soon" : "/registration-soon"} element={<RegistrationSoon />} />
-            <Route path={rootUrl ? rootUrl + "/cmt-instructions" : "/cmt-instructions"} element={<CMTInstructions />} />
             <Route path={rootUrl ? rootUrl + "/manuscript-instructions" : "/manuscript-instructions"} element={<ManuscriptInstructions />} />
             {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
             <Route path={rootUrl ? rootUrl + "/*" : "/*"} element={<NotFound />} />
