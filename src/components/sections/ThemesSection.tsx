@@ -237,20 +237,15 @@ export const ThemesSection = () => {
               </p>
               <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center">
                 <a
-                  href="https://channeli.in/api/django_filemanager/media_files/136151/" target="_blank" rel="noreferrer"
+                  href={`${import.meta.env.VITE_ROOT_URL || ''}${import.meta.env.VITE_ROOT_URL ? '/18SEE%20Brochure_V3.pdf' : '/18SEE%20Brochure_V3.pdf'}`}
+                  download
                   className="border-2 border-primary-foreground text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary-foreground/10 transition-colors text-center"
                 >
-                  Download Abstract Template
-                </a>
-                <a
-                  href={`${import.meta.env.VITE_ROOT_URL || ''}/cmt-instructions`}
-                  className="bg-primary-foreground text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary-foreground/90 transition-colors inline-block text-center"
-                >
-                  Submit Abstract
+                  Download Brochure
                 </a>
                 <a
                   href={`${import.meta.env.VITE_ROOT_URL || ''}/manuscript-instructions`}
-                  className="border-2 border-primary-foreground text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary-foreground/10 transition-colors text-center"
+                  className="bg-primary-foreground text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary-foreground/90 transition-colors inline-block text-center"
                 >
                   Submit Manuscript
                 </a>
