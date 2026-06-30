@@ -235,18 +235,24 @@ export const ThemesSection = () => {
                 We invite researchers, practitioners, innovators and students to share their original work
                 across these themes. Submit your abstracts (around 300 words) and contribute to advancing earthquake engineering.
               </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <div className="flex flex-col sm:flex-row flex-wrap gap-4 justify-center">
                 <a
                   href="https://channeli.in/api/django_filemanager/media_files/136151/" target="_blank" rel="noreferrer"
-                  className="border-2 border-primary-foreground text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary-foreground/10 transition-colors"
+                  className="border-2 border-primary-foreground text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary-foreground/10 transition-colors text-center"
                 >
-                  Download Template
+                  Download Abstract Template
                 </a>
                 <a
                   href={`${import.meta.env.VITE_ROOT_URL || ''}/cmt-instructions`}
-                  className="bg-primary-foreground text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary-foreground/90 transition-colors inline-block"
+                  className="bg-primary-foreground text-primary px-6 py-3 rounded-lg font-semibold hover:bg-primary-foreground/90 transition-colors inline-block text-center"
                 >
                   Submit Abstract
+                </a>
+                <a
+                  href={`${import.meta.env.VITE_ROOT_URL || ''}/manuscript-instructions`}
+                  className="border-2 border-primary-foreground text-primary-foreground px-6 py-3 rounded-lg font-semibold hover:bg-primary-foreground/10 transition-colors text-center"
+                >
+                  Submit Manuscript
                 </a>
               </div>
             </CardContent>
