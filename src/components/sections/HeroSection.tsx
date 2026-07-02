@@ -8,7 +8,7 @@ import Image2 from "@/assets/IITR_organiser_logo.png";
 const milestones = [
   { heading: "Abstract submission closes in", date: "2026-03-01T23:59:59" },
   { heading: "Confirmation of acceptance of abstracts in", date: "2026-04-15T23:59:00" },
-  { heading: "Full-length manuscript submission closes in", date: "2026-06-30T23:59:59" },
+  { heading: "Full-length manuscript submission closes in", date: "2026-07-31T23:59:59" },
   { heading: "Conference starts in", date: "2026-12-10T09:00:00" },
 ];
 

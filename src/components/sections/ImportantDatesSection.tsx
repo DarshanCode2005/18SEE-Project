@@ -67,10 +67,10 @@ export const ImportantDatesSection = () => {
                       revised: "April 15, 2026"
                     },
                     {
-                      date: new Date("2026-06-30T23:59:00"),
+                      date: new Date("2026-07-31T23:59:00"),
                       label: "Full-length manuscript submission closes",
-                      old: "May 30, 2026",
-                      revised: "June 30, 2026"
+                      old: "June 30, 2026",
+                      revised: "July 31, 2026"
                     },
                     {
                       date: new Date("2026-12-10T09:00:00"),
