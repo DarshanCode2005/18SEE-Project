@@ -289,7 +289,7 @@ export const ThemesSection = () => {
                   <AccordionTrigger>Full-length Manuscript</AccordionTrigger>
                   <AccordionContent>
                     <ul className="list-disc pl-5 space-y-1">
-                      <li>Submission window: Upon abstract acceptance until June 30, 2026.</li>
+                      <li>Submission window: Upon abstract acceptance until July 31, 2026.</li>
                       <li>Length: 6–8 pages including figures and references (template will be provided).</li>
                       <li>Use SI units; ensure figures are at least 300 dpi.</li>
                       <li>Citations and references in a consistent style (e.g., APA/ASCE).</li>
@@ -302,7 +302,7 @@ export const ThemesSection = () => {
                   <AccordionContent>
                     <ul className="list-disc pl-5 space-y-1">
                       <li>Peer review results communicated by Apr 30, 2026.</li>
-                      <li>Revised manuscripts due by June 30, 2026.</li>
+                      <li>Revised manuscripts due by July 31, 2026.</li>
                       <li>Final acceptance subject to timely revisions and registration.</li>
                     </ul>
                   </AccordionContent>
