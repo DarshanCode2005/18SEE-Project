@@ -13,7 +13,7 @@ import {
   Building,
   Earth
 } from "lucide-react";
-import iitrlogo from "@/assets/iitr_logo_about.png";
+import iitrlogo from "@/assets/new_iitr_logo.png";
 
 export const AboutSection = () => {
   const highlights = [
@@ -60,7 +60,7 @@ export const AboutSection = () => {
             <Card className="border-0 shadow-card bg-gradient-card">
               <CardContent className="p-8">
                 <div className="flex items-center space-x-3 mb-6">
-                  <img src={iitrlogo} alt="IITR Logo" className="h-16 w-21" style={{ marginLeft: '-1rem' }} />
+                  <img src={iitrlogo} alt="IITR Logo" className="h-16 w-16 object-contain" style={{ marginLeft: '-1rem' }} />
                   <h3 className="font-montserrat text-2xl font-semibold text-foreground" style={{ marginLeft: '0rem' }}>
                     About 18SEE
                   </h3>

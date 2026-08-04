@@ -3,7 +3,7 @@ import { ArrowLeft, ExternalLink, Download, X, ZoomIn } from "lucide-react";
 import { Link } from "react-router-dom";
 import { useState } from "react";
 import { Separator } from "@/components/ui/separator";
-import iitrLogo from "@/assets/iitr_logo.svg";
+import iitrLogo from "@/assets/new_iitr_logo.png";
 import {
   Mail,
   Phone,
@@ -13,7 +13,6 @@ import {
   Youtube
 } from "lucide-react";
 import xLogo from "@/assets/x-logo.png";
-import iitroorkee from "@/assets/iitr_logo_about.png";
 
 import step1 from "@/assets/manuscript_instructions/manuscript-step-1.png";
 import step2 from "@/assets/manuscript_instructions/manuscript-step-2.png";
@@ -144,7 +143,7 @@ export const ManuscriptInstructions = () => {
                     <img
                       src={iitrLogo}
                       alt="IIT Roorkee Logo"
-                      className="w-full h-full object-cover rounded-full border-2 border-primary bg-white"
+                      className="w-full h-full object-contain"
                     />
                   </div>
                   <div className="text-center mt-2 sm:mt-0">
@@ -273,7 +272,7 @@ export const ManuscriptInstructions = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mt-4">
           <div className="flex items-center justify-center gap-4 sm:gap-6 min-h-[120px]">
             <img
-              src={iitroorkee}
+              src={iitrLogo}
               alt="IIT Roorkee Logo"
               className="h-16 sm:h-20 md:h-24 lg:h-28 xl:h-32 w-auto flex-shrink-0"
             />

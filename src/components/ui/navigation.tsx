@@ -1,6 +1,6 @@
 import { useState, useEffect, useRef } from "react";
 import { Button } from "@/components/ui/button";
-import iitrLogo from "@/assets/iitr_logo.svg";
+import iitrLogo from "@/assets/new_iitr_logo.png";
 import { Menu, X } from "lucide-react";
 
 interface NavigationProps {
@@ -97,11 +97,11 @@ export const Navigation = ({
         <div className="flex items-center py-2 sm:py-3 md:py-4 my-0">
           {/* Logo */}
           <div className="flex items-center space-x-3">
-            <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 flex items-center justify-center">
+            <div className="w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 flex items-center justify-center shrink-0">
               <img
                 src={iitrLogo}
                 alt="IIT Roorkee Logo"
-                className={`w-full h-full object-cover rounded-full border-2 border-primary bg-white ${isLanding && !isScrolled ? 'brightness-110' : 'brightness-90'}`}
+                className={`w-full h-full object-contain ${isLanding && !isScrolled ? 'brightness-110' : 'brightness-90'}`}
               />
             </div>
             <div className="hidden sm:block">

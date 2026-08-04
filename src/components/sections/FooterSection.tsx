@@ -1,6 +1,6 @@
 import { Separator } from "@/components/ui/separator";
 import { NewsletterForm } from "@/components/sections/NewsletterSection";
-import iitrLogo from "@/assets/iitr_logo.svg";
+import iitrLogo from "@/assets/new_iitr_logo.png";
 import {
   Mail,
   Phone,
@@ -118,12 +118,12 @@ export const FooterSection = () => {
                   <li key={link.name}>
                     <a
                       href={link.href}
-                      className="text-sm text-primary-foreground/80 hover:text-secondary transition-colors flex items-center"
+                      className="text-sm text-primary-foreground/80 hover:text-secondary transition-colors inline-flex items-start gap-1"
                       target={link.external ? "_blank" : undefined}
                       rel={link.external ? "noopener noreferrer" : undefined}
                     >
                       <span className="break-words">{link.name}</span>
-                      {link.external && <ExternalLink className="h-3 w-3 ml-1 flex-shrink-0" />}
+                      {link.external && <ExternalLink className="h-3 w-3 mt-0.5 flex-shrink-0" />}
                     </a>
                   </li>
                 ))}
@@ -134,14 +134,14 @@ export const FooterSection = () => {
             <div className="sm:col-span-2 lg:col-span-1">
               {/* <NewsletterForm variant="footer" /> */}
               <div className="flex flex-col sm:flex-row items-center sm:items-center space-y-3 sm:space-y-0 sm:space-x-3 mt-6">
-                <div className="w-28 h-28 sm:w-24 sm:h-24 lg:w-32 lg:h-32 flex items-center justify-center">
+                <div className="w-28 h-28 sm:w-24 sm:h-24 lg:w-32 lg:h-32 flex items-center justify-center shrink-0">
                   <img
                     src={iitrLogo}
                     alt="IIT Roorkee Logo"
-                    className="w-full h-full object-cover rounded-full border-2 border-primary bg-white"
+                    className="w-full h-full object-contain"
                   />
                 </div>
-                <div className="text-center mt-2 sm:mt-0">
+                <div className="text-center sm:text-left mt-2 sm:mt-0">
                   <h3 className="font-montserrat text-xl sm:text-2xl font-bold tracking-tight">
                     18SEE-2026
                   </h3>
