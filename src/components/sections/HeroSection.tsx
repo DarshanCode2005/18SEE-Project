@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button";
 import { Calendar, MapPin, Users, Download } from "lucide-react";
 import heroCampus from "@/assets/hero-campus.webp";
 import Image1 from "@/assets/ISET.svg";
-import Image2 from "@/assets/IITR_organiser_logo.png";
+import Image2 from "@/assets/new_iitr_logo.png";
 
 const milestones = [
   { heading: "Abstract submission closes in", date: "2026-03-01T23:59:59" },

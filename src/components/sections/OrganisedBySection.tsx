@@ -1,6 +1,6 @@
 import React from "react";
 import ISETLogo from "@/assets/ISET_logo.png";
-import IITRLogo from "@/assets/IITR_organiser_logo.png";
+import IITRLogo from "@/assets/new_iitr_logo.png";
 
 export const OrganisedBySection = () => (
   <section id="organised-by" className="py-12 bg-background">
