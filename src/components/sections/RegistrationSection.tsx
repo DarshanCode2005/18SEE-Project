@@ -8,7 +8,7 @@ export const RegistrationSection = () => {
   const plans = [
     {
       title: "Early Bird Registration",
-      deadline: "August 31, 2026",
+      deadline: "September 30, 2026",
       icon: <Crown className="h-6 w-6 text-primary" />,
       highlight: "Most Popular",
       buttonColor: "bg-yellow-500 hover:bg-yellow-600 text-white",
