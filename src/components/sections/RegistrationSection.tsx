@@ -138,7 +138,7 @@ export const RegistrationSection = () => {
               {[
                 { label: "SAARC Delegates", value: `₹${plan.Delegates_from_SAARC_fees}` },
                 { label: "ISET Life Members/Fellows", value: `₹${plan.ISET_Members_Fees}` },
-                { label: "Students / Research Scholars / Spouses", value: `₹${plan.Students_Fees}` },
+                { label: "Full-time Students / Full-time Research Scholars / Spouses", value: `₹${plan.Students_Fees}` },
                 { label: "Foreign Delegates / Students", value: `$${plan.Foreign_Delegates_Fees}` },
                 {
                   label: "Foreign Delegates / Students with ISET Membership",
