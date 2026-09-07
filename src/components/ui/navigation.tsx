@@ -54,6 +54,10 @@ export const Navigation = ({
     },
     // Schedule handled as dropdown below
     {
+      name: "Keynote Speakers",
+      href: toBase("/international-speakers")
+    },
+    {
       name: "Committee",
       href: toBase("/committee")
     },
@@ -64,6 +68,10 @@ export const Navigation = ({
     {
       name: "Registration",
       href: isLanding ? "#registration" : toBase("#registration")
+    },
+    {
+      name: "Sponsors",
+      href: isLanding ? "#sponsors" : toBase("#sponsors")
     },
     {
       name: "Contact",

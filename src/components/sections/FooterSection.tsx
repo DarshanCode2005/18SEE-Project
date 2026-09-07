@@ -18,6 +18,8 @@ export const FooterSection = () => {
   const quickLinks = [
     { name: "Home", href: "#home" },
     { name: "Brochure", href: rootUrl ? rootUrl + "/18SEE%20Brochure_V3.pdf" : "/18SEE%20Brochure_V3.pdf" },
+    { name: "Keynote Speakers", href: rootUrl ? rootUrl + "/international-speakers" : "/international-speakers" },
+    { name: "Sponsors", href: rootUrl ? rootUrl + "/#sponsors" : "/#sponsors" },
     { name: "Manuscript Submission", href: rootUrl ? rootUrl + "/manuscript-instructions" : "/manuscript-instructions" },
     { name: "Registration", href: rootUrl ? rootUrl + "/registration-soon" : "/registration-soon" }
   ];
