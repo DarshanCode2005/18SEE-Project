@@ -12,6 +12,8 @@ import { OrganisedBySection } from "@/components/sections/OrganisedBySection";
 import { Accomodation } from "@/components/sections/Accomodation";
 import { ImportantDatesSection } from "@/components/sections/ImportantDatesSection";
 import { AcademicPartners } from "@/components/sections/AcademicPartner";
+import { KeynoteSpeakersSection } from "@/components/sections/KeynoteSpeakersSection";
+import { IndustrialSponsorsSection } from "@/components/sections/IndustrialSponsorsSection";
 
 import React, { useRef, useEffect, useState } from "react";
 import { useLocation } from "react-router-dom";
@@ -65,6 +67,8 @@ const Index = () => {
         <HeroSection />
         <AboutSection />
         <ThemesSection />
+        <KeynoteSpeakersSection featuredLimit={6} />
+        <IndustrialSponsorsSection />
         <ImportantDatesSection />
         {/* <ScheduleSection /> Removed from landing page */}
         {/* Download/View Schedule buttons removed as per new instructions */}

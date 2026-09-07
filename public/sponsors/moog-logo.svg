@@ -1,0 +1,8 @@
+<svg width="1400" height="300" viewBox="0 0 1400 300" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Moog logo">
+  <rect width="1400" height="300" fill="#7D0E1F"/>
+  <text x="700" y="185" text-anchor="middle" font-size="178" font-weight="700" letter-spacing="-10" fill="#F7F7F5" font-family="Arial, Helvetica, sans-serif">MOOG</text>
+  <g transform="translate(1235 70)">
+    <circle cx="50" cy="55" r="38" fill="none" stroke="#F7F7F5" stroke-width="7"/>
+    <text x="50" y="72" text-anchor="middle" font-size="38" font-weight="700" fill="#F7F7F5" font-family="Arial, Helvetica, sans-serif">®</text>
+  </g>
+</svg>

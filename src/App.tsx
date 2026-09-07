@@ -8,6 +8,7 @@ import Index from "./pages/Index";
 import NotFound from "./pages/NotFound";
 import Schedule from "./pages/Schedule";
 import Committee from "./pages/Committee";
+import KeynoteSpeakers from "./pages/KeynoteSpeakers";
 import RegistrationSoon from "./pages/RegistrationSoon";
 import { CMTInstructions } from "./pages/CMTInstructions";
 import { ManuscriptInstructions } from "./pages/ManuscriptInstructions";
@@ -61,6 +62,7 @@ const App = () => {
             <Route path={rootUrl ? rootUrl + "/" : "/"} element={<Index />} />
             <Route path={rootUrl ? rootUrl + "/schedule" : "/schedule"} element={<Schedule />} />
             <Route path={rootUrl ? rootUrl + "/committee" : "/committee"} element={<Committee />} />
+            <Route path={rootUrl ? rootUrl + "/keynote-speakers" : "/keynote-speakers"} element={<KeynoteSpeakers />} />
             <Route path={rootUrl ? rootUrl + "/registration-soon" : "/registration-soon"} element={<RegistrationSoon />} />
             <Route path={rootUrl ? rootUrl + "/cmt-instructions" : "/cmt-instructions"} element={<CMTInstructions />} />
             <Route path={rootUrl ? rootUrl + "/manuscript-instructions" : "/manuscript-instructions"} element={<ManuscriptInstructions />} />

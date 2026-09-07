@@ -1,0 +1,16 @@
+<svg width="1200" height="400" viewBox="0 0 1200 400" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Gauge Geotechniques logo">
+  <rect width="1200" height="400" fill="#f6f6f5"/>
+  <g transform="translate(20,30)">
+    <g transform="translate(0,0)">
+      <path d="M40 260 L120 120 L180 260 Z" fill="#4c647d"/>
+      <path d="M70 260 L150 120 L210 260 Z" fill="#9bb7cc" opacity="0.9"/>
+      <path d="M110 260 L190 120 L250 260 Z" fill="#d8e3ee" opacity="0.8"/>
+      <path d="M180 260 L260 120 L310 260 Z" fill="#4c647d"/>
+    </g>
+    <g transform="translate(230,0)">
+      <text x="0" y="215" font-size="110" font-weight="700" fill="#2d3c4b" font-family="Arial, Helvetica, sans-serif">Gauge</text>
+      <text x="0" y="300" font-size="72" font-weight="700" fill="#2d3c4b" font-family="Arial, Helvetica, sans-serif">Geotechniques</text>
+      <text x="0" y="350" font-size="30" font-weight="600" fill="#4d5d6d" font-family="Arial, Helvetica, sans-serif">An ISO 9001: 2008 Certified Company</text>
+    </g>
+  </g>
+</svg>

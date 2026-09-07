@@ -62,6 +62,10 @@ export const Navigation = ({
       href: toBase("/committee")
     },
     {
+      name: "Keynote Speakers",
+      href: toBase("/keynote-speakers")
+    },
+    {
       name: "Gallery",
       href: isLanding ? "#gallery" : toBase("#gallery")
     },
