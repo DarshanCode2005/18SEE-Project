@@ -4,6 +4,7 @@ import { Calendar, MapPin, Users, Download } from "lucide-react";
 import heroCampus from "@/assets/hero-campus.webp";
 import Image1 from "@/assets/ISET.svg";
 import Image2 from "@/assets/new_iitr_logo.png";
+import { KeynoteSpeakersStrip } from "@/components/sections/KeynoteSpeakersStrip";
 
 const milestones = [
   { heading: "Abstract submission closes in", date: "2026-03-01T23:59:59" },
@@ -64,7 +65,7 @@ export const HeroSection = () => {
     </div>
 
     {/* Content */}
-    <div className="relative z-10 max-w-7xl mt-20 mx-auto px-4 sm:px-6 lg:px-8 text-center">
+    <div className="relative z-10 w-full min-w-0 max-w-7xl mt-20 mx-auto px-4 sm:px-6 lg:px-8 text-center">
       <div className="animate-fade-in mx-0 my-[80px]">
         <div className="flex items-center justify-center gap-6 mb-6">
           <div className="max-[889px]:hidden relative items-center justify-center flex" style={{ height: '8rem', width: '8rem' }}>
@@ -143,6 +144,8 @@ export const HeroSection = () => {
             </div>)}
           </div>
         </div>
+
+        <KeynoteSpeakersStrip />
 
         {/* Call to Action */}
         <div className="flex flex-col sm:flex-row justify-center gap-4">

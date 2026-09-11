@@ -2,6 +2,51 @@
 @tailwind components;
 @tailwind utilities;
 
+.speaker-marquee {
+  overflow: hidden;
+}
+
+.speaker-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: keynote-scroll 100s linear infinite;
+}
+
+.speaker-marquee-group {
+  display: flex;
+  flex-shrink: 0;
+  gap: 1rem;
+  padding-right: 1rem;
+}
+
+.speaker-marquee:hover .speaker-marquee-track,
+.speaker-marquee[data-paused="true"] .speaker-marquee-track {
+  animation-play-state: paused;
+}
+
+@keyframes keynote-scroll {
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .speaker-marquee-track {
+    animation: none;
+    width: 100%;
+  }
+
+  .speaker-marquee-group {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+  }
+
+  .speaker-marquee-copy,
+  .speaker-motion-toggle {
+    display: none;
+  }
+}
+
 @layer base {
   html {
     scroll-behavior: smooth;

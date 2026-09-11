@@ -2,7 +2,6 @@ import { ExternalLink } from "lucide-react";
 import { Badge } from "@/components/ui/badge";
 import moog from "@/assets/sponsors/moog.png";
 import gauge from "@/assets/sponsors/gauge.svg";
-import pyrodynamics from "@/assets/sponsors/pyrodynamics.png";
 import spectrisHbk from "@/assets/sponsors/spectris-hbk.svg";
 
 type Sponsor = {
@@ -29,12 +28,6 @@ const exhibitionSponsors: Sponsor[] = [
     type: "Standard Exhibition Stall (Small)",
     website: "https://www.gaugeindia.com/",
     logo: gauge,
-  },
-  {
-    name: "Pyrodynamics",
-    type: "Standard Exhibition Stall (Big)",
-    website: "https://www.pyrodynamicsindia.com/",
-    logo: pyrodynamics,
   },
   {
     name: "Spectris Technologies Pvt Ltd (HBK – Hottinger Brüel & Kjær)",

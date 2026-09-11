@@ -74,10 +74,10 @@ const Index = () => {
         {/* How to Reach & Accommodation Section */}
         <Accomodation />
         <PostSymposiumTourSection />
-        <GallerySection />
         <ContactSection />
         <SponsorsSection />
         <AcademicPartners />
+        <GallerySection />
         <FooterSection />
       </div>
     </div>
